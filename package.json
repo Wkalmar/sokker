@@ -1,17 +1,29 @@
 {
-  "name": "sokker",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4",
-    "three": "^0.93.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+	"name": "sokker",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"apollo-cache-inmemory": "^1.0.0",
+		"apollo-client": "^2.3.4",
+		"apollo-link": "^1.0.0",
+		"apollo-link-batch-http": "^1.2.2",
+		"apollo-link-context": "^1.0.8",
+		"graphql": "^0.13.2",
+		"graphql-tag": "^2.9.2",
+		"history": "^4.7.2",
+		"mobx": "^4.2.1",
+		"mobx-react": "^5.1.2",
+		"mobx-state-tree": "^2.0.5",
+		"react": "^16.4.1",
+		"react-apollo": "^2.1.5",
+		"react-dom": "^16.4.1",
+		"react-router-dom": "^4.3.1",
+		"react-scripts": "1.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+	}
 }

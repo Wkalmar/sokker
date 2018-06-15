@@ -1,6 +1,3 @@
-import Alert from 'react-s-alert';
-// MobX
-import { runInAction } from "mobx";
 
 
 export default function (data = {}, errors = null) {
@@ -32,10 +29,9 @@ function applyData(dataName, data) {
 
 function revertData(dataName, errorMsg) {
 
-	Alert.error(errorMsg);
 	switch (dataName) {
 
 		default:
-			console.log(`%c RESPONSE RESOLVER UNHANDLED ERROR:`, 'color: darkred', dataName, data);
+			console.log(`%c RESPONSE RESOLVER UNHANDLED ERROR:`, 'color: darkred', dataName, errorMsg);
 	}
 }
