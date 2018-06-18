@@ -9,7 +9,6 @@ import lazy from "utils/lazy.utils";
 class HomePage extends React.Component {
 
 	static permissions = {
-		needAuth: true
 	};
 }
 

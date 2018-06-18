@@ -18,7 +18,7 @@ const responseResolverLink = new ApolloLink((operation, forward)=> {
 
 
 const httpLink = new BatchHttpLink({
-	uri: 'https://api.graph.cool/simple/v1/cjh1v6rdw1kmk0171da10ighp',
+	uri: 'https://api.graph.cool/simple/v1/cjifv0wao4jus0111cytzymtk',
 	batchInterval: 200,
 	batchMax: 50,
 	batchKey: str => str.operationName

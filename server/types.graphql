@@ -14,3 +14,25 @@ type User @model {
   name: String
   trigger: String # for triggering socket update
 }
+
+
+type Player @model {
+  # Required system field:
+  id: ID! @isUnique # read-only (managed by Graphcool)
+
+  # Optional system fields (remove if not needed):
+  createdAt: DateTime! # read-only (managed by Graphcool)
+  updatedAt: DateTime! # read-only (managed by Graphcool)
+
+  playerId: String!
+  name: String!
+  age: Float
+  defender: Float
+  keeper: Float
+  pace: Float
+  passing: Float
+  playmaker: Float
+  stamina: Float
+  striker: Float
+  technique: Float
+}

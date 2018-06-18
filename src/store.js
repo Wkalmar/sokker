@@ -4,7 +4,8 @@ import RootModel from "models/Root.model";
 
 
 const store = RootModel.create({
-	users: {}
+	users: {},
+	players: {}
 });
 
 // MobX spy goes here
