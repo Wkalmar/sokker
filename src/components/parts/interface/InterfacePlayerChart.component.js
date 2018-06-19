@@ -1,9 +1,10 @@
+import React from 'react';
 // MobX
 import { observer } from 'mobx-react';
-import {action, reaction, observable, observe, computed, autorun, asStructure, runInAction, toJs } from 'mobx';
+import { observable } from 'mobx';
 // Chart
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
-import { ResponsiveContainer, PieChart, Sector, LabelList, Cell, Legend, Pie } from "recharts";
+import { ResponsiveContainer, PieChart, Sector, Cell, Legend, Pie } from "recharts";
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 
 const colors = scaleOrdinal(schemeCategory10).range();
@@ -16,15 +17,14 @@ const data01 = [
 ];
 
 
-@observer
 class InterfacePlayerChart extends React.Component {
 
-	@observable activeIndex = -1;
+	activeIndex = observable.box(-1);
 
 
-	get chartData() { return _.map(this.props.playerData.output, (value, name)=> ({ name, value: +value })) };
+	get chartData() { return this.props.playerData.output.map((value, name)=> ({ name, value: +value })) };
 
-	get chartSize() { return Math.max(..._.map(this.chartData, (prop)=> prop.value)) * 80; };
+	get chartSize() { return Math.max(...this.chartData.map((prop)=> prop.value)) * 80; };
 
 
 	renderActiveShape = (props)=> {
@@ -66,16 +66,13 @@ class InterfacePlayerChart extends React.Component {
 				<text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">
 					{ `${payload.name} / ${payload.value}` }
 				</text>
-				{/*<text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#333">
-					{`${payload.value}`}
-				</text>*/}
 			</g>
 		);
 	};
 
 
 	onPieEnter = (data, index, e)=> {
-		this.activeIndex = index;
+		this.activeIndex.set(index);
 	};
 
 
@@ -87,7 +84,7 @@ class InterfacePlayerChart extends React.Component {
 					<Pie data={this.chartData}
 						 dataKey="value"
 						 activeShape={this.renderActiveShape}
-						 activeIndex={this.activeIndex}
+						 activeIndex={this.activeIndex.get()}
 						 onMouseEnter={this.onPieEnter}
 						 cx={'50%'}
 						 cy={'50%'}
@@ -104,4 +101,4 @@ class InterfacePlayerChart extends React.Component {
 }
 
 
-export default InterfacePlayerChart
+export default observer(InterfacePlayerChart);

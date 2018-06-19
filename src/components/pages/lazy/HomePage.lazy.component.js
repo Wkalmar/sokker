@@ -3,6 +3,8 @@ import React from 'react';
 import { observer } from "mobx-react";
 // Store
 import store from "store";
+// Component
+import Interface from "components/parts/interface/Interface.component";
 
 
 class HomePageContent extends React.Component {
@@ -13,6 +15,8 @@ class HomePageContent extends React.Component {
                 HomePage!
 
 				<button onClick={ store.players.fetchPlayers }>Re fetch players</button>
+
+                <Interface />
             </div>
         )
     }

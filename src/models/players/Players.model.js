@@ -28,7 +28,7 @@ const actions = (self)=> {
 			fetch("https://brainsokker.herokuapp.com/current_transfers", {
 			}).then((response)=> response.json()).then((players)=> {
 				runInAction(`PLAYERS-SAVE-ALL`, ()=> {
-					players.map((player)=> self.createMutation({ ...player, playerId: player.id }));
+					players.map((player)=> self.create({ ...player, playerId: player.id }));
 				});
 			});
 		},

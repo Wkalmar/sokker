@@ -1,10 +1,8 @@
 // MobX
-import {action, reaction, observable, observe, computed, autorun, asStructure, runInAction, toJs } from 'mobx';
+import { observable } from 'mobx';
 
 
 class InterfaceTableModel {
-
-	@observable windowWidth = window.innerWidth - this.pageScrollBar;
 
 	itemHeight = 350;
 
@@ -14,9 +12,11 @@ class InterfaceTableModel {
 
 	pageScrollBar = 15;
 
-	get itemsInRow() { return Math.floor((this.windowWidth - this.itemBetweenDistance*3) / this.itemMinWidth); };
+	windowWidth = observable.box(window.innerWidth - this.pageScrollBar);
 
-	get itemWidth() { return (this.windowWidth - (this.itemBetweenDistance * (this.itemsInRow + 1))) / this.itemsInRow; };
+	get itemsInRow() { return Math.floor((this.windowWidth.get() - this.itemBetweenDistance*3) / this.itemMinWidth); };
+
+	get itemWidth() { return (this.windowWidth.get() - (this.itemBetweenDistance * (this.itemsInRow + 1))) / this.itemsInRow; };
 
 	currentRow(index) { return (Math.ceil((index+1) / this.itemsInRow)); };
 
