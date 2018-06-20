@@ -6,15 +6,15 @@ import permissions from "utils/permissions.utils";
 import lazy from "utils/lazy.utils";
 
 
-class HomePage extends React.Component {
+class LogInPage extends React.Component {
 
 	static permissions = {
+		notForAuth: true,
+		redirectPath: "/"
 	};
 }
 
-
 export default observer(
 	permissions(
-		lazy(()=> import(/* webpackChunkName: "HomePage" */ 'components/pages/HomePage.component'))(HomePage)
+		lazy(()=> import(/* webpackChunkName: "LogInPage" */ 'components/pages/LogInPage.component'))(LogInPage)
 	));
-

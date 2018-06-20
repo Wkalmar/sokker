@@ -3,9 +3,11 @@ import { types } from "mobx-state-tree";
 import AuthorizedUserModel from "models/AuthorizedUser.model";
 import UsersModel from "models/users/Users.model";
 import PlayersModel from "models/players/Players.model";
+import NetModel from "models/Net.model";
 
 
 const RootModel = {
+	NET: types.optional(types.maybe(NetModel), null),
 	nextPathUrl: types.maybe(types.string),
 
 	authorizedUser: types.optional(types.maybe(AuthorizedUserModel), null),

@@ -1,3 +1,7 @@
+html {
+	background: #cecece;
+}
+
 .cssload-loader-big > .cssload-loader {
 	margin: 0 auto;
 	width: 200px;

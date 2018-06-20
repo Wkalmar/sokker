@@ -7,8 +7,8 @@ import { observer } from 'mobx-react';
 import store from 'store';
 // Pages
 import Layout from "components/Layout.component";
-import HomePage from "components/pages/HomePage.component";
-import LogInPage from "components/pages/LogInPage.component";
+import HomePage from "components/pages/lazy/HomePage.lazy.component";
+import LogInPage from "components/pages/lazy/LogInPage.lazy.component";
 import Page404 from "components/pages/Page404.component";
 
 

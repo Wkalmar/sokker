@@ -1,0 +1,27 @@
+.header {
+	background: white;
+	position: fixed;
+	border-bottom: 1px solid lightgray;
+	height: 80px;
+	top: 0;
+	left: 0;
+	right: 0;
+	line-height: 80px;
+}
+
+.header_logo {
+	width: auto;
+	height: 60px;
+}
+
+.header_menu {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.header_menu > * {
+	margin-right: 20px;
+}

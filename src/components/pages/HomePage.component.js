@@ -1,19 +1,25 @@
 import React from 'react';
 // MobX
 import { observer } from "mobx-react";
-// Utils
-import permissions from "utils/permissions.utils";
-import lazy from "utils/lazy.utils";
+// Store
+import store from "store";
+// Components
+import BoxList from "components/parts/boxes/BoxList.component";
 
 
-class HomePage extends React.Component {
+class HomePageContent extends React.Component {
 
-	static permissions = {
-	};
+	render() {
+		console.log(store, 42);
+		return (
+			<div>
+				<BoxList boxes={ [
+					<div>42</div>
+				] } />
+			</div>
+		)
+	}
 }
 
 
-export default observer(
-	permissions(
-		lazy(()=> import(/* webpackChunkName: "HomePage" */ 'components/pages/lazy/HomePage.lazy.component'))(HomePage)
-));
+export default observer(HomePageContent);
