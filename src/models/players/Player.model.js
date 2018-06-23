@@ -13,7 +13,7 @@ const Player = {
 	playmaker: types.maybe(types.number),
 	stamina: types.maybe(types.number),
 	striker: types.maybe(types.number),
-	technique: types.maybe(types.number),
+	technique: types.maybe(types.number)
 };
 
 

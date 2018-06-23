@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 
 
 export default gql`mutation createPlayer(
+	$userId: ID!,
 	$playerId: String!,
 	$name: String!,
 	$age: Float!,
@@ -19,6 +20,8 @@ export default gql`mutation createPlayer(
 	$mid: Float!
 ) {
     createPlayer(
+		userId: $userId,
+		
         playerId: $playerId,
         name: $name,
 		

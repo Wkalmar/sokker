@@ -91,6 +91,7 @@ class InterfacePlayerChart extends React.Component {
 
 
 	render() {
+		if(!Object.keys(this.props.playerData).length) return null;
 		return (
 			<ResponsiveContainer>
 				<PieChart width={100} height={100}>

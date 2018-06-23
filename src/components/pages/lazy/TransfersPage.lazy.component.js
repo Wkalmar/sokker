@@ -9,6 +9,7 @@ import lazy from "utils/lazy.utils";
 class TransfersPage extends React.Component {
 
 	static permissions = {
+		needAuth: true
 	};
 }
 

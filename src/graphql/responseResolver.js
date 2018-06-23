@@ -1,4 +1,5 @@
 import Alert from 'react-s-alert';
+import { runInAction } from 'mobx';
 // Utils
 import history from "utils/history.utils";
 // Store
@@ -45,6 +46,9 @@ function applyData(dataName, data) {
 			break;
 		case "allPlayers":
 			store.NET.train(data);
+			runInAction(`PLAYERS-CREATE-ALL-SUCCESS`, ()=> {
+				data.map((player)=> store.players.create(player));
+			});
 			break;
 
 		default:

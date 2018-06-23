@@ -40,7 +40,7 @@ type Player @model {
     updatedAt: DateTime! # read-only (managed by Graphcool)
 
 #    net: Net! @relation(name: "NetOfPlayers")
-    user: [User!]! @relation(name: "UserOfPlayers")
+    user: User! @relation(name: "UserOfPlayers")
 
     playerId: String!
     name: String!

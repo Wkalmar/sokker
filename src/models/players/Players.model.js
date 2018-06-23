@@ -24,19 +24,14 @@ const actions = (self)=> {
 			}).catch((e)=> console.log("CREATE_PLAYER_MUTATION", e));
 		},
 
-		fetchPlayers() {
-			fetch("https://brainsokker.herokuapp.com/current_transfers", {
-			}).then((response)=> response.json()).then((players)=> {
-				runInAction(`PLAYERS-SAVE-ALL`, ()=> {
-					players.map((player)=> self.create({ ...player, playerId: player.id }));
-				});
-			});
-		},
-
 
 		create(player = {}) {
-			self.all.set(player.name, player);
-		}
+			console.log(player, 42);
+			if(self.all.has(player.id)) return self.all.get(player.id).update(player);
+			runInAction(`PLAYER-CREATE-SUCCESS ${player.id}`, ()=> {
+				self.all.set(player.id, player);
+			});
+		},
 	};
 };
 

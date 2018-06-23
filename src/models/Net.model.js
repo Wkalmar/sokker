@@ -1,4 +1,5 @@
 import { types } from "mobx-state-tree";
+import { runInAction } from "mobx";
 import brain from "brainjs";
 
 const NET = window.NET = new brain.NeuralNetwork();
@@ -27,6 +28,7 @@ const actions = (self)=> {
 			});
 		},
 
+
 		train(data = []) {
 			const formattedData = data.map((player)=> ({
 				input: {
@@ -47,10 +49,11 @@ const actions = (self)=> {
 					gk: player.gk
 				}
 			}));
-			if(!formattedData.length) return self.isLearned = true;
 
-			self.errorThresh = NET.train(formattedData).error;
-			self.isLearned = true;
+			runInAction(`NET-TRAIN-SUCCESS`, ()=> {
+				self.errorThresh = !formattedData.length ? -1 : NET.train(formattedData).error;
+				self.isLearned = true;
+			});
 		}
 	};
 };

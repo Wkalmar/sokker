@@ -31,7 +31,7 @@ class InterfacePlayer extends React.Component {
 
 
 	savePlayer = ()=> {
-		store.players.createMutation({ ...this.props.player, ...this.output.toJSON(), playerId: this.props.player.id });
+		store.players.createMutation({ ...this.props.player, ...this.output.toJSON(), playerId: this.props.player.id, userId: store.authorizedUser.id });
 	};
 
 

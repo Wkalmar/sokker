@@ -6,6 +6,7 @@ import LOG_IN_USER_MUTATION from "graphql/mutations/authenticateUser.mutation";
 import AuthorizedUserModel from "models/AuthorizedUser.model";
 import UsersModel from "models/users/Users.model";
 import PlayersModel from "models/players/Players.model";
+import TransfersModel from "models/Transfers.model";
 import NetModel from "models/Net.model";
 
 
@@ -15,7 +16,8 @@ const RootModel = {
 
 	authorizedUser: types.optional(types.maybe(AuthorizedUserModel), null),
 	users: UsersModel,
-	players: PlayersModel
+	players: PlayersModel,
+	transfers: TransfersModel
 };
 
 
