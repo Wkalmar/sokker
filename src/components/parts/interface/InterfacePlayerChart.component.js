@@ -21,10 +21,24 @@ class InterfacePlayerChart extends React.Component {
 
 	activeIndex = observable.box(-1);
 
+	maxChartRadius = 90;
+	totalSkillsSum = 4 * 100;
 
-	get chartData() { return this.props.playerData.output.map((value, name)=> ({ name, value: +value })) };
+	get chartData() { return Object.keys(this.props.playerData).map((name)=> ({
+		name: name.toUpperCase(),
+		value: this.props.playerData[name]
+	})); };
 
-	get chartSize() { return Math.max(...this.chartData.map((prop)=> prop.value)) * 80; };
+
+	get playerSkillsSum() { return this.chartData.reduce(function(previousValue, currentValue) {
+		return (previousValue.value ? previousValue.value * 100 : previousValue)  + currentValue.value * 100;
+	}); };
+
+
+	get chartRadius() {
+		const chartRadiusInPercents = this.playerSkillsSum * 100 / this.totalSkillsSum;
+		return this.maxChartRadius * chartRadiusInPercents / 100;
+	};
 
 
 	renderActiveShape = (props)=> {
@@ -64,7 +78,7 @@ class InterfacePlayerChart extends React.Component {
 				<path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
 				<circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
 				<text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">
-					{ `${payload.name} / ${payload.value}` }
+					{ `${payload.name} / ${+payload.value.toFixed(1)}` }
 				</text>
 			</g>
 		);
@@ -81,7 +95,7 @@ class InterfacePlayerChart extends React.Component {
 			<ResponsiveContainer>
 				<PieChart width={100} height={100}>
 					<Legend verticalAlign="top" align="right" />
-					<Pie data={this.chartData}
+					<Pie data={ this.chartData }
 						 dataKey="value"
 						 activeShape={this.renderActiveShape}
 						 activeIndex={this.activeIndex.get()}
@@ -89,8 +103,8 @@ class InterfacePlayerChart extends React.Component {
 						 cx={'50%'}
 						 cy={'50%'}
 						 innerRadius={0}
-						 outerRadius={ this.chartSize > 100 ? 100 : this.chartSize }>
-						{ data01.map((entry, index)=> (
+						 outerRadius={ this.chartRadius }>
+						{ this.chartData.map((entry, index)=> (
 							<Cell key={`slice-${index}`} fill={colors[index % 10]} />
 						)) }
 					</Pie>

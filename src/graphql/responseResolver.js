@@ -43,6 +43,9 @@ function applyData(dataName, data) {
 		case "createPlayer":
 			Alert.success("Player saved");
 			break;
+		case "allPlayers":
+			store.NET.train(data);
+			break;
 
 		default:
 			console.log(`%c RESPONSE RESOLVER UNHANDLED:`, 'color: darkred', dataName, data);

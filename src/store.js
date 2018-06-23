@@ -1,10 +1,12 @@
 import { spy } from "mobx";
+// import { onPatch } from "mobx-state-tree";
 // Models
 import RootModel from "models/Root.model";
+import NetModel from "models/Net.model";
 
 
 const store = RootModel.create({
-	NET: null,
+	NET: { isLearned: false, errorThresh: 0, maxErrorThresh: 0.005 },
 	users: {},
 	players: {}
 });

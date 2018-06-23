@@ -1,17 +1,56 @@
 import { types } from "mobx-state-tree";
 import brain from "brainjs";
 
+const NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
-	id: types.maybe(types.string)
+	isLearned: types.boolean,
+	errorThresh: types.number,
+	maxErrorThresh: types.number,
 };
 
 
 const actions = (self)=> {
 	return {
 
-		train(data = []) {
+		run(player) {
+			return NET.run({
+				age: player.age,
+				defender: player.defender,
+				keeper: player.keeper,
+				pace: player.pace,
+				passing: player.passing,
+				playmaker: player.playmaker,
+				stamina: player.stamina,
+				striker: player.striker,
+				technique: player.technique,
+			});
+		},
 
+		train(data = []) {
+			const formattedData = data.map((player)=> ({
+				input: {
+					age: player.age,
+					defender: player.defender,
+					keeper: player.keeper,
+					pace: player.pace,
+					passing: player.passing,
+					playmaker: player.playmaker,
+					stamina: player.stamina,
+					striker: player.striker,
+					technique: player.technique,
+				},
+				output: {
+					att: player.att,
+					def: player.def,
+					mid: player.mid,
+					gk: player.gk
+				}
+			}));
+			if(!formattedData.length) return self.isLearned = true;
+
+			self.errorThresh = NET.train(formattedData).error;
+			self.isLearned = true;
 		}
 	};
 };

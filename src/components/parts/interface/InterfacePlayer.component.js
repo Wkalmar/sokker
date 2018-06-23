@@ -26,12 +26,17 @@ class InterfacePlayer extends React.Component {
 
 	componentDidMount() {
 		setTimeout(()=> this.isReady.set(true), this.props.index * 200);
+		Object.keys(this.playerPrediction).map((name)=> this.output.set(name, this.playerPrediction[name].toFixed(1)));
 	}
 
 
 	savePlayer = ()=> {
-		console.log("save player!", { ...this.props.player, ...this.output.toJSON() });
 		store.players.createMutation({ ...this.props.player, ...this.output.toJSON(), playerId: this.props.player.id });
+	};
+
+
+	get playerPrediction() {
+		return store.NET.run(this.props.player);
 	};
 
 
@@ -69,7 +74,7 @@ class InterfacePlayer extends React.Component {
 				</div>
 
 				<div style={{ float: 'right', width: '60%', height: 280, marginTop: 20 }}>
-					<InterfacePlayerChart playerData={ { output: [], input: [] } } />
+					<InterfacePlayerChart playerData={ this.playerPrediction } />
 				</div>
 
 				<div style={{
