@@ -19,9 +19,7 @@ export default async (event) => {
     const {
         email,
         password,
-        avatar,
-        name,
-        phone } = event.data;
+        name } = event.data;
 
     if (!validator.isEmail(email)) {
       return { error: 'Not a valid email' }
@@ -39,7 +37,7 @@ export default async (event) => {
     const hash = await bcrypt.hash(password, salt);
 
     // create new user
-    const userId = await createGraphcoolUser(api, email, hash, avatar, name, phone);
+    const userId = await createGraphcoolUser(api, email, hash, name);
 
     // generate node token for new User node
     const token = await graphcool.generateNodeToken(userId, 'User');
@@ -66,15 +64,13 @@ async function getUser(api: GraphQLClient, email: string) {
   return api.request<{ User }>(query, variables)
 }
 
-async function createGraphcoolUser(api: GraphQLClient, email, password, avatar, name, phone) {
+async function createGraphcoolUser(api: GraphQLClient, email, password, name) {
   const mutation = `
-    mutation createGraphcoolUser($email: String!, $password: String!, $avatar: String, $name: String, $phone: String) {
+    mutation createGraphcoolUser($email: String!, $password: String!, $name: String) {
       createUser(
         email: $email,
         password: $password,
-        avatar: $avatar,
-        name: $name,
-        phone: $phone
+        name: $name
       ) {
         id
       }
@@ -84,9 +80,7 @@ async function createGraphcoolUser(api: GraphQLClient, email, password, avatar, 
   const variables = {
     email,
     password,
-    avatar,
-    name,
-    phone,
+    name
   };
 
   return api.request<{ createUser: User }>(mutation, variables)

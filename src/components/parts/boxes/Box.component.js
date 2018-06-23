@@ -16,6 +16,8 @@ class Box extends React.Component {
 	}
 
 
+	headerMargin = 200;
+
 	timeout = null;
 
 	itemHeight = 350;
@@ -34,7 +36,7 @@ class Box extends React.Component {
 
 	currentRow(index) { return (Math.ceil((index+1) / this.itemsInRow)); };
 
-	top(index) { return this.itemHeight * (this.currentRow(index) - 1) + (this.itemBetweenDistance * this.currentRow(index)); };
+	top(index) { return this.itemHeight * (this.currentRow(index) - 1) + (this.itemBetweenDistance * this.currentRow(index)) + this.headerMargin; };
 
 	left(index) { return (index % this.itemsInRow) * this.itemWidth + ((index % this.itemsInRow + 1) * this.itemBetweenDistance); };
 

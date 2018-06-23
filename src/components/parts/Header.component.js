@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // Styles
 import "styles/header.css";
+// Store
+import store from "store";
 // MobX
 import { observer } from "mobx-react";
 
@@ -11,9 +14,10 @@ class Header extends React.Component {
 		return (
 			<div className="header">
 				<ul className="header_menu">
-					<img src="https://img00.deviantart.net/44e6/i/2016/256/f/b/brain_a_logo_shopping_logo_by_komikis-dahiij0.png" className="header_logo"/>
-					<p>234</p>
-					<p>asd</p>
+					<Link to="/"><img src="https://img00.deviantart.net/44e6/i/2016/256/f/b/brain_a_logo_shopping_logo_by_komikis-dahiij0.png" className="header_logo"/></Link>
+					{ !store.authorizedUser && <Link to="/login">Log in</Link> }
+					{ store.authorizedUser && <Link to="/transfers">Transfers</Link> }
+					{ store.authorizedUser && <p onClick={ store.logOut }>Log out</p> }
 				</ul>
 			</div>
 		)

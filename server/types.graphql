@@ -9,10 +9,25 @@ type User @model {
   createdAt: DateTime! # read-only (managed by Graphcool)
   updatedAt: DateTime! # read-only (managed by Graphcool)
 
+  net: [Net!]! @relation(name: "UserAndNet")
+
   email: String! @isUnique
   password: String!
   name: String
   trigger: String # for triggering socket update
+}
+
+
+type Net @model {
+  # Required system field:
+  id: ID! @isUnique # read-only (managed by Graphcool)
+
+  # Optional system fields (remove if not needed):
+  createdAt: DateTime! # read-only (managed by Graphcool)
+  updatedAt: DateTime! # read-only (managed by Graphcool)
+
+  user: [User!]! @relation(name: "UserAndNet")
+  players: [Player!]! @relation(name: "NetOfPlayers")
 }
 
 
@@ -23,6 +38,8 @@ type Player @model {
   # Optional system fields (remove if not needed):
   createdAt: DateTime! # read-only (managed by Graphcool)
   updatedAt: DateTime! # read-only (managed by Graphcool)
+
+  net: Net! @relation(name: "NetOfPlayers")
 
   playerId: String!
   name: String!

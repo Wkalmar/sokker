@@ -16,30 +16,19 @@ import PreLoader from "components/parts/PreLoader.component";
 class Layout extends React.Component {
 
 
-	renderContent() {
-		return (
-			<div>
-				<div className="wrapper">
-					<Header />
-					{ this.props.children }
-				</div>
-			</div>
-		);
-	}
-
-
 	render() {
 		return (
-			<div>
+			<div className="wrapper">
+				<Header />
 				{ store.authorizedUser ?
 					<QueryLoader query={ GET_USER_INFO_QUERY }
 								 fetchPolicy="network-only"
 								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 								 variables={{ id: store.authorizedUser.id }}>
-						{ this.renderContent() }
+						{ this.props.children }
 					</QueryLoader>
 					:
-					this.renderContent()
+					this.props.children
 				}
 			</div>
 		)

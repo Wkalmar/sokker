@@ -1,13 +1,25 @@
 .header {
-	background: white;
+	background: #506198;;
 	position: fixed;
 	border-bottom: 1px solid lightgray;
-	height: 80px;
+	height: 200px;
 	top: 0;
 	left: 0;
 	right: 0;
-	line-height: 80px;
+	line-height: 200px;
+	z-index: 2;
+	color: white;
 }
+
+.header a {
+	color: white;
+}
+
+
+.header a:hover {
+	opacity: 0.7;
+}
+
 
 .header_logo {
 	width: auto;
@@ -24,4 +36,5 @@
 
 .header_menu > * {
 	margin-right: 20px;
+	display: inherit;
 }

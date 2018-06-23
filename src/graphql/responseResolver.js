@@ -1,3 +1,7 @@
+// Utils
+import history from "utils/history.utils";
+// Store
+import store from "store";
 
 
 export default function (data = {}, errors = null) {
@@ -20,6 +24,19 @@ export default function (data = {}, errors = null) {
 function applyData(dataName, data) {
 
 	switch (dataName) {
+
+		// Users
+		case "loggedInUser":
+			if(!data) return;
+			store.logIn(data.id); // sobaka@i.ua
+			break;
+		case "signupUser":
+		case "authenticateUser":
+			if(!data) return;
+			sessionStorage.setItem('token', data.token);
+			store.logIn(data.id);
+			history.push(store.nextPathUrl || '/');
+			break;
 
 		default:
 			console.log(`%c RESPONSE RESOLVER UNHANDLED:`, 'color: darkred', dataName, data);

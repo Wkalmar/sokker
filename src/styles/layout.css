@@ -2,6 +2,11 @@ html {
 	background: #cecece;
 }
 
+body {
+	margin-top: 250px;
+	font-family: Arial;
+}
+
 .cssload-loader-big > .cssload-loader {
 	margin: 0 auto;
 	width: 200px;

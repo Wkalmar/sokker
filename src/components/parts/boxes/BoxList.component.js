@@ -9,7 +9,7 @@ class BoxList extends React.Component {
 
 	render() {
 		return (
-			<div style={{ position: 'relative', marginTop: 100 }}>
+			<div>
 				{ this.props.boxes.map((box, i)=> <Box key={i} index={i}>{ box }</Box>) }
 			</div>
 		)
