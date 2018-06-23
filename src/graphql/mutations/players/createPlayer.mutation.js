@@ -12,11 +12,16 @@ export default gql`mutation createPlayer(
 	$playmaker: Float!,
 	$stamina: Float!,
 	$striker: Float!,
-	$technique: Float!
+	$technique: Float!,
+	$att: Float!,
+	$def: Float!,
+	$gk: Float!,
+	$mid: Float!
 ) {
     createPlayer(
         playerId: $playerId,
         name: $name,
+		
         age: $age,
         defender: $defender,
         keeper: $keeper,
@@ -25,7 +30,12 @@ export default gql`mutation createPlayer(
         playmaker: $playmaker,
         stamina: $stamina,
         striker: $striker,
-        technique: $technique
+        technique: $technique,
+		
+		att: $att,
+		def: $def,
+		gk: $gk,
+		mid: $mid
 	) {
         id
     }

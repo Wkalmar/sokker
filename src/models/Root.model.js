@@ -37,7 +37,8 @@ const actions = (store)=> {
 		logIn: (userId)=> { store.authorizedUser = { id: userId } },
 
 
-		logOut: ()=> {
+		logOut: (e)=> {
+			e.preventDefault();
 			sessionStorage.removeItem('token');
 			store.authorizedUser = null;
 			client.resetStore();

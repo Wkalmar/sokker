@@ -9,6 +9,7 @@ import { ApolloProvider } from 'react-apollo';
 import client from "graphql/client";
 import LOGGED_IN_USER_QUERY from "graphql/queries/loggedInUser.query";
 // Components
+import AlertContainer from "components/AlertContainer.component";
 import QueryLoader from "components/QueryLoader.component";
 import PreLoader from "components/parts/PreLoader.component";
 
@@ -21,6 +22,7 @@ class App extends React.Component {
 				<QueryLoader query={ LOGGED_IN_USER_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}>
 					<Router />
+					<AlertContainer />
 				</QueryLoader>
 			</ApolloProvider>
 		);

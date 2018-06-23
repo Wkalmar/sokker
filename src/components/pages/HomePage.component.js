@@ -14,8 +14,8 @@ class HomePageContent extends React.Component {
 		return (
 			<BoxList boxes={ [
 				<div>
-					<Link to="/login">Login</Link>
-					<Link to="/registration">Registration</Link>
+					{ !store.authorizedUser && <Link to="/login">Log in</Link> }
+					{ !store.authorizedUser && <Link to="/registration">Registration</Link> }
 				</div>
 			] } />
 		)

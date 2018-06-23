@@ -1,3 +1,4 @@
+import Alert from 'react-s-alert';
 // Utils
 import history from "utils/history.utils";
 // Store
@@ -36,6 +37,11 @@ function applyData(dataName, data) {
 			sessionStorage.setItem('token', data.token);
 			store.logIn(data.id);
 			history.push(store.nextPathUrl || '/');
+			break;
+
+		//	Players
+		case "createPlayer":
+			Alert.success("Player saved");
 			break;
 
 		default:

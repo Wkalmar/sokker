@@ -2,54 +2,61 @@
 # based on which the GraphQL API is generated
 
 type User @model {
-  # Required system field:
-  id: ID! @isUnique # read-only (managed by Graphcool)
+    # Required system field:
+    id: ID! @isUnique # read-only (managed by Graphcool)
 
-  # Optional system fields (remove if not needed):
-  createdAt: DateTime! # read-only (managed by Graphcool)
-  updatedAt: DateTime! # read-only (managed by Graphcool)
+    # Optional system fields (remove if not needed):
+    createdAt: DateTime! # read-only (managed by Graphcool)
+    updatedAt: DateTime! # read-only (managed by Graphcool)
 
-  net: [Net!]! @relation(name: "UserAndNet")
+    players: [Player!]! @relation(name: "UserOfPlayers")
 
-  email: String! @isUnique
-  password: String!
-  name: String
-  trigger: String # for triggering socket update
+    email: String! @isUnique
+    password: String!
+    name: String
+    trigger: String # for triggering socket update
 }
 
 
 type Net @model {
-  # Required system field:
-  id: ID! @isUnique # read-only (managed by Graphcool)
+    # Required system field:
+    id: ID! @isUnique # read-only (managed by Graphcool)
 
-  # Optional system fields (remove if not needed):
-  createdAt: DateTime! # read-only (managed by Graphcool)
-  updatedAt: DateTime! # read-only (managed by Graphcool)
+    # Optional system fields (remove if not needed):
+    createdAt: DateTime! # read-only (managed by Graphcool)
+    updatedAt: DateTime! # read-only (managed by Graphcool)
 
-  user: [User!]! @relation(name: "UserAndNet")
-  players: [Player!]! @relation(name: "NetOfPlayers")
+#    user: [User!]! @relation(name: "UserAndNet")
+#    players: [Player!]! @relation(name: "NetOfPlayers")
 }
 
 
 type Player @model {
-  # Required system field:
-  id: ID! @isUnique # read-only (managed by Graphcool)
+    # Required system field:
+    id: ID! @isUnique # read-only (managed by Graphcool)
 
-  # Optional system fields (remove if not needed):
-  createdAt: DateTime! # read-only (managed by Graphcool)
-  updatedAt: DateTime! # read-only (managed by Graphcool)
+    # Optional system fields (remove if not needed):
+    createdAt: DateTime! # read-only (managed by Graphcool)
+    updatedAt: DateTime! # read-only (managed by Graphcool)
 
-  net: Net! @relation(name: "NetOfPlayers")
+#    net: Net! @relation(name: "NetOfPlayers")
+    user: [User!]! @relation(name: "UserOfPlayers")
 
-  playerId: String!
-  name: String!
-  age: Float
-  defender: Float
-  keeper: Float
-  pace: Float
-  passing: Float
-  playmaker: Float
-  stamina: Float
-  striker: Float
-  technique: Float
+    playerId: String!
+    name: String!
+
+    age: Float!
+    defender: Float!
+    keeper: Float!
+    pace: Float!
+    passing: Float!
+    playmaker: Float!
+    stamina: Float!
+    striker: Float!
+    technique: Float!,
+
+    att: Float!,
+    def: Float!,
+    gk: Float!,
+    mid: Float!
 }

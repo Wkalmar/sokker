@@ -1,4 +1,5 @@
 import { types } from "mobx-state-tree";
+import brain from "brainjs";
 
 
 const Net = {
@@ -8,6 +9,10 @@ const Net = {
 
 const actions = (self)=> {
 	return {
+
+		train(data = []) {
+
+		}
 	};
 };
 

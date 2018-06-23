@@ -8,7 +8,6 @@ import store from "store";
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 
 
-
 class Interface extends React.Component {
 
 

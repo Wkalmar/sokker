@@ -3,19 +3,20 @@ import InputMask from 'react-input-mask';
 // MobX
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
-// Models
-import InterfaceTabelModel from "components/parts/interface/InterfaceTable.model";
+// Store
+import store from "store";
 // Components
 import InterfacePlayerChart from "components/parts/interface/InterfacePlayerChart.component";
+import PreLoader from "components/parts/PreLoader.component";
 
 
 class InterfacePlayer extends React.Component {
 
 	output = observable.map({
-		GK: '0.0',
-		DEF: '0.0',
-		MID: '0.0',
-		ATT: '0.0'
+		gk: 0,
+		def: 0,
+		mid: 0,
+		att: 0
 	});
 
 	isSavingData = observable.box(false);
@@ -23,55 +24,24 @@ class InterfacePlayer extends React.Component {
 	isReady = observable.box(false);
 
 
-	constructor() {
-		super();
-		this.table = new InterfaceTabelModel();
-
-		window.addEventListener('resize', this.onWindowResize);
-	}
-
-
 	componentDidMount() {
 		setTimeout(()=> this.isReady.set(true), this.props.index * 200);
 	}
 
 
-	componentWillUnmount() {
-		window.removeEventListener('resize', this.onWindowResize);
-	}
-
-
-	onWindowResize = ()=> {
-		clearTimeout(this.timeout);
-		this.timeout = setTimeout(()=> this.table.windowWidth.set(window.innerWidth - this.table.pageScrollBar, 100));
+	savePlayer = ()=> {
+		console.log("save player!", { ...this.props.player, ...this.output.toJSON() });
+		store.players.createMutation({ ...this.props.player, ...this.output.toJSON(), playerId: this.props.player.id });
 	};
 
 
 	render() {
 		const player = this.props.player;
-		const index = this.props.index;
 
-		if(!this.isReady.get()) return (
-			<div style={{
-				width: this.table.itemWidth,
-				height: this.table.itemHeight,
-				top: this.table.top(index),
-				left: this.table.left(index),
-				background: 'transparent',
-				position: 'absolute'
-			}} />
-		);
+		if(!this.isReady.get()) return <PreLoader />;
 
 		return (
-			<div style={{
-				width: this.table.itemWidth,
-				height: this.table.itemHeight,
-				top: this.table.top(index),
-				left: this.table.left(index),
-				background: 'white',
-				position: 'absolute',
-				transition: '1s background'
-			}}>
+			<div>
 				<div style={{ float: 'left', padding: '20px 0 0 20px', width: 'calc(40% - 20px)' }}>
 					<a href={ `http://sokker.org/search?sch_ID_human=&sch_fname_human=${player.name.split(' ')[0]}&sch_name_human=${player.name.split(' ')[1]}` }>
 						<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
@@ -116,8 +86,8 @@ class InterfacePlayer extends React.Component {
 						<InputMask mask="9.9"
 								   maskChar=" "
 								   alwaysShowMask={ true }
-								   value={ this.output.get('GK') }
-								   onChange={ (e)=> this.output.set('GK', e.currentTarget.value) }
+								   value={ this.output.get('gk') }
+								   onChange={ (e)=> this.output.set('gk', +e.currentTarget.value) }
 								   style={{
 									   outline: 'none',
 									   width: 25,
@@ -133,8 +103,8 @@ class InterfacePlayer extends React.Component {
 						<InputMask mask="9.9"
 								   maskChar=" "
 								   alwaysShowMask={ true }
-								   value={ this.output.get('DEF') }
-								   onChange={ (e)=> this.output.set('DEF', e.currentTarget.value) }
+								   value={ this.output.get('def') }
+								   onChange={ (e)=> this.output.set('def', +e.currentTarget.value) }
 								   style={{
 									   outline: 'none',
 									   width: 25,
@@ -150,8 +120,8 @@ class InterfacePlayer extends React.Component {
 						<InputMask mask="9.9"
 								   maskChar=" "
 								   alwaysShowMask={ true }
-								   value={ this.output.get('MID') }
-								   onChange={ (e)=> this.output.set('MID', e.currentTarget.value) }
+								   value={ this.output.get('mid') }
+								   onChange={ (e)=> this.output.set('mid', +e.currentTarget.value) }
 								   style={{
 									   outline: 'none',
 									   width: 25,
@@ -167,8 +137,8 @@ class InterfacePlayer extends React.Component {
 						<InputMask mask="9.9"
 								   maskChar=" "
 								   alwaysShowMask={ true }
-								   value={ this.output.get('ATT') }
-								   onChange={ (e)=> this.output.set('ATT', e.currentTarget.value) }
+								   value={ this.output.get('att') }
+								   onChange={ (e)=> this.output.set('att', +e.currentTarget.value) }
 								   style={{
 									   outline: 'none',
 									   width: 25,
@@ -190,7 +160,7 @@ class InterfacePlayer extends React.Component {
 					background: 'rgb(61, 117, 160)',
 					outline: 'none',
 					cursor: 'pointer'
-				}}>
+				}} onClick={ this.savePlayer }>
 					{ this.isSavingData.get() ? 'Saving...' : 'Save' }
 				</button>
 			</div>
