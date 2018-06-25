@@ -24,29 +24,31 @@ class TransfersPage extends React.Component {
 		// TODO: Move this
 		store.transfers.fetchTransferPlayers();
 
-		this["@reaction on change [userPlayers] count"] = reaction(
-			()=> values(store.players.all).length,
+		this["@reaction on change [userPlayers]"] = reaction(
+			()=> this.userPlayers.map((player)=> player.mid + player.att + player.def + player.gk),
 			()=> {
-				console.log(values(store.players.all), "values(store.players.all)");
-				store.NET.train(values(store.players.all));
+				store.NET.train(this.userPlayers);
 			},
 			{
-				fireImmediately: false,
-				name: "@reaction on change [userPlayers] count"
+				fireImmediately: true,
+				name: "@reaction on change [userPlayers]"
 			}
 		);
 	}
 
 
 	componentWillUnmount() {
-		this["@reaction on change [userPlayers] count"]();
+		this["@reaction on change [userPlayers]"]();
 	}
+
+
+	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 
 
 	renderNetStatus() {
 		return (
 			<div>
-				Net train { store.NET.status }
+				<p style={{ color: store.NET.status === "error" ? "red" : "green" }}>Net train { store.NET.status }</p>
 				<p style={{ color: store.NET.maxErrorThresh < store.NET.errorThresh ? "red" : "green" }}>Eerror thresh: { store.NET.errorThresh }</p>
 			</div>
 		);

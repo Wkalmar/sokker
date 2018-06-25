@@ -43,7 +43,11 @@ function applyData(dataName, data) {
 		//	Players
 		case "createPlayer":
 			store.players.create(data);
-			Alert.success("Player saved");
+			Alert.success("Player saved to DB");
+			break;
+		case "updatePlayer":
+			store.players.create(data);
+			Alert.success("Player updated in DB");
 			break;
 		case "allPlayers":
 			runInAction(`PLAYERS-CREATE-ALL-SUCCESS`, ()=> {

@@ -48,7 +48,7 @@ class InterfacePlayer extends React.Component {
 		return (
 			<div key={ store.NET.status }>
 				<div style={{ float: 'left', padding: '20px 0 0 20px', width: 'calc(40% - 20px)' }}>
-					<a href={ `http://sokker.org/search?sch_ID_human=&sch_fname_human=${player.name.split(' ')[0]}&sch_name_human=${player.name.split(' ')[1]}` }>
+					<a href={ `http://sokker.org/player/PID/${player.id}` }>
 						<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
 					</a>
 					<p>age { Math.round(player.age * 100) }</p>

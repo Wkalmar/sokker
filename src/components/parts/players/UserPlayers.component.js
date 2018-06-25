@@ -18,7 +18,6 @@ class UserPlayers extends React.Component {
 
 
 	renderPlayersList() {
-		console.log(this.userPlayers, 234);
 		return (
 			<BoxList boxes={ this.userPlayers.map((player, i)=> <InterfacePlayer player={ player } key={player.name} index={i} />) } />
 		);

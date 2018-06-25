@@ -52,14 +52,12 @@ const actions = (self)=> {
 				}
 			}));
 
-			console.log(formattedData, 42);
 			if(!formattedData.length) {
 				runInAction(`NET-TRAIN-ERROR (players: ${data.length})`, ()=> {
 					self.status = "error";
 				});
 			} else {
 				runInAction(`NET-TRAIN-SUCCESS (players: ${data.length})`, ()=> {
-					console.log(formattedData, "formattedData");
 					self.errorThresh = NET.train(formattedData).error;
 					self.status = "success";
 				});

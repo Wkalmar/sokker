@@ -1,5 +1,5 @@
 // MobX
-import { runInAction } from "mobx";
+import { values, runInAction } from "mobx";
 import { types } from 'mobx-state-tree';
 // Models
 import PlayerModel from "models/players/Player.model";
@@ -17,9 +17,13 @@ const Players = {
 const actions = (self)=> {
 	return {
 
-		createMutation(player) {
+		createMutation(newPlayer) {
+			const duplicatedPlayer = values(self.all).find((player)=> {
+				return player.playerId === newPlayer.id;
+			});
+			if(duplicatedPlayer) return duplicatedPlayer.updateMutation({ ...newPlayer, id: duplicatedPlayer.id });
 			client.mutate({
-				variables: player,
+				variables: newPlayer,
 				mutation: CREATE_PLAYER_MUTATION
 			}).catch((e)=> console.log("CREATE_PLAYER_MUTATION", e));
 		},
@@ -35,4 +39,9 @@ const actions = (self)=> {
 };
 
 
-export default types.model('Players', Players).actions(actions);
+const views = (self)=> {
+	return {
+	};
+};
+
+export default types.model('Players', Players).actions(actions).views(views);

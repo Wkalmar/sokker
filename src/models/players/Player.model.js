@@ -1,12 +1,16 @@
-import { runInAction } from "mobx";
 import { types } from "mobx-state-tree";
+import { runInAction } from "mobx";
+// GraphQL
+import client from "graphql/client";
+import UPDATE_PLAYER_MUTATION from "graphql/mutations/players/updatePlayer.mutation";
 
 
 const Player = {
 	user: types.frozen,
+	id: types.string,
 
-	id: types.maybe(types.string),
-	name: types.maybe(types.string),
+	playerId: types.string,
+	name: types.string,
 
 	age: types.maybe(types.number),
 	defender: types.maybe(types.number),
@@ -27,6 +31,22 @@ const Player = {
 
 const actions = (self)=> {
 	return {
+
+		updateMutation: (player={})=> {
+			return client.mutate({
+				variables: player,
+				mutation: UPDATE_PLAYER_MUTATION
+			}).catch((e)=> console.log("UPDATE_PLAYER_MUTATION", e));
+		},
+
+
+		update(player={}) {
+			runInAction(`PLAYER-UPDATE-SUCCESS ${player.id}`, ()=> {
+				Object.keys(self).forEach((fieldName)=> {
+					if(player[fieldName] !== undefined) self[fieldName] = player[fieldName];
+				});
+			});
+		}
 	};
 };
 
