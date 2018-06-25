@@ -41,5 +41,26 @@ export default gql`mutation createPlayer(
 		mid: $mid
 	) {
         id
+        user {
+            id
+        }
+
+        playerId
+        name
+
+        age
+        defender
+        keeper
+        pace
+        passing
+        playmaker
+        stamina
+        striker
+        technique
+
+        att
+        def
+        gk
+        mid
     }
 }`

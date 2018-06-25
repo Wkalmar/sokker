@@ -42,10 +42,10 @@ function applyData(dataName, data) {
 
 		//	Players
 		case "createPlayer":
+			store.players.create(data);
 			Alert.success("Player saved");
 			break;
 		case "allPlayers":
-			store.NET.train(data);
 			runInAction(`PLAYERS-CREATE-ALL-SUCCESS`, ()=> {
 				data.map((player)=> store.players.create(player));
 			});

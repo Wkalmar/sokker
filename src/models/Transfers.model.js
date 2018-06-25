@@ -13,6 +13,7 @@ const actions = (self)=> {
 		fetchTransferPlayers() {
 			fetch("https://brainsokker.herokuapp.com/current_transfers", {
 			}).then((response)=> response.json()).then((players)=> {
+				players.length = 10;
 				self.create(players);
 			});
 		},

@@ -9,13 +9,6 @@ import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 
 const colors = scaleOrdinal(schemeCategory10).range();
 
-const data01 = [
-	{ name: 'GK', value: 0.1 },
-	{ name: 'DEF', value: 0.2 },
-	{ name: 'MID', value: 0.8 },
-	{ name: 'ATT', value: 1 }
-];
-
 
 class InterfacePlayerChart extends React.Component {
 

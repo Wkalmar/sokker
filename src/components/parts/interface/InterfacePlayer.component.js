@@ -26,7 +26,7 @@ class InterfacePlayer extends React.Component {
 
 	componentDidMount() {
 		setTimeout(()=> this.isReady.set(true), this.props.index * 200);
-		Object.keys(this.playerPrediction).map((name)=> this.output.set(name, this.playerPrediction[name].toFixed(1)));
+		Object.keys(this.playerPrediction).map((name)=> this.output.set(name, +this.playerPrediction[name].toFixed(1)));
 	}
 
 
@@ -46,7 +46,7 @@ class InterfacePlayer extends React.Component {
 		if(!this.isReady.get()) return <PreLoader />;
 
 		return (
-			<div>
+			<div key={ store.NET.status }>
 				<div style={{ float: 'left', padding: '20px 0 0 20px', width: 'calc(40% - 20px)' }}>
 					<a href={ `http://sokker.org/search?sch_ID_human=&sch_fname_human=${player.name.split(' ')[0]}&sch_name_human=${player.name.split(' ')[1]}` }>
 						<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>

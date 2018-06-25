@@ -5,9 +5,9 @@ import brain from "brainjs";
 const NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
-	isLearned: types.boolean,
+	status: types.string,
 	errorThresh: types.number,
-	maxErrorThresh: types.number,
+	maxErrorThresh: types.number
 };
 
 
@@ -15,6 +15,7 @@ const actions = (self)=> {
 	return {
 
 		run(player) {
+			if(self.status !== "success") return {};
 			return NET.run({
 				age: player.age,
 				defender: player.defender,
@@ -30,6 +31,7 @@ const actions = (self)=> {
 
 
 		train(data = []) {
+			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> self.status = "training");
 			const formattedData = data.map((player)=> ({
 				input: {
 					age: player.age,
@@ -50,10 +52,18 @@ const actions = (self)=> {
 				}
 			}));
 
-			runInAction(`NET-TRAIN-SUCCESS`, ()=> {
-				self.errorThresh = !formattedData.length ? -1 : NET.train(formattedData).error;
-				self.isLearned = true;
-			});
+			console.log(formattedData, 42);
+			if(!formattedData.length) {
+				runInAction(`NET-TRAIN-ERROR (players: ${data.length})`, ()=> {
+					self.status = "error";
+				});
+			} else {
+				runInAction(`NET-TRAIN-SUCCESS (players: ${data.length})`, ()=> {
+					console.log(formattedData, "formattedData");
+					self.errorThresh = NET.train(formattedData).error;
+					self.status = "success";
+				});
+			}
 		}
 	};
 };

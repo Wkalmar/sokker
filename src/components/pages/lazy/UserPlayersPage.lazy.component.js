@@ -6,16 +6,16 @@ import permissions from "utils/permissions.utils";
 import lazy from "utils/lazy.utils";
 
 
-class TransfersPage extends React.Component {
+class UserPlayersPage extends React.Component {
 
 	static permissions = {
-		needAuth: false
+		needAuth: true
 	};
 }
 
 
 export default observer(
 	permissions(
-		lazy(()=> import(/* webpackChunkName: "TransfersPage" */ 'components/pages/TransfersPage.component'))(TransfersPage)
+		lazy(()=> import(/* webpackChunkName: "UserPlayersPage" */ 'components/pages/UserPlayersPage.component'))(UserPlayersPage)
 	));
 

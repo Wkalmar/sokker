@@ -26,12 +26,11 @@ const actions = (self)=> {
 
 
 		create(player = {}) {
-			console.log(player, 42);
 			if(self.all.has(player.id)) return self.all.get(player.id).update(player);
 			runInAction(`PLAYER-CREATE-SUCCESS ${player.id}`, ()=> {
 				self.all.set(player.id, player);
 			});
-		},
+		}
 	};
 };
 
