@@ -16,7 +16,7 @@ class Header extends React.Component {
 				<ul className="header_menu">
 					<Link to="/"><img src="https://img00.deviantart.net/44e6/i/2016/256/f/b/brain_a_logo_shopping_logo_by_komikis-dahiij0.png" className="header_logo"/></Link>
 					{ !store.authorizedUser && <Link to="/login">Log in</Link> }
-					{ store.authorizedUser && <Link to="/transfers">Transfers</Link> }
+					{ store.authorizedUser && <Link to="/transfers">Transfers 💯</Link> }
 					{ store.authorizedUser && <a onClick={ store.logOut }>Log out</a> }
 				</ul>
 			</div>
