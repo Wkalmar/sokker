@@ -65,6 +65,9 @@ function revertData(dataName, errorMsg) {
 
 	switch (dataName) {
 
+		case "signupUser":
+			Alert.error(errorMsg);
+			break;
 		default:
 			console.log(`%c RESPONSE RESOLVER UNHANDLED ERROR:`, 'color: darkred', dataName, errorMsg);
 	}

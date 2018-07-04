@@ -9,7 +9,7 @@ class Page404 extends React.Component {
 
 		return (
 			<div>
-				404
+				{ window.location.pathname } 404
 			</div>
 		)
 	}

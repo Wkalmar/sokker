@@ -2,6 +2,7 @@ import { types } from "mobx-state-tree";
 // GraphQL
 import client from "graphql/client";
 import LOG_IN_USER_MUTATION from "graphql/mutations/authenticateUser.mutation";
+import SIGN_UP_USER_MUTATION from "graphql/mutations/signupUser.mutation";
 // Models
 import AuthorizedUserModel from "models/AuthorizedUser.model";
 import UsersModel from "models/users/Users.model";
@@ -27,6 +28,15 @@ const actions = (store)=> {
 		setNextPathUrl(url = "") {
 			store.nextPathUrl = url;
 		},
+
+
+		signUpMutation: ({ email, password, name })=> {
+			return client.mutate({
+				variables: { email, password, name },
+				mutation: SIGN_UP_USER_MUTATION
+			}).catch((e)=> console.log("SIGN_UP_USER_MUTATION" + e));
+		},
+
 
 		logInMutation: ({ email, password })=> {
 			return client.mutate({

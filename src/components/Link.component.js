@@ -1,0 +1,11 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+
+export default ({ to, children })=> {
+
+	// Storybook fix Link outside Router problem
+	if(global.STORYBOOK_ENV) return <span>{ children }</span>;
+
+	return <Link to={ to }>{ children }</Link>;
+}

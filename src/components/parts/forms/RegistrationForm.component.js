@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 // MobX
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
-// Apollo
-import { Mutation } from 'react-apollo';
-// Mutations
-import SIGN_UP_USER_MUTATION from "graphql/mutations/signupUser.mutation";
+// Store
+import store from 'store';
 // Components
 import PreLoader from 'components/parts/PreLoader.component';
+import Link from "components/Link.component";
 
 
 class RegistrationForm extends React.Component {
@@ -22,13 +20,11 @@ class RegistrationForm extends React.Component {
 	});
 
 
-	register = async (signUpMutation)=> {
+	register = async ()=> {
 		this.isLoading.set(true);
-		await signUpMutation({ variables: {
-				email: this.form.email,
-				password: this.form.password,
-				name: this.form.name
-			}});
+
+		await store.signUpMutation(this.form);
+
 		this.isLoading.set(false);
 	};
 
@@ -51,21 +47,13 @@ class RegistrationForm extends React.Component {
 					   value={ this.form.name }
 					   onChange={ (e)=> this.form.name = e.currentTarget.value } />
 
-				<Mutation mutation={SIGN_UP_USER_MUTATION}>
-					{
-						(signUpMutation)=> {
-							return (
-								<button onClick={ this.register.bind(this, signUpMutation) }
-										disabled={ this.isLoading.get() || !this.form.email || !this.form.password }>{
-									this.isLoading.get() ?
-										<PreLoader />
-										:
-										'Register'
-								}</button>
-							)
-						}
-					}
-				</Mutation>
+				<button onClick={ this.register }
+						disabled={ this.isLoading.get() || !this.form.email || !this.form.password }>{
+					this.isLoading.get() ?
+						<PreLoader />
+						:
+						'Register'
+				}</button>
 				<hr/>
 				<Link to="/login">Sign in</Link>
 			</div>

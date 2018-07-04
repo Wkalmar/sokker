@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 // MobX
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
@@ -7,6 +6,7 @@ import { observer } from 'mobx-react';
 import store from "store";
 // Components
 import PreLoader from 'components/parts/PreLoader.component';
+import Link from "components/Link.component";
 
 
 class LogInForm extends React.Component {
@@ -30,9 +30,11 @@ class LogInForm extends React.Component {
 		return (
 			<div>
 				<input type="text"
+					   className="email"
 					   value={ this.form.email }
 					   onChange={ (e)=> this.form.email = e.currentTarget.value }/>
 				<input type="password"
+					   className="password"
 					   value={ this.form.password }
 					   onChange={ (e)=> this.form.password = e.currentTarget.value }/>
 

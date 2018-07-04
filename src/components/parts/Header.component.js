@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 // Styles
 import "styles/header.css";
 // Store
 import store from "store";
 // MobX
 import { observer } from "mobx-react";
+// Components
+import Link from "components/Link.component";
 
 
 class Header extends React.Component {
