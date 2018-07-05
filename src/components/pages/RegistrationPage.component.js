@@ -8,12 +8,6 @@ import BoxList from "components/parts/boxes/BoxList.component";
 
 class RegistrationPage extends React.Component {
 
-	static permissions = {
-		notForAuth: true,
-		redirectPath: "/"
-	};
-
-
 	render() {
 		return (
 			<BoxList boxes={ [

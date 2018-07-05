@@ -1,11 +1,13 @@
 html {
-	background: white;
+	background: #506097;
+	height: 100%;
 }
 
 body {
 	margin-top: 250px;
 	font-family: Arial;
 	overflow-y: scroll;
+	height: 100%;
 }
 
 

@@ -11,6 +11,7 @@ import HomePage from "components/pages/lazy/HomePage.lazy.component";
 import LogInPage from "components/pages/lazy/LogInPage.lazy.component";
 import RegistrationPage from "components/pages/lazy/RegistrationPage.lazy.component";
 import TransfersPage from "components/pages/lazy/TransfersPage.lazy.component";
+import UserPlayersPage from "components/pages/lazy/UserPlayersPage.lazy.component";
 import Page404 from "components/pages/Page404.component";
 
 
@@ -40,6 +41,7 @@ const Routes = ()=> {
 				<RouteComponent exact path="/login" component={LogInPage} />
 				<RouteComponent exact path="/registration" component={RegistrationPage} />
 				<RouteComponent exact path="/transfers" component={TransfersPage} />
+				<RouteComponent exact path="/user-players" component={UserPlayersPage} />
 				<RouteComponent component={Page404} />
 			</Switch>
 

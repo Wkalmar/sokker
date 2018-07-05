@@ -1,35 +1,25 @@
 import React from 'react';
 // MobX
-import { observer, inject } from "mobx-react";
+import { observer } from "mobx-react";
+// Store
+import store from "store";
 // Components
+import TransfersPage from "components/pages/TransfersPage.component";
 import UserPlayers from "components/parts/players/UserPlayers.component";
 
 
-class UserPlayersPage extends React.Component {
-
-	static permissions = {
-		needAuth: true,
-		redirectPath: "/"
-	};
-
+class UserPlayersPage extends TransfersPage {
 
 	render() {
 		return (
 			<div>
-				{ this.props.store.NET.status }
-				{ this.props.store.NET.status === "success" ?
-					<p style={{
-						color: this.props.store.NET.maxErrorThresh < this.props.store.NET.errorThresh ? "red" : "green"
-					}}>Eerror thresh: { this.props.store.NET.errorThresh }</p>
-					:
-					null
-				}
-
-				<UserPlayers userId={ this.props.store.authorizedUser.id } />
+				<h1>User NET trained players</h1>
+				{ this.renderNetStatus() }
+				<UserPlayers userId={ store.authorizedUser.id } />
 			</div>
 		)
 	}
 }
 
 
-export default inject("store")(observer(UserPlayersPage));
+export default observer(UserPlayersPage);
