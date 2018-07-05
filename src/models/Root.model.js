@@ -9,6 +9,7 @@ import SIGN_UP_USER_MUTATION from "graphql/mutations/signupUser.mutation";
 // Models
 import AuthorizedUserModel from "models/AuthorizedUser.model";
 import UsersModel from "models/users/Users.model";
+import FiltersModel from "models/Filters.model";
 import PlayersModel from "models/players/Players.model";
 import TransfersModel from "models/Transfers.model";
 import NetModel from "models/Net.model";
@@ -21,7 +22,8 @@ const RootModel = {
 	authorizedUser: types.optional(types.maybe(AuthorizedUserModel), null),
 	users: UsersModel,
 	players: PlayersModel,
-	transfers: TransfersModel
+	transfers: TransfersModel,
+	filters: FiltersModel
 };
 
 

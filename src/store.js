@@ -8,7 +8,30 @@ const store = RootModel.create({
 	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
 	users: {},
 	players: {},
-	transfers: { players: [] }
+	transfers: { players: [] },
+	filters: {
+		age: {
+			range: [16, 40],
+			order: "✘"
+		},
+		skills: {
+			stamina: "✘",
+			keeper: "✘",
+			pace: "✘",
+			defender: "✘",
+			technique: "✘",
+			playmaker: "✘",
+			passing: "✘",
+			striker: "✘"
+		},
+		roles: {
+			ATT: true,
+			DEF: true,
+			MID: true,
+			GK: true
+		},
+		search: ""
+	}
 });
 
 // MobX spy goes here
