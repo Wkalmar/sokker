@@ -2,11 +2,9 @@ import React from 'react';
 // Styles
 import "styles/layout.css";
 // MobX
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 // GraphQL
 import GET_USER_INFO_QUERY from "graphql/queries/getUserInfo.query";
-// Store
-import store from "store";
 // Components
 import Header from "components/parts/Header.component";
 import QueryLoader from "components/QueryLoader.component";
@@ -20,11 +18,11 @@ class Layout extends React.Component {
 		return (
 			<div className="wrapper">
 				<Header />
-				{ store.authorizedUser ?
+				{ this.props.store.authorizedUser ?
 					<QueryLoader query={ GET_USER_INFO_QUERY }
 								 fetchPolicy="network-only"
 								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-								 variables={{ id: store.authorizedUser.id }}>
+								 variables={{ id: this.props.store.authorizedUser.id }}>
 						{ this.props.children }
 					</QueryLoader>
 					:
@@ -35,4 +33,4 @@ class Layout extends React.Component {
 	}
 }
 
-export default observer(Layout)
+export default inject("store")(observer(Layout))

@@ -1,9 +1,7 @@
 import React from 'react';
 // MobX
 import { values } from "mobx";
-import { observer } from "mobx-react";
-// Store
-import store from "store";
+import { observer, inject } from "mobx-react";
 // GraphQL
 import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
 // Components
@@ -14,7 +12,7 @@ import BoxList from "components/parts/boxes/BoxList.component";
 
 class UserPlayers extends React.Component {
 
-	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === this.props.userId); };
+	get userPlayers() { return values(this.props.store.players.all).filter((player)=> player.userId === this.props.userId); };
 
 
 	renderPlayersList() {
@@ -37,4 +35,4 @@ class UserPlayers extends React.Component {
 }
 
 
-export default observer(UserPlayers);
+export default inject("store")(observer(UserPlayers));

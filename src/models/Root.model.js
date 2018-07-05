@@ -1,4 +1,7 @@
 import { types } from "mobx-state-tree";
+import { runInAction } from "mobx";
+// Utils
+import history from "utils/history.utils";
 // GraphQL
 import client from "graphql/client";
 import LOG_IN_USER_MUTATION from "graphql/mutations/authenticateUser.mutation";
@@ -51,9 +54,12 @@ const actions = (store)=> {
 
 		logOut: (e)=> {
 			e.preventDefault();
-			sessionStorage.removeItem('token');
-			store.authorizedUser = null;
-			client.resetStore();
+			history.push("/");
+			runInAction(`USER-LOGOUT-SUCCESS`, ()=> {
+				sessionStorage.removeItem('token');
+				store.authorizedUser = null;
+				client.resetStore();
+			});
 		}
 	};
 };

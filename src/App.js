@@ -1,8 +1,12 @@
 import React from 'react';
+// MobX
+import { Provider, observer } from "mobx-react";
 // Styles
 import "styles/reset.css";
 // Routes
 import Router from "components/Router";
+// Store
+import store from "store";
 // Apollo
 import { ApolloProvider } from 'react-apollo';
 // GraphQL
@@ -21,8 +25,12 @@ class App extends React.Component {
 			<ApolloProvider client={client}>
 				<QueryLoader query={ LOGGED_IN_USER_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}>
-					<Router />
-					<AlertContainer />
+					<Provider store={ store }>
+						<div>
+							<Router />
+							<AlertContainer />
+						</div>
+					</Provider>
 				</QueryLoader>
 			</ApolloProvider>
 		);
@@ -30,4 +38,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default observer(App);

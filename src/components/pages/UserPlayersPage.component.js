@@ -1,8 +1,6 @@
 import React from 'react';
 // MobX
-import { observer } from "mobx-react";
-// Store
-import store from "store";
+import { observer, inject } from "mobx-react";
 // Components
 import UserPlayers from "components/parts/players/UserPlayers.component";
 
@@ -18,18 +16,20 @@ class UserPlayersPage extends React.Component {
 	render() {
 		return (
 			<div>
-				{ store.NET.status }
-				{ store.NET.status === "success" ?
-					<p style={{ color: store.NET.maxErrorThresh < store.NET.errorThresh ? "red" : "green" }}>Eerror thresh: { store.NET.errorThresh }</p>
+				{ this.props.store.NET.status }
+				{ this.props.store.NET.status === "success" ?
+					<p style={{
+						color: this.props.store.NET.maxErrorThresh < this.props.store.NET.errorThresh ? "red" : "green"
+					}}>Eerror thresh: { this.props.store.NET.errorThresh }</p>
 					:
 					null
 				}
 
-				<UserPlayers userId={ store.authorizedUser.id } />
+				<UserPlayers userId={ this.props.store.authorizedUser.id } />
 			</div>
 		)
 	}
 }
 
 
-export default observer(UserPlayersPage);
+export default inject("store")(observer(UserPlayersPage));

@@ -1,10 +1,8 @@
 import React from 'react';
 import InputMask from 'react-input-mask';
 // MobX
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import { observable } from 'mobx';
-// Store
-import store from "store";
 // Components
 import InterfacePlayerChart from "components/parts/interface/InterfacePlayerChart.component";
 import PreLoader from "components/parts/PreLoader.component";
@@ -31,12 +29,17 @@ class InterfacePlayer extends React.Component {
 
 
 	savePlayer = ()=> {
-		store.players.createMutation({ ...this.props.player, ...this.output.toJSON(), playerId: this.props.player.id, userId: store.authorizedUser.id });
+		this.props.store.players.createMutation({
+			...this.props.player,
+			...this.output.toJSON(),
+			playerId: this.props.player.id,
+			userId: this.props.store.authorizedUser.id
+		});
 	};
 
 
 	get playerPrediction() {
-		return store.NET.run(this.props.player);
+		return this.props.store.NET.run(this.props.player);
 	};
 
 
@@ -46,7 +49,7 @@ class InterfacePlayer extends React.Component {
 		if(!this.isReady.get()) return <PreLoader />;
 
 		return (
-			<div key={ store.NET.status }>
+			<div key={ this.props.store.NET.status }>
 				<div style={{ float: 'left', padding: '20px 0 0 20px', width: 'calc(40% - 20px)' }}>
 					<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 						<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
@@ -173,5 +176,5 @@ class InterfacePlayer extends React.Component {
 	}
 }
 
-export default observer(InterfacePlayer);
+export default inject("store")(observer(InterfacePlayer));
 

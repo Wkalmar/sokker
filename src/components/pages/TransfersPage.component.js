@@ -1,9 +1,7 @@
 import React from 'react';
 // MobX
 import { reaction, values } from "mobx";
-import { observer } from "mobx-react";
-// Store
-import store from "store";
+import { observer, inject } from "mobx-react";
 // GraphQL
 import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
 // Components
@@ -22,12 +20,13 @@ class TransfersPage extends React.Component {
 
 	componentDidMount() {
 		// TODO: Move this
-		store.transfers.fetchTransferPlayers();
+		this.props.store.transfers.fetchTransferPlayers();
 
 		this["@reaction on change [userPlayers]"] = reaction(
-			()=> this.userPlayers.map((player)=> player.mid + player.att + player.def + player.gk),
+			()=> this.props.store.authorizedUser && this.userPlayers.map((player)=> player.mid + player.att + player.def + player.gk),
 			()=> {
-				store.NET.train(this.userPlayers);
+				if(!this.props.store.authorizedUser) return;
+				this.props.store.NET.train(this.userPlayers);
 			},
 			{
 				fireImmediately: true,
@@ -42,14 +41,16 @@ class TransfersPage extends React.Component {
 	}
 
 
-	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
+	get userPlayers() { return values(this.props.store.players.all).filter((player)=> player.userId === this.props.store.authorizedUser.id); };
 
 
 	renderNetStatus() {
 		return (
 			<div>
-				<p style={{ color: store.NET.status === "error" ? "red" : "green" }}>Net train { store.NET.status }</p>
-				<p style={{ color: store.NET.maxErrorThresh < store.NET.errorThresh ? "red" : "green" }}>Eerror thresh: { store.NET.errorThresh }</p>
+				<p style={{ color: this.props.store.NET.status === "error" ? "red" : "green" }}>Net train { this.props.store.NET.status }</p>
+				<p style={{ color: this.props.store.NET.maxErrorThresh < this.props.store.NET.errorThresh ? "red" : "green" }}>
+					Error thresh: { this.props.store.NET.errorThresh }
+				</p>
 			</div>
 		);
 	}
@@ -61,8 +62,8 @@ class TransfersPage extends React.Component {
 				<h1>Current transfers</h1>
 				{ this.renderNetStatus() }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
-							 variables={{ userId: store.authorizedUser.id }}>
-					<BoxList boxes={ store.transfers.players.map((player, i)=> <InterfacePlayer player={ player }
+							 variables={{ userId: this.props.store.authorizedUser.id }}>
+					<BoxList boxes={ this.props.store.transfers.players.map((player, i)=> <InterfacePlayer player={ player }
 																								key={player.name}
 																								index={i} />) } />
 				</QueryLoader>
@@ -72,4 +73,4 @@ class TransfersPage extends React.Component {
 }
 
 
-export default observer(TransfersPage);
+export default inject("store")(observer(TransfersPage));
