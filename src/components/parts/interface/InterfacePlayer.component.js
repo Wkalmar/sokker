@@ -1,6 +1,8 @@
 import React from 'react';
+// Styles
+import "styles/interface/interface-player.css";
 // MobX
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { observable } from 'mobx';
 // Store
 import store from "store";
@@ -50,7 +52,7 @@ class InterfacePlayer extends React.Component {
 		if(!this.isReady.get()) return <PreLoader />;
 
 		return (
-			<div key={ store.NET.status }>
+			<div className="interface-player" key={ store.NET.status }>
 				<InterfacePlayerInfo player={ this.props.player } />
 
 				<div style={{ float: 'right', width: '60%', height: 280, marginTop: 20 }}>

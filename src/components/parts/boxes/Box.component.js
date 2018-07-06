@@ -1,4 +1,6 @@
 import React from 'react';
+// Styles
+import "styles/boxes/box.css";
 // MobX
 import { observer } from "mobx-react";
 import { observable } from "mobx";
@@ -56,14 +58,7 @@ class Box extends React.Component {
 	// TODO: RefaQ me plz
 	render() {
 		return (
-			<div style={{
-				width: this.itemWidth,
-				height: this.itemHeight,
-				top: this.top(this.props.index),
-				left: this.left(this.props.index),
-				background: 'white',
-				position: 'absolute'
-			}}>
+			<div className="box">
 				{ this.props.children }
 			</div>
 		)

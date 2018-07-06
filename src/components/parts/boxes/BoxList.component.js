@@ -1,4 +1,6 @@
 import React from 'react';
+// Styles
+import "styles/boxes/box-list.css";
 // MobX
 import { observable } from "mobx";
 import { observer } from "mobx-react";
@@ -18,7 +20,7 @@ class BoxList extends React.Component {
 
 	render() {
 		return (
-			<div ref="boxList">
+			<div className="box-list" ref="boxList">
 				{ this.props.boxes.map((box, i)=> <Box key={i}
 													   index={i}
 													   offsetTop={ this.offsetTop.get() }>{ box }</Box>) }

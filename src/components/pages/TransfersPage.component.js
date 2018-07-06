@@ -62,8 +62,8 @@ class TransfersPage extends React.Component {
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 variables={{ userId: store.authorizedUser.id }}>
 					<BoxList boxes={ this.players.map((player, i)=> <InterfacePlayer player={ player }
-																								key={player.name}
-																								index={i} />) } />
+																					 key={player.name}
+																					 index={i} />) } />
 				</QueryLoader>
 			</div>
 		)
