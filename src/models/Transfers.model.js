@@ -1,9 +1,13 @@
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
+// Store
+import store from "store";
+// Models
+import PlayerModel from "models/players/Player.model";
 
 
 const Transfers = {
-	players: types.frozen
+	players: types.optional(types.map(PlayerModel), {})
 };
 
 
@@ -21,7 +25,9 @@ const actions = (self)=> {
 
 		create(players) {
 			runInAction(`TRANSFER-PLAYERS-CREATE-SUCCESS`, ()=> {
-				self.players = players;
+				players.forEach((player)=> {
+					self.players.set(player.id, { ...player, ...store.NET.run(player), playerId: player.id });
+				});
 			});
 		}
 	};

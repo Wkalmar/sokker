@@ -8,7 +8,7 @@ const store = RootModel.create({
 	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
 	users: {},
 	players: {},
-	transfers: { players: [] },
+	transfers: {},
 	filters: {
 		age: {
 			range: [16, 40],

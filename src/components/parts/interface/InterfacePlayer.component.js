@@ -2,6 +2,8 @@ import React from 'react';
 // MobX
 import { observer, inject } from 'mobx-react';
 import { observable } from 'mobx';
+// Store
+import store from "store";
 // Components
 import InterfacePlayerChart from "components/parts/interface/InterfacePlayerChart.component";
 import InterfacePlayerInput from "components/parts/interface/InterfacePlayerInput.component";
@@ -30,17 +32,17 @@ class InterfacePlayer extends React.Component {
 
 
 	savePlayer = ()=> {
-		this.props.store.players.createMutation({
+		store.players.createMutation({
 			...this.props.player,
 			...this.output.toJSON(),
 			playerId: this.props.player.id,
-			userId: this.props.store.authorizedUser.id
+			userId: store.authorizedUser.id
 		});
 	};
 
 
 	get playerPrediction() {
-		return this.props.store.NET.run(this.props.player);
+		return store.NET.run(this.props.player);
 	};
 
 
@@ -48,7 +50,7 @@ class InterfacePlayer extends React.Component {
 		if(!this.isReady.get()) return <PreLoader />;
 
 		return (
-			<div key={ this.props.store.NET.status }>
+			<div key={ store.NET.status }>
 				<InterfacePlayerInfo player={ this.props.player } />
 
 				<div style={{ float: 'right', width: '60%', height: 280, marginTop: 20 }}>
@@ -99,5 +101,5 @@ class InterfacePlayer extends React.Component {
 	}
 }
 
-export default inject("store")(observer(InterfacePlayer));
+export default observer(InterfacePlayer);
 

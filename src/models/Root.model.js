@@ -67,4 +67,4 @@ const actions = (store)=> {
 };
 
 
-export default types.model(RootModel).actions(actions);
+export default types.model("RootModel", RootModel).actions(actions);
