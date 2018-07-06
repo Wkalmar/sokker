@@ -4020,9 +4020,9 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-fuse.js@^3.0.1, fuse.js@^3.2.0:
+fuse.js@^3.0.1, fuse.js@^3.2.0, "fuse.js@git+https://github.com/krisk/fuse/":
   version "3.2.1"
-  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.2.1.tgz#6320cb94ce56ec9755c89ade775bcdbb0358d425"
+  resolved "git+https://github.com/krisk/fuse/#ec5d1a7079a03784e7a3e6778b428cad8774d881"
 
 gauge@~2.7.3:
   version "2.7.4"
@@ -7199,7 +7199,7 @@ rc-slider@^8.6.1:
     shallowequal "^1.0.1"
     warning "^3.0.0"
 
-rc-tooltip@^3.7.0, rc-tooltip@^3.7.2:
+rc-tooltip@^3.7.0:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/rc-tooltip/-/rc-tooltip-3.7.2.tgz#3698656d4bacd51b72d9e327bed15d1d5a9f1b27"
   dependencies:

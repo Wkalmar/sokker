@@ -10,27 +10,28 @@
 }
 
 .filter {
-	background: white;
 	min-height: 100px;
-	padding: 10px;
 	color: black;
 	width: calc(50% - 30px);
-	margin: 5px;
+	margin: 0 15px;
 }
 
 .filter_title {
-	margin: 10px 0 5px 0;
+	margin: 5px 0 5px 0;
+	font-size: 14px;
+	color: whitesmoke;
 }
 
 .filter input,
 .filter button {
 	border: none;
 	padding: 5px;
-	background: #506198;
-	color: whitesmoke;
+	background: whitesmoke;
+	color: #506198;
 	margin: 0 5px 5px 0;
 	outline: none;
 	cursor: pointer;
+	min-width: 100px;
 }
 
 .filter button:hover {
@@ -43,6 +44,6 @@
 }
 
 .filter input::placeholder {
-	color: whitesmoke;
+	color: #506198;
 	opacity: 0.5;
 }

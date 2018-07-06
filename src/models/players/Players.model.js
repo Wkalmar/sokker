@@ -40,8 +40,7 @@ const actions = (self)=> {
 
 
 const views = (self)=> {
-	return {
-	};
+	return {};
 };
 
 export default types.model('Players', Players).actions(actions).views(views);

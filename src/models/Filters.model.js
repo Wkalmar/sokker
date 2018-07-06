@@ -40,7 +40,7 @@ const actions = (self)=> {
 			players = players.filter((player)=> {
 				return player.age * 100 >= self.age.get('range')[0] && player.age * 100 <= self.age.get('range')[1]
 			});
-			// console.log("Time to filter!", players, self);
+			console.log("Time to filter!", players, self);
 
 			return players;
 		}

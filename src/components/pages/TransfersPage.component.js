@@ -38,9 +38,8 @@ class TransfersPage extends React.Component {
 
 	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 
-	get players() { return values(store.transfers.players); };
 
-	get filteredPlayers() { return store.filters.filter(this.players); };
+	get players() { return store.transfers.filtered; };
 
 
 	renderNetStatus() {
@@ -62,7 +61,7 @@ class TransfersPage extends React.Component {
 				{ this.renderNetStatus() }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 variables={{ userId: store.authorizedUser.id }}>
-					<BoxList boxes={ this.filteredPlayers.map((player, i)=> <InterfacePlayer player={ player }
+					<BoxList boxes={ this.players.map((player, i)=> <InterfacePlayer player={ player }
 																								key={player.name}
 																								index={i} />) } />
 				</QueryLoader>

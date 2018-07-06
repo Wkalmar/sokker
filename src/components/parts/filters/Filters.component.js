@@ -43,7 +43,7 @@ class Filters extends React.Component {
 								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
 					<div className="filter_title">Sort by age:</div>
 					<button onClick={ this.onOrderChange }
-							style={{ background: this.ageOrder === "✘" ? "gray" : "#2876b4" }}>
+							style={{ color: this.ageOrder === "✘" ? "gray" : "#2876b4" }}>
 						Order { this.ageOrder }
 					</button>
 				</div>
@@ -72,9 +72,9 @@ class Filters extends React.Component {
 						   value={ store.filters.search }
 						   onChange={ (e)=> store.filters.change({ search: e.currentTarget.value }) } />
 				</div>
-				<div className="filter" style={{ width: "100%", border: "1px solid gray" }}>
-					<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>
-				</div>
+				{/*<div className="filter" style={{ width: "100%", border: "1px solid gray" }}>*/}
+					{/*<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>*/}
+				{/*</div>*/}
 			</div>
 		)
 	}

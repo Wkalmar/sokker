@@ -28,7 +28,8 @@
     "recharts": "^1.0.0-beta.10",
     "sinon": "^6.1.0",
     "storybook-addon-specifications": "^2.1.2",
-    "three": "^0.93.0"
+    "three": "^0.93.0",
+    "fuse.js": "git+https://github.com/krisk/fuse/"
   },
   "scripts": {
     "start": "react-scripts start",

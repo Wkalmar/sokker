@@ -26,7 +26,7 @@ class InterfacePlayer extends React.Component {
 
 
 	componentDidMount() {
-		setTimeout(()=> this.isReady.set(true), this.props.index * 200);
+		setTimeout(()=> this.isReady.set(true), this.props.index * 100);
 		Object.keys(this.playerPrediction).map((name)=> this.output.set(name, +this.playerPrediction[name].toFixed(1)));
 	}
 
