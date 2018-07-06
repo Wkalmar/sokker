@@ -22,13 +22,11 @@ const store = RootModel.create({
 			technique: "✘",
 			playmaker: "✘",
 			passing: "✘",
-			striker: "✘"
-		},
-		roles: {
-			ATT: true,
-			DEF: true,
-			MID: true,
-			GK: true
+			striker: "✘",
+			ATT: "✘",
+			DEF: "✘",
+			MID: "✘",
+			GK: "✘"
 		},
 		search: ""
 	}

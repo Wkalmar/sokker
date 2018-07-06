@@ -4,7 +4,6 @@ import { types } from "mobx-state-tree";
 const Filters = {
 	age: types.frozen,
 	skills: types.frozen,
-	roles: types.frozen,
 	search: types.string
 };
 
@@ -34,18 +33,21 @@ const actions = (self)=> {
 						break;
 				}
 			});
+			self.filter();
 		},
 
 
 		filter() {
-			console.log("TIme to filter!");
+			console.log("Time to filter!", self);
 		}
 	};
 };
 
 
 const views = (self)=> {
+
 	return {
+		get sortBySkillName() { return Object.keys(self.skills).find((name)=> self.skills[name] !== "✘"); },
 	};
 };
 

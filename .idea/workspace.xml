@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Filters.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/filters.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/Header.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/Header.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Root.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Root.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Filters.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Filters.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,8 +22,8 @@
       <file leaf-file-name="Filters.component.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="92" column="75" lean-forward="true" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="75" />
+            <state relative-caret-position="242">
+              <caret line="58" column="68" lean-forward="true" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#37#73#0" expanded="true" />
@@ -38,11 +32,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="45" lean-forward="true" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Filters.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/Filters.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="525">
+              <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -309,7 +312,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57675000" />
+    <option name="totallyTimeSpent" value="58538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -768,22 +771,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="15">
+          <caret line="1" column="45" lean-forward="true" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Filters.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="525">
+          <caret line="35" column="26" lean-forward="true" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="92" column="75" lean-forward="true" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="75" />
+        <state relative-caret-position="242">
+          <caret line="58" column="68" lean-forward="true" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#37#73#0" expanded="true" />

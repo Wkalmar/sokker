@@ -32,11 +32,6 @@ class Filters extends React.Component {
 	};
 
 
-	onRoleChange = (name)=> {
-		store.filters.change({ roles: { [name]: !store.filters.roles[name] }});
-	};
-
-
 	render() {
 		return (
 			<div className="filters">
@@ -56,29 +51,29 @@ class Filters extends React.Component {
 					</button>
 				</div>
 				<div className="filter">
-					<div className="filter_title">Show role/roles</div>
-					<button onClick={ ()=> this.onRoleChange("ATT") } style={{ background: store.filters.roles["ATT"] ? "#2876b4" : "gray" }}>ATT</button>
-					<button onClick={ ()=> this.onRoleChange("DEF") } style={{ background: store.filters.roles["DEF"] ? "rgb(247, 126, 17)" : "gray" }}>DEF</button>
-					<button onClick={ ()=> this.onRoleChange("MID") } style={{ background: store.filters.roles["MID"] ? "rgb(44, 160, 44)" : "gray" }}>MID</button>
-					<button onClick={ ()=> this.onRoleChange("GK") } style={{ background: store.filters.roles["GK"] ? "rgb(215, 39, 41)" : "gray" }}>GK</button>
+					<div className="filter_title">Sort by role</div>
+					<button onClick={ ()=> this.onSkillChange('ATT') } style={{ background: store.filters.skills["ATT"] === "✘" ? "gray" : "#2876b4" }}>ATT { store.filters.skills["ATT"] }</button>
+					<button onClick={ ()=> this.onSkillChange('DEF') } style={{ background: store.filters.skills["DEF"]  === "✘" ? "gray" : "rgb(247, 126, 17)" }}>DEF { store.filters.skills["DEF"] }</button>
+					<button onClick={ ()=> this.onSkillChange("MID") } style={{ background: store.filters.skills["MID"]  === "✘" ? "gray" : "rgb(44, 160, 44)" }}>MID</button>
+					<button onClick={ ()=> this.onSkillChange("GK") } style={{ background: store.filters.skills["GK"]  === "✘" ? "gray" : "rgb(215, 39, 41)" }}>GK</button>
 				</div>
 				<div className="filter">
 					<div className="filter_title">Sort by skills:</div>
-					<button onClick={ (e)=> this.onSkillChange('stamina') }
+					<button onClick={ ()=> this.onSkillChange('stamina') }
 							style={{ background: store.filters.skills.stamina === "✘" ? "gray" : "#2876b4"}}>stamina { store.filters.skills.stamina }</button>
-					<button onClick={ (e)=> this.onSkillChange('keeper') }
+					<button onClick={ ()=> this.onSkillChange('keeper') }
 							style={{ background: store.filters.skills.keeper === "✘" ? "gray" : "#2876b4"}}>keeper { store.filters.skills.keeper }</button>
-					<button onClick={ (e)=> this.onSkillChange('pace') }
+					<button onClick={ ()=> this.onSkillChange('pace') }
 							style={{ background: store.filters.skills.pace === "✘" ? "gray" : "#2876b4"}}>pace { store.filters.skills.pace }</button>
-					<button onClick={ (e)=> this.onSkillChange('defender') }
+					<button onClick={ ()=> this.onSkillChange('defender') }
 							style={{ background: store.filters.skills.defender === "✘" ? "gray" : "#2876b4"}}>defender { store.filters.skills.defender }</button>
-					<button onClick={ (e)=> this.onSkillChange('technique') }
+					<button onClick={ ()=> this.onSkillChange('technique') }
 							style={{ background: store.filters.skills.technique === "✘" ? "gray" : "#2876b4"}}>technique { store.filters.skills.technique }</button>
-					<button onClick={ (e)=> this.onSkillChange('playmaker')}
+					<button onClick={ ()=> this.onSkillChange('playmaker')}
 							style={{ background: store.filters.skills.playmaker === "✘" ? "gray" : "#2876b4"}}>playmaker { store.filters.skills.playmaker }</button>
-					<button onClick={ (e)=> this.onSkillChange('passing') }
+					<button onClick={ ()=> this.onSkillChange('passing') }
 							style={{ background: store.filters.skills.passing === "✘" ? "gray" : "#2876b4"}}>passing { store.filters.skills.passing }</button>
-					<button onClick={ (e)=> this.onSkillChange('striker') }
+					<button onClick={ ()=> this.onSkillChange('striker') }
 							style={{ background: store.filters.skills.striker === "✘" ? "gray" : "#2876b4"}}>striker { store.filters.skills.striker }</button>
 				</div>
 				<div className="filter">
