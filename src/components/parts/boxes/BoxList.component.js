@@ -21,7 +21,7 @@ class BoxList extends React.Component {
 	render() {
 		return (
 			<div className="box-list" ref="boxList">
-				{ this.props.boxes.map((box, i)=> <Box key={i}
+				{ this.props.boxes.map((box, i)=> <Box key={box.key}
 													   index={i}
 													   offsetTop={ this.offsetTop.get() }>{ box }</Box>) }
 			</div>

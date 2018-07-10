@@ -33,16 +33,6 @@ const actions = (self)=> {
 						break;
 				}
 			});
-		},
-
-
-		filter(players = []) :Array {
-			players = players.filter((player)=> {
-				return player.age * 100 >= self.age.get('range')[0] && player.age * 100 <= self.age.get('range')[1]
-			});
-			console.log("Time to filter!", players, self);
-
-			return players;
 		}
 	};
 };

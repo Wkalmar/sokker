@@ -4,19 +4,19 @@ import App from 'App';
 import registerServiceWorker from './registerServiceWorker';
 import { WebGLRenderer } from 'three';
 
-import ssr from "ssr";
-ssr();
+// import ssr from "ssr";
+// ssr();
 
 const renderer = new WebGLRenderer({ antialias: true });
 
-ReactDOM.render(<div>TEST SSR</div>, document.getElementById('root'));
+ReactDOM.render(<App renderer={ renderer }/>, document.getElementById('root'));
 
 
 if(module.hot) {
 	module.hot.accept('App', () => {
 		const NextApp = require('App').default;
 		ReactDOM.render(
-			<div>TEST SSR</div>,
+			<NextApp renderer={ renderer } />,
 			document.getElementById('root')
 		)
 	})

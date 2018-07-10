@@ -57,7 +57,7 @@ class InterfacePlayer extends React.Component {
 				<InterfacePlayerInfo player={ this.props.player } />
 
 				<div style={{ float: 'right', width: '60%', height: 280, marginTop: 20 }}>
-					<InterfacePlayerChart playerData={ this.getPlayerPrediction } />
+					<InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
 				</div>
 
 				<div style={{

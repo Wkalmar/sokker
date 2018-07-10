@@ -11,6 +11,7 @@ import LOGGED_IN_USER_QUERY from "graphql/queries/loggedInUser.query";
 
 export default async function() {
 
+	// TODO: How can I define url for SSR (hardcoded '/user-players') ????
 	const queries = JSON.parse(localStorage.getItem("SSR"))['/user-players'];
 	await client.query({ query: LOGGED_IN_USER_QUERY });
 
