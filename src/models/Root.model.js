@@ -18,6 +18,7 @@ import NetModel from "models/Net.model";
 const RootModel = {
 	NET: types.optional(types.maybe(NetModel), null),
 	nextPathUrl: types.maybe(types.string),
+	currentPath: types.maybe(types.string),
 
 	authorizedUser: types.optional(types.maybe(AuthorizedUserModel), null),
 	users: UsersModel,
@@ -29,6 +30,10 @@ const RootModel = {
 
 const actions = (store)=> {
 	return {
+
+		setCurrentPath(url = "") {
+			store.currentPath = url;
+		},
 
 		setNextPathUrl(url = "") {
 			store.nextPathUrl = url;

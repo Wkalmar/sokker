@@ -27,9 +27,10 @@ class InterfacePlayer extends React.Component {
 	isReady = observable.box(false);
 
 
-	componentDidMount() {
-		setTimeout(()=> this.isReady.set(true), this.props.index * 100);
-		Object.keys(this.playerPrediction).map((name)=> this.output.set(name, +this.playerPrediction[name].toFixed(1)));
+	constructor(props) {
+		super();
+		this.isReady.set(true);
+		Object.keys(this.getPlayerPrediction(props.player)).map((name)=> this.output.set(name, +this.getPlayerPrediction(props.player)[name].toFixed(1)));
 	}
 
 
@@ -43,8 +44,8 @@ class InterfacePlayer extends React.Component {
 	};
 
 
-	get playerPrediction() {
-		return store.NET.run(this.props.player);
+	getPlayerPrediction(player = this.props.player) {
+		return store.NET.run(player);
 	};
 
 
@@ -56,7 +57,7 @@ class InterfacePlayer extends React.Component {
 				<InterfacePlayerInfo player={ this.props.player } />
 
 				<div style={{ float: 'right', width: '60%', height: 280, marginTop: 20 }}>
-					<InterfacePlayerChart playerData={ this.playerPrediction } />
+					<InterfacePlayerChart playerData={ this.getPlayerPrediction } />
 				</div>
 
 				<div style={{

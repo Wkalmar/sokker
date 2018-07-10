@@ -22,17 +22,12 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<ApolloProvider client={client}>
-				<QueryLoader query={ LOGGED_IN_USER_QUERY }
-							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}>
-					<Provider store={ store }>
-						<div>
-							<Router />
-							<AlertContainer />
-						</div>
-					</Provider>
-				</QueryLoader>
-			</ApolloProvider>
+			<Provider store={ store }>
+				<div>
+					<Router />
+					<AlertContainer />
+				</div>
+			</Provider>
 		);
 	}
 }

@@ -10,6 +10,10 @@ import UserPlayers from "components/parts/players/UserPlayers.component";
 
 class UserPlayersPage extends TransfersPage {
 
+	static permissions = {
+		needAuth: true
+	};
+
 	render() {
 		return (
 			<div>

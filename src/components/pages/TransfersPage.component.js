@@ -13,7 +13,8 @@ import QueryLoader from "components/QueryLoader.component";
 
 class TransfersPage extends React.Component {
 
-	componentDidMount() {
+	constructor() {
+		super();
 		// TODO: Move this
 		store.transfers.fetchTransferPlayers();
 

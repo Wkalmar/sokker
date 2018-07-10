@@ -19,12 +19,7 @@ class Layout extends React.Component {
 			<div className="wrapper">
 				<Header />
 				{ this.props.store.authorizedUser ?
-					<QueryLoader query={ GET_USER_INFO_QUERY }
-								 fetchPolicy="network-only"
-								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-								 variables={{ id: this.props.store.authorizedUser.id }}>
-						{ this.props.children }
-					</QueryLoader>
+					this.props.children
 					:
 					this.props.children
 				}

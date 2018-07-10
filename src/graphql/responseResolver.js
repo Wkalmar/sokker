@@ -32,6 +32,10 @@ function applyData(dataName, data) {
 			if(!data) return;
 			store.logIn(data.id); // sobaka@i.ua
 			break;
+
+		case "User":
+			store.users.create(data);
+			break;
 		case "signupUser":
 		case "authenticateUser":
 			if(!data) return;
