@@ -20,7 +20,8 @@ class Header extends React.Component {
 					{ this.props.store.authorizedUser && <Link to="/user-players">User players</Link> }
 					{ this.props.store.authorizedUser && <a onClick={ this.props.store.logOut }>Log out</a> }
 				</ul>
-				<Filters />
+
+				{ this.props.store.authorizedUser && <Filters /> }
 			</div>
 		)
 	}

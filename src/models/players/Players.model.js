@@ -17,15 +17,15 @@ const Players = {
 const actions = (self)=> {
 	return {
 
-		createMutation(newPlayer) {
+		async createMutation(newPlayer) {
 			const duplicatedPlayer = values(self.all).find((player)=> {
 				return player.playerId === newPlayer.id;
 			});
-			if(duplicatedPlayer) return duplicatedPlayer.updateMutation({ ...newPlayer, id: duplicatedPlayer.id });
-			client.mutate({
+			if(duplicatedPlayer) return await duplicatedPlayer.updateMutation({ ...newPlayer, id: duplicatedPlayer.id });
+			await client.mutate({
 				variables: newPlayer,
 				mutation: CREATE_PLAYER_MUTATION
-			}).catch((e)=> console.log("CREATE_PLAYER_MUTATION", e));
+			}).catch((e)=> console.log("CREATE_PLAYER_MUTATION 🍪 🍩 ", e));
 		},
 
 

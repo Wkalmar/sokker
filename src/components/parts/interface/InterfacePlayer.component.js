@@ -34,13 +34,15 @@ class InterfacePlayer extends React.Component {
 	}
 
 
-	savePlayer = ()=> {
-		store.players.createMutation({
+	savePlayer = async ()=> {
+		this.isSavingData.set(true);
+		await store.players.createMutation({
 			...this.props.player,
 			...this.output.toJSON(),
 			playerId: this.props.player.id,
 			userId: store.authorizedUser.id
 		});
+		this.isSavingData.set(false);
 	};
 
 
@@ -96,7 +98,7 @@ class InterfacePlayer extends React.Component {
 					background: 'rgb(61, 117, 160)',
 					outline: 'none',
 					cursor: 'pointer'
-				}} onClick={ this.savePlayer }>
+				}} onClick={ this.savePlayer } disabled={ this.isSavingData.get() }>
 					{ this.isSavingData.get() ? 'Saving...' : 'Save' }
 				</button>
 			</div>
