@@ -9,7 +9,8 @@ import CREATE_PLAYER_MUTATION from "graphql/mutations/players/createPlayer.mutat
 
 
 const Players = {
-	all: types.optional(types.map(PlayerModel), {})
+	all: types.optional(types.map(PlayerModel), {}),
+	isHideCharts: types.boolean
 };
 
 
@@ -18,6 +19,7 @@ const actions = (self)=> {
 	return {
 
 		async createMutation(newPlayer) {
+			self.refreshPlayersCharts(true);
 			const duplicatedPlayer = values(self.all).find((player)=> {
 				return player.playerId === newPlayer.id;
 			});
@@ -34,6 +36,10 @@ const actions = (self)=> {
 			runInAction(`PLAYER-CREATE-SUCCESS ${player.id}`, ()=> {
 				self.all.set(player.id, player);
 			});
+		},
+
+		refreshPlayersCharts(isHideCharts) {
+			self.isHideCharts = isHideCharts;
 		}
 	};
 };

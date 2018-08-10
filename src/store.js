@@ -7,7 +7,9 @@ import RootModel from "models/Root.model";
 const store = RootModel.create({
 	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
 	users: {},
-	players: {},
+	players: {
+		isHideCharts: false
+	},
 	transfers: {},
 	filters: {
 		age: {

@@ -8,6 +8,7 @@ import store from "store";
 // Models
 import PlayerModel from "models/players/Player.model";
 
+
 let fuse = null;
 const fuseOptions = {
 	shouldSort: true,
@@ -77,7 +78,6 @@ const views = (self)=> {
 					:
 					x > y ? 1 : -1;
 			});
-
 			return players;
 		}
 	};

@@ -23,6 +23,7 @@ class TransfersPage extends React.Component {
 			()=> {
 				if(!store.authorizedUser) return;
 				store.NET.train(this.userPlayers);
+				store.players.refreshPlayersCharts(false);
 			},
 			{
 				fireImmediately: true,

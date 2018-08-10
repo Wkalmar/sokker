@@ -1,7 +1,9 @@
 import React from 'react';
 // MobX
 import { observable } from 'mobx';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
+// Store
+import store from "store";
 // Components
 import PreLoader from 'components/parts/PreLoader.component';
 import Link from "components/Link.component";
@@ -19,7 +21,7 @@ class LogInForm extends React.Component {
 
 	logIn = async ()=> {
 		this.isLoading.set(true);
-		await this.props.store.logInMutation(this.form);
+		await store.logInMutation(this.form);
 		this.isLoading.set(false);
 	};
 
@@ -51,4 +53,4 @@ class LogInForm extends React.Component {
 	}
 }
 
-export default inject("store")(observer(LogInForm));
+export default observer(LogInForm);
