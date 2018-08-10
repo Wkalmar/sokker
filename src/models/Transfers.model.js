@@ -63,11 +63,23 @@ const views = (self)=> {
 		get filtered() {
 			let players = values(self.players);
 			const ageRange = store.filters.age.get('range');
+			const ageOrder = store.filters.age.get('order');
 			const skill = entries(store.filters.skills).find((entry)=> entry[1] !== "✘");
+
 			// Filter by name
 			if(store.filters.search) players = fuse.search(store.filters.search).map((result)=> result.item);
+
 			// Filter by age
 			players = players.filter((player)=> player.age * 100 >= ageRange[0] && player.age * 100 <= ageRange[1]);
+
+			// Sort by age order
+			if(ageOrder !== "✘") players = players.sort((a, b)=> {
+				return ageOrder === "▼" ?
+					a.age > b.age ? -1 : 1
+					:
+					a.age > b.age ? 1 : -1;
+			});
+
 			// Sort by skill
 			if(skill) players = players.sort((a, b)=> {
 				const skillName = skill[0].toLowerCase();

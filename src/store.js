@@ -13,7 +13,7 @@ const store = RootModel.create({
 	transfers: {},
 	filters: {
 		age: {
-			range: [16, 40],
+			range: [16, 35],
 			order: "✘"
 		},
 		skills: {

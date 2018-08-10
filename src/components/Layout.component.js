@@ -1,14 +1,12 @@
 import React from 'react';
+import { push as Menu } from 'react-burger-menu';
 // Styles
 import "styles/layout.css";
+import "styles/sidebar.css";
 // MobX
 import { observer, inject } from "mobx-react";
-// GraphQL
-import GET_USER_INFO_QUERY from "graphql/queries/getUserInfo.query";
 // Components
 import Header from "components/parts/Header.component";
-import QueryLoader from "components/QueryLoader.component";
-import PreLoader from "components/parts/PreLoader.component";
 
 
 class Layout extends React.Component {
@@ -16,13 +14,23 @@ class Layout extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div id="outer-container">
 				<Header />
-				{ this.props.store.authorizedUser ?
-					this.props.children
-					:
-					this.props.children
-				}
+
+				<Menu noOverlay right push pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
+					<a id="home" className="menu-item" href="/">Home</a>
+					<a id="about" className="menu-item" href="/about">About</a>
+					<a id="contact" className="menu-item" href="/contact">Contact</a>
+					<a className="menu-item--small" href="">Settings</a>
+				</Menu>
+
+				<div id="page-wrap">
+					{ this.props.store.authorizedUser ?
+						this.props.children
+						:
+						this.props.children
+					}
+				</div>
 			</div>
 		)
 	}

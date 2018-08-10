@@ -1,6 +1,6 @@
 import React from "react";
 import history from 'utils/history.utils';
-import { Router, Route, Switch, Redirect, StaticRouter } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { ApolloProvider } from 'react-apollo';
 // MobX
 import { observer } from 'mobx-react';
