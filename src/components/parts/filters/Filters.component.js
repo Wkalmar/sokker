@@ -66,15 +66,15 @@ class Filters extends React.Component {
 					<FiltersSkillBtn name="striker" />
 				</div>
 				<div className="filter">
-					<div className="filter_title">Search</div>
+					<div className="filter_title">Search by name</div>
 					<input type="text"
 						   placeholder="search..."
 						   value={ store.filters.search }
 						   onChange={ (e)=> store.filters.change({ search: e.currentTarget.value }) } />
 				</div>
-				{/*<div className="filter" style={{ width: "100%", border: "1px solid gray" }}>*/}
-					{/*<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>*/}
-				{/*</div>*/}
+				<div className="filter" style={{ paddingTop: 20 }}>
+					<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>
+				</div>
 			</div>
 		)
 	}
