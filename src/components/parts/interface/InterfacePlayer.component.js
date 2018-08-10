@@ -32,6 +32,11 @@ class InterfacePlayer extends React.Component {
 	constructor(props) {
 		super();
 		this.isReady.set(true);
+		this.setOutput(props);
+	}
+
+
+	setOutput(props) {
 		Object.keys(this.getPlayerPrediction(props.player)).map((name)=> this.output.set(name, +this.getPlayerPrediction(props.player)[name].toFixed(1)));
 	}
 

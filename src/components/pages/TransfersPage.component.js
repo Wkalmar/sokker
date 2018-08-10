@@ -10,6 +10,7 @@ import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 import QueryLoader from "components/QueryLoader.component";
 import Filters from "components/parts/filters/Filters.component";
+import PreLoader from "components/parts/PreLoader.component";
 
 
 class TransfersPage extends React.Component {
@@ -52,7 +53,6 @@ class TransfersPage extends React.Component {
 
 	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 
-
 	get players() { return store.transfers.filtered; };
 
 
@@ -79,6 +79,7 @@ class TransfersPage extends React.Component {
 			<div>
 				{ this.renderNetStatus() }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
+							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>
 
 					<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
