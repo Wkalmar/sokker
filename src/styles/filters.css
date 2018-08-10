@@ -6,7 +6,6 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: center;
-	width: 40%;
 }
 
 .filter {
@@ -45,4 +44,12 @@
 .filter input::placeholder {
 	color: white;
 	opacity: 0.5;
+}
+
+.filter .rc-slider-track,
+.filter .rc-slider-dot-active,
+.filter .rc-slider-handle {
+	background: #d67800;
+	border-color: #d67800;
+	box-shadow: none;
 }

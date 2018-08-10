@@ -3,18 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/Header.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/Header.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/filters.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/filters.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/header.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/interface/interface-player.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/interface/interface-player.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,25 +22,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TransfersPage.component.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TransfersPage.component.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/pages/TransfersPage.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+            <state relative-caret-position="615">
+              <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#86#126#0" expanded="true" />
                 <element signature="e#299#382#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="filters.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/filters.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -54,26 +38,8 @@
       <file leaf-file-name="Filters.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FiltersSkillBtn.component.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles/header.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="24" />
+            <state relative-caret-position="649">
+              <caret line="63" column="56" lean-forward="true" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -81,21 +47,8 @@
       <file leaf-file-name="interface-player.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/styles/interface/interface-player.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InterfacePlayerChart.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-              <folding>
-                <element signature="e#35#73#0" expanded="true" />
-                <element signature="e#206#290#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -104,7 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>authorizedUserId</find>
       <find>this.props.authorizedUser.id ?</find>
       <find>inject(&quot;</find>
       <find>this.props.authorizedUser</find>
@@ -134,6 +86,7 @@
       <find>STORYBOOK_ENV</find>
       <find>import Pre</find>
       <find>.filtered</find>
+      <find>.ReactVirtualized__Grid</find>
     </findStrings>
     <replaceStrings>
       <replace>this.props.store.authorizedUser</replace>
@@ -176,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/styles/boxes/box.css" />
         <option value="$PROJECT_DIR$/src/models/Root.model.js" />
         <option value="$PROJECT_DIR$/src/graphql/fragments/users/UserAllInfo.fragment.js" />
-        <option value="$PROJECT_DIR$/src/components/Layout.component.js" />
         <option value="$PROJECT_DIR$/src/components/pages/UserPlayersPage.component.js" />
         <option value="$PROJECT_DIR$/src/components/QueryLoader.component.js" />
         <option value="$PROJECT_DIR$/src/ssr.js" />
@@ -192,14 +144,15 @@
         <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" />
-        <option value="$PROJECT_DIR$/src/styles/interface/interface-player.css" />
         <option value="$PROJECT_DIR$/src/components/parts/Header.component.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js" />
+        <option value="$PROJECT_DIR$/src/styles/interface/interface-player.css" />
+        <option value="$PROJECT_DIR$/src/components/Layout.component.js" />
         <option value="$PROJECT_DIR$/src/styles/layout.css" />
+        <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
         <option value="$PROJECT_DIR$/src/styles/header.css" />
         <option value="$PROJECT_DIR$/src/styles/filters.css" />
-        <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" />
       </list>
     </option>
   </component>
@@ -323,6 +276,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="interface" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -397,12 +357,12 @@
       <workItem from="1533046881476" duration="1476000" />
       <workItem from="1533114259236" duration="2169000" />
       <workItem from="1533291006805" duration="1323000" />
-      <workItem from="1533894707449" duration="4545000" />
+      <workItem from="1533894707449" duration="6216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85296000" />
+    <option name="totallyTimeSpent" value="86967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -653,13 +613,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/lazy/Interface.lazy.component.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Layout.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="21" lean-forward="true" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -769,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/interface/interface-player.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -790,50 +736,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/TransfersPage.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#86#126#0" expanded="true" />
-            <element signature="e#299#382#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/filters.css">
+    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="56" column="40" lean-forward="true" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
+        <state relative-caret-position="649">
+          <caret line="63" column="56" lean-forward="true" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js">
+    <entry file="file://$PROJECT_DIR$/src/styles/interface/interface-player.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="165">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/filters.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/TransfersPage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#299#382#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

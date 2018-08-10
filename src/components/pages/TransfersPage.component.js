@@ -47,7 +47,7 @@ class TransfersPage extends React.Component {
 
 	renderNetStatus() {
 		return (
-			<div>
+			<div style={{ fontSize: '10px' }}>
 				<p style={{ color: store.NET.status === "error" ? "red" : "green" }}>Net train { store.NET.status }</p>
 				<p style={{ color: store.NET.maxErrorThresh < store.NET.errorThresh ? "red" : "green" }}>
 					Error thresh: { store.NET.errorThresh }
@@ -60,24 +60,31 @@ class TransfersPage extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Current transfers</h1>
 				{ this.renderNetStatus() }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 variables={{ userId: store.authorizedUser.id }}>
 
-					<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
-						<List rowCount={ this.players.length }
-							  height={ 1500 }
-							  width={ window.innerWidth / 100 * 60 }
-							  rowHeight={ 370 }
-							  rowRenderer={({ style, index, key })=> {
-								  return <div style={ style } key={ key }>
-									  <InterfacePlayer player={ this.players[index] }
-													   index={index} />
-								  </div>
-							  } } />
+					<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start'}}>
+						<div style={{ overflow: 'hidden', width: window.innerWidth / 100 * 60 - 15, marginLeft: 10 }}>
+							<List rowCount={ this.players.length }
+								  height={ 1000 }
+								  width={ window.innerWidth / 100 * 60 }
+								  rowHeight={ 370 }
+								  rowRenderer={({ style, index, key })=> {
+									  return <div style={ style } key={ key }>
+										  <InterfacePlayer player={ this.players[index] }
+														   index={index} />
+									  </div>
+								  } } />
+						</div>
 
-						{ store.authorizedUser && <Filters /> }
+						<div style={{
+							position: 'fixed',
+							left: window.innerWidth / 100 * 60,
+							width: window.innerWidth - (window.innerWidth / 100 * 60 + 50)
+						}}>
+							{ store.authorizedUser && <Filters /> }
+						</div>
 					</div>
 				</QueryLoader>
 			</div>

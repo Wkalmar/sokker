@@ -16,7 +16,7 @@ class Layout extends React.Component {
 
 	render() {
 		return (
-			<div className="wrapper">
+			<div>
 				<Header />
 				{ this.props.store.authorizedUser ?
 					this.props.children
