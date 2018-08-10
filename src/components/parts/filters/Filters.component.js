@@ -43,7 +43,7 @@ class Filters extends React.Component {
 								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
 					<div className="filter_title">Sort by age:</div>
 					<button onClick={ this.onOrderChange }
-							style={{ color: this.ageOrder === "✘" ? "gray" : "#2876b4" }}>
+							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
 						Order { this.ageOrder }
 					</button>
 				</div>

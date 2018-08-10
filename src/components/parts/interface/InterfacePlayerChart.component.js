@@ -18,11 +18,6 @@ class InterfacePlayerChart extends React.Component {
 	totalSkillsSum = 4 * 100;
 
 
-	shouldComponentUpdate(nextProps, nextState) {
-		return false;
-	}
-
-
 	get chartData() { return Object.keys(this.props.playerData).map((name)=> ({
 		name: name.toUpperCase(),
 		value: this.props.playerData[name]

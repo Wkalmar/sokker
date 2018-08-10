@@ -1,34 +1,32 @@
 .filters {
 	line-height: initial;
-	padding: 10px;
+	margin: 0 10px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: flex-start;
 	align-content: center;
-	width: 100%;
-	background: #506097;
+	width: 40%;
 }
 
 .filter {
-	min-height: 100px;
-	color: black;
-	width: calc(50% - 30px);
+	width: calc(100% - 10px);
 	margin: 0 15px;
 }
 
 .filter_title {
-	margin: 5px 0 5px 0;
-	font-size: 14px;
-	color: whitesmoke;
+	margin: 10px 0 5px 0;
+	font-size: 16px;
+	color: black;
 }
 
 .filter input,
 .filter button {
 	border: none;
-	padding: 5px;
-	background: whitesmoke;
-	color: #506198;
+	padding: 5px 10px;
+	background: #d67800;
+	color: white;
+	font-size: 14px;
 	margin: 0 5px 5px 0;
 	outline: none;
 	cursor: pointer;
@@ -45,6 +43,6 @@
 }
 
 .filter input::placeholder {
-	color: #506198;
+	color: white;
 	opacity: 0.5;
 }

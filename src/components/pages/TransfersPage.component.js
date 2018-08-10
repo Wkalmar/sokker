@@ -1,4 +1,5 @@
 import React from 'react';
+import List from 'react-virtualized/dist/commonjs/List'
 // MobX
 import { reaction, values } from "mobx";
 import { observer } from "mobx-react";
@@ -6,9 +7,9 @@ import store from "store";
 // GraphQL
 import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
 // Components
-import BoxList from "components/parts/boxes/BoxList.component";
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 import QueryLoader from "components/QueryLoader.component";
+import Filters from "components/parts/filters/Filters.component";
 
 
 class TransfersPage extends React.Component {
@@ -63,9 +64,21 @@ class TransfersPage extends React.Component {
 				{ this.renderNetStatus() }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 variables={{ userId: store.authorizedUser.id }}>
-					<BoxList boxes={ this.players.map((player, i)=> <InterfacePlayer player={ player }
-																					 key={player.name}
-																					 index={i} />) } />
+
+					<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
+						<List rowCount={ this.players.length }
+							  height={ 1500 }
+							  width={ window.innerWidth / 100 * 60 }
+							  rowHeight={ 370 }
+							  rowRenderer={({ style, index, key })=> {
+								  return <div style={ style } key={ key }>
+									  <InterfacePlayer player={ this.players[index] }
+													   index={index} />
+								  </div>
+							  } } />
+
+						{ store.authorizedUser && <Filters /> }
+					</div>
 				</QueryLoader>
 			</div>
 		)

@@ -20,8 +20,8 @@ function onSkillChange(name) {
 }
 
 
-export default observer(function({ name, color="#2876b4" }) {
+export default observer(function({ name, color="black" }) {
 	return (
-		<button onClick={ ()=> onSkillChange(name) } style={{ color: getSkill(name) === "✘" ? "gray" : color }}>{ name } { getSkill(name) }</button>
+		<button onClick={ ()=> onSkillChange(name) } style={{ color: getSkill(name) === "✘" ? "white" : color }}>{ name } { getSkill(name) }</button>
 	)
 });

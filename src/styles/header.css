@@ -1,11 +1,11 @@
 .header {
-	background: #506198;;
+	background: #d67800;
 	position: fixed;
-	height: 200px;
+	height: 100px;
 	top: 0;
 	left: 0;
 	right: 0;
-	line-height: 200px;
+	line-height: 100px;
 	z-index: 2;
 	color: white;
 	max-width: 1400px;

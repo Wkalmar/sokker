@@ -7,15 +7,8 @@ import "styles/reset.css";
 import Router from "components/Router";
 // Store
 import store from "store";
-// Apollo
-import { ApolloProvider } from 'react-apollo';
-// GraphQL
-import client from "graphql/client";
-import LOGGED_IN_USER_QUERY from "graphql/queries/loggedInUser.query";
 // Components
 import AlertContainer from "components/AlertContainer.component";
-import QueryLoader from "components/QueryLoader.component";
-import PreLoader from "components/parts/PreLoader.component";
 
 
 class App extends React.Component {
