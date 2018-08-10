@@ -1,7 +1,7 @@
 import React from 'react';
 import List from 'react-virtualized/dist/commonjs/List'
 // MobX
-import { reaction, values } from "mobx";
+import { reaction, observable, values } from "mobx";
 import { observer } from "mobx-react";
 import store from "store";
 // GraphQL
@@ -13,6 +13,14 @@ import Filters from "components/parts/filters/Filters.component";
 
 
 class TransfersPage extends React.Component {
+
+	table = observable({
+		height: window.innerHeight,
+		width: window.innerWidth / 100 * 60, // 60%
+		marginLeft: 15,
+		rowHeight: 370
+	});
+
 
 	constructor() {
 		super();
@@ -31,11 +39,14 @@ class TransfersPage extends React.Component {
 				name: "@reaction on change [userPlayers]"
 			}
 		);
+
+		window.addEventListener('resize', this.onWindowResize);
 	}
 
 
 	componentWillUnmount() {
 		this["@reaction on change [userPlayers]"]();
+		window.removeEventListener('resize', this.onWindowResize);
 	}
 
 
@@ -43,6 +54,12 @@ class TransfersPage extends React.Component {
 
 
 	get players() { return store.transfers.filtered; };
+
+
+	onWindowResize = (e)=> {
+		this.table.width = e.currentTarget.innerWidth / 100 * 60;
+		this.table.height = e.currentTarget.innerHeight;
+	};
 
 
 	renderNetStatus() {
@@ -64,14 +81,14 @@ class TransfersPage extends React.Component {
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 variables={{ userId: store.authorizedUser.id }}>
 
-					<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start'}}>
-						<div style={{ overflow: 'hidden', width: window.innerWidth / 100 * 60 - 15, marginLeft: 10 }}>
+					<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
+						<div style={{ overflow: 'hidden', width: this.table.width, marginLeft: 10 }}>
 							<List rowCount={ this.players.length }
-								  height={ 1000 }
-								  width={ window.innerWidth / 100 * 60 }
-								  rowHeight={ 370 }
-								  rowRenderer={({ style, index, key })=> {
-									  return <div style={ style } key={ key }>
+								  height={ this.table.height }
+								  width={ this.table.width }
+								  rowHeight={ this.table.rowHeight }
+								  rowRenderer={({ style, index, isVisible })=> {
+									  return <div style={ style } key={ this.players[index].id }>
 										  <InterfacePlayer player={ this.players[index] }
 														   index={index} />
 									  </div>
@@ -80,7 +97,7 @@ class TransfersPage extends React.Component {
 
 						<div style={{
 							position: 'fixed',
-							left: window.innerWidth / 100 * 60,
+							left: window.innerWidth / 100 * 60 + 15,
 							width: window.innerWidth - (window.innerWidth / 100 * 60 + 50)
 						}}>
 							{ store.authorizedUser && <Filters /> }
