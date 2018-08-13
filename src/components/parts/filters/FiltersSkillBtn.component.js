@@ -11,10 +11,12 @@ function onSkillChange(name) {
 	const skill = store.filters.skills.get(name);
 	store.filters.change({
 		skills: {
-			[name]: skill.order === "✘" ?
-				"▼"
-				:
-				skill.order === "▲" ? "✘" : "▲"
+			[name]: {
+				order: skill.order === "✘" ?
+					"▼"
+					:
+					skill.order === "▲" ? "✘" : "▲"
+			}
 		}
 	});
 }

@@ -18,6 +18,10 @@ class Filters extends React.Component {
 
 	get ageOrder() { return store.filters.age.get('order'); };
 
+	get stamina() { return store.filters.skills.get('stamina'); };
+
+	get keeper() { return store.filters.skills.get('keeper'); };
+
 
 	onOrderChange = ()=> {
 		store.filters.change({
@@ -49,13 +53,20 @@ class Filters extends React.Component {
 				</div>
 
 				<div className="filter">
-					<div className="filter-title">Filter by skills</div>
+					<div className="filter-title">Filter by stamina ({ this.stamina.range[0]} - { this.stamina.range[1] })</div>
+					<Slider.Range min={0}
+								  max={11}
+								  dots
+								  pushable
+								  onChange={ (range)=> store.filters.change({ skills: { stamina: { range } } }) }
+								  defaultValue={[0, 11]} />
+					<div className="filter-title">Filter by keeper ({ this.keeper.range[0]} - { this.keeper.range[1] })</div>
 					<Slider.Range min={0}
 								  max={17}
 								  dots
 								  pushable
-								  onChange={ (range)=> store.filters.change({ stamina: { range } }) }
-								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
+								  onChange={ (range)=> store.filters.change({ skills: { keeper: { range } } }) }
+								  defaultValue={[0, 17]} />
 				</div>
 				<div className="filter">
 					<div className="filter_title">Sort by role</div>
@@ -81,6 +92,9 @@ class Filters extends React.Component {
 						   placeholder="search..."
 						   value={ store.filters.search }
 						   onChange={ (e)=> store.filters.change({ search: e.currentTarget.value }) } />
+				</div>
+				<div className="filter" style={{ paddingTop: 20 }}>
+					<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>
 				</div>
 			</div>
 		)

@@ -20,7 +20,7 @@ const store = RootModel.create({
 		skills: {
 			stamina: {
 				order: "✘",
-				range: [0, 17]
+				range: [0, 11]
 			},
 			keeper: {
 				order: "✘",
