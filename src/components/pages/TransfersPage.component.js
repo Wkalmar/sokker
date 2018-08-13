@@ -33,6 +33,7 @@ class TransfersPage extends React.Component {
 			()=> {
 				if(!store.authorizedUser) return;
 				store.NET.train(this.userPlayers);
+				store.transfers.addPredictions();
 				store.players.refreshPlayersCharts(false);
 			},
 			{

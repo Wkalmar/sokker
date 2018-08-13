@@ -44,10 +44,18 @@ const actions = (self)=> {
 		create(players) {
 			runInAction(`TRANSFER-PLAYERS-CREATE-SUCCESS`, ()=> {
 				players.forEach((player)=> {
-					self.players.set(player.id, { ...player, att: 0, def: 0, mid: 0, gk: 0, playerId: player.id });
+					self.players.set(player.id, { ...player, ...store.NET.run(player), playerId: player.id });
 				});
 			});
 		},
+
+
+		addPredictions() {
+			values(self.players).forEach((player)=> {
+				self.players.set(player.id, { ...player, ...store.NET.run(player) });
+			});
+		},
+
 
 		// Hooks
 		postProcessSnapshot(snapshot) {

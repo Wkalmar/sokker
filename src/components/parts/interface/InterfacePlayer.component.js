@@ -37,7 +37,11 @@ class InterfacePlayer extends React.Component {
 
 
 	setOutput(props) {
-		Object.keys(this.getPlayerPrediction(props.player)).map((name)=> this.output.set(name, +this.getPlayerPrediction(props.player)[name].toFixed(1)));
+		console.log(props.player.gk, props.player.gk.toFixed(1), 42);
+		this.output.set('gk', props.player.gk.toFixed(1));
+		this.output.set('def', props.player.gk.toFixed(1));
+		this.output.set('mid', props.player.gk.toFixed(1));
+		this.output.set('att', props.player.gk.toFixed(1));
 	}
 
 
