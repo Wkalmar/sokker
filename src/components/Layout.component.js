@@ -32,13 +32,22 @@ class Layout extends React.Component {
 	};
 
 
+	onMenuChange = ({ isOpen })=> {
+		window.document.getElementsByTagName('body')[0].style.height = isOpen ? window.innerHeight - 100 + 'px' : '100%';
+	};
+
+
 	render() {
 		return (
 			<div id="outer-container">
 				<Header />
 
 				{ store.device === "mobile" ?
-					<Menu right push pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } width={ this.menuWidth.get() }>
+					<Menu right push
+						  pageWrapId={ "page-wrap" }
+						  onStateChange={ this.onMenuChange }
+						  outerContainerId={ "outer-container" }
+						  width={ this.menuWidth.get() }>
 						{ store.authorizedUser && <Filters /> }
 					</Menu>
 					: null }
