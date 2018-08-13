@@ -72,7 +72,7 @@ const views = (self)=> {
 			let players = values(self.players);
 			const ageRange = store.filters.age.get('range');
 			const ageOrder = store.filters.age.get('order');
-			const skill = entries(store.filters.skills).find((entry)=> entry[1] !== "✘");
+			const skill = entries(store.filters.skills).find((entry)=> entry[1].order !== "✘");
 
 			// Filter by name
 			if(store.filters.search) players = fuse.search(store.filters.search).map((result)=> result.item);
@@ -94,7 +94,7 @@ const views = (self)=> {
 				const x = a[skillName];
 				const y = b[skillName];
 				if(x === y) return 0;
-				return skill[1] === "▼" ?
+				return skill[1].order === "▼" ?
 					x > y ? -1 : 1
 					:
 					x > y ? 1 : -1;

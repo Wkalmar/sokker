@@ -47,6 +47,16 @@ class Filters extends React.Component {
 						Order { this.ageOrder }
 					</button>
 				</div>
+
+				<div className="filter">
+					<div className="filter-title">Filter by skills</div>
+					<Slider.Range min={0}
+								  max={17}
+								  dots
+								  pushable
+								  onChange={ (range)=> store.filters.change({ stamina: { range } }) }
+								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
+				</div>
 				<div className="filter">
 					<div className="filter_title">Sort by role</div>
 					<FiltersSkillBtn name="ATT" color="#2876b4" />

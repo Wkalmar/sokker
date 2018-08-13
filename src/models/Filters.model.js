@@ -18,10 +18,10 @@ const actions = (self)=> {
 			names.forEach((name)=> {
 				switch(name) {
 					case "skills":
-						keys(self.skills).forEach((name)=> self.skills.set(name, "✘"));
+						keys(self.skills).forEach((name)=> self.skills.set(name, { ...self.skills.get(name), order: "✘" }));
 
 						const skillName = Object.keys(filter[name])[0];
-						self.skills.set(skillName, filter[name][skillName]);
+						self.skills.set(skillName, { ...self.skills.get(skillName), order: filter[name][skillName] });
 						break;
 					case "search":
 						self.search = filter["search"];

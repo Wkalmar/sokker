@@ -18,18 +18,54 @@ const store = RootModel.create({
 			order: "✘"
 		},
 		skills: {
-			stamina: "✘",
-			keeper: "✘",
-			pace: "✘",
-			defender: "✘",
-			technique: "✘",
-			playmaker: "✘",
-			passing: "✘",
-			striker: "✘",
-			ATT: "✘",
-			DEF: "✘",
-			MID: "✘",
-			GK: "✘"
+			stamina: {
+				order: "✘",
+				range: [0, 17]
+			},
+			keeper: {
+				order: "✘",
+				range: [0, 17]
+			},
+			pace: {
+				order: "✘",
+				range: [0, 17]
+			},
+			defender: {
+				order: "✘",
+				range: [0, 17]
+			},
+			technique: {
+				order: "✘",
+				range: [0, 17]
+			},
+			playmaker: {
+				order: "✘",
+				range: [0, 17]
+			},
+			passing: {
+				order: "✘",
+				range: [0, 17]
+			},
+			striker: {
+				order: "✘",
+				range: [0, 17]
+			},
+			ATT: {
+				order: "✘",
+				range: [0, 17]
+			},
+			DEF: {
+				order: "✘",
+				range: [0, 17]
+			},
+			MID: {
+				order: "✘",
+				range: [0, 17]
+			},
+			GK: {
+				order: "✘",
+				range: [0, 17]
+			}
 		},
 		search: ""
 	}

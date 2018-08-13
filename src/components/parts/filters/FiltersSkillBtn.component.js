@@ -5,16 +5,16 @@ import store from "store";
 import { observer } from "mobx-react";
 
 
-function getSkill(name) { return store.filters.skills.get(name); };
+function getSkill(name) { return store.filters.skills.get(name); }
 
 function onSkillChange(name) {
 	const skill = store.filters.skills.get(name);
 	store.filters.change({
 		skills: {
-			[name]: skill === "✘" ?
+			[name]: skill.order === "✘" ?
 				"▼"
 				:
-				skill === "▲" ? "✘" : "▲"
+				skill.order === "▲" ? "✘" : "▲"
 		}
 	});
 }
@@ -22,6 +22,9 @@ function onSkillChange(name) {
 
 export default observer(function({ name, color="black" }) {
 	return (
-		<button onClick={ ()=> onSkillChange(name) } style={{ color: getSkill(name) === "✘" ? "white" : color }}>{ name } { getSkill(name) }</button>
+		<button onClick={ ()=> onSkillChange(name) }
+				style={{ color: getSkill(name).order === "✘" ? "white" : color }}>
+			{ name } { getSkill(name).order }
+		</button>
 	)
 });
