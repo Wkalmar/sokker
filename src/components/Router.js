@@ -46,7 +46,7 @@ const Routes = ()=> {
 		<Router history={history}>
 			<ApolloProvider client={client}>
 				<QueryLoader query={ LOGGED_IN_USER_QUERY }
-							 preLoader={ <div className="cssload-loader-big1"><PreLoader/></div>}>
+							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}>
 						<Switch>
 							<RouteComponent exact path="/" component={HomePage} />
 							<RouteComponent exact path="/login" component={LogInPage} />

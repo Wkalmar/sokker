@@ -3,6 +3,7 @@ import List from 'react-virtualized/dist/commonjs/List'
 // MobX
 import { reaction, observable, values } from "mobx";
 import { observer } from "mobx-react";
+// Store
 import store from "store";
 // GraphQL
 import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
@@ -16,8 +17,8 @@ import PreLoader from "components/parts/PreLoader.component";
 class TransfersPage extends React.Component {
 
 	table = observable({
-		height: window.innerHeight,
-		width: window.innerWidth / 100 * 60, // 60%
+		height: this.tableHeight,
+		width: this.tableWidth,
 		marginLeft: 15,
 		rowHeight: 370
 	});
@@ -52,14 +53,18 @@ class TransfersPage extends React.Component {
 	}
 
 
+	get tableWidth() { return store.device === "desktop" ? window.innerWidth / 100 * 60 : window.innerWidth; };
+
+	get tableHeight() { return store.device === "desktop" ? window.innerHeight : window.innerHeight; };
+
 	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 
 	get players() { return store.transfers.filtered; };
 
 
 	onWindowResize = (e)=> {
-		this.table.width = e.currentTarget.innerWidth / 100 * 60;
-		this.table.height = e.currentTarget.innerHeight;
+		this.table.width = this.tableWidth;
+		this.table.height = this.tableHeight;
 	};
 
 
@@ -76,7 +81,7 @@ class TransfersPage extends React.Component {
 								  height={ this.table.height }
 								  width={ this.table.width }
 								  rowHeight={ this.table.rowHeight }
-								  rowRenderer={({ style, index, isVisible })=> {
+								  rowRenderer={({ style, index })=> {
 									  return (
 										  <div style={ style } key={ this.players[index].id }>
 											  <InterfacePlayer player={ this.players[index] }
@@ -86,13 +91,15 @@ class TransfersPage extends React.Component {
 								  } } />
 						</div>
 
-						<div style={{
-							position: 'fixed',
-							left: window.innerWidth / 100 * 60 + 15,
-							width: window.innerWidth - (window.innerWidth / 100 * 60 + 50)
-						}}>
-							{ store.authorizedUser && <Filters /> }
-						</div>
+						{ store.device === "desktop" ?
+							<div style={{
+								position: 'fixed',
+								left: this.tableWidth + 15,
+								width: window.innerWidth - (this.tableWidth + 50)
+							}}>
+								{ store.authorizedUser && <Filters /> }
+							</div>
+							: null }
 					</div>
 				</QueryLoader>
 			</div>

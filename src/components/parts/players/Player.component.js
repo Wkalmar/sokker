@@ -1,6 +1,8 @@
 import React from 'react';
 // MobX
-import { observer, inject } from "mobx-react";
+import { observer } from "mobx-react";
+// Store
+import store from "store";
 // GraphQL
 import PLAYER_ALL_INFO_QUERY from "graphql/queries/players/playerAllInfo.query";
 // Components
@@ -10,8 +12,7 @@ import QueryLoader from "components/QueryLoader.component";
 
 class Player extends React.Component {
 
-
-	get player() { return this.props.store.players.all.get(this.props.playerId); };
+	get player() { return store.players.all.get(this.props.playerId); };
 
 
 	render() {
@@ -31,4 +32,4 @@ class Player extends React.Component {
 }
 
 
-export default inject("store")(observer(Player));
+export default observer(Player);

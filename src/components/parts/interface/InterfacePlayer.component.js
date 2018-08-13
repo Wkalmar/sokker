@@ -22,8 +22,6 @@ class InterfacePlayer extends React.Component {
 		att: 0
 	});
 
-	isShowChart = observable.box(false);
-
 	isSavingData = observable.box(false);
 
 	isReady = observable.box(false);
@@ -37,11 +35,10 @@ class InterfacePlayer extends React.Component {
 
 
 	setOutput(props) {
-		console.log(props.player.gk, props.player.gk.toFixed(1), 42);
-		this.output.set('gk', props.player.gk.toFixed(1));
-		this.output.set('def', props.player.gk.toFixed(1));
-		this.output.set('mid', props.player.gk.toFixed(1));
-		this.output.set('att', props.player.gk.toFixed(1));
+		this.output.set('gk', +props.player.gk.toFixed(1));
+		this.output.set('def', +props.player.def.toFixed(1));
+		this.output.set('mid', +props.player.mid.toFixed(1));
+		this.output.set('att', +props.player.att.toFixed(1));
 	}
 
 
@@ -62,23 +59,11 @@ class InterfacePlayer extends React.Component {
 	};
 
 
-	onMouseEnterChart = ()=> {
-		this.isShowChart.set(true);
-	};
-
-
-	onMouseLeaveChart = ()=> {
-		this.isShowChart.set(false);
-	};
-
-
 	render() {
 		if(!this.isReady.get()) return <PreLoader />;
 
 		return (
 			<div className="interface-player"
-				 onMouseEnter={ this.onMouseEnterChart }
-				 onMouseLeave={ this.onMouseLeaveChart }
 				 key={ store.NET.status } >
 				<InterfacePlayerInfo player={ this.props.player } />
 
