@@ -15,7 +15,7 @@ import Filters from "components/parts/filters/Filters.component";
 
 class Layout extends React.Component {
 
-	menuWidth = observable.box(window.innerWidth / 100 * 80);
+	menuWidth = observable.box(window.innerWidth / 100 * 95);
 
 
 	componentDidMount() {
@@ -28,7 +28,7 @@ class Layout extends React.Component {
 
 
 	onWindowResize = ()=> {
-		this.menuWidth.set(window.innerWidth / 100 * 80);
+		this.menuWidth.set(window.innerWidth / 100 * 95);
 	};
 
 
@@ -38,7 +38,7 @@ class Layout extends React.Component {
 				<Header />
 
 				{ store.device === "mobile" ?
-					<Menu noOverlay right push pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } width={ this.menuWidth.get() }>
+					<Menu right push pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } width={ this.menuWidth.get() }>
 						{ store.authorizedUser && <Filters /> }
 					</Menu>
 					: null }

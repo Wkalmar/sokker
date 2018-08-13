@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Layout.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/Header.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/Header.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/players/Player.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/players/Player.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/players/UserPlayers.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/players/UserPlayers.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/sidebar.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,11 +26,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Layout.component.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Layout.component.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Layout.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="488">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/styles/sidebar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -127,7 +129,6 @@
         <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
         <option value="$PROJECT_DIR$/src/styles/header.css" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/styles/sidebar.css" />
         <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/src/models/Root.model.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -142,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/styles/layout.css" />
         <option value="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" />
         <option value="$PROJECT_DIR$/src/components/Layout.component.js" />
+        <option value="$PROJECT_DIR$/src/styles/sidebar.css" />
       </list>
     </option>
   </component>
@@ -250,6 +252,12 @@
               <item name="models" type="462c0819:PsiDirectoryNode" />
               <item name="players" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -325,18 +333,18 @@
       <workItem from="1533291006805" duration="1323000" />
       <workItem from="1533894707449" duration="13739000" />
       <workItem from="1533984357666" duration="615000" />
-      <workItem from="1534155227448" duration="5646000" />
+      <workItem from="1534155227448" duration="5900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100751000" />
+    <option name="totallyTimeSpent" value="101005000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.2912673" />
+      <window_info active="true" content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.2912673" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -345,7 +353,7 @@
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32995495" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.2140575" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.2140575" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -620,13 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -725,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pages/TransfersPage.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -739,10 +733,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Layout.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="488">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
         </state>
       </provider>
     </entry>
