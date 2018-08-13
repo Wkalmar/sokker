@@ -15,7 +15,8 @@ import Filters from "components/parts/filters/Filters.component";
 
 class Layout extends React.Component {
 
-	menuWidth = observable.box(window.innerWidth / 100 * 95);
+	menuWidth = observable.box(window.innerWidth / 100 * 90);
+	menuHeight = observable.box(window.innerHeight - 100);
 
 
 	componentDidMount() {
@@ -28,7 +29,8 @@ class Layout extends React.Component {
 
 
 	onWindowResize = ()=> {
-		this.menuWidth.set(window.innerWidth / 100 * 95);
+		this.menuWidth.set(window.innerWidth / 100 * 90);
+		this.menuHeight.set(window.innerHeight - 100);
 	};
 
 
@@ -48,7 +50,11 @@ class Layout extends React.Component {
 						  onStateChange={ this.onMenuChange }
 						  outerContainerId={ "outer-container" }
 						  width={ this.menuWidth.get() }>
-						{ store.authorizedUser && <Filters /> }
+						{ store.authorizedUser &&
+							<div style={{ height: this.menuHeight.get(), overflow: 'scroll' }}>
+								<Filters />
+							</div>
+						}
 					</Menu>
 					: null }
 
