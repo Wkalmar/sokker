@@ -89,10 +89,12 @@ class TransfersPage extends React.Component {
 								  width={ this.table.width }
 								  rowHeight={ this.table.rowHeight }
 								  rowRenderer={({ style, index, isVisible })=> {
-									  return <div style={ style } key={ this.players[index].id }>
-										  <InterfacePlayer player={ this.players[index] }
-														   index={index} />
-									  </div>
+									  return (
+										  <div style={ style } key={ this.players[index].id }>
+											  <InterfacePlayer player={ this.players[index] }
+															   index={index} />
+										  </div>
+									  )
 								  } } />
 						</div>
 

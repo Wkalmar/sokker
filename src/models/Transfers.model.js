@@ -85,6 +85,7 @@ const views = (self)=> {
 				const skillName = skill[0].toLowerCase();
 				const x = a[skillName];
 				const y = b[skillName];
+				if(x === y) return 0;
 				return skill[1] === "▼" ?
 					x > y ? -1 : 1
 					:
