@@ -1,5 +1,5 @@
 import { types } from "mobx-state-tree";
-import { keys } from "mobx";
+import { keys, runInAction } from "mobx";
 
 
 const Filters = {
@@ -9,30 +9,38 @@ const Filters = {
 };
 
 
+let timeout = null;
 const actions = (self)=> {
 	return {
 		
 		change(filter={}) {
-			const names = Object.keys(filter);
+			clearTimeout(timeout);
+			timeout = setTimeout(()=> self.realChange(filter), 100);
+		},
 
-			names.forEach((name)=> {
-				switch(name) {
-					case "skills":
-						const skillName = Object.keys(filter[name])[0];
-						filter[name][skillName].order && keys(self.skills).forEach((name)=> self.skills.set(name, { ...self.skills.get(name), order: "✘" }));
 
-						self.skills.set(skillName, { ...self.skills.get(skillName), ...filter[name][skillName] });
-						break;
-					case "search":
-						self.search = filter["search"];
-						break;
-					default:
+		realChange(filter) {
+			runInAction(`FILTERS-CHANGE-FILTER ${ JSON.stringify(filter) }-SUCCESS`, ()=> {
+				const names = Object.keys(filter);
 
-						Object.keys(filter[name]).forEach((prop)=> {
-							self[name].set(prop, filter[name][prop]);
-						});
-						break;
-				}
+				names.forEach((name)=> {
+					switch(name) {
+						case "skills":
+							const skillName = Object.keys(filter[name])[0];
+							filter[name][skillName].order && keys(self.skills).forEach((name)=> self.skills.set(name, { ...self.skills.get(name), order: "✘" }));
+
+							self.skills.set(skillName, { ...self.skills.get(skillName), ...filter[name][skillName] });
+							break;
+						case "search":
+							self.search = filter["search"];
+							break;
+						default:
+							Object.keys(filter[name]).forEach((prop)=> {
+								self[name].set(prop, filter[name][prop]);
+							});
+							break;
+					}
+				});
 			});
 		}
 	};

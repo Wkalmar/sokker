@@ -18,9 +18,9 @@ class Filters extends React.Component {
 
 	get ageOrder() { return store.filters.age.get('order'); };
 
-	get stamina() { return store.filters.skills.get('stamina'); };
-
 	get keeper() { return store.filters.skills.get('keeper'); };
+
+	get pace() { return store.filters.skills.get('pace'); };
 
 
 	onOrderChange = ()=> {
@@ -53,19 +53,27 @@ class Filters extends React.Component {
 				</div>
 
 				<div className="filter">
-					<div className="filter-title">Filter by stamina ({ this.stamina.range[0]} - { this.stamina.range[1] })</div>
-					<Slider.Range min={0}
-								  max={11}
-								  dots
-								  pushable
-								  onChange={ (range)=> store.filters.change({ skills: { stamina: { range } } }) }
-								  defaultValue={[0, 11]} />
 					<div className="filter-title">Filter by keeper ({ this.keeper.range[0]} - { this.keeper.range[1] })</div>
 					<Slider.Range min={0}
 								  max={17}
 								  dots
 								  pushable
 								  onChange={ (range)=> store.filters.change({ skills: { keeper: { range } } }) }
+								  defaultValue={[0, 17]} />
+
+					<div className="filter-title">Filter by pace ({ this.pace.range[0]} - { this.pace.range[1] })</div>
+					<Slider.Range min={0}
+								  max={17}
+								  dots
+								  pushable
+								  onChange={ (range)=> store.filters.change({ skills: { pace: { range } } }) }
+								  defaultValue={[0, 17]} />
+					<div className="filter-title">Filter by pace ({ this.pace.range[0]} - { this.pace.range[1] })</div>
+					<Slider.Range min={0}
+								  max={17}
+								  dots
+								  pushable
+								  onChange={ (range)=> store.filters.change({ skills: { pace: { range } } }) }
 								  defaultValue={[0, 17]} />
 				</div>
 				<div className="filter">
