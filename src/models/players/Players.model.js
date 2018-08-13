@@ -1,5 +1,5 @@
 // MobX
-import { values, runInAction } from "mobx";
+import { values } from "mobx";
 import { types } from 'mobx-state-tree';
 // Models
 import PlayerModel from "models/players/Player.model";
@@ -33,9 +33,7 @@ const actions = (self)=> {
 
 		create(player = {}) {
 			if(self.all.has(player.id)) return self.all.get(player.id).update(player);
-			runInAction(`PLAYER-CREATE-SUCCESS ${player.id}`, ()=> {
-				self.all.set(player.id, player);
-			});
+			self.all.set(player.id, player);
 		},
 
 		refreshPlayersCharts(isHideCharts) {

@@ -9,19 +9,10 @@ import store from "store";
 import { observer } from "mobx-react";
 // Components
 import FiltersSkillBtn from "components/parts/filters/FiltersSkillBtn.component";
+import FiltersSkillRange from "components/parts/filters/FiltersSkillRange.component";
 
 
 class Filters extends React.Component {
-
-
-	get ageRange() { return store.filters.age.get('range'); };
-
-	get ageOrder() { return store.filters.age.get('order'); };
-
-	get keeper() { return store.filters.skills.get('keeper'); };
-
-	get pace() { return store.filters.skills.get('pace'); };
-
 
 	onOrderChange = ()=> {
 		store.filters.change({
@@ -38,6 +29,10 @@ class Filters extends React.Component {
 		return (
 			<div className="filters">
 				<div className="filter">
+					<div className="filter_title">+ Saved filters..</div>
+					<button>Reset filters</button>
+				</div>
+				<div className="filter">
 					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] }) <span>✘</span></div>
 					<Slider.Range min={16}
 								  max={40}
@@ -48,33 +43,18 @@ class Filters extends React.Component {
 					<div className="filter_title">Sort by age:</div>
 					<button onClick={ this.onOrderChange }
 							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
-						Order { this.ageOrder }
+						Order { this.ageOrder } (fixme)
 					</button>
 				</div>
 
 				<div className="filter">
-					<div className="filter-title">Filter by keeper ({ this.keeper.range[0]} - { this.keeper.range[1] })</div>
-					<Slider.Range min={0}
-								  max={17}
-								  dots
-								  pushable
-								  onChange={ (range)=> store.filters.change({ skills: { keeper: { range } } }) }
-								  defaultValue={[0, 17]} />
-
-					<div className="filter-title">Filter by pace ({ this.pace.range[0]} - { this.pace.range[1] })</div>
-					<Slider.Range min={0}
-								  max={17}
-								  dots
-								  pushable
-								  onChange={ (range)=> store.filters.change({ skills: { pace: { range } } }) }
-								  defaultValue={[0, 17]} />
-					<div className="filter-title">Filter by pace ({ this.pace.range[0]} - { this.pace.range[1] })</div>
-					<Slider.Range min={0}
-								  max={17}
-								  dots
-								  pushable
-								  onChange={ (range)=> store.filters.change({ skills: { pace: { range } } }) }
-								  defaultValue={[0, 17]} />
+					<FiltersSkillRange name="keeper" />
+					<FiltersSkillRange name="pace" />
+					<FiltersSkillRange name="defender" />
+					<FiltersSkillRange name="technique" />
+					<FiltersSkillRange name="playmaker" />
+					<FiltersSkillRange name="passing" />
+					<FiltersSkillRange name="striker" />
 				</div>
 				<div className="filter">
 					<div className="filter_title">Sort by role</div>
