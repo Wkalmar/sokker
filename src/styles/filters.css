@@ -9,7 +9,7 @@
 }
 
 .filter {
-	width: calc(100% - 10px);
+	width: 100%;
 	margin: 0 15px;
 }
 
@@ -52,4 +52,9 @@
 	background: #d67800;
 	border-color: #d67800;
 	box-shadow: none;
+}
+
+.filter .rc-slider-handle {
+	border: 10px solid transparent;
+	top: 2px;
 }

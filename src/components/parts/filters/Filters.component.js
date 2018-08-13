@@ -37,8 +37,8 @@ class Filters extends React.Component {
 					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] }) <span>✘</span></div>
 					<Slider.Range min={16}
 								  max={40}
-								  dots={ true }
-								  pushable={ true }
+								  dots
+								  pushable
 								  onChange={ (range)=> store.filters.change({ age: { range } }) }
 								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
 					<div className="filter_title">Sort by age:</div>
