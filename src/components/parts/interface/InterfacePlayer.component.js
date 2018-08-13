@@ -97,19 +97,19 @@ class InterfacePlayer extends React.Component {
 					<p>Net&nbsp;prediction: </p>
 					<p>
 						<span>GK</span>&nbsp;
-						<InterfacePlayerInput role="gk" output={ this.output } />
+						<InterfacePlayerInput pos="gk" output={ this.output } />
 					</p>
 					<p>
 						<span>DEF</span>&nbsp;
-						<InterfacePlayerInput role="def" output={ this.output } />
+						<InterfacePlayerInput pos="def" output={ this.output } />
 					</p>
 					<p>
 						<span>MID</span>&nbsp;
-						<InterfacePlayerInput role="mid" output={ this.output } />
+						<InterfacePlayerInput pos="mid" output={ this.output } />
 					</p>
 					<p>
 						<span>ATT</span>&nbsp;
-						<InterfacePlayerInput role="att" output={ this.output } />
+						<InterfacePlayerInput pos="att" output={ this.output } />
 					</p>
 				</div>
 

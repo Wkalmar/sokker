@@ -5,6 +5,8 @@ import "styles/layout.css";
 import "styles/sidebar.css";
 // MobX
 import { observer, inject } from "mobx-react";
+// Store
+import store from "store";
 // Components
 import Header from "components/parts/Header.component";
 
@@ -17,9 +19,9 @@ class Layout extends React.Component {
 			<div id="outer-container">
 				<Header />
 
-				<Menu noOverlay right push pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" }>
-
-				</Menu>
+				{ store.device === "mobile" ?
+					<Menu noOverlay right push pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } />
+					: null }
 
 				<div id="page-wrap">
 					{ this.props.store.authorizedUser ?

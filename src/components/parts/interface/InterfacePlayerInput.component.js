@@ -4,13 +4,13 @@ import InputMask from 'react-input-mask';
 import { observer } from 'mobx-react';
 
 
-export default observer(function({ output, role }) {
+export default observer(function({ output, pos }) {
 	return (
 		<InputMask mask="9.9"
 				   maskChar=" "
 				   alwaysShowMask={ true }
-				   value={ output.get(role) }
-				   onChange={ (e)=> output.set(role, +e.currentTarget.value) }
+				   value={ output.get(pos) }
+				   onChange={ (e)=> output.set(pos, +e.currentTarget.value) }
 				   style={{
 					   outline: 'none',
 					   width: 25,

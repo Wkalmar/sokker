@@ -62,22 +62,9 @@ class TransfersPage extends React.Component {
 	};
 
 
-	renderNetStatus() {
-		return (
-			<div style={{ fontSize: '10px' }}>
-				<p style={{ color: store.NET.status === "error" ? "red" : "green" }}>Net train { store.NET.status }</p>
-				<p style={{ color: store.NET.maxErrorThresh < store.NET.errorThresh ? "red" : "green" }}>
-					Error thresh: { store.NET.errorThresh }
-				</p>
-			</div>
-		);
-	}
-
-
 	render() {
 		return (
 			<div>
-				{ this.renderNetStatus() }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>

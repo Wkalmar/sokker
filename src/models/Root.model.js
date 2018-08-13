@@ -17,6 +17,7 @@ import NetModel from "models/Net.model";
 
 const RootModel = {
 	NET: types.optional(types.maybe(NetModel), null),
+	device: types.string,
 	nextPathUrl: types.maybe(types.string),
 	currentPath: types.maybe(types.string),
 
@@ -30,6 +31,10 @@ const RootModel = {
 
 const actions = (store)=> {
 	return {
+
+		setDevice() {
+			store.device = window.innerWidth > 800 ? "desktop" : "mobile";
+		},
 
 		setCurrentPath(url = "") {
 			store.currentPath = url;
@@ -67,6 +72,16 @@ const actions = (store)=> {
 				store.authorizedUser = null;
 				client.resetStore();
 			});
+		},
+
+
+		// Hooks
+		afterCreate() {
+			store.setDevice();
+			window.addEventListener('resize', store.setDevice);
+		},
+		beforeDestroy() {
+			window.removeEventListener('resize', store.setDevice);
 		}
 	};
 };

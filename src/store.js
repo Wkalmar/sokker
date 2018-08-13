@@ -6,6 +6,7 @@ import RootModel from "models/Root.model";
 
 const store = RootModel.create({
 	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
+	device: "desktop",
 	users: {},
 	players: {
 		isHideCharts: false
