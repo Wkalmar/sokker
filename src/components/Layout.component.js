@@ -23,10 +23,6 @@ class Layout extends React.Component {
 		window.addEventListener('resize', this.onWindowResize);
 	}
 
-	componenWillUnmount() {
-		window.removeEventListener('resize', this.onWindowResize);
-	}
-
 
 	onWindowResize = ()=> {
 		this.menuWidth.set(window.innerWidth / 100 * 90);

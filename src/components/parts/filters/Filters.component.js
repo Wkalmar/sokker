@@ -14,6 +14,12 @@ import FiltersSkillRange from "components/parts/filters/FiltersSkillRange.compon
 
 class Filters extends React.Component {
 
+
+	get ageRange() { return store.filters.age.get('range'); };
+
+	get ageOrder() { return store.filters.age.get('order'); };
+
+
 	onOrderChange = ()=> {
 		store.filters.change({
 			age: { order: this.ageOrder === "✘" ?

@@ -97,7 +97,7 @@ class TransfersPage extends React.Component {
 								left: this.tableWidth + 15,
 								width: window.innerWidth - (this.tableWidth + 50)
 							}}>
-								{ store.authorizedUser && <Filters /> }
+								{ store.authorizedUser && <div style={{ height: this.table.height - 100, overflowY: 'scroll' }}><Filters /></div> }
 							</div>
 							: null }
 					</div>
