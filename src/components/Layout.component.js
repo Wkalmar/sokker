@@ -40,7 +40,7 @@ class Layout extends React.Component {
 			<div id="outer-container">
 				<Header />
 
-				{ store.device === "mobile" ?
+				{ store.device === "mobile" && store.currentPath === "/" ?
 					<Menu right push
 						  pageWrapId={ "page-wrap" }
 						  onStateChange={ this.onMenuChange }

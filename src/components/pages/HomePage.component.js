@@ -16,7 +16,9 @@ class HomePageContent extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{
+				display: store.currentPath === "/" ? "block" : "none"
+			}}>
 				{ !store.authorizedUser && <Link to="/login">Log in</Link> }
 				{ !store.authorizedUser && <Link to="/registration">Registration</Link> }
 

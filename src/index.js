@@ -4,8 +4,6 @@ import App from 'App';
 import registerServiceWorker from './registerServiceWorker';
 import { WebGLRenderer } from 'three';
 
-// import ssr from "ssr";
-// ssr();
 
 const renderer = new WebGLRenderer({ antialias: true });
 

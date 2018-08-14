@@ -69,7 +69,7 @@ class Interface extends React.Component {
 		if(!this.players.length) return <div className="cssload-loader-big"><PreLoader/></div>;
 		return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
-				<div style={{ overflow: 'hidden', width: this.table.width, marginLeft: 10 }}>
+				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
 					<List rowCount={ this.players.length }
 						  height={ this.table.height }
 						  width={ this.table.width }
