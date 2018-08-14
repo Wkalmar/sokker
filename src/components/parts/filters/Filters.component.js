@@ -49,7 +49,7 @@ class Filters extends React.Component {
 					<div className="filter_title">Sort by age:</div>
 					<button onClick={ this.onOrderChange }
 							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
-						Order { this.ageOrder } (fixme)
+						Order { this.ageOrder }
 					</button>
 				</div>
 
