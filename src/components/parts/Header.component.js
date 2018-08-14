@@ -26,7 +26,7 @@ class Header extends React.Component {
 					<Link to="/"><HomeSVG /></Link>
 					{ store.authorizedUser && <Link to="/network"><NeuralSVG /></Link> }
 				</ul>
-				<ul className="header_menu">
+				<ul className="header_menu" style={{ marginRight: store.device === "mobile" ? "45px" : 0 }}>
 					<p><LanguageSVG /></p>
 					<Link to="/help"><HelpSVG /></Link>
 					{ store.authorizedUser && <Link to="/profile"><ProfileSVG /></Link> }
