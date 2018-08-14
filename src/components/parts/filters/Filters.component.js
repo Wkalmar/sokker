@@ -87,9 +87,9 @@ class Filters extends React.Component {
 						   value={ store.filters.search }
 						   onChange={ (e)=> store.filters.change({ search: e.currentTarget.value }) } />
 				</div>
-				<div className="filter" style={{ paddingTop: 20 }}>
-					<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>
-				</div>
+				{/*<div className="filter" style={{ paddingTop: 20 }}>*/}
+					{/*<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>*/}
+				{/*</div>*/}
 			</div>
 		)
 	}
