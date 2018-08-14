@@ -17,13 +17,12 @@ class HomePageContent extends React.Component {
 
 	render() {
 		const test = 345;
-		const A = { T }
 		return (
 			<div style={{
 				display: store.currentPath === "/" ? "block" : "none"
 			}}>
 				{ !store.authorizedUser && <Link to="/login"><T><button>Login {{ test }}</button></T></Link> }
-				{ !store.authorizedUser && <Link to="/registration"><A.T>Registration</A.T></Link> }
+				{ !store.authorizedUser && <Link to="/registration"><T>Registration</T></Link> }
 
 				<button onClick={()=> store.changeLang('ru') }>ru</button>
 				<button onClick={()=> store.changeLang('en') }>en</button>

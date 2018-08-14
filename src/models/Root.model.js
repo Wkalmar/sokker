@@ -1,3 +1,4 @@
+import { getI18n } from "react-i18next";
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
 // Utils
@@ -13,8 +14,6 @@ import FiltersModel from "models/Filters.model";
 import PlayersModel from "models/players/Players.model";
 import TransfersModel from "models/Transfers.model";
 import NetModel from "models/Net.model";
-import {getI18n} from "react-i18next";
-
 
 const RootModel = {
 	lang: types.string,
