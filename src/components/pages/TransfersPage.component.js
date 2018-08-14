@@ -16,11 +16,7 @@ class TransfersPage extends React.Component {
 	render() {
 		return (
 			<div>
-				<QueryLoader query={ USER_PLAYERS_QUERY }
-							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-							 variables={{ userId: store.authorizedUser.id }}>
-					<Interface />
-				</QueryLoader>
+				tra
 			</div>
 		)
 	}

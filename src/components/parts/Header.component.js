@@ -1,4 +1,9 @@
 import React from 'react';
+// SVG
+import LoginSVG from "svg/login.svg";
+import LogoutSVG from "svg/logout.svg";
+import NeuralSVG from "svg/neural.svg";
+import HomeSVG from "svg/home.svg";
 // Styles
 import "styles/header.css";
 // Store
@@ -15,11 +20,10 @@ class Header extends React.Component {
 		return (
 			<div className="header">
 				<ul className="header_menu">
-					<Link to="/"><img alt="logo" src="https://img00.deviantart.net/44e6/i/2016/256/f/b/brain_a_logo_shopping_logo_by_komikis-dahiij0.png" className="header_logo"/></Link>
-					{ !store.authorizedUser && <Link to="/login">Log in</Link> }
-					{ store.authorizedUser && <Link to="/transfers">Current transfers</Link> }
-					{ store.authorizedUser && <Link to="/user-players">User players</Link> }
-					{ store.authorizedUser && <a onClick={ store.logOut }>Log out</a> }
+					{ store.authorizedUser && <Link to="/"><HomeSVG /></Link> }
+					{ !store.authorizedUser && <Link to="/login"><LoginSVG /></Link> }
+					{ store.authorizedUser && <Link to="/network"><NeuralSVG /></Link> }
+					{ store.authorizedUser && <a onClick={ store.logOut }><LogoutSVG /></a> }
 				</ul>
 			</div>
 		)

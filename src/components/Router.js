@@ -51,8 +51,6 @@ const Routes = ()=> {
 							<RouteComponent exact path="/" component={HomePage} />
 							<RouteComponent exact path="/login" component={LogInPage} />
 							<RouteComponent exact path="/registration" component={RegistrationPage} />
-							<RouteComponent exact path="/transfers" component={TransfersPage} />
-							<RouteComponent exact path="/user-players" component={UserPlayersPage} />
 							<RouteComponent component={Page404} />
 						</Switch>
 				</QueryLoader>
