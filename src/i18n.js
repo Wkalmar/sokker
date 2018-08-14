@@ -8,7 +8,11 @@ i18n
 	.use(LanguageDetector)
 	.use(reactI18nextModule)
 	.init({
-		fallbackLng: 'ru',
+		locale: 'ru',
+		language: 'ru',
+		languages: ["en", "ru"],
+
+
 
 		// have a common namespace used around the full app
 		ns: ['translations'],
@@ -17,7 +21,7 @@ i18n
 			loadPath: '/locales/{{lng}}/{{ns}}.json',
 		},
 
-		debug: true,
+		debug: false,
 
 		interpolation: {
 			escapeValue: false, // not needed for react!!
@@ -27,6 +31,5 @@ i18n
 			wait: true
 		}
 	});
-
 
 export default i18n;

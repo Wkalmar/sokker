@@ -13,9 +13,11 @@ import FiltersModel from "models/Filters.model";
 import PlayersModel from "models/players/Players.model";
 import TransfersModel from "models/Transfers.model";
 import NetModel from "models/Net.model";
+import {getI18n} from "react-i18next";
 
 
 const RootModel = {
+	lang: types.string,
 	NET: types.optional(types.maybe(NetModel), null),
 	device: types.string,
 	nextPathUrl: types.maybe(types.string),
@@ -31,6 +33,12 @@ const RootModel = {
 
 const actions = (store)=> {
 	return {
+
+		changeLang(lang) {
+			getI18n().changeLanguage(lang);
+			store.lang = lang;
+		},
+
 
 		setDevice() {
 			store.device = window.innerWidth > 800 ? "desktop" : "mobile";

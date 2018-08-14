@@ -1,5 +1,4 @@
 import React from 'react';
-import T from "components/parts/T.component";
 // MobX
 import { observer } from "mobx-react";
 // Styles
