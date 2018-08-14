@@ -1,4 +1,4 @@
-import { getI18n } from "react-i18next";
+import i18n from 'i18next';
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
 // Utils
@@ -14,6 +14,7 @@ import FiltersModel from "models/Filters.model";
 import PlayersModel from "models/players/Players.model";
 import TransfersModel from "models/Transfers.model";
 import NetModel from "models/Net.model";
+
 
 const RootModel = {
 	lang: types.string,
@@ -34,10 +35,9 @@ const actions = (store)=> {
 	return {
 
 		changeLang(lang) {
-			getI18n().changeLanguage(lang);
+			i18n.changeLanguage(lang);
 			store.lang = lang;
 		},
-
 
 		setDevice() {
 			store.device = window.innerWidth > 800 ? "desktop" : "mobile";

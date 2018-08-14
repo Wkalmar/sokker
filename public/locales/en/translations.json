@@ -1,5 +1,5 @@
 {
-	"Registration": "Registration",
-	"<0>Login <1>{{test}}</1></0>": "Login <1>{{test}}!</1>",
+	"Registration": "<0>Registration</0>",
+	"Login": "<0>Login <1>{{test}}!</1></0>",
 	"title": "Welcome to react using react-i18next",
 }
