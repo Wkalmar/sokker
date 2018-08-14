@@ -27,7 +27,7 @@ class Header extends React.Component {
 					{ store.authorizedUser && <Link to="/network"><NeuralSVG /></Link> }
 				</ul>
 				<ul className="header_menu" style={{
-					marginRight: store.device === "mobile" && store.currentPath === "/" ? "45px" : 0
+					marginRight: store.device === "mobile" && store.currentPath === "/" ? "65px" : 0
 				}}>
 					<p><LanguageSVG /></p>
 					<Link to="/help"><HelpSVG /></Link>
