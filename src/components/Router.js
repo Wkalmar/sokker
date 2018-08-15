@@ -11,6 +11,7 @@ import Layout from "components/Layout.component";
 import HomePage from "components/pages/lazy/HomePage.lazy.component";
 import LogInPage from "components/pages/lazy/LogInPage.lazy.component";
 import RegistrationPage from "components/pages/lazy/RegistrationPage.lazy.component";
+import NeuralNetworkPage from "components/pages/lazy/NeuralNetworkPage.lazy.component";
 import Page404 from "components/pages/Page404.component";
 // Components
 import QueryLoader from "components/QueryLoader.component";
@@ -51,6 +52,8 @@ const Routes = ()=> {
 								<RouteComponent exact path="/" component={<div>{null}</div>} />
 								<RouteComponent exact path="/login" component={LogInPage} />
 								<RouteComponent exact path="/registration" component={RegistrationPage} />
+								<RouteComponent exact path="/neuralnetwork" component={ NeuralNetworkPage } />
+								{/*<RouteComponent exact path="/profile" component={RegistrationPage} />*/}
 								<RouteComponent component={Page404} />
 							</Switch>
 							<Layout>
