@@ -8,11 +8,10 @@ i18n
 	.use(LanguageDetector)
 	.use(reactI18nextModule)
 	.init({
-		locale: 'ru',
-		language: 'ru',
+		lng: 'ru',
 		languages: ["en", "ru"],
 
-
+		preload: ["en", "ru"],
 
 		// have a common namespace used around the full app
 		ns: ['translations'],

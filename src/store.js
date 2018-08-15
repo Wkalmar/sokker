@@ -1,4 +1,5 @@
 import { spy } from "mobx";
+import i18n from 'i18next';
 // import { onPatch } from "mobx-state-tree";
 // Models
 import RootModel from "models/Root.model";
@@ -71,6 +72,10 @@ const store = RootModel.create({
 		search: ""
 	}
 });
+
+store.t = function(string, params={}) {
+	return i18n.t(string, params, store.lang);
+};
 
 // MobX spy goes here
 spy((event)=> {

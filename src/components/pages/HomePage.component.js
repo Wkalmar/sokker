@@ -23,9 +23,12 @@ class HomePageContent extends React.Component {
 				{ !store.authorizedUser && <Link to="/login"><T i18nKey="Login"><button>Login</button></T></Link> }
 				{ !store.authorizedUser && <Link to="/registration"><T i18nKey="Registration"><button>Registration</button></T></Link> }
 
-				{/*{ store.lang }*/}
-				{/*<button onClick={()=> store.changeLang('ru') }>ru</button>*/}
-				{/*<button onClick={()=> store.changeLang('en') }>en</button>*/}
+				<T i18nKey="Hello">
+					Hello <strong title={"Login"}>{{ name: store.t('NickName') }}</strong>, you have {{ count: 42 }} unread message.
+				</T>
+
+				<button onClick={()=> store.changeLang('ru') }>ru</button>
+				<button onClick={()=> store.changeLang('en') }>en</button>
 
 				{ store.authorizedUser &&
 					<QueryLoader query={ USER_PLAYERS_QUERY }
