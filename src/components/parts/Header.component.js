@@ -77,14 +77,14 @@ class Header extends React.Component {
 					<div ref={ this.headerLangRef } style={{ cursor: 'pointer', position: "relative" }} onClick={ this.toggleDropDown }>
 						<img style={{ width: '20px', height: '20px' }} alt={store.lang} src={ flags[store.lang] } />
 					</div>
-					<Link to="/help"><HelpSVG /></Link>
-					{ store.authorizedUser && <Link to="/profile"><ProfileSVG /></Link> }
+					{/*<Link to="/help"><HelpSVG /></Link>*/}
+					{/*{ store.authorizedUser && <Link to="/profile"><ProfileSVG /></Link> }*/}
 					{ !store.authorizedUser && <Link to="/login"><LoginSVG /></Link> }
 					{ store.authorizedUser && <a onClick={ store.logOut }><LogoutSVG /></a> }
 				</ul>
 
 				<ul ref={ this.popoverRef } className="header_drop_down" style={{
-					top: this.isOpenDropDown.get() ? "-50px" : '-315px'
+					top: this.isOpenDropDown.get() ? "0" : '-100px'
 				}}>
 					{ Object.keys(flags).map((lang)=> {
 						return (
