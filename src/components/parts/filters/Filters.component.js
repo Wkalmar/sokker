@@ -45,7 +45,7 @@ class Filters extends React.Component {
 					<input type="text"
 						   placeholder="search..."
 						   value={ store.filters.search }
-						   onChange={ (e)=> store.filters.change({ search: e.currentTarget.value }) } />
+						   onChange={ (e)=> store.filters.realChange({ search: e.currentTarget.value }) } />
 				</div>
 
 				<div className="filter">

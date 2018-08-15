@@ -8,7 +8,7 @@ import store from "store";
 // Components
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 import Filters from "components/parts/filters/Filters.component";
-import PreLoader from "components/parts/PreLoader.component";
+import T from "components/parts/T.component";
 
 
 class Interface extends React.Component {
@@ -66,22 +66,25 @@ class Interface extends React.Component {
 
 
 	render() {
-		if(!this.players.length) return <div className="cssload-loader-big"><PreLoader/></div>;
 		return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
-					<List rowCount={ this.players.length }
-						  height={ this.table.height }
-						  width={ this.table.width }
-						  rowHeight={ this.table.rowHeight }
-						  rowRenderer={({ style, index })=> {
-							  return (
-								  <div style={ style } key={ this.players[index].id }>
-									  <InterfacePlayer player={ this.players[index] }
-													   index={index} />
-								  </div>
-							  )
-						  } } />
+					{ this.players.length ?
+						<List rowCount={ this.players.length }
+							  height={ this.table.height }
+							  width={ this.table.width }
+							  rowHeight={ this.table.rowHeight }
+							  rowRenderer={({ style, index })=> {
+								  return (
+									  <div style={ style } key={ this.players[index].id }>
+										  <InterfacePlayer player={ this.players[index] }
+														   index={index} />
+									  </div>
+								  )
+							  } } />
+						:
+						<T>No players found</T>
+					}
 				</div>
 
 				{ store.device === "desktop" ?

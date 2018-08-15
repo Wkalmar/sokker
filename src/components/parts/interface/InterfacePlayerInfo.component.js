@@ -1,6 +1,8 @@
 import React from 'react';
 // MobX
 import { observer } from 'mobx-react';
+// Components
+import T from "components/parts/T.component";
 
 
 export default observer(function({ player }) {
@@ -9,6 +11,7 @@ export default observer(function({ player }) {
 			<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 				<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
 			</a>
+			<p><T>End of trade</T> { player.endOfTrade }</p>
 			<p>age { Math.round(player.age * 100) }</p>
 
 			<div style={{ fontSize: '12px', margin: '35px 0 0 0' }}>

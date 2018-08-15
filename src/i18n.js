@@ -8,7 +8,7 @@ i18n
 	.use(LanguageDetector)
 	.use(reactI18nextModule)
 	.init({
-		lng: 'ru',
+		lng: 'en',
 		languages: ["en", "ru"],
 
 		preload: ["en", "ru"],

@@ -19,7 +19,7 @@ const actions = (self)=> {
 		},
 
 
-		realChange(filter) {
+		realChange(filter={}) {
 			runInAction(`FILTERS-CHANGE-FILTER ${ JSON.stringify(filter) }-SUCCESS`, ()=> {
 				const names = Object.keys(filter);
 
