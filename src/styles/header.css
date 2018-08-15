@@ -30,6 +30,9 @@
 }
 
 .header_menu {
+	background: #d67800;
+	position: relative;
+	z-index: 5;
 	white-space: nowrap;
 	display: flex;
 	align-items: center;
@@ -45,4 +48,26 @@
 
 .header_menu > *:last-child {
 	margin-right: 0;
+}
+
+
+.header_drop_down {
+	cursor: default;
+	position: absolute;
+	background: #d67800;
+	transition: .7s top;
+	width: 45px;
+	right: 86px;
+	padding-top: 100px;
+}
+
+.header_drop_down > li {
+	cursor: pointer;
+	text-align: center;
+	line-height: 30px;
+	padding-top: 10px;
+}
+
+.header_drop_down > li:hover {
+	opacity: 0.5;
 }

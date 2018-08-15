@@ -39,13 +39,9 @@ class Filters extends React.Component {
 					<button>Reset filters</button>
 				</div>
 				<div className="filter">
-					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] }) <span>✘</span></div>
-					<Slider.Range min={16}
-								  max={40}
-								  dots
-								  pushable
-								  onChange={ (range)=> store.filters.change({ age: { range } }) }
-								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
+
+					<FiltersSkillRange name="age" />
+					
 					<div className="filter_title">Sort by age:</div>
 					<button onClick={ this.onOrderChange }
 							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
@@ -53,15 +49,6 @@ class Filters extends React.Component {
 					</button>
 				</div>
 
-				<div className="filter">
-					<FiltersSkillRange name="keeper" />
-					<FiltersSkillRange name="pace" />
-					<FiltersSkillRange name="defender" />
-					<FiltersSkillRange name="technique" />
-					<FiltersSkillRange name="playmaker" />
-					<FiltersSkillRange name="passing" />
-					<FiltersSkillRange name="striker" />
-				</div>
 				<div className="filter">
 					<div className="filter_title">Sort by role</div>
 					<FiltersSkillBtn name="ATT" color="#2876b4" />
@@ -72,13 +59,20 @@ class Filters extends React.Component {
 				<div className="filter">
 					<div className="filter_title">Sort by skills:</div>
 					<FiltersSkillBtn name="stamina" />
-					<FiltersSkillBtn name="keeper" />
-					<FiltersSkillBtn name="pace" />
-					<FiltersSkillBtn name="defender" />
-					<FiltersSkillBtn name="technique" />
-					<FiltersSkillBtn name="playmaker" />
-					<FiltersSkillBtn name="passing" />
-					<FiltersSkillBtn name="striker" />
+
+					<FiltersSkillRange name="keeper" />
+
+					<FiltersSkillRange name="pace" />
+
+					<FiltersSkillRange name="defender" />
+
+					<FiltersSkillRange name="technique" />
+
+					<FiltersSkillRange name="playmaker" />
+
+					<FiltersSkillRange name="passing" />
+
+					<FiltersSkillRange name="striker" />
 				</div>
 				<div className="filter">
 					<div className="filter_title">Search by name</div>

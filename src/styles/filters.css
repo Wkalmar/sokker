@@ -46,6 +46,10 @@
 	opacity: 0.5;
 }
 
+.filter .rc-slider {
+	margin: 10px 0;
+}
+
 .filter .rc-slider-track,
 .filter .rc-slider-dot-active,
 .filter .rc-slider-handle {
@@ -54,7 +58,18 @@
 	box-shadow: none;
 }
 
+.filter .rc-slider-rail {
+	background: black;
+}
+
+.filter .rc-slider-track {
+	height: 14px;
+	top: 0;
+	border-radius: unset;
+}
+
+
 .filter .rc-slider-handle {
-	border: 10px solid transparent;
-	top: 2px;
+	border: 7px solid transparent;
+	top: 5px;
 }
