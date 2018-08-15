@@ -1,5 +1,5 @@
 // MobX
-import { values } from "mobx";
+import { values, runInAction } from "mobx";
 import { types } from 'mobx-state-tree';
 // Models
 import PlayerModel from "models/players/Player.model";
@@ -14,7 +14,6 @@ const Players = {
 };
 
 
-// let interval = null;
 const actions = (self)=> {
 	return {
 

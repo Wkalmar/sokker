@@ -27,7 +27,6 @@ class HomePageContent extends React.Component {
 					Hello <strong title={"Login"}>{{ name: store.t('NickName') }}</strong>, you have {{ count: 42 }} unread message.
 				</T>
 
-
 				{ store.authorizedUser &&
 					<QueryLoader query={ USER_PLAYERS_QUERY }
 								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}

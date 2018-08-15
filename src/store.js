@@ -11,7 +11,7 @@ const store = RootModel.create({
 	device: "desktop",
 	users: {},
 	players: {
-		isHideCharts: false
+		isHideCharts: true
 	},
 	transfers: {},
 	filters: {
