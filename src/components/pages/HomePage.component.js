@@ -23,6 +23,11 @@ class HomePageContent extends React.Component {
 				{ !store.authorizedUser && <Link to="/login"><T i18nKey="Login"><button>Login</button></T></Link> }
 				{ !store.authorizedUser && <Link to="/registration"><T i18nKey="Registration"><button>Registration</button></T></Link> }
 
+				<T i18nKey="Hello">
+					Hello <strong title={"Login"}>{{ name: store.t('NickName') }}</strong>, you have {{ count: 42 }} unread message.
+				</T>
+
+
 				{ store.authorizedUser &&
 					<QueryLoader query={ USER_PLAYERS_QUERY }
 								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}

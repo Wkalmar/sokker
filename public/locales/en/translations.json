@@ -2,5 +2,14 @@
 	"Registration": "<0>Registration</0>",
 	"Login": "<0>Login <1>{{test}}!</1></0>",
 	"Hello": "Hello <1><0>{{name}}</0></1>, you have <3>{{count}}</3> unread message.",
-	"NickName": "Fedor"
+	"NickName": "Fedor",
+	"Filter by <1>{{name}}</1>": "Filter by <1>{{name}}</1>",
+	"keeper": "keeper",
+	"pace": "pace",
+	"defender": "defender",
+	"technique": "technique",
+	"playmaker": "playmaker",
+	"passing": "passing",
+	"striker": "striker",
+	"Search by name": "Search by name"
 }

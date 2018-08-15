@@ -8,6 +8,7 @@ import store from "store";
 // MobX
 import { observer } from "mobx-react";
 // Components
+import T from "components/parts/T.component";
 import FiltersSkillBtn from "components/parts/filters/FiltersSkillBtn.component";
 import FiltersSkillRange from "components/parts/filters/FiltersSkillRange.component";
 
@@ -39,9 +40,12 @@ class Filters extends React.Component {
 					<button>Reset filters</button>
 				</div>
 				<div className="filter">
-
-					<FiltersSkillRange name="age" />
-					
+					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] }) <span>✘</span></div>
+					<Slider.Range min={16}
+								  max={40}
+								  pushable
+								  onChange={ (range)=> store.filters.change({ age: { range } }) }
+								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
 					<div className="filter_title">Sort by age:</div>
 					<button onClick={ this.onOrderChange }
 							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
@@ -75,7 +79,7 @@ class Filters extends React.Component {
 					<FiltersSkillRange name="striker" />
 				</div>
 				<div className="filter">
-					<div className="filter_title">Search by name</div>
+					<div className="filter_title"><T>Search by name</T></div>
 					<input type="text"
 						   placeholder="search..."
 						   value={ store.filters.search }

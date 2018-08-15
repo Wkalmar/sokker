@@ -6,6 +6,7 @@ import store from "store";
 import { observer } from "mobx-react";
 // Components
 import FiltersSkillBtn from "components/parts/filters/FiltersSkillBtn.component";
+import T from "components/parts/T.component";
 
 
 function getSkill(name) { return store.filters.skills.get(name); }
@@ -13,10 +14,9 @@ function getSkill(name) { return store.filters.skills.get(name); }
 export default observer(function({ name }) {
 	return (
 		<div>
-			<div className="filter_title">Filter by { name } ({ getSkill(name).range[0]} - { getSkill(name).range[1] })</div>
+			<div className="filter_title"><T>Filter by {{ name: store.t(name) }}</T> ({ getSkill(name).range[0]} - { getSkill(name).range[1] })</div>
 			<Slider.Range min={0}
 						  max={17}
-						  // dots
 						  pushable
 						  trackStyle={{
 						  	background: "red"

@@ -2,15 +2,15 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
     position: fixed;
-    width: 36px;
-    height: 30px;
-    right: 20px;
-    top: 10px;
+    width: 20px;
+    height: 18px;
+    right: 24px;
+    top: 16px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    background: #373a47;
+    background: black;
 }
 
 /* Position and sizing of clickable cross button */
@@ -26,7 +26,7 @@
 .bm-menu-wrap {
     top: 50px;
     bottom: 0;
-    background: #373a47;
+    background: white;
 }
 
 /* General sidebar styles */

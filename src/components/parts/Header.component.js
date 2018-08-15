@@ -69,7 +69,7 @@ class Header extends React.Component {
 				</ul>
 
 				<ul className="header_menu"  style={{
-					marginRight: store.device === "mobile" && store.currentPath === "/" ? "65px" : 0
+					marginRight: store.device === "mobile" && store.currentPath === "/" ? "57px" : 0
 				}}>
 					<div ref={ this.headerLangRef } style={{ cursor: 'pointer', position: "relative" }} onClick={ this.toggleDropDown }>
 						<img style={{ width: '20px', height: '20px' }} alt={store.lang} src={ flags[store.lang] } />

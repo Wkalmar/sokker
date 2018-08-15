@@ -48,6 +48,7 @@
 
 .filter .rc-slider {
 	margin: 10px 0;
+	cursor: pointer;
 }
 
 .filter .rc-slider-track,
