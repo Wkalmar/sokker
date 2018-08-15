@@ -9,6 +9,7 @@ import LoginSVG from "svg/login.svg";
 import LogoutSVG from "svg/logout.svg";
 import NeuralSVG from "svg/neural.svg";
 import HomeSVG from "svg/home.svg";
+import SidebarSVG from "svg/sidebar.svg";
 import ProfileSVG from "svg/profile.svg";
 import HelpSVG from "svg/help.svg";
 // Styles
@@ -71,12 +72,15 @@ class Header extends React.Component {
 					}} to="/neuralnetwork"><NeuralSVG /></Link> }
 				</ul>
 
-				<ul className="header_menu"  style={{
-					marginRight: store.device === "mobile" && store.currentPath === "/" ? "57px" : 0
-				}}>
+				<ul className="header_menu">
+					{ store.device === "mobile" && store.currentPath === "/" ?
+						<a onClick={ store.toggleSideBar }><SidebarSVG /></a>
+						: null }
+
 					<div ref={ this.headerLangRef } style={{ cursor: 'pointer', position: "relative" }} onClick={ this.toggleDropDown }>
 						<img style={{ width: '20px', height: '20px' }} alt={store.lang} src={ flags[store.lang] } />
 					</div>
+
 					{/*<Link to="/help"><HelpSVG /></Link>*/}
 					{/*{ store.authorizedUser && <Link to="/profile"><ProfileSVG /></Link> }*/}
 					{ !store.authorizedUser && <Link to="/login"><LoginSVG /></Link> }

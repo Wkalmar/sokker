@@ -1,5 +1,6 @@
 .net-info {
-    width: 70%;
+    max-width: 900px;
+    padding: 0 10px;
     margin: 50px auto;
 }
 

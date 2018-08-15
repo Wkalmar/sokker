@@ -41,7 +41,9 @@ class Layout extends React.Component {
 				<Header />
 
 				{ store.device === "mobile" && store.currentPath === "/" ?
-					<Menu right push
+					<Menu right
+						  push
+						  isOpen={ store.isOpenSidebar }
 						  pageWrapId={ "page-wrap" }
 						  onStateChange={ this.onMenuChange }
 						  outerContainerId={ "outer-container" }

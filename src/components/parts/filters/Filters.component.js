@@ -39,6 +39,15 @@ class Filters extends React.Component {
 					<div className="filter_title">+ Saved filters..</div>
 					<button>Reset filters</button>
 				</div>
+
+				<div className="filter">
+					<div className="filter_title"><T>Search by name</T></div>
+					<input type="text"
+						   placeholder="search..."
+						   value={ store.filters.search }
+						   onChange={ (e)=> store.filters.change({ search: e.currentTarget.value }) } />
+				</div>
+
 				<div className="filter">
 					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] }) <span>✘</span></div>
 					<Slider.Range min={16}
@@ -60,6 +69,7 @@ class Filters extends React.Component {
 					<FiltersSkillBtn name="MID" color="rgb(44, 160, 44)" />
 					<FiltersSkillBtn name="GK" color="rgb(215, 39, 41)" />
 				</div>
+
 				<div className="filter">
 					<div className="filter_title">Sort by skills:</div>
 					<FiltersSkillBtn name="stamina" />
@@ -77,13 +87,6 @@ class Filters extends React.Component {
 					<FiltersSkillRange name="passing" />
 
 					<FiltersSkillRange name="striker" />
-				</div>
-				<div className="filter">
-					<div className="filter_title"><T>Search by name</T></div>
-					<input type="text"
-						   placeholder="search..."
-						   value={ store.filters.search }
-						   onChange={ (e)=> store.filters.change({ search: e.currentTarget.value }) } />
 				</div>
 				{/*<div className="filter" style={{ paddingTop: 20 }}>*/}
 					{/*<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>*/}

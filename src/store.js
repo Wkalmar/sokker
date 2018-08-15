@@ -7,6 +7,7 @@ import RootModel from "models/Root.model";
 
 const store = RootModel.create({
 	lang: "ru",
+	isOpenSidebar: false,
 	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
 	device: "desktop",
 	users: {},
@@ -73,9 +74,6 @@ const store = RootModel.create({
 	}
 });
 
-store.t = function(string, params={}) {
-	return i18n.t(string, params, store.lang);
-};
 
 // MobX spy goes here
 spy((event)=> {

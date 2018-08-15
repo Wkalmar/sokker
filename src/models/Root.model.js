@@ -18,7 +18,10 @@ import NetModel from "models/Net.model";
 
 const RootModel = {
 	lang: types.string,
+	isOpenSidebar: types.boolean,
+
 	NET: types.optional(types.maybe(NetModel), null),
+
 	device: types.string,
 	nextPathUrl: types.maybe(types.string),
 	currentPath: types.maybe(types.string),
@@ -33,6 +36,14 @@ const RootModel = {
 
 const actions = (store)=> {
 	return {
+
+		t(translate="", params={}) {
+			return i18n.t(translate, params, store.lang);
+		},
+
+		toggleSideBar() {
+			store.isOpenSidebar = !store.isOpenSidebar;
+		},
 
 		changeLang(lang) {
 			i18n.changeLanguage(lang);

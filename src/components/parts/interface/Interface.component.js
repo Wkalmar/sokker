@@ -52,7 +52,7 @@ class Interface extends React.Component {
 
 	get tableWidth() { return store.device === "desktop" ? window.innerWidth / 100 * 60 : window.innerWidth; };
 
-	get tableHeight() { return store.device === "desktop" ? window.innerHeight : window.innerHeight; };
+	get tableHeight() { return window.innerHeight - 100; };
 
 	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 
@@ -90,7 +90,7 @@ class Interface extends React.Component {
 						left: this.tableWidth + 15,
 						width: window.innerWidth - (this.tableWidth + 50)
 					}}>
-						{ store.authorizedUser && <div style={{ height: this.table.height - 100, overflowY: 'scroll' }}><Filters /></div> }
+						{ store.authorizedUser && <div style={{ height: this.table.height, overflowY: 'scroll' }}><Filters /></div> }
 					</div>
 						: null }
 			</div>
