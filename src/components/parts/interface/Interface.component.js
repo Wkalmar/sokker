@@ -83,7 +83,7 @@ class Interface extends React.Component {
 		if(!store.transfers.players.size) return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
-					<PreLoader />
+					<div className="cssload-loader-big"><PreLoader/></div>
 				</div>
 				{ this.renderFilter() }
 			</div>

@@ -7,7 +7,7 @@ import T from "components/parts/T.component";
 
 export default observer(function({ player }) {
 	return (
-		<div style={{ float: 'left', padding: '20px 0 0 20px', width: 'calc(40% - 20px)' }}>
+		<div className="interface-player-info">
 			<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 				<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
 			</a>

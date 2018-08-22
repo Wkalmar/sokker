@@ -64,7 +64,7 @@ class Header extends React.Component {
 	render() {
 		return (
 			<div className="header">
-				<ul className="header_menu" style={{ width: '100%' }}>
+				<ul className="header_menu">
 					<Link to="/"><HomeSVG /></Link>
 					{ store.authorizedUser && <Link className="rotating" style={{
 						position: 'relative',

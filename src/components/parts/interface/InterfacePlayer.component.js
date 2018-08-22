@@ -67,7 +67,7 @@ class InterfacePlayer extends React.Component {
 				 key={ store.NET.status } >
 				<InterfacePlayerInfo player={ this.props.player } />
 
-				<div style={{ float: 'right', width: '60%', height: 280, marginTop: 20 }}>
+				<div className="interface-player-chart">
 					{ store.players.isHideCharts ?
 						<PreLoader />
 						:
@@ -75,29 +75,32 @@ class InterfacePlayer extends React.Component {
 					}
 				</div>
 
-				<div>
-					<p>Net&nbsp;prediction: </p>
-					<p>
-						<span>GK</span>&nbsp;
-						<InterfacePlayerInput pos="gk" output={ this.output } />
-					</p>
-					<p>
-						<span>DEF</span>&nbsp;
-						<InterfacePlayerInput pos="def" output={ this.output } />
-					</p>
-					<p>
-						<span>MID</span>&nbsp;
-						<InterfacePlayerInput pos="mid" output={ this.output } />
-					</p>
-					<p>
-						<span>ATT</span>&nbsp;
-						<InterfacePlayerInput pos="att" output={ this.output } />
-					</p>
-				</div>
+				<div className="interface-player-form">
 
-				<button onClick={ this.savePlayer } disabled={ this.isSavingData.get() }>
-					{ this.isSavingData.get() ? 'Saving...' : 'Save' }
-				</button>
+					<div className="interface-player-form-inputs">
+						<p>Net prediction: </p>
+						<p>
+							<span>GK</span>
+							<InterfacePlayerInput pos="gk" output={ this.output } />
+						</p>
+						<p>
+							<span>DEF</span>
+							<InterfacePlayerInput pos="def" output={ this.output } />
+						</p>
+						<p>
+							<span>MID</span>
+							<InterfacePlayerInput pos="mid" output={ this.output } />
+						</p>
+						<p>
+							<span>ATT</span>
+							<InterfacePlayerInput pos="att" output={ this.output } />
+						</p>
+
+						<button onClick={ this.savePlayer } disabled={ this.isSavingData.get() }>
+							{ this.isSavingData.get() ? 'Saving...' : 'Save' }
+						</button>
+					</div>
+				</div>
 			</div>
 		);
 	}

@@ -1,7 +1,34 @@
 .interface-player {
-
+    background: whitesmoke;
+    color: black;
+    margin: 10px 0;
+    height: 360px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: flex-end;
 }
 
 .interface-player .cssload-loader {
     margin: 100px auto;
+}
+
+.interface-player-info {
+    width: 50%;
+}
+
+.interface-player-chart {
+    width: 50%;
+    height: 250px;
+}
+
+.interface-player-form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.interface-player-form-inputs {
+    display: flex;
+    justify-content: space-between;
 }
