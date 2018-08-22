@@ -53,7 +53,7 @@ class Interface extends React.Component {
 
 	get tableWidth() { return store.device === "desktop" ? window.innerWidth / 100 * 60 : window.innerWidth; };
 
-	get tableHeight() { return window.innerHeight - 150; };
+	get tableHeight() { return window.innerHeight - 50; };
 
 	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 

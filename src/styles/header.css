@@ -45,7 +45,8 @@
 .header_menu > * {
 	margin-right: 20px;
 	height: 50px;
-	padding-top: 23px;
+	padding-top: 12px;
+	box-sizing: border-box;
 	display: inherit;
 }
 
