@@ -75,14 +75,7 @@ class InterfacePlayer extends React.Component {
 					}
 				</div>
 
-				<div style={{
-					float: 'right',
-					display: 'flex',
-					justifyContent: 'space-between',
-					boxSizing: 'border-box',
-					width: '70%',
-					padding: '0 20px 0 0'
-				}}>
+				<div>
 					<p>Net&nbsp;prediction: </p>
 					<p>
 						<span>GK</span>&nbsp;
@@ -102,16 +95,7 @@ class InterfacePlayer extends React.Component {
 					</p>
 				</div>
 
-				<button style={{
-					margin: '0 0 0 20px',
-					float: 'left',
-					border: 'none',
-					padding: 10,
-					color: 'white',
-					background: 'rgb(61, 117, 160)',
-					outline: 'none',
-					cursor: 'pointer'
-				}} onClick={ this.savePlayer } disabled={ this.isSavingData.get() }>
+				<button onClick={ this.savePlayer } disabled={ this.isSavingData.get() }>
 					{ this.isSavingData.get() ? 'Saving...' : 'Save' }
 				</button>
 			</div>
