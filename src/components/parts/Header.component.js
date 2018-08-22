@@ -93,7 +93,7 @@ class Header extends React.Component {
 					{ Object.keys(flags).map((lang)=> {
 						return (
 							<li key={lang} onClick={ ()=> this.changeLang(lang) }>
-								<img style={{ width: '20px', height: '20px' }} alt={lang} src={ flags[lang] } />
+								<img style={{ width: '20px', height: '20px', marginTop: '2px' }} alt={lang} src={ flags[lang] } />
 							</li>
 						);
 					}) }
