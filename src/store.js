@@ -1,12 +1,11 @@
 import { spy } from "mobx";
-import i18n from 'i18next';
 // import { onPatch } from "mobx-state-tree";
 // Models
 import RootModel from "models/Root.model";
 
 
 const store = RootModel.create({
-	lang: "ru",
+	lang: "en",
 	isOpenSidebar: false,
 	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
 	device: "desktop",

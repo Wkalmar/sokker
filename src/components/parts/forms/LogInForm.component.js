@@ -1,4 +1,6 @@
 import React from 'react';
+// Styles
+import "styles/forms/login-form.css";
 // MobX
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
@@ -7,6 +9,7 @@ import store from "store";
 // Components
 import PreLoader from 'components/parts/PreLoader.component';
 import Link from "components/Link.component";
+import T from "components/parts/T.component";
 
 
 class LogInForm extends React.Component {
@@ -28,11 +31,14 @@ class LogInForm extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="login-form">
+				<p>Email:</p>
 				<input type="text"
 					   className="email"
 					   value={ this.form.email }
 					   onChange={ (e)=> this.form.email = e.currentTarget.value }/>
+
+				<p>Password:</p>
 				<input type="password"
 					   className="password"
 					   value={ this.form.password }
@@ -46,8 +52,7 @@ class LogInForm extends React.Component {
 						'LogIn'
 				}</button>
 
-				<p>or</p>
-				<Link to="/registration">Sign up</Link>
+				<Link to="/registration"><T>Sign up</T></Link>
 			</div>
 		)
 	}

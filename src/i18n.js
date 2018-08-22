@@ -20,7 +20,7 @@ i18n
 			loadPath: '/locales/{{lng}}/{{ns}}.json',
 		},
 
-		debug: true,
+		debug: false,
 
 		interpolation: {
 			escapeValue: false, // not needed for react!!

@@ -1,4 +1,6 @@
 import React from 'react';
+// Styles
+import "styles/forms/reg-form.css";
 // MobX
 import { observable } from 'mobx';
 import { observer } from 'mobx-react';
@@ -31,7 +33,7 @@ class RegistrationForm extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="reg-form">
 				<p>Email:</p>
 				<input type="text"
 					   value={ this.form.email }
@@ -54,7 +56,6 @@ class RegistrationForm extends React.Component {
 						:
 						'Register'
 				}</button>
-				<hr/>
 				<Link to="/login">Sign in</Link>
 			</div>
 		)

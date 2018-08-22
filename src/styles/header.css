@@ -55,7 +55,7 @@
 	cursor: default;
 	position: absolute;
 	background: #d67800;
-	transition: .7s top;
+	transition: .3s top;
 	right: 0;
 	z-index: 1102;
 	padding-top: 60px;

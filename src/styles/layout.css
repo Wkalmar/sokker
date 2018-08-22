@@ -4,6 +4,7 @@ html {
 
 body {
 	padding-top: 50px;
+	font-size: 14px;
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 	overflow-y: scroll;
 }
@@ -44,6 +45,39 @@ a:hover {
 	overflow-y: scroll;
 	padding-right: 17px;
 	box-sizing: content-box;
+}
+
+input,
+input:-webkit-autofill {
+	border: none;
+	padding: 5px;
+	display: block;
+	margin: 5px 0;
+	color: white;
+	outline: none;
+	background: #d67800 !important;
+}
+
+button {
+	padding: 5px 10px;
+	margin: 5px 0;
+	font-size: 12px;
+	background: #d67800;
+	color: whitesmoke;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	transition: 1s opacity;
+}
+
+button:hover {
+	opacity: 0.7;
+}
+
+
+input::placeholder {
+	color: white;
+	opacity: 0.5;
 }
 
 
