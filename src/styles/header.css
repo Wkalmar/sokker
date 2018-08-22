@@ -30,6 +30,7 @@
 }
 
 .header_menu {
+	overflow: hidden;
 	background: #d67800;
 	position: relative;
 	z-index: 1103;
@@ -43,6 +44,8 @@
 
 .header_menu > * {
 	margin-right: 20px;
+	height: 50px;
+	padding-top: 23px;
 	display: inherit;
 }
 

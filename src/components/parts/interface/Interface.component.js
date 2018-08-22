@@ -8,6 +8,7 @@ import store from "store";
 // Components
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 import Filters from "components/parts/filters/Filters.component";
+import PreLoader from "components/parts/PreLoader.component";
 import T from "components/parts/T.component";
 
 
@@ -65,7 +66,29 @@ class Interface extends React.Component {
 	};
 
 
+	renderFilter() {
+		return store.device === "desktop" ?
+			<div style={{
+				position: 'fixed',
+				left: this.tableWidth + 15,
+				width: window.innerWidth - (this.tableWidth + 50)
+			}}>
+				{ store.authorizedUser && <div style={{ height: this.table.height, overflowY: 'scroll' }}><Filters /></div> }
+			</div>
+			: null;
+	}
+
+
 	render() {
+		if(!store.transfers.players.size) return (
+			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
+				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
+					<PreLoader />
+				</div>
+				{ this.renderFilter() }
+			</div>
+		);
+
 		return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
@@ -83,19 +106,13 @@ class Interface extends React.Component {
 								  )
 							  } } />
 						:
-						<T>No players found</T>
+						<div style={{ fontSize: 20, textAlign: 'center', marginTop: '100px' }}>
+							<T>No players found</T>
+						</div>
 					}
 				</div>
 
-				{ store.device === "desktop" ?
-					<div style={{
-						position: 'fixed',
-						left: this.tableWidth + 15,
-						width: window.innerWidth - (this.tableWidth + 50)
-					}}>
-						{ store.authorizedUser && <div style={{ height: this.table.height, overflowY: 'scroll' }}><Filters /></div> }
-					</div>
-						: null }
+				{ this.renderFilter() }
 			</div>
 		)
 	}
