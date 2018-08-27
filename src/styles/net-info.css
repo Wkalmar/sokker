@@ -12,6 +12,7 @@
 .net-info-row {
     background: whitesmoke;
     margin: 5px 0;
+    flex-wrap: wrap;
     padding: 10px;
     font-size: 14px;
     box-sizing: border-box;
@@ -32,4 +33,10 @@
 
 .net-info-details-button:hover {
     opacity: 0.7;
+}
+
+.net-info-details-block {
+    width: 100%;
+    padding-top: 10px;
+    overflow: hidden;
 }

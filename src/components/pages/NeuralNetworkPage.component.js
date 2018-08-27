@@ -2,7 +2,7 @@ import React from 'react';
 // Styles
 import "styles/net-info.css";
 // MobX
-import { values } from "mobx";
+import { values, observable } from "mobx";
 import { observer } from "mobx-react";
 // Store
 import store from "store";
@@ -12,9 +12,16 @@ import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
 import QueryLoader from "components/QueryLoader.component";
 import PreLoader from "components/parts/PreLoader.component";
 import T from "components/parts/T.component";
+import InterfacePlayerInfo from "components/parts/interface/InterfacePlayerInfo.component";
+import InterfacePlayerForm from "components/parts/interface/InterfacePlayerForm.component";
 
 
 class NeuralNetworkPage extends React.Component {
+
+	isLoadingDeleteBtn = observable.box(false);
+
+	openedDetailsBlock = observable.box('');
+
 
 	get players() { return values(store.players.all); };
 
@@ -22,7 +29,10 @@ class NeuralNetworkPage extends React.Component {
 
 
 	showPlayerDetails(player) {
-		console.log("DETAILS:", player);
+		this.openedDetailsBlock.get() === player.id ?
+			this.openedDetailsBlock.set('')
+			:
+			this.openedDetailsBlock.set(player.id);
 	}
 
 
@@ -31,6 +41,13 @@ class NeuralNetworkPage extends React.Component {
 		store.NET.train(this.userPlayers);
 		store.transfers.addPredictions();
 		store.players.refreshPlayersCharts(false);
+	};
+
+
+	async removePlayer(id) {
+		this.isLoadingDeleteBtn.set(true);
+		await store.players.deleteMutation({ id: id });
+		this.isLoadingDeleteBtn.set(false);
 	};
 	
 
@@ -66,8 +83,21 @@ class NeuralNetworkPage extends React.Component {
 						{ this.players.map((player)=> {
 							return (
 								<div className="net-info-row" key={ player.id }>
-									{ player.name }
-									<button className="net-info-details-button" onClick={ ()=> this.showPlayerDetails(player) }><T>Details</T></button>
+									<div style={{ width: 'calc(100% - 100px)' }}>{ player.name }</div>
+									<button className="net-info-details-button" onClick={ ()=> this.showPlayerDetails(player) }>
+										<T>{  this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
+									</button>
+									<div className="net-info-details-block" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
+										{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerInfo player={ player } /> }
+										{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerForm player={ player } /> }
+										<button onClick={ ()=> this.removePlayer(player.id) }>
+											{ this.isLoadingDeleteBtn.get() ?
+												<PreLoader />
+												:
+												<T>Remove trained player and relearn NET</T>
+											}
+										</button>
+									</div>
 								</div>
 							)
 						}) }

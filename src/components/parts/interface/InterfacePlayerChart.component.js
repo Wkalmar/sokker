@@ -2,6 +2,8 @@ import React from 'react';
 // MobX
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
+// Store
+import store from "store";
 // Chart
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
 import { ResponsiveContainer, PieChart, Sector, Cell, Legend, Pie } from "recharts";
@@ -85,6 +87,7 @@ class InterfacePlayerChart extends React.Component {
 
 	render() {
 		if(!Object.keys(this.props.playerData).length) return null;
+		if(!store.isRenderInterface) return <div key={ store.isRenderInterface } />;
 		return (
 			<ResponsiveContainer>
 				<PieChart width={100} height={100}>

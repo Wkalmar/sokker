@@ -16,7 +16,7 @@ export default function (data = {}, errors = null) {
 	console.log("dataName", dataName);
 	console.log("data", data);
 	console.log("errors", errors);
-	console.groupEnd(`%c🕺 REQUEST`, "color: darkgreen");
+	console.groupEnd(`%c🕺 RESOLVER [${dataName}] (${errors ? "ERROR" : "SUCCESS"})`);
 
     if(errors) return revertData(dataName, errorMsg);
 	applyData(dataName, data);
@@ -52,6 +52,10 @@ function applyData(dataName, data) {
 		case "updatePlayer":
 			store.players.create(data);
 			Alert.success("Player updated in DB");
+			break;
+		case "deletePlayer":
+			store.players.delete(data.id);
+			Alert.success("Player deleted from DB");
 			break;
 		case "allPlayers":
 			runInAction(`PLAYERS-CREATE-ALL-SUCCESS`, ()=> {

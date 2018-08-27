@@ -8,50 +8,21 @@ import { observable } from 'mobx';
 import store from "store";
 // Components
 import InterfacePlayerChart from "components/parts/interface/InterfacePlayerChart.component";
-import InterfacePlayerInput from "components/parts/interface/InterfacePlayerInput.component";
 import InterfacePlayerInfo from "components/parts/interface/InterfacePlayerInfo.component";
+import InterfacePlayerForm from "components/parts/interface/InterfacePlayerForm.component";
 import PreLoader from "components/parts/PreLoader.component";
 
 
 class InterfacePlayer extends React.Component {
 
-	output = observable.map({
-		gk: 0,
-		def: 0,
-		mid: 0,
-		att: 0
-	});
-
-	isSavingData = observable.box(false);
 
 	isReady = observable.box(false);
 
 
 	constructor(props) {
-		super();
+		super(props);
 		this.isReady.set(true);
-		this.setOutput(props);
 	}
-
-
-	setOutput(props) {
-		this.output.set('gk', +props.player.gk.toFixed(1));
-		this.output.set('def', +props.player.def.toFixed(1));
-		this.output.set('mid', +props.player.mid.toFixed(1));
-		this.output.set('att', +props.player.att.toFixed(1));
-	}
-
-
-	savePlayer = async ()=> {
-		this.isSavingData.set(true);
-		await store.players.createMutation({
-			...this.props.player,
-			...this.output.toJSON(),
-			playerId: this.props.player.id,
-			userId: store.authorizedUser.id
-		});
-		this.isSavingData.set(false);
-	};
 
 
 	getPlayerPrediction(player = this.props.player) {
@@ -75,32 +46,7 @@ class InterfacePlayer extends React.Component {
 					}
 				</div>
 
-				<div className="interface-player-form">
-
-					<div className="interface-player-form-inputs">
-						<p>Net prediction: </p>
-						<p>
-							<span>GK</span>
-							<InterfacePlayerInput pos="gk" output={ this.output } />
-						</p>
-						<p>
-							<span>DEF</span>
-							<InterfacePlayerInput pos="def" output={ this.output } />
-						</p>
-						<p>
-							<span>MID</span>
-							<InterfacePlayerInput pos="mid" output={ this.output } />
-						</p>
-						<p>
-							<span>ATT</span>
-							<InterfacePlayerInput pos="att" output={ this.output } />
-						</p>
-
-						<button onClick={ this.savePlayer } disabled={ this.isSavingData.get() }>
-							{ this.isSavingData.get() ? 'Saving...' : 'Save' }
-						</button>
-					</div>
-				</div>
+				<InterfacePlayerForm player={ this.props.player } />
 			</div>
 		);
 	}
