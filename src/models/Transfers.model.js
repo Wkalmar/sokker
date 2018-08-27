@@ -104,7 +104,7 @@ const filterByPredictedValues = (players) => {
 	let result = players = players.filter((player) => player.att * 100 >= attRange[0] && player.att * 100 <= attRange[1]);
 	result = result.filter((player) => player.mid * 100 >= midRange[0] && player.mid * 100 <= midRange[1]);
 	result = result.filter((player) => player.def * 100 >= defRange[0] && player.def * 100 <= defRange[1]);
-	return players.filter((player) => player.gk * 100 >= gkRange[0] && player.gk * 100 <= gkRange[1]);
+	return result.filter((player) => player.gk * 100 >= gkRange[0] && player.gk * 100 <= gkRange[1]);
 }
 
 const sortByAge = (players) => {
