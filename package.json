@@ -21,6 +21,7 @@
     "mobx": "^4.2.1",
     "mobx-react": "^5.1.2",
     "mobx-state-tree": "^2.0.5",
+    "moment": "^2.22.2",
     "query-string": "^6.1.0",
     "rc-slider": "^8.6.1",
     "react": "^16.4.1",

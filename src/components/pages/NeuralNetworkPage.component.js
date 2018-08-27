@@ -18,10 +18,20 @@ class NeuralNetworkPage extends React.Component {
 
 	get players() { return values(store.players.all); };
 
+	get userPlayers() { return this.players.filter((player)=> player.userId === store.authorizedUser.id); };
+
 
 	showPlayerDetails(player) {
 		console.log("DETAILS:", player);
 	}
+
+
+	relearnNet = ()=> {
+		store.players.refreshPlayersCharts(true);
+		store.NET.train(this.userPlayers);
+		store.transfers.addPredictions();
+		store.players.refreshPlayersCharts(false);
+	};
 	
 
 	render() {
@@ -45,6 +55,10 @@ class NeuralNetworkPage extends React.Component {
 							</div>
 							<div className="net-info-row">
 								trained players <span>{ store.players.all.size }</span>
+							</div>
+							<div className="net-info-row">
+								<span />
+								<button onClick={ this.relearnNet }>Relearn net</button>
 							</div>
 						</div>
 

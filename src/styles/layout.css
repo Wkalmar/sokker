@@ -52,14 +52,14 @@ input:-webkit-autofill {
 	border: none;
 	padding: 5px;
 	display: block;
-	margin: 5px 0;
+	margin: 5px 0 10px 0;
 	color: white;
 	outline: none;
 	background: #d67800 !important;
 }
 
 button {
-	padding: 5px 10px;
+	padding: 10px 15px;
 	margin: 5px 0;
 	font-size: 12px;
 	background: #d67800;

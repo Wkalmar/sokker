@@ -80,6 +80,7 @@ class Interface extends React.Component {
 
 
 	render() {
+		if(!store.isRenderedInterface) return null;
 		if(!store.transfers.players.size) return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>

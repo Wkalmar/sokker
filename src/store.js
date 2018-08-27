@@ -5,6 +5,7 @@ import RootModel from "models/Root.model";
 
 
 const store = RootModel.create({
+	isRenderedInterface: false,
 	lang: "en",
 	isOpenSidebar: false,
 	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
