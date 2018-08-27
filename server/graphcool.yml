@@ -37,6 +37,12 @@ functions:
      handler:
         code: src/functions/email-password/loggedInUser.ts
 
+  transfers:
+     type: resolver
+     schema: src/functions/transfers/transfers.graphql
+     handler:
+       code: src/functions/transfers/transfers.js
+
 
 # Model/Relation permissions are used to limit the API access
 # To take the burden of thinking about those while development, we

@@ -78,7 +78,7 @@ class Header extends React.Component {
 						: null }
 
 					<div ref={ this.headerLangRef } style={{ cursor: 'pointer', position: "relative" }} onClick={ this.toggleDropDown }>
-						<img style={{ width: '20px', height: '20px' }} alt={store.lang} src={ flags[store.lang] } />
+						<img style={{ width: '20px', height: '20px', marginTop: '2px' }} alt={store.lang} src={ flags[store.lang] } />
 					</div>
 
 					{/*<Link to="/help"><HelpSVG /></Link>*/}

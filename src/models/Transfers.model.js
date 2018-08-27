@@ -5,6 +5,9 @@ import { types } from "mobx-state-tree";
 import { runInAction, values, entries } from "mobx";
 // Store
 import store from "store";
+// GraphQL
+import client from "graphql/client";
+import TRANSFERS_MUTATION from "graphql/mutations/transfers.mutation";
 // Models
 import PlayerModel from "models/players/Player.model";
 
@@ -31,12 +34,10 @@ const Transfers = {
 const actions = (self)=> {
 	return {
 
-		fetchTransferPlayers() {
-			fetch("https://brainsokker.herokuapp.com/current_transfers", {
-			}).then((response)=> response.json()).then((players)=> {
-				// players.length = 10;
-				self.create(players);
-			});
+		async createMutation() {
+			await client.mutate({
+				mutation: TRANSFERS_MUTATION
+			}).catch((e)=> console.log("TRANSFERS_MUTATION 🍪 + 🍩 ", e));
 		},
 
 

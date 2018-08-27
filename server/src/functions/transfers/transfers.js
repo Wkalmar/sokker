@@ -1,0 +1,87 @@
+let request = require('request');
+request = request.defaults({ jar: true });
+
+const htmlToJson = require("html-to-json");
+const $ = require('cheerio');
+
+
+async function parse() {
+
+	return new Promise(async (mainResolver) => {
+		await request.post({
+			url: 'http://sokker.org/start',
+			form: {
+				ilogin: 'benelone',
+				ipassword: 'password'
+			}
+		}, function (error, response, body) {
+			if(response.statusCode === 302 && response.headers && response.headers.location) {
+				let promisePlayersDataArray = [];
+
+				for(let page in Array.from({ length: 7 }, (v, k) => k)) {
+					promisePlayersDataArray.push(new Promise((resolve, reject)=> {
+
+						request(`http://sokker.org/transferSearch/pg/${page+1}`, (error, response, body)=> {
+
+							htmlToJson.parse(body, ['.panel-body .well',
+								function ($item) { return $item; },
+								function ($players) {
+									const DATA = [];
+									$players.forEach((item)=> {
+										const $player = $(item);
+
+										const id = $player.find("#playerCell").find("div").first().text().trim();
+
+										const details = $($player.find('.col-md-6.col-sm-5.col-xs-12.small').find("strng").html().split("<br>")[0]).text().trim();
+										const endOfTrade = $($player.find('.col-md-6.col-sm-5.col-xs-12.small').find("strng").find("strong")[2]).text().trim();
+
+										const skills = $player.find('.table.table-condensed.table-skills td')
+											.text().trim().split('\n');
+
+										const name = $player.find('a').text().trim();
+										const age = +$player.find('.h5').text().trim().split('wiek')[1] / 100;
+										const stamina = +skills[0].split('[')[1].split(']')[0] / 100;
+										const keeper = +skills[1].split('[')[1].split(']')[0] / 100;
+										const pace = +skills[2].split('[')[1].split(']')[0] / 100;
+										const defender = +skills[3].split('[')[1].split(']')[0] / 100;
+										const technique = +skills[4].split('[')[1].split(']')[0] / 100;
+										const playmaker = +skills[5].split('[')[1].split(']')[0] / 100;
+										const passing = +skills[6].split('[')[1].split(']')[0] / 100;
+										const striker = +skills[7].split('[')[1].split(']')[0] / 100;
+
+										DATA.push({
+											id, name, age, stamina, keeper, pace, defender, technique, playmaker, passing, striker, details, endOfTrade
+										});
+									});
+									return DATA;
+								}])
+								.done(function(player) {
+									resolve(player);
+								});
+						});
+					}));
+				}
+
+				Promise.all(promisePlayersDataArray).then((players)=> {
+					mainResolver([].concat.apply([], players));
+				});
+			} else {
+				mainResolver([]);
+			}
+		})
+	});
+}
+
+async function transfers(api) {
+
+	const x = await parse();
+	return {
+		data: {
+			response: JSON.stringify(x)
+		}
+	}
+
+}
+
+
+export default transfers;
