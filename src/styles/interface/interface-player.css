@@ -30,5 +30,6 @@
 
 .interface-player-form-inputs {
     display: flex;
+    max-width: 418px;
     justify-content: space-between;
 }

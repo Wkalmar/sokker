@@ -83,10 +83,19 @@ class NeuralNetworkPage extends React.Component {
 						{ this.players.map((player)=> {
 							return (
 								<div className="net-info-row" key={ player.id }>
-									<div style={{ width: 'calc(100% - 100px)' }}>{ player.name }</div>
+									{ this.openedDetailsBlock.get() !== player.id ?
+										<a style={{ width: 'calc(100% - 100px)' }}
+										   href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
+											<p>{ player.name }</p>
+										</a>
+										:
+										<span />
+									}
+
 									<button className="net-info-details-button" onClick={ ()=> this.showPlayerDetails(player) }>
 										<T>{  this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
 									</button>
+
 									<div className="net-info-details-block" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
 										{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerInfo player={ player } /> }
 										{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerForm player={ player } /> }
