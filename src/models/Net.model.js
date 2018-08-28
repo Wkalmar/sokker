@@ -31,7 +31,7 @@ const actions = (self)=> {
 
 
 		run(player) {
-			if(self.status !== "success") return {};
+			// if(self.status !== "success") return {};
 			return NET.run({
 				age: player.age,
 				defender: player.defender,
