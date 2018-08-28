@@ -1,5 +1,6 @@
 import React from 'react';
-import List from 'react-virtualized/dist/commonjs/List'
+import moment from 'moment';
+import { CellMeasurer, CellMeasurerCache, List } from 'react-virtualized';
 // MobX
 import { reaction, observable, values } from "mobx";
 import { observer } from "mobx-react";
@@ -20,6 +21,9 @@ class Interface extends React.Component {
 		marginLeft: 15,
 		rowHeight: 370
 	});
+
+
+	interval = observable.box(Date.now());
 
 
 	constructor() {
@@ -44,6 +48,11 @@ class Interface extends React.Component {
 	}
 
 
+	componentDidMount() {
+		setInterval(()=> this.interval.set(Date.now()), 1000);
+	}
+
+
 	componentWillUnmount() {
 		this["@reaction on change [userPlayers]"]();
 		window.removeEventListener('resize', this.onWindowResize);
@@ -56,7 +65,7 @@ class Interface extends React.Component {
 
 	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 
-	get players() { return store.transfers.filtered; };
+	get players() { return store.transfers.filtered.filter((player)=> moment().diff(moment(player.endOfTrade).add(1, 'h'), 'seconds', this.interval.get()) <= 0); };
 
 
 	onWindowResize = (e)=> {

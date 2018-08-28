@@ -12,8 +12,8 @@ export default observer(function({ player }) {
 			<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 				<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
 			</a>
-			<p><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</p>
-			<p>age { Math.round(player.age * 100) }</p>
+			<p style={{ fontSize: '12px', fontWeight: 'bold' }}>Age { Math.round(player.age * 100) }</p>
+			<p style={{ fontSize: '11px' }}><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</p>
 
 			<div style={{ fontSize: '12px', margin: '35px 0 0 0' }}>
 				<div key='1' style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid black' }}>
