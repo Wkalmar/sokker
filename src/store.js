@@ -8,7 +8,7 @@ const store = RootModel.create({
 	isRenderInterface: false,
 	lang: "en",
 	isOpenSidebar: false,
-	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
+	NET: { isLoading: false, status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
 	device: "desktop",
 	users: {},
 	players: {

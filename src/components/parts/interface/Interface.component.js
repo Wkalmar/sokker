@@ -24,7 +24,7 @@ class Interface extends React.Component {
 
 	constructor() {
 		super();
-		store.transfers.createMutation();
+		store.transfers.transfersMutation();
 
 		this["@reaction on change [userPlayers]"] = reaction(
 			()=> store.authorizedUser && this.userPlayers.map((player)=> player.mid + player.att + player.def + player.gk),

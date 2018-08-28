@@ -37,10 +37,8 @@ class NeuralNetworkPage extends React.Component {
 
 
 	relearnNet = ()=> {
-		store.players.refreshPlayersCharts(true);
 		store.NET.train(this.userPlayers);
 		store.transfers.addPredictions();
-		store.players.refreshPlayersCharts(false);
 	};
 
 
@@ -75,7 +73,13 @@ class NeuralNetworkPage extends React.Component {
 							</div>
 							<div className="net-info-row">
 								<span />
-								<button onClick={ this.relearnNet }>Relearn net</button>
+								<button onClick={ this.relearnNet }>
+									{ store.NET.status === "training" ?
+										<PreLoader />
+										:
+										<T>Relearn net</T>
+									}
+								</button>
 							</div>
 						</div>
 

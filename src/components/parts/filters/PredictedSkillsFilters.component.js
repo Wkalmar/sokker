@@ -1,15 +1,24 @@
 import React from 'react';
-import store from "store";
-import { observer } from "mobx-react";
 import Slider from 'rc-slider';
+// MobX
+import { observer } from "mobx-react";
+// Store
+import store from "store";
+// Components
 import FiltersSkillBtn from "components/parts/filters/FiltersSkillBtn.component";
 
+
 class PredictedSkillsFilters extends React.Component {
+
     get attRange() { return store.filters.att.get('range'); };
+
 	get midRange() { return store.filters.mid.get('range'); };
+
 	get defRange() { return store.filters.def.get('range'); };
+
 	get gkRange() { return store.filters.gk.get('range'); };
-    
+
+
     render() {
         return (
             <div className="filter">
@@ -18,6 +27,7 @@ class PredictedSkillsFilters extends React.Component {
                 <FiltersSkillBtn name="DEF" color="rgb(247, 126, 17)" />
                 <FiltersSkillBtn name="MID" color="rgb(44, 160, 44)" />
                 <FiltersSkillBtn name="GK" color="rgb(215, 39, 41)" />
+
                 <div className="filter_title">Predicted attacker range:  ({ this.attRange[0]/100 } - { this.attRange[1]/100 })</div>
                 <Slider.Range min={0}
                                 max={100}
