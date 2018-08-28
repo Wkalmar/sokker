@@ -3,6 +3,10 @@ import { keys, runInAction } from "mobx";
 
 
 const Filters = {
+	att: types.map(types.frozen),
+	mid: types.map(types.frozen),
+	def: types.map(types.frozen),
+	gk: types.map(types.frozen),
 	age: types.map(types.frozen),
 	skills: types.map(types.frozen),
 	search: types.string
@@ -12,7 +16,7 @@ const Filters = {
 let timeout = null;
 const actions = (self)=> {
 	return {
-		
+
 		change(filter={}) {
 			clearTimeout(timeout);
 			timeout = setTimeout(()=> self.realChange(filter), 100);

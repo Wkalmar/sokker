@@ -19,6 +19,22 @@ const store = RootModel.create({
 			range: [16, 35],
 			order: "✘"
 		},
+		att : {
+			range: [0, 100],
+			order: "✘"
+		},
+		mid : {
+			range: [0, 100],
+			order: "✘"
+		},
+		def : {
+			range: [0, 100],
+			order: "✘"
+		},
+		gk : {
+			range: [0, 100],
+			order: "✘"
+		},
 		skills: {
 			stamina: {
 				order: "✘",

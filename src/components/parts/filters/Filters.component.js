@@ -11,15 +11,14 @@ import { observer } from "mobx-react";
 import T from "components/parts/T.component";
 import FiltersSkillBtn from "components/parts/filters/FiltersSkillBtn.component";
 import FiltersSkillRange from "components/parts/filters/FiltersSkillRange.component";
+import PredictedSkillsFilters from "components/parts/filters/PredictedSkillsFilters.component";
 
 
 class Filters extends React.Component {
 
-
 	get ageRange() { return store.filters.age.get('range'); };
 
-	get ageOrder() { return store.filters.age.get('order'); };
-
+	get ageOrder() { return store.filters.age.get('order'); };	
 
 	onOrderChange = ()=> {
 		store.filters.change({
@@ -62,13 +61,7 @@ class Filters extends React.Component {
 					</button>
 				</div>
 
-				<div className="filter">
-					<div className="filter_title">Sort by role</div>
-					<FiltersSkillBtn name="ATT" color="#2876b4" />
-					<FiltersSkillBtn name="DEF" color="rgb(247, 126, 17)" />
-					<FiltersSkillBtn name="MID" color="rgb(44, 160, 44)" />
-					<FiltersSkillBtn name="GK" color="rgb(215, 39, 41)" />
-				</div>
+				<PredictedSkillsFilters />
 
 				<div className="filter">
 					<div className="filter_title">Sort by skills:</div>
