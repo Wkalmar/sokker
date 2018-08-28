@@ -1,8 +1,55 @@
+import { fromEvent } from 'graphcool-lib';
 let request = require('request');
 request = request.defaults({ jar: true });
 
 const htmlToJson = require("html-to-json");
 const $ = require('cheerio');
+
+
+async function transfers(event) {
+	const graphcool = fromEvent(event);
+	const api = graphcool.api('simple/v1');
+
+	const query = `query User($id: ID!) {
+			User(id: $id) {
+				transfers
+				updatedTransfersAt
+			}
+		}`;
+
+	const response = await api.request(query, { id: 'cjkntd1p42ocw0157motav7bq' });
+
+	if((Date.now() - +response.User.updatedTransfersAt) / 1000 / 60 > 3) {
+		const players = await parse();
+
+		const mutation = `
+		mutation updateUser($id: ID!, $transfers: String, $updatedTransfersAt: String) {
+			updateUser(id: $id, transfers: $transfers, updatedTransfersAt: $updatedTransfersAt) {
+				id
+				transfers
+				updatedTransfersAt
+			}
+		}`;
+
+		api.request(mutation, {
+			id: 'cjkntd1p42ocw0157motav7bq',
+			transfers: JSON.stringify(players),
+			updatedTransfersAt: "" + Date.now()
+		});
+
+		return {
+			data: {
+				response: JSON.stringify(players)
+			}
+		}
+	} else {
+		return {
+			data: {
+				response: response.User.transfers
+			}
+		}
+	}
+}
 
 
 async function parse() {
@@ -70,17 +117,6 @@ async function parse() {
 			}
 		})
 	});
-}
-
-async function transfers(api) {
-
-	const x = await parse();
-	return {
-		data: {
-			response: JSON.stringify(x)
-		}
-	}
-
 }
 
 

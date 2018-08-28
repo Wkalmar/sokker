@@ -91,6 +91,7 @@ class Interface extends React.Component {
 		return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
+					<button>Refresh</button>
 					{ this.players.length ?
 						<List rowCount={ this.players.length }
 							  height={ this.table.height }
