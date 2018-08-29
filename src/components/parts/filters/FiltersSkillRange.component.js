@@ -5,7 +5,6 @@ import store from "store";
 // MobX
 import { observer } from "mobx-react";
 // Components
-import FiltersSkillBtn from "components/parts/filters/FiltersSkillBtn.component";
 import T from "components/parts/T.component";
 
 
@@ -19,11 +18,10 @@ export default observer(function({ name }) {
 						  max={17}
 						  pushable
 						  trackStyle={{
-						  	background: "red"
+						  		background: "red"
 						  }}
 						  onChange={ (range)=> store.filters.change({ skills: { [name]: { range } } }) }
-						  defaultValue={[0, 17]} />
-			<FiltersSkillBtn name={ name } />
+						  defaultValue={ [getSkill(name).range[0], getSkill(name).range[1]] } />
 		</div>
 	)
 });

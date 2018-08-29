@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// Styles
+import "styles/animate.css";
+// Components
 import App from 'App';
 import registerServiceWorker from './registerServiceWorker';
 import { WebGLRenderer } from 'three';

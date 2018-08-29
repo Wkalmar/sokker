@@ -65,6 +65,7 @@ button {
 	background: #d67800;
 	color: whitesmoke;
 	outline: none;
+	min-height: 35px;
 	border: none;
 	cursor: pointer;
 	transition: 1s opacity;

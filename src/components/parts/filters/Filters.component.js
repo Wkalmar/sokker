@@ -36,7 +36,7 @@ class Filters extends React.Component {
 			<div className="filters">
 				<div className="filter">
 					<div className="filter_title">+ Saved filters..</div>
-					<button>Reset filters</button>
+					<button onClick={ store.filters.resetFilters }>Reset filters</button>
 				</div>
 
 				<div className="filter">
@@ -48,7 +48,7 @@ class Filters extends React.Component {
 				</div>
 
 				<div className="filter">
-					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] }) <span>✘</span></div>
+					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] })</div>
 					<Slider.Range min={16}
 								  max={40}
 								  pushable
@@ -67,18 +67,20 @@ class Filters extends React.Component {
 					<div className="filter_title">Sort by skills:</div>
 					<FiltersSkillBtn name="stamina" />
 
+					<FiltersSkillBtn name="keeper" />
+					<FiltersSkillBtn name="pace" />
+					<FiltersSkillBtn name="defender" />
+					<FiltersSkillBtn name="technique" />
+					<FiltersSkillBtn name="playmaker" />
+					<FiltersSkillBtn name="passing" />
+					<FiltersSkillBtn name="striker" />
+
 					<FiltersSkillRange name="keeper" />
-
 					<FiltersSkillRange name="pace" />
-
 					<FiltersSkillRange name="defender" />
-
 					<FiltersSkillRange name="technique" />
-
 					<FiltersSkillRange name="playmaker" />
-
 					<FiltersSkillRange name="passing" />
-
 					<FiltersSkillRange name="striker" />
 				</div>
 				{/*<div className="filter" style={{ paddingTop: 20 }}>*/}

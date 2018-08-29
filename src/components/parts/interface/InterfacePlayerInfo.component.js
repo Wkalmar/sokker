@@ -26,7 +26,7 @@ class InterfacePlayerInfo extends React.Component {
 		const player = this.props.player;
 
 		return (
-			<div className="interface-player-info" id={ this.dateNow }>
+			<div className="interface-player-info" id={ this.dateNow.get() }>
 				<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 					<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
 				</a>

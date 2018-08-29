@@ -1,6 +1,7 @@
 import React from 'react';
-import moment from 'moment';
 import { CellMeasurer, CellMeasurerCache, List } from 'react-virtualized';
+// Styles
+import "styles/interface/interface.css";
 // MobX
 import { reaction, observable, values } from "mobx";
 import { observer } from "mobx-react";
@@ -93,7 +94,11 @@ class Interface extends React.Component {
 		return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
-					<button>Refresh</button>
+
+					<button className="interface-refresh-btn animated infinite heartBeat slower" style={{ left: this.table.width - 70 }}>
+						<PreLoader />
+					</button>
+
 					{ this.players.length ?
 						<List rowCount={ this.players.length }
 							  height={ this.table.height }
