@@ -46,6 +46,7 @@ const actions = (self)=> {
 		create(players) {
 			runInAction(`TRANSFER-PLAYERS-CREATE-SUCCESS`, ()=> {
 				players.forEach((player)=> {
+					self.players.clear();
 					self.players.set(player.id, { ...player, ...store.NET.run(player), playerId: player.id });
 				});
 			});

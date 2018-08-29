@@ -6,6 +6,7 @@
     width: 50px;
     background: #2196F3;
     padding: 10px;
+    opacity: 0.8;
     bottom: 28px;
     transition: 3s all;
 }
