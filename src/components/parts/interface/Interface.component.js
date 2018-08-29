@@ -23,8 +23,6 @@ class Interface extends React.Component {
 	});
 
 
-	interval = observable.box(Date.now());
-
 
 	constructor() {
 		super();
@@ -48,11 +46,6 @@ class Interface extends React.Component {
 	}
 
 
-	componentDidMount() {
-		setInterval(()=> this.interval.set(Date.now()), 1000);
-	}
-
-
 	componentWillUnmount() {
 		this["@reaction on change [userPlayers]"]();
 		window.removeEventListener('resize', this.onWindowResize);
@@ -65,7 +58,7 @@ class Interface extends React.Component {
 
 	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
 
-	get players() { return store.transfers.filtered.filter((player)=> moment().diff(moment(player.endOfTrade).add(1, 'h'), 'seconds', this.interval.get()) <= 0); };
+	get players() { return store.transfers.filtered; };
 
 
 	onWindowResize = (e)=> {
