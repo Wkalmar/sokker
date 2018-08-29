@@ -63,7 +63,6 @@ class Interface extends React.Component {
 
 
 	reFetchTransfers = ()=> {
-		console.log("REFETCH!");
 		store.transfers.transfersMutation();
 	};
 
@@ -91,6 +90,13 @@ class Interface extends React.Component {
 		if(!store.transfers.players.size) return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
+
+					<button className="interface-refresh-btn animated infinite heartBeat slower"
+							onClick={ this.reFetchTransfers }
+							style={{ left: this.table.width - 70 }}>
+						<PreLoader />
+					</button>
+
 					<div className="cssload-loader-big"><PreLoader/></div>
 				</div>
 				{ this.renderFilter() }
