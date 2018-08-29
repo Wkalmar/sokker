@@ -109,7 +109,7 @@ class Interface extends React.Component {
 
 					<button className="interface-refresh-btn animated infinite heartBeat slower"
 							onClick={ this.reFetchTransfers }
-							style={{ left: this.table.width - 70 }}>
+							style={{ left: this.table.width - 80 }}>
 						<PreLoader />
 					</button>
 
