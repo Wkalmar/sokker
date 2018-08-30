@@ -20,12 +20,16 @@ class HomePageContent extends React.Component {
 			<div style={{
 				display: store.currentPath === "/" ? "block" : "none"
 			}}>
-				{ !store.authorizedUser && <Link to="/login"><T i18nKey="Login"><button>Login</button></T></Link> }
-				{ !store.authorizedUser && <Link to="/registration"><T i18nKey="Registration"><button>Registration</button></T></Link> }
+				{!store.authorizedUser &&
+					<div style={{padding: '20px'}}>
+						<Link to="/login"><T i18nKey="Login"><button>Login</button></T></Link>
+						<Link to="/registration"><T i18nKey="Registration"><button>Registration</button></T></Link>
+					</div>
+				}
 
-				<T i18nKey="Hello">
-					Hello <strong title={"Login"}>{{ name: store.t('NickName') }}</strong>, you have {{ count: 42 }} unread message.
-				</T>
+				{/*<T i18nKey="Hello">*/}
+					{/*Hello <strong title={"Login"}>{{ name: store.t('NickName') }}</strong>, you have {{ count: 42 }} unread message.*/}
+				{/*</T>*/}
 
 				{ store.authorizedUser &&
 					<QueryLoader query={ USER_PLAYERS_QUERY }

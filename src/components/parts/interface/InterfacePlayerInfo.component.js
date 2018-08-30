@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 // MobX
 import { observer } from 'mobx-react';
 // Components
@@ -7,11 +8,11 @@ import T from "components/parts/T.component";
 
 export default observer(function({ player }) {
 	return (
-		<div style={{ float: 'left', padding: '20px 0 0 20px', width: 'calc(40% - 20px)' }}>
+		<div className="interface-player-info">
 			<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 				<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
 			</a>
-			<p><T>End of trade</T> { player.endOfTrade }</p>
+			<p><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</p>
 			<p>age { Math.round(player.age * 100) }</p>
 
 			<div style={{ fontSize: '12px', margin: '35px 0 0 0' }}>

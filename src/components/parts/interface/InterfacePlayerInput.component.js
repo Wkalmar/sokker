@@ -13,7 +13,7 @@ export default observer(function({ output, pos }) {
 				   onChange={ (e)=> output.set(pos, +e.currentTarget.value) }
 				   style={{
 					   outline: 'none',
-					   width: 25,
+					   width: 30,
 					   height: 20,
 					   border: 'none',
 					   borderBottom: '1px solid black',

@@ -1,0 +1,7 @@
+type TransfersPayload {
+    response: String!
+}
+
+extend type Mutation {
+    transfers: TransfersPayload
+}

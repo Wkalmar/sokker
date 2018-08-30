@@ -64,7 +64,7 @@ class Header extends React.Component {
 	render() {
 		return (
 			<div className="header">
-				<ul className="header_menu" style={{ width: '100%' }}>
+				<ul className="header_menu">
 					<Link to="/"><HomeSVG /></Link>
 					{ store.authorizedUser && <Link className="rotating" style={{
 						position: 'relative',
@@ -78,7 +78,7 @@ class Header extends React.Component {
 						: null }
 
 					<div ref={ this.headerLangRef } style={{ cursor: 'pointer', position: "relative" }} onClick={ this.toggleDropDown }>
-						<img style={{ width: '20px', height: '20px' }} alt={store.lang} src={ flags[store.lang] } />
+						<img style={{ width: '20px', height: '20px', marginTop: '2px' }} alt={store.lang} src={ flags[store.lang] } />
 					</div>
 
 					{/*<Link to="/help"><HelpSVG /></Link>*/}
@@ -93,7 +93,7 @@ class Header extends React.Component {
 					{ Object.keys(flags).map((lang)=> {
 						return (
 							<li key={lang} onClick={ ()=> this.changeLang(lang) }>
-								<img style={{ width: '20px', height: '20px' }} alt={lang} src={ flags[lang] } />
+								<img style={{ width: '20px', height: '20px', marginTop: '2px' }} alt={lang} src={ flags[lang] } />
 							</li>
 						);
 					}) }

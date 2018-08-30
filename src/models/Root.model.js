@@ -17,6 +17,7 @@ import NetModel from "models/Net.model";
 
 
 const RootModel = {
+	isRenderInterface: types.boolean,
 	lang: types.string,
 	isOpenSidebar: types.boolean,
 
@@ -37,6 +38,10 @@ const RootModel = {
 const actions = (store)=> {
 	return {
 
+		setRenderInterface(isRenderInterface = false) {
+			store.isRenderInterface = isRenderInterface;
+		},
+
 		t(translate="", params={}) {
 			return i18n.t(translate, params, store.lang);
 		},
@@ -55,6 +60,7 @@ const actions = (store)=> {
 		},
 
 		setCurrentPath(url = "") {
+			store.setRenderInterface(url === '/');
 			store.currentPath = url;
 		},
 

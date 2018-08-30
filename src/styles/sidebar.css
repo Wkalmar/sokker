@@ -27,8 +27,8 @@
 
 /* General sidebar styles */
 .bm-menu {
-    height: auto !important;
     padding: 10px;
+    background: whitesmoke;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -45,6 +45,8 @@
 /* Individual item */
 .bm-item {
     display: inline-block;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
 }
 
 /* Styling of overlay */

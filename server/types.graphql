@@ -15,6 +15,9 @@ type User @model {
     password: String!
     name: String
     trigger: String # for triggering socket update
+
+    transfers: String
+    updatedTransfersAt: String
 }
 
 
@@ -60,3 +63,5 @@ type Player @model {
     gk: Float!,
     mid: Float!
 }
+
+

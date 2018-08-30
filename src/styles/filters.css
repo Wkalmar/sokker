@@ -15,35 +15,18 @@
 
 .filter_title {
 	margin: 10px 0 5px 0;
-	font-size: 16px;
+	font-size: 14px;
 	color: black;
 }
 
 .filter input,
 .filter button {
-	border: none;
-	padding: 5px 10px;
-	background: #d67800;
-	color: white;
-	font-size: 14px;
 	margin: 0 5px 5px 0;
-	outline: none;
-	cursor: pointer;
-	min-width: 100px;
 }
 
-.filter button:hover {
-	opacity: 0.7;
-}
 
 .filter input {
-	cursor: initial;
 	padding: 10px;
-}
-
-.filter input::placeholder {
-	color: white;
-	opacity: 0.5;
 }
 
 .filter .rc-slider {

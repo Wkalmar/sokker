@@ -40,7 +40,7 @@ class Layout extends React.Component {
 			<div id="outer-container">
 				<Header />
 
-				{ store.device === "mobile" && store.currentPath === "/" ?
+				{ store.authorizedUser && store.device === "mobile" && store.currentPath === "/" ?
 					<Menu right
 						  push
 						  isOpen={ store.isOpenSidebar }

@@ -5,6 +5,7 @@ import brain from "brainjs";
 const NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
+	isLoading: types.boolean,
 	status: types.string,
 	errorThresh: types.number,
 	maxErrorThresh: types.number
@@ -13,6 +14,21 @@ const Net = {
 
 const actions = (self)=> {
 	return {
+
+		setLoading(isLoading = false) {
+			self.isLoading = isLoading;
+		},
+
+
+		setStatus(status = "") {
+			self.status = status;
+		},
+
+
+		setErrorThresh(errorThresh) {
+			self.errorThresh = errorThresh;
+		},
+
 
 		run(player) {
 			if(self.status !== "success") return {};
@@ -30,8 +46,11 @@ const actions = (self)=> {
 		},
 
 
-		train(data = []) {
-			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> self.status = "training");
+		async train(data = []) {
+			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> {
+				self.status = "training";
+				self.setErrorThresh(0);
+			});
 			const formattedData = data.map((player)=> ({
 				input: {
 					age: player.age,
@@ -54,12 +73,16 @@ const actions = (self)=> {
 
 			if(!formattedData.length) {
 				runInAction(`NET-TRAIN-ERROR (players: ${data.length})`, ()=> {
-					self.status = "error";
+					self.setStatus("error");
 				});
 			} else {
 				runInAction(`NET-TRAIN-SUCCESS (players: ${data.length})`, ()=> {
-					self.errorThresh = NET.train(formattedData).error;
-					self.status = "success";
+					setTimeout(()=> {
+						// self.setErrorThresh(NET.train(formattedData).error);
+						//self.errorThresh = NET.train(formattedData).error;
+						self.setErrorThresh(NET.train(formattedData).error);
+						self.setStatus(self.errorThresh < self.maxErrorThresh ? "success" : "error");
+					}, 0);
 				});
 			}
 		}
