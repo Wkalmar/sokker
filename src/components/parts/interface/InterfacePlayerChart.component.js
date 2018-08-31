@@ -86,11 +86,12 @@ class InterfacePlayerChart extends React.Component {
 
 
 	render() {
+		if(!store.NET.isEnabled) return null;
 		if(!Object.keys(this.props.playerData).length) return null;
 		if(!store.isRenderInterface) return <div key={ store.isRenderInterface } />;
 		return (
 			<ResponsiveContainer>
-				<PieChart width={100} height={100}>
+				<PieChart width={120} height={100}>
 					<Legend verticalAlign="top" align="right" />
 					<Pie data={ this.chartData }
 						 dataKey="value"

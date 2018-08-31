@@ -1,0 +1,26 @@
+.interface-player-info {
+
+}
+
+.interface-player-info > p {
+    font-size: 12px;
+    font-weight: bold
+}
+
+
+.interface-player-info > i {
+    font-size: 11px;
+}
+
+
+.interface-player-info-block {
+    font-size: 12px;
+    margin: 15px 0 0 0;
+}
+
+.interface-player-info-block > div {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    margin: 5px 0;
+}

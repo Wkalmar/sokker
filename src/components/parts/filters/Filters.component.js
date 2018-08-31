@@ -61,7 +61,9 @@ class Filters extends React.Component {
 					</button>
 				</div>
 
-				<PredictedSkillsFilters />
+				{ store.NET.isEnabled ?
+					<PredictedSkillsFilters />
+					: null }
 
 				<div className="filter">
 					<div className="filter_title">Sort by skills:</div>

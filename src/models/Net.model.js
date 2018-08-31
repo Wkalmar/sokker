@@ -5,6 +5,7 @@ import brain from "brainjs";
 const NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
+	isEnabled: false,
 	isLoading: types.boolean,
 	status: types.string,
 	errorThresh: types.number,
@@ -14,6 +15,10 @@ const Net = {
 
 const actions = (self)=> {
 	return {
+
+		toggleNet() {
+			self.isEnabled = !self.isEnabled;
+		},
 
 		setLoading(isLoading = false) {
 			self.isLoading = isLoading;
