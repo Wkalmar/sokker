@@ -57,13 +57,13 @@ class NeuralNetworkPage extends React.Component {
 					<div className="net-info">
 						<div className="net-info-table">
 							<div className="net-info-row">
-								<T>{ store.NET.isEnabled ? 'disable' : 'enable'} NET </T>
-								<input type="checkbox" onChange={ store.NET.toggleNet } checked={ store.NET.isEnabled } />
+								<T>{ store.NET.status !== 'disabled' ? 'disable' : 'enable'} NET </T>
+								<input type="checkbox" onChange={ store.NET.toggleNet } checked={ store.NET.status === 'disabled' } />
 							</div>
 						</div>
 
 						<div className="net-info-title"><T>NET information</T></div>
-						{ store.NET.isEnabled ?
+						{ store.NET.status !== 'disabled' ?
 							<div className="net-info-table">
 								<div className="net-info-row">
 									status: <span style={{
@@ -81,7 +81,7 @@ class NeuralNetworkPage extends React.Component {
 								<div className="net-info-row">
 									<span />
 									<button onClick={ this.relearnNet }>
-										{ store.NET.status === "training" ?
+										{ store.NET.status === "learning" ?
 											<PreLoader />
 											:
 											<T>Relearn net</T>
@@ -92,7 +92,7 @@ class NeuralNetworkPage extends React.Component {
 							: null }
 
 						<div className="net-info-title"><T>Trained players information</T></div>
-						{ store.NET.isEnabled ?
+						{ store.NET.status !== 'disabled' ?
 							this.players.map((player)=> {
 								return (
 									<div className="net-info-row" key={ player.id }>

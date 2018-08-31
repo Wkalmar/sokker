@@ -50,6 +50,21 @@ class Header extends React.Component {
 	}
 
 
+	get netStatusColor() {
+		console.log("ww", store.NET.status);
+		switch(store.NET.status) {
+			case 'error':
+				return 'red';
+			case 'success':
+				return 'green';
+			case 'learning':
+				return 'yellow';
+			case 'disabled':
+				return 'lightgray';
+		}
+	}
+
+
 	toggleDropDown = ()=> {
 		this.isOpenDropDown.set(!this.isOpenDropDown.get());
 	};
@@ -66,10 +81,15 @@ class Header extends React.Component {
 			<div className="header">
 				<ul className="header_menu">
 					<Link to="/"><HomeSVG /></Link>
-					{ store.authorizedUser && <Link className="rotating" style={{
-						position: 'relative',
-						left: '-7px'
-					}} to="/neuralnetwork"><NeuralSVG /></Link> }
+					<span className="neural-link-wrapper">
+						{ store.authorizedUser && <Link className="rotating" style={{
+							position: 'relative',
+							left: '-7px'
+						}} to="/neuralnetwork">
+							<NeuralSVG />
+						</Link> }
+						<span style={{ background: this.netStatusColor }} />
+					</span>
 				</ul>
 
 				<ul className="header_menu">

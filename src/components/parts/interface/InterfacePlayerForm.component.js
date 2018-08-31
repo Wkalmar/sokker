@@ -48,7 +48,7 @@ class InterfacePlayerFrom extends React.Component {
 
 
 	render() {
-		if(!store.NET.isEnabled) return null;
+		if(store.NET.status === 'disabled') return null;
 		return (
 			<div className="interface-player-form">
 

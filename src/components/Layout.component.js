@@ -25,6 +25,8 @@ class Layout extends React.Component {
 
 
 	onWindowResize = ()=> {
+		console.log('keks...');
+		store.interfaceMeasurerCache.clearAll();
 		this.menuWidth.set(window.innerWidth / 100 * 90);
 		this.menuHeight.set(window.innerHeight - 100);
 	};

@@ -7,7 +7,6 @@ import store from "store";
 const NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
-	isEnabled: true,
 	isLoading: types.boolean,
 	status: types.string,
 	errorThresh: types.number,
@@ -19,11 +18,11 @@ const actions = (self)=> {
 	return {
 
 		toggleNet() {
-			self.isEnabled = !self.isEnabled;
+			self.status = self.status === 'disabled' ? 'enabled' : 'disabled';
 			store.transfers.transfersMutation();
 			store.interfaceMeasurerCache.clearAll();
 
-			if(self.isEnabled === true) {
+			if(self.status === 'enabled') {
 				self.train(store.players.userPlayers);
 			}
 		},
@@ -61,7 +60,7 @@ const actions = (self)=> {
 
 		async train(data = []) {
 			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> {
-				self.status = "training";
+				self.status = "learning";
 				self.setErrorThresh(0);
 			});
 			const formattedData = data.map((player)=> ({

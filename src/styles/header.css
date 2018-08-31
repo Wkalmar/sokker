@@ -55,6 +55,22 @@
 }
 
 
+.header_menu .neural-link-wrapper {
+	padding-top: 0;
+}
+
+.header_menu .neural-link-wrapper > a {
+	padding-top: 9px;
+}
+
+.neural-link-wrapper > span {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	margin-top: 12px;
+	margin-left: -13px;
+}
+
 .header_drop_down {
 	cursor: default;
 	position: absolute;

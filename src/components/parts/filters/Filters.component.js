@@ -61,7 +61,7 @@ class Filters extends React.Component {
 					</button>
 				</div>
 
-				{ store.NET.isEnabled ?
+				{ store.NET.status !== 'disabled' ?
 					<PredictedSkillsFilters />
 					: null }
 
