@@ -12,8 +12,7 @@ import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
 import QueryLoader from "components/QueryLoader.component";
 import PreLoader from "components/parts/PreLoader.component";
 import T from "components/parts/T.component";
-import InterfacePlayerInfo from "components/parts/interface/InterfacePlayerInfo.component";
-import InterfacePlayerForm from "components/parts/interface/InterfacePlayerForm.component";
+import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 
 
 class NeuralNetworkPage extends React.Component {
@@ -111,8 +110,8 @@ class NeuralNetworkPage extends React.Component {
 										</button>
 
 										<div className="net-info-details-block" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
-											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerInfo player={ player } /> }
-											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerForm player={ player } /> }
+											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
+
 											<button onClick={ ()=> this.removePlayer(player.id) }>
 												{ this.isLoadingDeleteBtn.get() ?
 													<PreLoader />
