@@ -58,11 +58,14 @@ class NeuralNetworkPage extends React.Component {
 						<div className="net-info-table">
 							<div className="net-info-row">
 								<T>{ store.NET.status !== 'disabled' ? 'disable' : 'enable'} NET </T>
-								<input type="checkbox" onChange={ store.NET.toggleNet } checked={ store.NET.status === 'disabled' } />
+								<input type="checkbox"
+									   style={{ margin: 0 }}
+									   onChange={ store.NET.toggleNet }
+									   checked={ store.NET.status === 'disabled' } />
 							</div>
 						</div>
 
-						<div className="net-info-title"><T>NET information</T></div>
+						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>NET information</T></div> }
 						{ store.NET.status !== 'disabled' ?
 							<div className="net-info-table">
 								<div className="net-info-row">
@@ -91,7 +94,7 @@ class NeuralNetworkPage extends React.Component {
 							</div>
 							: null }
 
-						<div className="net-info-title"><T>Trained players information</T></div>
+						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Trained players information</T></div> }
 						{ store.NET.status !== 'disabled' ?
 							this.players.map((player)=> {
 								return (

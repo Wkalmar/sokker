@@ -1,5 +1,7 @@
 import { types, applySnapshot } from "mobx-state-tree";
 import { keys, runInAction } from "mobx";
+// Store
+import store from "store";
 // Utils
 import defaultFilters from "utils/defaultFilters.utils";
 
