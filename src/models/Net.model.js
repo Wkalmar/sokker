@@ -21,7 +21,6 @@ const actions = (self)=> {
 		toggleNet() {
 			self.isEnabled = !self.isEnabled;
 			store.transfers.transfersMutation();
-			console.log(store.interfaceMeasurerCache, 42);
 			store.interfaceMeasurerCache.clearAll();
 
 			if(self.isEnabled === true) {

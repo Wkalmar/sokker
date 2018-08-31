@@ -41,7 +41,7 @@ class InterfacePlayer extends React.Component {
 				{ store.players.isHideCharts ?
 					<PreLoader />
 					:
-					<InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
+					store.NET.isEnabled && <InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
 				}
 
 				<InterfacePlayerForm player={ this.props.player } />
