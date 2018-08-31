@@ -62,11 +62,6 @@ class Interface extends React.Component {
 	get players() { return store.transfers.filtered; };
 
 
-	reFetchTransfers = ()=> {
-		store.transfers.transfersMutation();
-	};
-
-
 	onWindowResize = (e)=> {
 		this.table.width = this.tableWidth;
 		this.table.height = this.tableHeight;
@@ -86,14 +81,33 @@ class Interface extends React.Component {
 	}
 
 
+	rowRenderer = ({ index, key, parent, style })=> {
+		return (
+			<CellMeasurer
+				cache={ store.interfaceMeasurerCache }
+				columnIndex={0}
+				key={key}
+				rowIndex={index}
+				parent={parent}>
+				{ ()=> (
+					<div style={ style } key={ this.players[index].id }>
+						<InterfacePlayer player={ this.players[index] }
+										 index={index} />
+					</div>
+				) }
+			</CellMeasurer>
+		);
+	};
+
+
 	render() {
 		if(!store.transfers.players.size) return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
 
 					<button className="interface-refresh-btn animated infinite heartBeat slower"
-							onClick={ this.reFetchTransfers }
-							style={{ left: this.table.width - 70 }}>
+							onClick={ store.transfers.transfersMutation }
+							style={{ left: this.table.width - 80 }}>
 						<PreLoader />
 					</button>
 
@@ -103,29 +117,24 @@ class Interface extends React.Component {
 			</div>
 		);
 
+
 		return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
 
 					<button className="interface-refresh-btn animated infinite heartBeat slower"
-							onClick={ this.reFetchTransfers }
+							onClick={ store.transfers.transfersMutation }
 							style={{ left: this.table.width - 80 }}>
 						<PreLoader />
 					</button>
 
 					{ this.players.length ?
 						<List rowCount={ this.players.length }
+							  deferredMeasurementCache={ store.interfaceMeasurerCache }
 							  height={ this.table.height }
 							  width={ this.table.width }
-							  rowHeight={ this.table.rowHeight }
-							  rowRenderer={({ style, index })=> {
-								  return (
-									  <div style={ style } key={ this.players[index].id }>
-										  <InterfacePlayer player={ this.players[index] }
-														   index={index} />
-									  </div>
-								  )
-							  } } />
+							  rowHeight={ store.interfaceMeasurerCache.rowHeight }
+							  rowRenderer={ this.rowRenderer } />
 						:
 						<div style={{ fontSize: 20, textAlign: 'center', marginTop: '100px' }}>
 							<T>No players found</T>

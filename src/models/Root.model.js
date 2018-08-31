@@ -1,6 +1,7 @@
 import i18n from 'i18next';
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
+import { CellMeasurerCache } from "react-virtualized";
 // Utils
 import history from "utils/history.utils";
 // GraphQL
@@ -16,8 +17,13 @@ import TransfersModel from "models/Transfers.model";
 import NetModel from "models/Net.model";
 
 
+const interfaceMeasurerCache = new CellMeasurerCache({
+	fixedWidth: true,
+	minHeight: 10,
+});
+
+
 const RootModel = {
-	isRenderInterface: types.boolean,
 	lang: types.string,
 	isOpenSidebar: types.boolean,
 
@@ -38,10 +44,6 @@ const RootModel = {
 const actions = (store)=> {
 	return {
 
-		setRenderInterface(isRenderInterface = false) {
-			store.isRenderInterface = isRenderInterface;
-		},
-
 		t(translate="", params={}) {
 			return i18n.t(translate, params, store.lang);
 		},
@@ -60,7 +62,6 @@ const actions = (store)=> {
 		},
 
 		setCurrentPath(url = "") {
-			store.setRenderInterface(url === '/');
 			store.currentPath = url;
 		},
 
@@ -111,4 +112,13 @@ const actions = (store)=> {
 };
 
 
-export default types.model("RootModel", RootModel).actions(actions);
+const views = (store)=> {
+	return {
+		get interfaceMeasurerCache() {
+			return interfaceMeasurerCache;
+		}
+	};
+};
+
+
+export default types.model("RootModel", RootModel).actions(actions).views(views);

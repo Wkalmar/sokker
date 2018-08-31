@@ -7,7 +7,7 @@ import store from "store";
 const NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
-	isEnabled: false,
+	isEnabled: true,
 	isLoading: types.boolean,
 	status: types.string,
 	errorThresh: types.number,
@@ -20,7 +20,13 @@ const actions = (self)=> {
 
 		toggleNet() {
 			self.isEnabled = !self.isEnabled;
-			if(self.isEnabled === true) self.train(store.players.userPlayers);
+			store.transfers.transfersMutation();
+			console.log(store.interfaceMeasurerCache, 42);
+			store.interfaceMeasurerCache.clearAll();
+
+			if(self.isEnabled === true) {
+				self.train(store.players.userPlayers);
+			}
 		},
 
 		setLoading(isLoading = false) {

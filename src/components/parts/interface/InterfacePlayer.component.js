@@ -38,13 +38,11 @@ class InterfacePlayer extends React.Component {
 				 key={ store.NET.status } >
 				<InterfacePlayerInfo player={ this.props.player } />
 
-				<div className="interface-player-chart">
-					{ store.players.isHideCharts ?
-						<PreLoader />
-						:
-						<InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
-					}
-				</div>
+				{ store.players.isHideCharts ?
+					<PreLoader />
+					:
+					<InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
+				}
 
 				<InterfacePlayerForm player={ this.props.player } />
 			</div>
