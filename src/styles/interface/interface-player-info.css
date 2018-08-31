@@ -29,4 +29,9 @@
     justify-content: space-between;
     background: white;
     margin: 5px 0;
+    border-bottom: 1px solid white;
+}
+
+.interface-player-info-block > div:hover {
+    border-bottom: 1px solid #d67800;
 }

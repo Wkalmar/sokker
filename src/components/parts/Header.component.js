@@ -51,7 +51,6 @@ class Header extends React.Component {
 
 
 	get netStatusColor() {
-		console.log("ww", store.NET.status);
 		switch(store.NET.status) {
 			case 'error':
 				return 'red';
