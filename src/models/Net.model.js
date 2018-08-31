@@ -1,6 +1,8 @@
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
 import brain from "brainjs";
+// Store
+import store from "store";
 
 const NET = window.NET = new brain.NeuralNetwork();
 
@@ -18,6 +20,7 @@ const actions = (self)=> {
 
 		toggleNet() {
 			self.isEnabled = !self.isEnabled;
+			if(self.isEnabled === true) self.train(store.players.userPlayers);
 		},
 
 		setLoading(isLoading = false) {

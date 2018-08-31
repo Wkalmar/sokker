@@ -1,6 +1,8 @@
 // MobX
-import { values, runInAction } from "mobx";
+import { values } from "mobx";
 import { types } from 'mobx-state-tree';
+// Store
+import store from 'store';
 // Models
 import PlayerModel from "models/players/Player.model";
 // GraphQl
@@ -55,7 +57,9 @@ const actions = (self)=> {
 
 
 const views = (self)=> {
-	return {};
+	return {
+		get userPlayers() { return values(self.all).filter((player)=> player.userId === store.authorizedUser.id); }
+	};
 };
 
 export default types.model('Players', Players).actions(actions).views(views);
