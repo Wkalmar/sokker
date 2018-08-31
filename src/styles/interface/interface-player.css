@@ -19,6 +19,12 @@
     height: 250px;
 }
 
+@media screen and (max-width: 700px) {
+    .interface-player-chart {
+        width: 100%;
+    }
+}
+
 .interface-player-form {
     display: flex;
     justify-content: flex-end;
