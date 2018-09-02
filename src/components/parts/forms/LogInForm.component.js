@@ -28,6 +28,10 @@ class LogInForm extends React.Component {
 		this.isLoading.set(false);
 	};
 
+	isLoginDisabled = ()=> {
+		return this.isLoading.get() || !this.form.email || !this.form.password;
+	}
+
 
 	render() {
 		return (
@@ -45,7 +49,7 @@ class LogInForm extends React.Component {
 					   onChange={ (e)=> this.form.password = e.currentTarget.value }/>
 
 				<button onClick={  this.logIn }
-						disabled={ this.isLoading.get() || !this.form.email || !this.form.password }>{
+						disabled={ this.isLoginDisabled() }>{
 					this.isLoading.get() ?
 						<PreLoader/>
 						:
