@@ -28,6 +28,19 @@ class LogInForm extends React.Component {
 		this.isLoading.set(false);
 	};
 
+	handleKeyPress = async(e)=> {
+		switch (e.key) {
+			case 'Enter':
+				if (this.isLoginDisabled()) {
+					break;
+				}
+				await this.logIn();
+				break;
+			default:
+				break;
+		}
+	}
+
 	isLoginDisabled = ()=> {
 		return this.isLoading.get() || !this.form.email || !this.form.password;
 	}
@@ -40,13 +53,15 @@ class LogInForm extends React.Component {
 				<input type="text"
 					   className="email"
 					   value={ this.form.email }
-					   onChange={ (e)=> this.form.email = e.currentTarget.value }/>
+					   onChange={ (e)=> this.form.email = e.currentTarget.value }
+					   onKeyPress={ this.handleKeyPress }/>
 
 				<p>Password:</p>
 				<input type="password"
 					   className="password"
 					   value={ this.form.password }
-					   onChange={ (e)=> this.form.password = e.currentTarget.value }/>
+					   onChange={ (e)=> this.form.password = e.currentTarget.value }
+					   onKeyPress={ this.handleKeyPress }/>
 
 				<button onClick={  this.logIn }
 						disabled={ this.isLoginDisabled() }>{
