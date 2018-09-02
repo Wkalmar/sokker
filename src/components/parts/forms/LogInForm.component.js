@@ -29,19 +29,6 @@ class LogInForm extends React.Component {
 		this.isLoading.set(false);
 	};
 
-	handleKeyPress = async(e)=> {
-		switch (e.key) {
-			case 'Enter':
-				if (this.isLoginDisabled()) {
-					break;
-				}
-				await this.logIn();
-				break;
-			default:
-				break;
-		}
-	}
-
 	isLoginDisabled = ()=> {
 		return this.isLoading.get() || !this.form.email || !this.form.password;
 	}
