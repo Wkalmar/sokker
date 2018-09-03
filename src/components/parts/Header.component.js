@@ -90,7 +90,7 @@ class Header extends React.Component {
 						<span style={{ background: this.netStatusColor }} />
 					</span> }
 
-					{ store.authorizedUser && <Link to="/favorites">★</Link> }
+					{ store.authorizedUser && <Link className="header_menu-favorites" to="/favorites">★</Link> }
 				</ul>
 
 				<ul className="header_menu">
