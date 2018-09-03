@@ -55,6 +55,15 @@ const actions = (self)=> {
 
 		resetFilters() {
 			applySnapshot(self, defaultFilters);
+		},
+
+
+		// Hooks
+		postProcessSnapshot() {
+			// TODO: Fix this issue with [React virtualized] list _cache
+			const $list = document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0];
+			if($list) $list.scrollTop = $list.scrollTop+1;
+
 		}
 	};
 };

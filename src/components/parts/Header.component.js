@@ -80,15 +80,15 @@ class Header extends React.Component {
 			<div className="header">
 				<ul className="header_menu">
 					<Link to="/"><HomeSVG /></Link>
-					<span className="neural-link-wrapper">
-						{ store.authorizedUser && <Link className="rotating" style={{
+					{ store.authorizedUser && <span className="neural-link-wrapper">
+						<Link className="rotating" style={{
 							position: 'relative',
 							left: '-7px'
 						}} to="/neuralnetwork">
 							<NeuralSVG />
-						</Link> }
+						</Link>
 						<span style={{ background: this.netStatusColor }} />
-					</span>
+					</span> }
 				</ul>
 
 				<ul className="header_menu">
