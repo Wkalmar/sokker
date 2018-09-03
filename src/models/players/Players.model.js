@@ -20,7 +20,7 @@ const Players = {
 const actions = (self)=> {
 	return {
 
-		async createMutation(newPlayer) {
+		async upsertMutation(newPlayer) {
 			self.refreshPlayersCharts(true);
 			const duplicatedPlayer = values(self.all).find((player)=> {
 				return player.id === newPlayer.id;
