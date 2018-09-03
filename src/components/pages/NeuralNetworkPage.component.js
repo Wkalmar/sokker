@@ -61,7 +61,7 @@ class NeuralNetworkPage extends React.Component {
 								<input type="checkbox"
 									   style={{ margin: 0 }}
 									   onChange={ store.NET.toggleNet }
-									   checked={ store.NET.status === 'disabled' } />
+									   checked={ store.NET.status !== 'disabled' } />
 							</div>
 						</div>
 

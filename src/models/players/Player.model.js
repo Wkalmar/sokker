@@ -15,6 +15,8 @@ const Player = {
 	playerId: types.string,
 	name: types.string,
 
+	isFavorite: types.maybe(types.boolean),
+
 	age: types.maybe(types.number),
 	defender: types.maybe(types.number),
 	keeper: types.maybe(types.number),
