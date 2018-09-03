@@ -22,36 +22,41 @@ class LogInForm extends React.Component {
 	});
 
 
-	logIn = async ()=> {
+	logIn = async (e)=> {
+		e.preventDefault();
 		this.isLoading.set(true);
 		await store.logInMutation(this.form);
 		this.isLoading.set(false);
 	};
 
+	isLoginDisabled = ()=> {
+		return this.isLoading.get() || !this.form.email || !this.form.password;
+	}
+
 
 	render() {
 		return (
 			<div className="login-form">
-				<p>Email:</p>
-				<input type="text"
-					   className="email"
-					   value={ this.form.email }
-					   onChange={ (e)=> this.form.email = e.currentTarget.value }/>
+				<form onSubmit={ this.logIn }>
+					<p>Email:</p>
+					<input type="text"
+						className="email"
+						value={ this.form.email }
+						onChange={ (e)=> this.form.email = e.currentTarget.value }/>
 
-				<p>Password:</p>
-				<input type="password"
-					   className="password"
-					   value={ this.form.password }
-					   onChange={ (e)=> this.form.password = e.currentTarget.value }/>
+					<p>Password:</p>
+					<input type="password"
+						className="password"
+						value={ this.form.password }
+						onChange={ (e)=> this.form.password = e.currentTarget.value }/>
 
-				<button onClick={  this.logIn }
-						disabled={ this.isLoading.get() || !this.form.email || !this.form.password }>{
-					this.isLoading.get() ?
-						<PreLoader/>
-						:
-						'LogIn'
-				}</button>
-
+					<button disabled={ this.isLoginDisabled() }>{
+						this.isLoading.get() ?
+							<PreLoader/>
+							:
+							'LogIn'
+					}</button>
+				</form>
 				<Link to="/registration"><T>Sign up</T></Link>
 			</div>
 		)
