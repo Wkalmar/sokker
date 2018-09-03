@@ -2,28 +2,32 @@
     background: whitesmoke;
     color: black;
     margin: 10px 0;
-    height: 360px;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .interface-player .cssload-loader {
     margin: 100px auto;
 }
 
-.interface-player-info {
-    width: 50%;
-}
 
 .interface-player-chart {
     width: 50%;
     height: 250px;
 }
 
+@media screen and (max-width: 700px) {
+    .interface-player-chart {
+        width: 100%;
+    }
+}
+
 .interface-player-form {
+    display: flex;
+    justify-content: flex-end;
     width: 100%;
     margin-top: 20px;
 }
@@ -31,5 +35,27 @@
 .interface-player-form-inputs {
     display: flex;
     max-width: 418px;
+    min-width: 280px;
     justify-content: space-between;
+}
+
+.interface-player-form-inputs span {
+    color: #0606068a;
+}
+
+.interface-player-form-inputs input {
+    color: #d67801;
+    margin: 3px 0 0 0;
+    width: 25px;
+    height: 20px;
+    font-size: 15px;
+    background: white !important;
+    border-bottom: 1px solid #f77f11;
+}
+
+.interface-player-form-inputs button {
+    margin: 17px 0 0 0;
+    min-height: auto;
+    height: 31px;
+    line-height: 11px;
 }

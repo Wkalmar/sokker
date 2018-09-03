@@ -9,7 +9,7 @@ const Player = {
 	user: types.frozen,
 	id: types.string,
 
-	details: types.maybe(types.string),
+	currentPrice: types.maybe(types.string),
 	endOfTrade: types.maybe(types.string),
 
 	playerId: types.string,

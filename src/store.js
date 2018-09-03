@@ -1,93 +1,21 @@
 import { spy } from "mobx";
-// import { onPatch } from "mobx-state-tree";
+// Utils
+import defaultFilters from "utils/defaultFilters.utils";
 // Models
 import RootModel from "models/Root.model";
 
 
 const store = RootModel.create({
-	isRenderInterface: false,
 	lang: "en",
 	isOpenSidebar: false,
-	NET: { isLoading: false, status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
+	NET: { isLoading: false, status: "learning", errorThresh: 0, maxErrorThresh: 0.005 },
 	device: "desktop",
 	users: {},
 	players: {
 		isHideCharts: true
 	},
 	transfers: {},
-	filters: {
-		age: {
-			range: [16, 35],
-			order: "✘"
-		},
-		att : {
-			range: [0, 100],
-			order: "✘"
-		},
-		mid : {
-			range: [0, 100],
-			order: "✘"
-		},
-		def : {
-			range: [0, 100],
-			order: "✘"
-		},
-		gk : {
-			range: [0, 100],
-			order: "✘"
-		},
-		skills: {
-			stamina: {
-				order: "✘",
-				range: [0, 17]
-			},
-			keeper: {
-				order: "✘",
-				range: [0, 17]
-			},
-			pace: {
-				order: "✘",
-				range: [0, 17]
-			},
-			defender: {
-				order: "✘",
-				range: [0, 17]
-			},
-			technique: {
-				order: "✘",
-				range: [0, 17]
-			},
-			playmaker: {
-				order: "✘",
-				range: [0, 17]
-			},
-			passing: {
-				order: "✘",
-				range: [0, 17]
-			},
-			striker: {
-				order: "✘",
-				range: [0, 17]
-			},
-			ATT: {
-				order: "✘",
-				range: [0, 17]
-			},
-			DEF: {
-				order: "✘",
-				range: [0, 17]
-			},
-			MID: {
-				order: "✘",
-				range: [0, 17]
-			},
-			GK: {
-				order: "✘",
-				range: [0, 17]
-			}
-		},
-		search: ""
-	}
+	filters: defaultFilters
 });
 
 
@@ -104,29 +32,6 @@ spy((event)=> {
 			break;
 	}
 });
-
-
-// @SOURCE: https://github.com/mobxjs/mobx-state-tree/blob/master/API.md#onpatch
-// onPatch(store, (patch)=> {
-// 	let color = 'color: gray;';
-// 	switch(patch.op) {
-// 		case "add":
-// 			color = 'color: green;';
-// 			break;
-// 		case "replace":
-// 			color = 'color: darkorange;';
-// 			break;
-// 		case "remove":
-// 			color = 'color: darkred;';
-// 			break;
-// 		default:
-// 			color = 'color: black';
-// 			break;
-// 	}
-// 	console.groupCollapsed(`%c🦄🌈 [@action: ${patch.op} ${patch.path}]`, color);
-// 	console.log(patch);
-// 	console.groupEnd(`%c🦄🌈 [@action: ${patch.op} ${patch.path}]`, color);
-// });
 
 
 export default store;

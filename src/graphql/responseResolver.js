@@ -83,15 +83,3 @@ function revertData(dataName, errorMsg) {
 			Alert.error(errorMsg);
 	}
 }
-
-function parse(data) {
-	const result = {};
-	Object.keys(data).forEach(key => {
-		try {
-			result[key] = JSON.parse(data[key]);
-		} catch (e) {
-			result[key] = data[key]; // For string case
-		}
-	});
-	return result;
-}

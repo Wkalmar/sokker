@@ -1,0 +1,37 @@
+.interface-player-info {
+
+}
+
+@media screen and (max-width: 700px) {
+    .interface-player-info {
+        width: 100% !important;
+    }
+}
+
+.interface-player-info > p {
+    font-size: 12px;
+    font-weight: bold
+}
+
+
+.interface-player-info > i {
+    font-size: 11px;
+}
+
+
+.interface-player-info-block {
+    font-size: 12px;
+    margin: 15px 0 0 0;
+}
+
+.interface-player-info-block > div {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    margin: 5px 0;
+    border-bottom: 1px solid white;
+}
+
+.interface-player-info-block > div:hover {
+    border-bottom: 1px solid #d67800;
+}

@@ -12,8 +12,7 @@ import USER_PLAYERS_QUERY from "graphql/queries/players/userPlayers.query";
 import QueryLoader from "components/QueryLoader.component";
 import PreLoader from "components/parts/PreLoader.component";
 import T from "components/parts/T.component";
-import InterfacePlayerInfo from "components/parts/interface/InterfacePlayerInfo.component";
-import InterfacePlayerForm from "components/parts/interface/InterfacePlayerForm.component";
+import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 
 
 class NeuralNetworkPage extends React.Component {
@@ -56,64 +55,74 @@ class NeuralNetworkPage extends React.Component {
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>
 					<div className="net-info">
-						<div className="net-info-title"><T>NET information</T></div>
 						<div className="net-info-table">
 							<div className="net-info-row">
-								status: <span style={{
-								color: store.NET.status === "success" ? "rgb(44, 160, 44)" : "rgb(215, 39, 41)"
-							}}>{ store.NET.status }</span>
-							</div>
-							<div className="net-info-row">
-								error thresh: <span style={{
-								color: store.NET.errorThresh < store.NET.maxErrorThresh ? "rgb(44, 160, 44)" : "rgb(215, 39, 41)"
-							}}>{ store.NET.errorThresh }</span>
-							</div>
-							<div className="net-info-row">
-								trained players <span>{ store.players.all.size }</span>
-							</div>
-							<div className="net-info-row">
-								<span />
-								<button onClick={ this.relearnNet }>
-									{ store.NET.status === "training" ?
-										<PreLoader />
-										:
-										<T>Relearn net</T>
-									}
-								</button>
+								<T>{ store.NET.status !== 'disabled' ? 'disable' : 'enable'} NET </T>
+								<input type="checkbox"
+									   style={{ margin: 0 }}
+									   onChange={ store.NET.toggleNet }
+									   checked={ store.NET.status === 'disabled' } />
 							</div>
 						</div>
 
-						<div className="net-info-title"><T>Trained players information</T></div>
-						{ this.players.map((player)=> {
-							return (
-								<div className="net-info-row" key={ player.id }>
-									{ this.openedDetailsBlock.get() !== player.id ?
+						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>NET information</T></div> }
+						{ store.NET.status !== 'disabled' ?
+							<div className="net-info-table">
+								<div className="net-info-row">
+									status: <span style={{
+									color: store.NET.status === "success" ? "rgb(44, 160, 44)" : "rgb(215, 39, 41)"
+								}}>{ store.NET.status }</span>
+								</div>
+								<div className="net-info-row">
+									error thresh: <span style={{
+									color: store.NET.errorThresh < store.NET.maxErrorThresh ? "rgb(44, 160, 44)" : "rgb(215, 39, 41)"
+								}}>{ store.NET.errorThresh }</span>
+								</div>
+								<div className="net-info-row">
+									trained players <span>{ store.players.all.size }</span>
+								</div>
+								<div className="net-info-row">
+									<span />
+									<button onClick={ this.relearnNet }>
+										{ store.NET.status === "learning" ?
+											<PreLoader />
+											:
+											<T>Relearn net</T>
+										}
+									</button>
+								</div>
+							</div>
+							: null }
+
+						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Trained players information</T></div> }
+						{ store.NET.status !== 'disabled' ?
+							this.players.map((player)=> {
+								return (
+									<div className="net-info-row" key={ player.id }>
 										<a style={{ width: 'calc(100% - 100px)' }}
 										   href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 											<p>{ player.name }</p>
 										</a>
-										:
-										<span />
-									}
 
-									<button className="net-info-details-button" onClick={ ()=> this.showPlayerDetails(player) }>
-										<T>{  this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
-									</button>
-
-									<div className="net-info-details-block" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
-										{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerInfo player={ player } /> }
-										{ this.openedDetailsBlock.get() === player.id && <InterfacePlayerForm player={ player } /> }
-										<button onClick={ ()=> this.removePlayer(player.id) }>
-											{ this.isLoadingDeleteBtn.get() ?
-												<PreLoader />
-												:
-												<T>Remove trained player and relearn NET</T>
-											}
+										<button className="net-info-details-button" onClick={ ()=> this.showPlayerDetails(player) }>
+											<T>{  this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
 										</button>
+
+										<div className="net-info-details-block" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
+											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
+
+											<button onClick={ ()=> this.removePlayer(player.id) }>
+												{ this.isLoadingDeleteBtn.get() ?
+													<PreLoader />
+													:
+													<T>Remove trained player and relearn NET</T>
+												}
+											</button>
+										</div>
 									</div>
-								</div>
-							)
-						}) }
+									)
+								})
+							: null }
 					</div>
 				</QueryLoader>
 			</div>

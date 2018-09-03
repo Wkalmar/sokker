@@ -11,14 +11,6 @@ export default observer(function({ output, pos }) {
 				   alwaysShowMask={ true }
 				   value={ output.get(pos) }
 				   onChange={ (e)=> output.set(pos, +e.currentTarget.value) }
-				   style={{
-					   outline: 'none',
-					   width: 30,
-					   height: 20,
-					   border: 'none',
-					   borderBottom: '1px solid black',
-					   fontSize: 14
-				   }}
 		/>
 	);
 })

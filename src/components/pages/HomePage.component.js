@@ -18,9 +18,9 @@ class HomePageContent extends React.Component {
 	render() {
 		return (
 			<div style={{
-				display: store.currentPath === "/" ? "block" : "none"
+				opacity: store.currentPath === "/" ? "1" : "0"
 			}}>
-				{!store.authorizedUser &&
+				{ !store.authorizedUser &&
 					<div style={{padding: '20px'}}>
 						<Link to="/login"><T i18nKey="Login"><button>Login</button></T></Link>
 						<Link to="/registration"><T i18nKey="Registration"><button>Registration</button></T></Link>

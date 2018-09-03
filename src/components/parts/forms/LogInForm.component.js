@@ -29,7 +29,8 @@ class LogInForm extends React.Component {
 		this.isLoading.set(false);
 	};
 
-	isLoginDisabled = ()=> {
+
+	get isLoginDisabled() {
 		return this.isLoading.get() || !this.form.email || !this.form.password;
 	}
 
@@ -38,6 +39,7 @@ class LogInForm extends React.Component {
 		return (
 			<div className="login-form">
 				<form onSubmit={ this.logIn }>
+
 					<p>Email:</p>
 					<input type="text"
 						className="email"
@@ -50,12 +52,12 @@ class LogInForm extends React.Component {
 						value={ this.form.password }
 						onChange={ (e)=> this.form.password = e.currentTarget.value }/>
 
-					<button disabled={ this.isLoginDisabled() }>{
-						this.isLoading.get() ?
+					<button disabled={ this.isLoginDisabled }>
+						{ this.isLoading.get() ?
 							<PreLoader/>
 							:
-							'LogIn'
-					}</button>
+							<T>'LogIn'</T> }
+					</button>
 				</form>
 				<Link to="/registration"><T>Sign up</T></Link>
 			</div>

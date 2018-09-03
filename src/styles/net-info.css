@@ -6,7 +6,8 @@
 
 .net-info-title {
     margin: 30px 0 10px 0;
-    color: #2876b4;
+    font-size: 18px;
+    color: #d67800;
 }
 
 .net-info-row {
@@ -25,6 +26,7 @@
     border: none;
     float: right;
     cursor: pointer;
+    margin: 0;
     color: whitesmoke;
     background: #d67800;
     outline: none;
@@ -37,7 +39,14 @@
 
 .net-info-details-block {
     width: 100%;
-    margin-top: -34px;
-    padding-top: 10px;
     overflow: hidden;
+}
+
+.net-info-details-block  .interface-player {
+    padding: 0;
+}
+
+
+.net-info-details-block .interface-player-info a {
+    display: none;
 }

@@ -1,0 +1,17 @@
+.interface-refresh-btn {
+    position: fixed;
+    z-index: 5;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background: #2196F3;
+    padding: 10px;
+    opacity: 0.8;
+    bottom: 28px;
+    transition: 3s all;
+}
+
+.interface-refresh-btn:hover {
+    opacity: 1;
+    background: #d67800;
+}

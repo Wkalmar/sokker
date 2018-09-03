@@ -1,6 +1,8 @@
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
 import brain from "brainjs";
+// Store
+import store from "store";
 
 const NET = window.NET = new brain.NeuralNetwork();
 
@@ -14,6 +16,16 @@ const Net = {
 
 const actions = (self)=> {
 	return {
+
+		toggleNet() {
+			self.status = self.status === 'disabled' ? 'enabled' : 'disabled';
+			store.transfers.transfersMutation();
+			store.interfaceMeasurerCache.clearAll();
+
+			if(self.status === 'enabled') {
+				self.train(store.players.userPlayers);
+			}
+		},
 
 		setLoading(isLoading = false) {
 			self.isLoading = isLoading;
@@ -31,7 +43,7 @@ const actions = (self)=> {
 
 
 		run(player) {
-			if(self.status !== "success") return {};
+			// if(self.status !== "success") return {};
 			return NET.run({
 				age: player.age,
 				defender: player.defender,
@@ -48,7 +60,7 @@ const actions = (self)=> {
 
 		async train(data = []) {
 			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> {
-				self.status = "training";
+				self.status = "learning";
 				self.setErrorThresh(0);
 			});
 			const formattedData = data.map((player)=> ({

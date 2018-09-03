@@ -2,7 +2,6 @@ import React from 'react';
 // Css
 import "styles/preloader.css";
 
-
 const PreLoader = ()=> (
 	<div className="cssload-loader">
 		<div className="cssload-inner cssload-one"/>

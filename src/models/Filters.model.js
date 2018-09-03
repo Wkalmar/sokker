@@ -1,5 +1,9 @@
-import { types } from "mobx-state-tree";
+import { types, applySnapshot } from "mobx-state-tree";
 import { keys, runInAction } from "mobx";
+// Store
+import store from "store";
+// Utils
+import defaultFilters from "utils/defaultFilters.utils";
 
 
 const Filters = {
@@ -46,6 +50,11 @@ const actions = (self)=> {
 					}
 				});
 			});
+		},
+
+
+		resetFilters() {
+			applySnapshot(self, defaultFilters);
 		}
 	};
 };

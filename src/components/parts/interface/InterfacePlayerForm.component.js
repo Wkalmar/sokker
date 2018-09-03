@@ -48,11 +48,11 @@ class InterfacePlayerFrom extends React.Component {
 
 
 	render() {
+		if(store.NET.status === 'disabled') return null;
 		return (
 			<div className="interface-player-form">
 
 				<div className="interface-player-form-inputs">
-					<p>Net prediction: </p>
 					<p>
 						<span>GK</span>
 						<InterfacePlayerInput pos="gk" output={ this.output } />
