@@ -3,6 +3,8 @@ import React from 'react';
 import store from "store";
 // MobX
 import { observer } from "mobx-react";
+// Components
+import T from "components/parts/T.component";
 
 
 function getSkill(name) { return store.filters.skills.get(name); }
@@ -26,7 +28,7 @@ export default observer(function({ name, color="black" }) {
 	return (
 		<button onClick={ ()=> onSkillChange(name) }
 				style={{ background: getSkill(name).order === "✘" ? "#d67800" : color }}>
-			{ name } { getSkill(name).order }
+			<T>{ name }</T> { getSkill(name).order }
 		</button>
 	)
 });

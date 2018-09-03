@@ -1,5 +1,5 @@
 import React from 'react';
-import { CellMeasurer, CellMeasurerCache, List } from 'react-virtualized';
+import { CellMeasurer, List } from 'react-virtualized';
 // Styles
 import "styles/interface/interface.css";
 // MobX

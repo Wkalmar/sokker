@@ -13,7 +13,7 @@ function getSkill(name) { return store.filters.skills.get(name); }
 export default observer(function({ name }) {
 	return (
 		<div>
-			<div className="filter_title"><T>Filter by {{ name: store.t(name) }}</T> ({ getSkill(name).range[0]} - { getSkill(name).range[1] })</div>
+			<div className="filter_title"><T>Filter by <span>{ name }</span></T> ({ getSkill(name).range[0]} - { getSkill(name).range[1] })</div>
 			<Slider.Range min={0}
 						  max={17}
 						  pushable

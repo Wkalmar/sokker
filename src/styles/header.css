@@ -70,6 +70,7 @@
 	color: black;
 	font-size: 18px;
 	line-height: 28px;
+	padding-top: 11px;
 }
 .header_menu .header_menu-favorites:hover {
 	text-decoration: none;

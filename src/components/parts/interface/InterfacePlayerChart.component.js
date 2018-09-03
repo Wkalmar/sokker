@@ -2,8 +2,6 @@ import React from 'react';
 // MobX
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
-// Store
-import store from "store";
 // Chart
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
 import { ResponsiveContainer, PieChart, Sector, Cell, Legend, Pie } from "recharts";

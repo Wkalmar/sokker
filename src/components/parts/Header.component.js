@@ -10,8 +10,6 @@ import LogoutSVG from "svg/logout.svg";
 import NeuralSVG from "svg/neural.svg";
 import HomeSVG from "svg/home.svg";
 import SidebarSVG from "svg/sidebar.svg";
-import ProfileSVG from "svg/profile.svg";
-import HelpSVG from "svg/help.svg";
 // Styles
 import "styles/header.css";
 // MobX
