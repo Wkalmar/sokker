@@ -37,7 +37,7 @@ class InterfacePlayerFrom extends React.Component {
 
 	savePlayer = async ()=> {
 		this.isSavingData.set(true);
-		await store.players.createMutation({
+		await store.players.upsertMutation({
 			...this.props.player,
 			...this.output.toJSON(),
 			playerId: this.props.player.id,
