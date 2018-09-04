@@ -30,14 +30,6 @@ class InterfacePlayer extends React.Component {
 	};
 
 
-	toggleFavorite = ()=> {
-		this.props.player.update({
-			id: this.props.player.id,
-			isFavorite: !this.props.player.isFavorite
-		});
-	};
-
-
 	render() {
 		if(!this.isReady.get()) return <PreLoader />;
 
@@ -50,14 +42,6 @@ class InterfacePlayer extends React.Component {
 					<PreLoader />
 					:
 					store.NET.status !== 'disabled' && <InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
-				}
-
-				{ this.props.player.user ?
-					null
-					:
-					<div className="interface-player-favorite" onClick={ this.toggleFavorite }>
-						{ this.props.player.isFavorite ? '★' : '☆' }
-					</div>
 				}
 
 				<InterfacePlayerForm player={ this.props.player } />

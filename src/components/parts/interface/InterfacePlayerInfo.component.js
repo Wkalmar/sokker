@@ -26,6 +26,14 @@ class InterfacePlayerInfo extends React.Component {
 	}
 
 
+	toggleFavorite = ()=> {
+		this.props.player.update({
+			id: this.props.player.id,
+			isFavorite: !this.props.player.isFavorite
+		});
+	};
+
+
 	renderSkill(skillName) {
 		const skill = this.props.player[skillName] * 100;
 
@@ -51,8 +59,19 @@ class InterfacePlayerInfo extends React.Component {
 		return (
 			<div className="interface-player-info" style={{ width: store.NET.status !== 'disabled' ? '40%' : '100%' }} id={ this.dateNow.get() }>
 				<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
-					<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
+					<p style={{ margin: '0 0 10px 0' }}>
+						{ player.name }
+					</p>
 				</a>
+
+				{ player.user ?
+					null
+					:
+					<div className="interface-player-favorite" onClick={ this.toggleFavorite }>
+						{ player.isFavorite ? '★' : '☆' }
+					</div>
+				}
+
 				<p><T>Age</T> { Math.round(player.age * 100) }</p>
 				{ player.endOfTrade && <i><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</i> }
 

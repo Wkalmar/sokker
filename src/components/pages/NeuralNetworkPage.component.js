@@ -51,7 +51,6 @@ class NeuralNetworkPage extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>{ '' + store.players.isHideCharts }</h1>
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>
