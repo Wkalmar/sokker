@@ -13,6 +13,7 @@ import QueryLoader from "components/QueryLoader.component";
 import PreLoader from "components/parts/PreLoader.component";
 import T from "components/parts/T.component";
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
+import NeuralScatterChart from "components/parts/neural/NeuralScatterChart.component";
 
 
 class NeuralNetworkPage extends React.Component {
@@ -23,6 +24,8 @@ class NeuralNetworkPage extends React.Component {
 
 
 	get players() { return values(store.players.all); };
+
+	get transfers() { return store.transfers.filtered; };
 
 	get userPlayers() { return this.players.filter((player)=> player.userId === store.authorizedUser.id); };
 
@@ -100,6 +103,16 @@ class NeuralNetworkPage extends React.Component {
 							</div>
 							: null }
 
+						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Transfer players skill / age chart</T></div> }
+						{ store.NET.status !== 'disabled' ?
+							<div className="net-info-table">
+								<div className="net-info-row">
+									<NeuralScatterChart players={ this.transfers }
+														title='Transfer players skill / age chart' />
+								</div>
+							</div>
+							:
+							null }
 
 						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Trained players information</T></div> }
 						{ store.NET.status !== 'disabled' ?

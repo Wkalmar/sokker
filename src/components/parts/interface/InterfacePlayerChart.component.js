@@ -2,7 +2,6 @@ import React from 'react';
 // MobX
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
-// Chart
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
 import { ResponsiveContainer, PieChart, Sector, Cell, Legend, Pie } from "recharts";
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
