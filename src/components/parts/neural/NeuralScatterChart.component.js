@@ -17,9 +17,9 @@ class NeuralScatterChart extends React.Component {
 
 	get chartData() {
 		return this.props.players.map((player)=> {
-			const gkSkill = player.gk * 100 * 3;
+			// const gkSkill = player.gk * 100 * 3;
 			return {
-				skill: player.gk > 0.5 ? gkSkill : (player.att + player.def + player.mid) * 100,
+				skill: (player.att + player.def + player.mid + player.gk) * 100,
 				age: Math.round(player.age * 100),
 				name: player.name,
 				id: player.id
@@ -62,8 +62,6 @@ class NeuralScatterChart extends React.Component {
 
 
 	render() {
-		console.log(this.selectedPlayer.get(), "??");
-
 		return (
 			<div style={{ width: '100%' }}>
 				<div style={{ width: '100%', height: '600px', background: 'white' }}>
