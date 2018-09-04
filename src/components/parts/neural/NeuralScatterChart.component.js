@@ -63,10 +63,10 @@ class NeuralScatterChart extends React.Component {
 	renderScatterShape = (player)=> {
 		const skill = player[this.activeTab.get()];
 		let fill = this.colors[this.activeTab.get()];
-		if(this.selectedPlayer.get() && this.selectedPlayer.get().id === player.id) fill = 'black';
+		if(this.selectedPlayer.get() && this.selectedPlayer.get().id === player.id) fill = 'gray';
 		return <circle cx={player.x}
 					   cy={player.y}
-					   r={ skill * 12 <= 6 ? 6 : skill * 12 }
+					   r={ skill * 14 <= 6 ? 6 : skill * 14 }
 					   fill={ fill } stroke="none" />;
 	};
 

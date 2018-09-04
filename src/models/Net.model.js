@@ -7,7 +7,6 @@ import store from "store";
 const NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
-	isLoading: types.boolean,
 	status: types.string,
 	errorThresh: types.number,
 	maxErrorThresh: types.number
@@ -25,10 +24,6 @@ const actions = (self)=> {
 			if(self.status === 'enabled') {
 				self.train(store.players.userPlayers);
 			}
-		},
-
-		setLoading(isLoading = false) {
-			self.isLoading = isLoading;
 		},
 
 
@@ -59,6 +54,7 @@ const actions = (self)=> {
 
 
 		async train(data = []) {
+			if(self.status === 'disabled') return runInAction(`NET-TRAIN-WARNING (status: ${self.status })`, ()=> {});
 			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> {
 				self.status = "learning";
 				self.setErrorThresh(0);

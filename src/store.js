@@ -9,7 +9,7 @@ import RootModel from "models/Root.model";
 const store = RootModel.create({
 	lang: i18n.lang,
 	isOpenSidebar: false,
-	NET: { isLoading: false, status: "learning", errorThresh: 0, maxErrorThresh: 0.005 },
+	NET: { status: "disabled", errorThresh: 0, maxErrorThresh: 0.005 },
 	device: "desktop",
 	users: {},
 	players: {
@@ -26,6 +26,7 @@ spy((event)=> {
 		case 'action':
 			if(event.name.match('@reaction')) return console.log('%c' + event.name, 'color: gray');
 			if(event.name.match('-PENDING')) return console.log('%c' + event.name, 'color: darkorange');
+			if(event.name.match('-WARNING')) return console.log('%c' + event.name, 'color: orange');
 			if(event.name.match('-ERROR')) return console.log('%c' + event.name, 'color: darkred');
 			if(event.name.match('-SUCCESS')) return console.log('%c' + event.name, 'color: green');
 			break;

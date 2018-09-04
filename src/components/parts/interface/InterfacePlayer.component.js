@@ -8,6 +8,7 @@ import { observable } from 'mobx';
 import store from "store";
 // Components
 import InterfacePlayerChart from "components/parts/interface/InterfacePlayerChart.component";
+import InterfacePlayerSkillsChart from "components/parts/interface/InterfacePlayerSkillsChart.component";
 import InterfacePlayerInfo from "components/parts/interface/InterfacePlayerInfo.component";
 import InterfacePlayerForm from "components/parts/interface/InterfacePlayerForm.component";
 import PreLoader from "components/parts/PreLoader.component";
@@ -41,10 +42,10 @@ class InterfacePlayer extends React.Component {
 				{ store.players.isHideCharts ?
 					<PreLoader />
 					:
-					store.NET.status === 'disabled' ?
-						<h1>Radar chart http://recharts.org/en-US/api/RadarChart</h1>
-						:
+					store.NET.status !== 'disabled' ?
 						<InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
+						:
+						<InterfacePlayerSkillsChart player={ this.props.player } />
 				}
 
 
