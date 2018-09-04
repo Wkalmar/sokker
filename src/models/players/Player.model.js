@@ -37,8 +37,8 @@ const Player = {
 const actions = (self)=> {
 	return {
 
-		updateMutation: (player={})=> {
-			return client.mutate({
+		async updateMutation(player={}) {
+			return await client.mutate({
 				variables: player,
 				mutation: UPDATE_PLAYER_MUTATION
 			}).catch((e)=> console.log("UPDATE_PLAYER_MUTATION", e));

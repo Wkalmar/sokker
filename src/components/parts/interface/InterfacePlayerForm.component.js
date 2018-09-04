@@ -74,7 +74,7 @@ class InterfacePlayerFrom extends React.Component {
 					<button onClick={ this.savePlayer }
 							style={{ width: '92px' }}
 							disabled={ this.isSavingData.get() }>
-						{ this.isSavingData.get() ? <T>Saving...</T> : <T>Save</T> }
+						{ this.isSavingData.get() ? <T>Saving</T> : <T>Save</T> }
 					</button>
 				</div>
 			</div>
