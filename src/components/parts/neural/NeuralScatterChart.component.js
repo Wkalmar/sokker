@@ -5,34 +5,38 @@ import { observer } from "mobx-react";
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
 import { ResponsiveContainer, ScatterChart, CartesianGrid, XAxis, YAxis, ZAxis, Tooltip, Legend, Scatter } from "recharts";
 // Components
-import T from "components/parts/T.component";
+import PreLoader from "components/parts/PreLoader.component";
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 
 
 class NeuralScatterChart extends React.Component {
 
-	
+
+	activeTab = observable.box('att');
+
 	selectedPlayer = observable.box(null);
+
+	colors = {
+		att: '#2876b4',
+		def: 'rgb(247, 126, 17)',
+		mid: 'rgb(44, 160, 44)',
+		gk: 'rgb(215, 39, 41)',
+	};
 	
 
 	get chartData() {
 		return this.props.players.map((player)=> {
-			// const gkSkill = player.gk * 100 * 3;
 			return {
-				skill: (player.att + player.def + player.mid + player.gk) * 100,
+				att: player.att + 0.01,
+				def: player.def + 0.01,
+				mid: player.mid + 0.01,
+				gk: player.gk + 0.01,
 				age: Math.round(player.age * 100),
 				name: player.name,
 				id: player.id
 			};
 		});
 	};
-
-
-	getColor(percent) {
-		const r = percent<50 ? 255 : Math.floor(255-(percent*2-100)*255/100);
-		const g = percent>50 ? 255 : Math.floor((percent*2)*255/100);
-		return 'rgb('+r+','+g+',0)';
-	}
 
 
 	onScatterClick = ({ id })=> {
@@ -48,50 +52,82 @@ class NeuralScatterChart extends React.Component {
 			<div style={{ background: 'whitesmoke', padding: '10px', fontSize: '13px', lineHeight: '20px' }}>
 				{ player.name }<br/>
 				age: { player.age }<br/>
-				skill: { Math.round(player.skill) }<br/>
+				{ this.activeTab.get() }: { player[this.activeTab.get()].toFixed(1) }<br/>
 			</div>
 		)
 	};
 
 
-	renderScatterShape = ({ id, skill, age, x, y })=> {
-		const skillToAge = (skill-age*3) / 20;
-		const radius = skillToAge <= 6 ? 6 : skillToAge;
-		return <circle cx={x} cy={y} r={ radius } fill={this.getColor(skill / 8)} stroke="none"/>
+	renderScatterShape = (player)=> {
+		const skill = player[this.activeTab.get()];
+		return <circle cx={player.x}
+					   cy={player.y}
+					   r={ skill * 12 <= 6 ? 6 : skill * 12 }
+					   fill={ this.colors[this.activeTab.get()] } stroke="none" />;
 	};
+
+
+	renderLabels() {
+		return (
+			<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+				{ Object.keys(this.colors).map((skill)=> {
+					return <div key={skill}
+								onClick={ ()=> this.activeTab.set(skill) }
+								style={{
+									background: this.colors[skill],
+									border: `2px solid ${ skill === this.activeTab.get() ? 'white' : this.colors[skill] }`,
+									width: '40px',
+									cursor: 'pointer',
+									height: '20px',
+									margin: '10px' }} />
+				}) }
+			</div>
+		);
+	}
+
+
+	renderChart() {
+		if(!this.props.players.length) return <div className="cssload-loader-big"><PreLoader /></div>;
+		return (
+			<ScatterChart margin={{ top: 10, right: 20, bottom: 50, left: 0 }}>
+				<Legend />
+				<XAxis type="number"
+					   tick={{ fontSize: '11px' }}
+					   dataKey={ this.activeTab.get() }
+					   tickCount={ 6 }
+					   domain={[0, 1]}
+					   name={ this.activeTab.get() }
+					   unit={` ${this.activeTab.get()}`} />
+				<YAxis type="number"
+					   dataKey="age"
+					   tickCount={ 15 }
+					   domain={[15, 'dataMax + 1']}
+					   tick={{ fontSize: '11px' }}
+					   name="age"
+					   unit=" age" />
+				<CartesianGrid />
+				<Tooltip cursor={{ strokeDasharray: '3 3' }}
+						 isAnimationActive={false}
+						 content={ this.renderTooltip } />
+				<Scatter name={ this.activeTab.get().toUpperCase() }
+						 data={ this.chartData }
+						 fill={ this.colors[this.activeTab.get()] }
+						 onClick={ this.onScatterClick }
+						 shape={ this.renderScatterShape }
+				/>
+			</ScatterChart>
+		);
+	}
 
 
 	render() {
 		return (
 			<div style={{ width: '100%' }}>
 				<div style={{ width: '100%', height: '600px', background: 'white' }}>
+					{ this.renderLabels() }
+
 					<ResponsiveContainer>
-						<ScatterChart margin={{ top: 50, right: 20, bottom: 50, left: 0 }}>
-							<XAxis type="number"
-								   tick={{ fontSize: '11px' }}
-								   dataKey="skill"
-								   tickCount={ 10 }
-								   name="skill"
-								   unit=" skill" />
-							<YAxis type="number"
-								   dataKey="age"
-								   tickCount={ 10 }
-								   domain={[15, 'dataMax + 1']}
-								   tick={{ fontSize: '11px' }}
-								   name="age"
-								   unit=" age" />
-							<CartesianGrid />
-							<Tooltip cursor={{ strokeDasharray: '3 3' }}
-									 isAnimationActive={false}
-									 content={ this.renderTooltip } />
-							<Legend />
-							<Scatter name={ this.props.title }
-									 data={ this.chartData }
-									 fill="#2876b4"
-									 onClick={ this.onScatterClick }
-									 shape={ this.renderScatterShape }
-							/>
-						</ScatterChart>
+						{ this.renderChart() }
 					</ResponsiveContainer>
 				</div>
 				<div>

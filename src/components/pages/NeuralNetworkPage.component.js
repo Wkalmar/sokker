@@ -25,7 +25,7 @@ class NeuralNetworkPage extends React.Component {
 
 	get players() { return values(store.players.all); };
 
-	get transfers() { return store.transfers.filtered; };
+	get transfers() { return values(store.transfers.players); };
 
 	get userPlayers() { return this.players.filter((player)=> player.userId === store.authorizedUser.id); };
 
@@ -107,8 +107,7 @@ class NeuralNetworkPage extends React.Component {
 						{ store.NET.status !== 'disabled' ?
 							<div className="net-info-table">
 								<div className="net-info-row">
-									<NeuralScatterChart players={ this.transfers }
-														title='Transfer players skill / age chart' />
+									<NeuralScatterChart players={ this.transfers } />
 								</div>
 							</div>
 							:

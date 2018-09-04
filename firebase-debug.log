@@ -1,0 +1,25 @@
+[debug] [2018-09-04T13:10:54.034Z] ----------------------------------------------------------------------
+[debug] [2018-09-04T13:10:54.037Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-09-04T13:10:54.037Z] CLI Version:   3.15.0
+[debug] [2018-09-04T13:10:54.037Z] Platform:      darwin
+[debug] [2018-09-04T13:10:54.037Z] Node Version:  v9.8.0
+[debug] [2018-09-04T13:10:54.038Z] Time:          Tue Sep 04 2018 16:10:54 GMT+0300 (EEST)
+[debug] [2018-09-04T13:10:54.038Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-04T13:10:54.052Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-04T13:10:54.052Z] > authorizing via signed-in user
+[debug] [2018-09-04T13:10:54.054Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/brainsokker42  
+ Tue Sep 04 2018 16:10:54 GMT+0300 (EEST)
+[debug] [2018-09-04T13:10:54.781Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-04T13:10:54.782Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/brainsokker42/tokens  
+ Tue Sep 04 2018 16:10:54 GMT+0300 (EEST)
+[debug] [2018-09-04T13:10:55.371Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'brainsokker42'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing build directory for upload...
+[debug] [2018-09-04T13:10:57.203Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/brainsokker42/uploads/-LLZhGV3IpScBp-Xis8F?fileCount=23&message=  
+ Tue Sep 04 2018 16:10:57 GMT+0300 (EEST)
+[debug] [2018-09-04T13:11:01.679Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-04T13:11:01.680Z] [hosting] .tgz uploaded successfully, waiting for extraction
