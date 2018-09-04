@@ -41,8 +41,13 @@ class InterfacePlayer extends React.Component {
 				{ store.players.isHideCharts ?
 					<PreLoader />
 					:
-					store.NET.status !== 'disabled' && <InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
+					store.NET.status === 'disabled' ?
+						<h1>Radar chart http://recharts.org/en-US/api/RadarChart</h1>
+						:
+						<InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
 				}
+
+
 
 				<InterfacePlayerForm player={ this.props.player } />
 			</div>

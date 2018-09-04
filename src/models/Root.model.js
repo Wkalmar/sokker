@@ -58,7 +58,7 @@ const actions = (store)=> {
 		},
 
 		setDevice() {
-			store.device = window.innerWidth > 800 ? "desktop" : "mobile";
+			store.device = window.innerWidth > 1000 ? "desktop" : "mobile";
 		},
 
 		setCurrentPath(url = "") {

@@ -2,6 +2,8 @@ import React from "react";
 // MobX
 import { observable } from "mobx";
 import { observer } from "mobx-react";
+// Store
+import store from "store";
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
 import { ResponsiveContainer, ScatterChart, CartesianGrid, XAxis, YAxis, ZAxis, Tooltip, Legend, Scatter } from "recharts";
 // Components
@@ -49,7 +51,7 @@ class NeuralScatterChart extends React.Component {
 		if(!tooltip.payload.length) return null;
 		const player = tooltip.payload[0].payload;
 		return (
-			<div style={{ background: 'whitesmoke', padding: '10px', fontSize: '13px', lineHeight: '20px' }}>
+			<div style={{ background: 'white', border: '1px solid gray', padding: '10px', fontSize: '13px', lineHeight: '20px' }}>
 				{ player.name }<br/>
 				age: { player.age }<br/>
 				{ this.activeTab.get() }: { player[this.activeTab.get()].toFixed(1) }<br/>
@@ -60,10 +62,12 @@ class NeuralScatterChart extends React.Component {
 
 	renderScatterShape = (player)=> {
 		const skill = player[this.activeTab.get()];
+		let fill = this.colors[this.activeTab.get()];
+		if(this.selectedPlayer.get() && this.selectedPlayer.get().id === player.id) fill = 'black';
 		return <circle cx={player.x}
 					   cy={player.y}
 					   r={ skill * 12 <= 6 ? 6 : skill * 12 }
-					   fill={ this.colors[this.activeTab.get()] } stroke="none" />;
+					   fill={ fill } stroke="none" />;
 	};
 
 
@@ -75,10 +79,10 @@ class NeuralScatterChart extends React.Component {
 								onClick={ ()=> this.activeTab.set(skill) }
 								style={{
 									background: this.colors[skill],
-									border: `2px solid ${ skill === this.activeTab.get() ? 'white' : this.colors[skill] }`,
+									border: `3px solid ${ skill === this.activeTab.get() ? 'white' : this.colors[skill] }`,
 									width: '40px',
 									cursor: 'pointer',
-									height: '20px',
+									height: '15px',
 									margin: '10px' }} />
 				}) }
 			</div>
@@ -88,9 +92,10 @@ class NeuralScatterChart extends React.Component {
 
 	renderChart() {
 		if(!this.props.players.length) return <div className="cssload-loader-big"><PreLoader /></div>;
+		if(store.players.isHideCharts) return <div className="cssload-loader-big"><PreLoader /></div>;
 		return (
 			<ScatterChart margin={{ top: 10, right: 20, bottom: 50, left: 0 }}>
-				<Legend />
+				<Legend verticalAlign="top" height={30} iconType="square" />
 				<XAxis type="number"
 					   tick={{ fontSize: '11px' }}
 					   dataKey={ this.activeTab.get() }
