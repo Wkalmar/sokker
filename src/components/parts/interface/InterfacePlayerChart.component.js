@@ -95,7 +95,9 @@ class InterfacePlayerChart extends React.Component {
 							 activeShape={this.renderActiveShape}
 							 activeIndex={this.activeIndex.get()}
 							 onMouseEnter={this.onPieEnter}
+							 animationDuration={700}
 							 cx={'50%'}
+							 label={ this.renderActiveShape }
 							 cy={'50%'}
 							 innerRadius={0}
 							 outerRadius={ this.chartRadius }>

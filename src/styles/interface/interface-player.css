@@ -11,7 +11,9 @@
 }
 
 .interface-player .cssload-loader {
-    margin: 100px auto;
+    margin: 75px auto;
+    min-width: 50px;
+    min-height: 50px;
 }
 
 

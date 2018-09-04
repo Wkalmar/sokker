@@ -91,6 +91,12 @@ class NeuralNetworkPage extends React.Component {
 										}
 									</button>
 								</div>
+								<div className="net-info-row">
+									<span />
+									<button>
+										<T>Remove all net players</T>
+									</button>
+								</div>
 							</div>
 							: null }
 
