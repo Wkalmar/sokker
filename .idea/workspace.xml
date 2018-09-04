@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Net.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Net.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Transfers.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Transfers.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,26 +25,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Net.model.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/Net.model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Transfers.model.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/models/Transfers.model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -105,7 +87,6 @@
         <option value="$PROJECT_DIR$/server/src/functions/transfers/transfersParse.js" />
         <option value="$PROJECT_DIR$/server/src/functions/transfers/transfers.js" />
         <option value="$PROJECT_DIR$/src/styles/layout.css" />
-        <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
         <option value="$PROJECT_DIR$/src/svg/neural.svg.js" />
         <option value="$PROJECT_DIR$/src/components/Layout.component.js" />
         <option value="$PROJECT_DIR$/src/styles/net-info.css" />
@@ -144,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js" />
         <option value="$PROJECT_DIR$/src/models/Net.model.js" />
         <option value="$PROJECT_DIR$/src/store.js" />
+        <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
       </list>
     </option>
   </component>
@@ -351,16 +333,15 @@
       <workItem from="1535708474742" duration="68000" />
       <workItem from="1535708816405" duration="2000" />
       <workItem from="1535709252429" duration="33370000" />
-      <workItem from="1536070717227" duration="5485000" />
+      <workItem from="1536070717227" duration="5743000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224031000" />
+    <option name="totallyTimeSpent" value="224289000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.26730564" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -722,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Net.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -738,8 +712,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Transfers.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="33" lean-forward="true" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="330">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Net.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
         </state>
       </provider>
     </entry>

@@ -137,7 +137,9 @@ class NeuralScatterChart extends React.Component {
 				</div>
 				<div>
 					{ this.selectedPlayer.get() ?
-						<InterfacePlayer player={ this.selectedPlayer.get() } key={this.selectedPlayer.get().id } />
+						<div className="net-info-details-block">
+							<InterfacePlayer player={ this.selectedPlayer.get() } key={this.selectedPlayer.get().id } />
+						</div>
 						:
 						null }
 				</div>
