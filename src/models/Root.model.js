@@ -89,7 +89,7 @@ const actions = (store)=> {
 			e.preventDefault();
 			history.push("/");
 			runInAction(`USER-LOGOUT-SUCCESS`, ()=> {
-				sessionStorage.removeItem('token');
+				window.sessionStorage.removeItem('token');
 				store.authorizedUser = null;
 				client.resetStore();
 			});

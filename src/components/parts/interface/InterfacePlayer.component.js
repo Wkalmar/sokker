@@ -16,24 +16,7 @@ import PreLoader from "components/parts/PreLoader.component";
 
 class InterfacePlayer extends React.Component {
 
-
-	isReady = observable.box(false);
-
-
-	constructor(props) {
-		super(props);
-		this.isReady.set(true);
-	}
-
-
-	getPlayerPrediction(player = this.props.player) {
-		return store.NET.run(player);
-	};
-
-
 	render() {
-		if(!this.isReady.get()) return <PreLoader />;
-
 		return (
 			<div className="interface-player"
 				 key={ store.NET.status } >
@@ -43,7 +26,12 @@ class InterfacePlayer extends React.Component {
 					<PreLoader />
 					:
 					store.NET.status !== 'disabled' ?
-						<InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
+						<InterfacePlayerChart playerData={{
+							gk: this.props.player.gk,
+							def: this.props.player.def,
+							mid: this.props.player.mid,
+							att: this.props.player.att
+						}} />
 						:
 						<InterfacePlayerSkillsChart player={ this.props.player } />
 				}

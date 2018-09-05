@@ -1,5 +1,5 @@
 // MobX
-import { values } from "mobx";
+import { values, runInAction } from "mobx";
 import { types } from 'mobx-state-tree';
 // Store
 import store from 'store';
@@ -21,7 +21,6 @@ const actions = (self)=> {
 	return {
 
 		async upsertMutation(newPlayer) {
-			self.refreshPlayersCharts(true);
 			const duplicatedPlayer = values(self.all).find((player)=> {
 				return player.id === newPlayer.id;
 			});
@@ -33,14 +32,20 @@ const actions = (self)=> {
 		},
 
 		async deleteMutation({ id }) {
-			self.refreshPlayersCharts(true);
 			await client.mutate({
 				variables: { id },
 				mutation: DELETE_PLAYER_MUTATION
 			}).catch((e)=> console.log("DELETE_PLAYER_MUTATION 🍪 + 🍩 ", e));
 		},
 
-		create(player = {}) {
+
+		async createAll(players) {
+			runInAction(`PLAYERS-CREATE-ALL-SUCCESS`, ()=> {
+				players.map((player)=> store.players.create(player));
+			});
+		},
+
+		async create(player = {}) {
 			if(self.all.has(player.id)) return self.all.get(player.id).update(player);
 			self.all.set(player.id, player);
 		},

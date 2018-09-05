@@ -54,11 +54,15 @@ const actions = (self)=> {
 
 
 		async train(data = []) {
+
+			store.players.refreshPlayersCharts(true);
 			if(self.status === 'disabled') return runInAction(`NET-TRAIN-WARNING (status: ${self.status })`, ()=> {});
+
 			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> {
 				self.status = "learning";
 				self.setErrorThresh(0);
 			});
+
 			const formattedData = data.map((player)=> ({
 				input: {
 					age: player.age,
@@ -90,6 +94,8 @@ const actions = (self)=> {
 						//self.errorThresh = NET.train(formattedData).error;
 						self.setErrorThresh(NET.train(formattedData).error);
 						self.setStatus(self.errorThresh < self.maxErrorThresh ? "success" : "error");
+						store.transfers.addPredictions();
+						store.players.refreshPlayersCharts(false);
 					}, 0);
 				});
 			}

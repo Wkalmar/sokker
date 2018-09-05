@@ -40,7 +40,6 @@ class NeuralNetworkPage extends React.Component {
 
 	relearnNet = ()=> {
 		store.NET.train(this.userPlayers);
-		store.transfers.addPredictions();
 	};
 
 

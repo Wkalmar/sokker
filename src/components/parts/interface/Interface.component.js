@@ -29,19 +29,19 @@ class Interface extends React.Component {
 		super();
 		store.transfers.transfersMutation();
 
-		this["@reaction on change [userPlayers]"] = reaction(
-			()=> store.authorizedUser && this.userPlayers.map((player)=> player.mid + player.att + player.def + player.gk),
-			()=> {
-				if(!store.authorizedUser) return;
-				store.NET.train(this.userPlayers);
-				store.transfers.addPredictions();
-				store.players.refreshPlayersCharts(false);
-			},
-			{
-				fireImmediately: true,
-				name: "@reaction on change [userPlayers]"
-			}
-		);
+		// this["@reaction on change [userPlayers]"] = reaction(
+		// 	()=> store.authorizedUser && this.userPlayers.map((player)=> player.mid + player.att + player.def + player.gk),
+		// 	()=> {
+		// 		// if(!store.authorizedUser) return;
+		// 		// store.NET.train(this.userPlayers);
+		// 		// store.transfers.addPredictions();
+		// 		//store.players.refreshPlayersCharts(false);
+		// 	},
+		// 	{
+		// 		fireImmediately: true,
+		// 		name: "@reaction on change [userPlayers]"
+		// 	}
+		// );
 
 		window.addEventListener('resize', this.onWindowResize);
 	}

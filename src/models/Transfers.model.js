@@ -37,7 +37,6 @@ const actions = (self)=> {
 	return {
 
 		async transfersMutation() {
-			self.delete();
 			await client.mutate({
 				mutation: TRANSFERS_MUTATION
 			}).catch((e)=> console.log("TRANSFERS-MUTATION 🍪 + 🍩 ", e));
@@ -45,6 +44,7 @@ const actions = (self)=> {
 
 
 		create(players) {
+			self.delete();
 			runInAction(`TRANSFER-PLAYERS-CREATE-SUCCESS`, ()=> {
 				players.forEach((player)=> {
 					self.players.set(player.id, { ...player, ...store.NET.run(player), playerId: player.id });

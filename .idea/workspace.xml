@@ -7,17 +7,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/responseResolver.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/responseResolver.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Net.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Net.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Root.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Root.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Transfers.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Transfers.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/users/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/users/User.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/players/Players.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/players/Players.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,29 +30,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Interface.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/parts/interface/Interface.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InterfacePlayer.component.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="59" lean-forward="true" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transfers.model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/Transfers.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Players.model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/players/Players.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="responseResolver.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphql/responseResolver.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Net.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/Net.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Interface.component.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/parts/interface/Interface.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NeuralNetworkPage.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="697">
+              <caret line="96" column="49" lean-forward="true" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -62,12 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>isOpenSidebar</find>
-      <find>BoxList</find>
-      <find>UserPlayers</find>
-      <find>UserPlayersPage</find>
-      <find>store.t(</find>
-      <find>disable</find>
       <find>Sort by age</find>
       <find>filter by</find>
       <find>Age range</find>
@@ -88,10 +108,16 @@
       <find>toggleNet</find>
       <find>getUserInfo.query</find>
       <find>LOGGED_IN_USER_QUERY</find>
-      <find>.run(</find>
       <find>addPredictions(</find>
       <find>relearnNet</find>
       <find>.train(</find>
+      <find>refreshPlayersCharts(</find>
+      <find>transfersMutation(</find>
+      <find>.run(</find>
+      <find>plz getPlayerPrediction</find>
+      <find>sessionStorage</find>
+      <find>addPredictions</find>
+      <find>playerData</find>
     </findStrings>
     <replaceStrings>
       <replace>this.props.store.authorizedUser</replace>
@@ -121,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/components/pages/lazy/FavoritesPage.lazy.component.js" />
         <option value="$PROJECT_DIR$/src/components/Router.js" />
         <option value="$PROJECT_DIR$/src/components/pages/FavoritesPage.component.js" />
-        <option value="$PROJECT_DIR$/src/models/players/Players.model.js" />
         <option value="$PROJECT_DIR$/src/styles/header.css" />
         <option value="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js" />
@@ -146,19 +171,20 @@
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" />
         <option value="$PROJECT_DIR$/src/models/Root.model.js" />
         <option value="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" />
-        <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js" />
-        <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
         <option value="$PROJECT_DIR$/src/models/users/User.model.js" />
         <option value="$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js" />
         <option value="$PROJECT_DIR$/src/components/Layout.component.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" />
+        <option value="$PROJECT_DIR$/src/store.js" />
+        <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" />
+        <option value="$PROJECT_DIR$/src/models/Net.model.js" />
+        <option value="$PROJECT_DIR$/src/models/players/Players.model.js" />
         <option value="$PROJECT_DIR$/src/graphql/responseResolver.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" />
-        <option value="$PROJECT_DIR$/src/models/Net.model.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" />
       </list>
     </option>
   </component>
@@ -251,6 +277,13 @@
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="parts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -265,42 +298,7 @@
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-              <item name="neural" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="graphql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="queries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="players" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -395,38 +393,38 @@
       <workItem from="1535708474742" duration="68000" />
       <workItem from="1535708816405" duration="2000" />
       <workItem from="1535709252429" duration="33370000" />
-      <workItem from="1536070717227" duration="15500000" />
+      <workItem from="1536070717227" duration="17879000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234046000" />
+    <option name="totallyTimeSpent" value="236425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="GraphQL" order="10" weight="0.32995495" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32995495" />
       <window_info anchor="bottom" id="Run" order="5" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="right" id="Terminal" order="3" weight="0.24973376" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info active="true" content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.26730564" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="10" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -464,9 +462,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/pages/Page404.component.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pages/RegistrationPage.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -546,13 +541,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/locales/ru/translations.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -612,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/HomePage.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/functions/transfers/transfers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -630,20 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Root.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="120" column="12" lean-forward="true" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="87" column="41" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -675,13 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/players/Players.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="36" column="33" lean-forward="true" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -710,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphql/responseResolver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/users/User.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -738,38 +691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="42" column="42" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Net.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Transfers.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="66" column="10" lean-forward="true" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -780,10 +705,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="45" column="35" lean-forward="true" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/HomePage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/interface/Interface.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        <state relative-caret-position="223">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Net.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="96" column="49" lean-forward="true" selection-start-line="96" selection-start-column="49" selection-end-line="96" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/players/Players.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/responseResolver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Transfers.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="85" column="45" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Root.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="73" column="10" lean-forward="true" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="59" lean-forward="true" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
         </state>
       </provider>
     </entry>
