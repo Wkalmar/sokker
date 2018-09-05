@@ -44,10 +44,6 @@ const RootModel = {
 const actions = (store)=> {
 	return {
 
-		t(translate="", params={}) {
-			return i18n.t(translate, params, store.lang);
-		},
-
 		toggleSideBar() {
 			store.isOpenSidebar = !store.isOpenSidebar;
 		},
@@ -121,4 +117,13 @@ const views = (store)=> {
 };
 
 
-export default types.model("RootModel", RootModel).actions(actions).views(views);
+const volatile = (store)=> {
+	return {
+		t(translate="", params={}) {
+			return i18n.t(translate, params, store.lang);
+		},
+	}
+};
+
+
+export default types.model("RootModel", RootModel).actions(actions).views(views).volatile(volatile);

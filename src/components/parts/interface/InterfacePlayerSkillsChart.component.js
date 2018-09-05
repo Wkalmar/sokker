@@ -1,43 +1,46 @@
 import React from 'react';
 // MobX
 import { observer } from 'mobx-react';
+// Store
+import store from "store";
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, LabelList, Radar } from "recharts";
-import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
-
-const colors = scaleOrdinal(schemeCategory10).range();
-
-const data = [
-	{ subject: 'Math', A: 120, B: 110 },
-	{ subject: 'Chinese', A: 98, B: 130 },
-	{ subject: 'English', A: 86, B: 130 },
-	{ subject: 'Geography', A: 99, B: 100 },
-	{ subject: 'Physics', A: 85, B: 90 },
-	{ subject: 'History', A: 65, B: 85 },
-];
 
 
 class InterfacePlayerSkillsChart extends React.Component {
 
 	get playerData() {
-		return ['keeper', 'pace', 'defender', 'technique', 'playmaker', 'passing', 'striker'].map((skillName)=> {
+		return ['pace', 'striker', 'technique', 'defender', 'playmaker', 'passing', 'keeper'].map((skillName)=> {
 			return {
-				name: skillName,
+				name: store.t(skillName),
 				value: this.props.player[skillName]
 			};
 		});
 	}
 
+	
+	renderTooltip = (tooltip)=> {
+		if(!tooltip.payload.length) return null;
+		const name = tooltip.payload[0].payload.name;
+		const skill = Math.round(tooltip.payload[0].value * 100);
+		return (
+			<div style={{ background: 'white', border: '1px solid gray', padding: '10px', fontSize: '13px', lineHeight: '20px' }}>
+				{name}: { skill }
+			</div>
+		)
+	};
+	
 
 	render() {
 		return (
 			<div className="interface-player-chart">
 				<ResponsiveContainer>
-					<RadarChart data={this.playerData}>
+					<RadarChart data={this.playerData} outerRadius={90}>
 						<PolarGrid />
 						<PolarAngleAxis dataKey="name" />
-						<Tooltip />
-						<Radar name="Player" dataKey="value" stroke="#d67800" fill="#d67800" fillOpacity={0.6} />
+						<PolarRadiusAxis tickCount={17} domain={[0, 0.17]} tick={false}/>
+						<Tooltip content={ this.renderTooltip } />
+						<Radar name="Player" dataKey="value" stroke="#d67800" fill="#d67800" fillOpacity={0.7} />
 					</RadarChart>
 				</ResponsiveContainer>
 			</div>
