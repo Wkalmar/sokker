@@ -1,6 +1,7 @@
 .interface-player {
     background: whitesmoke;
     color: black;
+    position: relative;
     margin: 10px 0;
     padding: 15px;
     display: flex;
@@ -58,4 +59,17 @@
     min-height: auto;
     height: 31px;
     line-height: 11px;
+}
+
+.interface-player-favorite {
+    position: absolute;
+    bottom: 16px;
+    left: 5px;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.interface-player-favorite:hover {
+    opacity: 0.7;
 }

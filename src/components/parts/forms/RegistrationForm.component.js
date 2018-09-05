@@ -9,6 +9,7 @@ import store from 'store';
 // Components
 import PreLoader from 'components/parts/PreLoader.component';
 import Link from "components/Link.component";
+import T from "components/parts/T.component";
 
 
 class RegistrationForm extends React.Component {
@@ -34,17 +35,17 @@ class RegistrationForm extends React.Component {
 	render() {
 		return (
 			<div className="reg-form">
-				<p>Email:</p>
+				<p><T>Email</T>:</p>
 				<input type="text"
 					   value={ this.form.email }
 					   onChange={ (e)=> this.form.email = e.currentTarget.value } />
 
-				<p>Password:</p>
+				<p><T>Password</T>:</p>
 				<input type="password"
 					   value={ this.form.password }
 					   onChange={ (e)=> this.form.password = e.currentTarget.value } />
 
-				<p>Name:</p>
+				<p><T>Name</T>:</p>
 				<input type="text"
 					   value={ this.form.name }
 					   onChange={ (e)=> this.form.name = e.currentTarget.value } />
@@ -54,9 +55,9 @@ class RegistrationForm extends React.Component {
 					this.isLoading.get() ?
 						<PreLoader />
 						:
-						'Register'
+						<T>Register</T>
 				}</button>
-				<Link to="/login">Sign in</Link>
+				<Link to="/login"><T>Sign in</T></Link>
 			</div>
 		)
 	}

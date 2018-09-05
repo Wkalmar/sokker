@@ -35,29 +35,29 @@ class Filters extends React.Component {
 		return (
 			<div className="filters">
 				<div className="filter">
-					<div className="filter_title">+ Saved filters..</div>
-					<button onClick={ store.filters.resetFilters }>Reset filters</button>
+					<div className="filter_title"><T>Saved filters</T></div>
+					<button onClick={ store.filters.resetFilters }><T>Reset filters</T></button>
 				</div>
 
 				<div className="filter">
 					<div className="filter_title"><T>Search by name</T></div>
 					<input type="text"
-						   placeholder="search..."
+						   placeholder={ store.t('search...') }
 						   value={ store.filters.search }
 						   onChange={ (e)=> store.filters.realChange({ search: e.currentTarget.value }) } />
 				</div>
 
 				<div className="filter">
-					<div className="filter_title">Age range: ({ this.ageRange[0] } - { this.ageRange[1] })</div>
+					<div className="filter_title"><T>Age range</T>: ({ this.ageRange[0] } - { this.ageRange[1] })</div>
 					<Slider.Range min={16}
 								  max={40}
 								  pushable
 								  onChange={ (range)=> store.filters.change({ age: { range } }) }
 								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
-					<div className="filter_title">Sort by age:</div>
+					<div className="filter_title"><T>Sort by age</T>:</div>
 					<button onClick={ this.onOrderChange }
 							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
-						Order { this.ageOrder }
+						<T>Order</T> { this.ageOrder }
 					</button>
 				</div>
 
@@ -66,7 +66,7 @@ class Filters extends React.Component {
 					: null }
 
 				<div className="filter">
-					<div className="filter_title">Sort by skills:</div>
+					<div className="filter_title"><T>Sort by skills</T>:</div>
 					<FiltersSkillBtn name="stamina" />
 
 					<FiltersSkillBtn name="keeper" />

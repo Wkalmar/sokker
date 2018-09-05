@@ -51,17 +51,18 @@ class NeuralNetworkPage extends React.Component {
 	render() {
 		return (
 			<div>
+				<h1>{ '' + store.players.isHideCharts }</h1>
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>
 					<div className="net-info">
 						<div className="net-info-table">
 							<div className="net-info-row">
-								<T>{ store.NET.status !== 'disabled' ? 'disable' : 'enable'} NET </T>
+								<T>{ store.NET.status !== 'disabled' ? 'disable' : 'enable'} NET</T>
 								<input type="checkbox"
 									   style={{ margin: 0 }}
 									   onChange={ store.NET.toggleNet }
-									   checked={ store.NET.status === 'disabled' } />
+									   checked={ store.NET.status !== 'disabled' } />
 							</div>
 						</div>
 
@@ -69,17 +70,17 @@ class NeuralNetworkPage extends React.Component {
 						{ store.NET.status !== 'disabled' ?
 							<div className="net-info-table">
 								<div className="net-info-row">
-									status: <span style={{
+									<T>status</T>: <span style={{
 									color: store.NET.status === "success" ? "rgb(44, 160, 44)" : "rgb(215, 39, 41)"
 								}}>{ store.NET.status }</span>
 								</div>
 								<div className="net-info-row">
-									error thresh: <span style={{
+									<T>error thresh</T>: <span style={{
 									color: store.NET.errorThresh < store.NET.maxErrorThresh ? "rgb(44, 160, 44)" : "rgb(215, 39, 41)"
 								}}>{ store.NET.errorThresh }</span>
 								</div>
 								<div className="net-info-row">
-									trained players <span>{ store.players.all.size }</span>
+									<T>trained players</T> <span>{ store.players.all.size }</span>
 								</div>
 								<div className="net-info-row">
 									<span />
@@ -94,18 +95,19 @@ class NeuralNetworkPage extends React.Component {
 							</div>
 							: null }
 
+
 						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Trained players information</T></div> }
 						{ store.NET.status !== 'disabled' ?
 							this.players.map((player)=> {
 								return (
 									<div className="net-info-row" key={ player.id }>
-										<a style={{ width: 'calc(100% - 100px)' }}
+										<a style={{ width: 'calc(100% - 115px)' }}
 										   href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 											<p>{ player.name }</p>
 										</a>
 
 										<button className="net-info-details-button" onClick={ ()=> this.showPlayerDetails(player) }>
-											<T>{  this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
+											<T>{ this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
 										</button>
 
 										<div className="net-info-details-block" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>

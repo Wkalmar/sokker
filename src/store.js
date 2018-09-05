@@ -1,4 +1,5 @@
 import { spy } from "mobx";
+import i18n from 'i18n';
 // Utils
 import defaultFilters from "utils/defaultFilters.utils";
 // Models
@@ -6,7 +7,7 @@ import RootModel from "models/Root.model";
 
 
 const store = RootModel.create({
-	lang: "en",
+	lang: i18n.lang,
 	isOpenSidebar: false,
 	NET: { isLoading: false, status: "learning", errorThresh: 0, maxErrorThresh: 0.005 },
 	device: "desktop",

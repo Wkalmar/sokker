@@ -1,6 +1,4 @@
 import React from 'react';
-// Components
-import PreLoader from "components/parts/PreLoader.component";
 
 
 const lazy = (loadLazyComponent)=> {

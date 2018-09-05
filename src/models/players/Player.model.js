@@ -15,6 +15,8 @@ const Player = {
 	playerId: types.string,
 	name: types.string,
 
+	isFavorite: types.maybe(types.boolean),
+
 	age: types.maybe(types.number),
 	defender: types.maybe(types.number),
 	keeper: types.maybe(types.number),
@@ -35,8 +37,8 @@ const Player = {
 const actions = (self)=> {
 	return {
 
-		updateMutation: (player={})=> {
-			return client.mutate({
+		async updateMutation(player={}) {
+			return await client.mutate({
 				variables: player,
 				mutation: UPDATE_PLAYER_MUTATION
 			}).catch((e)=> console.log("UPDATE_PLAYER_MUTATION", e));

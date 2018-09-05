@@ -6,6 +6,7 @@ import { observer } from 'mobx-react';
 import store from "store";
 // Components
 import InterfacePlayerInput from "components/parts/interface/InterfacePlayerInput.component";
+import T from "components/parts/T.component";
 
 
 class InterfacePlayerFrom extends React.Component {
@@ -70,8 +71,10 @@ class InterfacePlayerFrom extends React.Component {
 						<InterfacePlayerInput pos="att" output={ this.output } />
 					</p>
 
-					<button onClick={ this.savePlayer } disabled={ this.isSavingData.get() }>
-						{ this.isSavingData.get() ? 'Saving...' : 'Save' }
+					<button onClick={ this.savePlayer }
+							style={{ width: '92px' }}
+							disabled={ this.isSavingData.get() }>
+						{ this.isSavingData.get() ? <T>Saving</T> : <T>Save</T> }
 					</button>
 				</div>
 			</div>

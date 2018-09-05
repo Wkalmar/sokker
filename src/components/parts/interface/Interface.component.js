@@ -1,5 +1,5 @@
 import React from 'react';
-import { CellMeasurer, CellMeasurerCache, List } from 'react-virtualized';
+import { CellMeasurer, List } from 'react-virtualized';
 // Styles
 import "styles/interface/interface.css";
 // MobX
@@ -99,17 +99,23 @@ class Interface extends React.Component {
 		);
 	};
 
+	renderRefreshBtn() {
+		if(store.device !== 'desktop') return null;
+		return (
+			<button className="interface-refresh-btn animated infinite heartBeat slower"
+					onClick={ store.transfers.transfersMutation }
+					style={{ left: this.table.width - 80 }}>
+				<PreLoader />
+			</button>
+		);
+	}
+
 
 	render() {
 		if(!store.transfers.players.size) return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
-
-					<button className="interface-refresh-btn animated infinite heartBeat slower"
-							onClick={ store.transfers.transfersMutation }
-							style={{ left: this.table.width - 80 }}>
-						<PreLoader />
-					</button>
+					{ this.renderRefreshBtn() }
 
 					<div className="cssload-loader-big"><PreLoader/></div>
 				</div>
@@ -121,12 +127,7 @@ class Interface extends React.Component {
 		return (
 			<div style={{ display: 'flex', flexWrap: 'nowrap', alignItems: 'start' }}>
 				<div style={{ overflow: 'hidden', width: this.table.width, padding: "0 10px" }}>
-
-					<button className="interface-refresh-btn animated infinite heartBeat slower"
-							onClick={ store.transfers.transfersMutation }
-							style={{ left: this.table.width - 80 }}>
-						<PreLoader />
-					</button>
+					{ this.renderRefreshBtn() }
 
 					{ this.players.length ?
 						<List rowCount={ this.players.length }

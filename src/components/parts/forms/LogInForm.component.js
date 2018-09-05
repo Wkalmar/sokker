@@ -40,13 +40,13 @@ class LogInForm extends React.Component {
 			<div className="login-form">
 				<form onSubmit={ this.logIn }>
 
-					<p>Email:</p>
+					<p><T>Email</T>:</p>
 					<input type="text"
 						className="email"
 						value={ this.form.email }
 						onChange={ (e)=> this.form.email = e.currentTarget.value }/>
 
-					<p>Password:</p>
+					<p><T>Password</T>:</p>
 					<input type="password"
 						className="password"
 						value={ this.form.password }
@@ -56,7 +56,7 @@ class LogInForm extends React.Component {
 						{ this.isLoading.get() ?
 							<PreLoader/>
 							:
-							<T>'LogIn'</T> }
+							<T>LogIn</T> }
 					</button>
 				</form>
 				<Link to="/registration"><T>Sign up</T></Link>

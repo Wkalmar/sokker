@@ -39,7 +39,7 @@ class InterfacePlayerInfo extends React.Component {
 		return (
 			<p style={{ padding: '10px' }}>
 				<b style={{ color }}>{ Math.round(skill) }</b>
-				&nbsp;{ (skillName) }
+				&nbsp;{ (<T>{ skillName }</T>) }
 			</p>
 		);
 	}
@@ -53,8 +53,8 @@ class InterfacePlayerInfo extends React.Component {
 				<a href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 					<p style={{ margin: '0 0 10px 0' }}>{ player.name }</p>
 				</a>
-				<p>Age { Math.round(player.age * 100) }</p>
-				<i><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</i>
+				<p><T>Age</T> { Math.round(player.age * 100) }</p>
+				{ player.endOfTrade && <i><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</i> }
 
 				<div className="interface-player-info-block">
 					<div key='1'>
