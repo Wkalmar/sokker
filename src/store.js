@@ -5,6 +5,22 @@ import defaultFilters from "utils/defaultFilters.utils";
 // Models
 import RootModel from "models/Root.model";
 
+// Access to the features
+const watchAllAdmins = 1;
+const createNewAdmin = 2;
+const updateAdminProfile = 4;
+const watchAllUsers = 16;
+const updateLicense = 32;
+const sudosu = 64;
+
+
+const admin0 = watchAllAdmins;
+const admin1 = admin0 | createNewAdmin;
+const admin2 = admin1 | updateAdminProfile;
+const admin3 = admin2 | watchAllUsers;
+const admin4 = admin3 | updateLicense;
+const admin5 = admin4 | sudosu;
+
 
 const store = RootModel.create({
 	lang: i18n.lang,
