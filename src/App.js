@@ -13,13 +13,15 @@ class App extends React.Component {
 
 
 	componentDidMount() {
-		window.addEventListener("beforeunload", function (e) {
-			var confirmationMessage = "\o/";
-			/* Do you small action code here */
-			(e || window.event).returnValue = confirmationMessage; //Gecko + IE
-			return confirmationMessage;                            //Webkit, Safari, Chrome
-		});
+		// window.addEventListener("beforeunload", function (e) {
+		// 	             //Webkit, Safari, Chrome
+		// });
 	}
+
+	componentWillUnmount() {
+		//alert(3)
+	}
+
 
 	render() {
 		return (

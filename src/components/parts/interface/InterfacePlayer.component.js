@@ -48,8 +48,6 @@ class InterfacePlayer extends React.Component {
 						<InterfacePlayerSkillsChart player={ this.props.player } />
 				}
 
-
-
 				<InterfacePlayerForm player={ this.props.player } />
 			</div>
 		);

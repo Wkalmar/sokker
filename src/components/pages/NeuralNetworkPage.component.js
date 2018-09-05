@@ -54,6 +54,7 @@ class NeuralNetworkPage extends React.Component {
 	render() {
 		return (
 			<div>
+				{ JSON.stringify(store.NET) }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>

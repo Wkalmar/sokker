@@ -4,13 +4,13 @@ import { observer } from 'mobx-react';
 // Store
 import store from "store";
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
-import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, LabelList, Radar } from "recharts";
+import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Tooltip, Radar } from "recharts";
 
 
 class InterfacePlayerSkillsChart extends React.Component {
 
 	get playerData() {
-		return ['pace', 'striker', 'technique', 'defender', 'playmaker', 'passing', 'keeper'].map((skillName)=> {
+		return ['pace', 'striker', 'technique', 'defender', 'playmaker', 'passing', 'keeper', 'stamina'].map((skillName)=> {
 			return {
 				name: store.t(skillName),
 				value: this.props.player[skillName]
@@ -35,10 +35,10 @@ class InterfacePlayerSkillsChart extends React.Component {
 		return (
 			<div className="interface-player-chart">
 				<ResponsiveContainer>
-					<RadarChart data={this.playerData} outerRadius={90}>
+					<RadarChart data={this.playerData} outerRadius={80}>
 						<PolarGrid />
 						<PolarAngleAxis dataKey="name" />
-						<PolarRadiusAxis tickCount={17} domain={[0, 0.17]} tick={false}/>
+						<PolarRadiusAxis tickCount={3} domain={[0, 0.17]} tick={false}/>
 						<Tooltip content={ this.renderTooltip } />
 						<Radar name="Player" dataKey="value" stroke="#d67800" fill="#d67800" fillOpacity={0.7} />
 					</RadarChart>

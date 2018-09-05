@@ -47,16 +47,6 @@ const actions = (self)=> {
 		create(players) {
 			runInAction(`TRANSFER-PLAYERS-CREATE-SUCCESS`, ()=> {
 				players.forEach((player)=> {
-					if(store.NET.status === 'disabled') return self.players.set(
-						player.id,
-						{
-							gk: 0,
-							def: 0,
-							att: 0,
-							mid: 0,
-							...player,
-							playerId: player.id
-						});
 					self.players.set(player.id, { ...player, ...store.NET.run(player), playerId: player.id });
 				});
 			});
