@@ -46,15 +46,17 @@ function applyData(dataName, data) {
 
 		//	Players
 		case "createPlayer":
-			store.NET.train([ ...values(store.players.all), data ]);
+			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
 			Alert.success("Player saved to DB");
 			break;
 		case "updatePlayer":
+			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
 			Alert.success("Player updated in DB");
 			break;
 		case "deletePlayer":
+			store.NET.train(store.players.userPlayers);
 			store.players.delete(data.id);
 			Alert.success("Player deleted from DB");
 			break;

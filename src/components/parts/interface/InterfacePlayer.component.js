@@ -3,7 +3,6 @@ import React from 'react';
 import "styles/interface/interface-player.css";
 // MobX
 import { observer } from 'mobx-react';
-import { observable } from 'mobx';
 // Store
 import store from "store";
 // Components

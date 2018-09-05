@@ -53,7 +53,6 @@ class NeuralNetworkPage extends React.Component {
 	render() {
 		return (
 			<div>
-				{ JSON.stringify(store.NET) }
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>
@@ -115,7 +114,7 @@ class NeuralNetworkPage extends React.Component {
 
 						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Trained players information</T></div> }
 						{ store.NET.status !== 'disabled' ?
-							this.players.map((player)=> {
+							this.players.reverse().map((player)=> {
 								return (
 									<div className="net-info-row" key={ player.id }>
 										<a style={{ width: 'calc(100% - 115px)' }}
