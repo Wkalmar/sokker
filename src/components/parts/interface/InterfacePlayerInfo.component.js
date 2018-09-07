@@ -64,13 +64,13 @@ class InterfacePlayerInfo extends React.Component {
 					</p>
 				</a>
 
-				{ player.user ?
-					null
-					:
-					<div className="interface-player-favorite" onClick={ this.toggleFavorite }>
-						{ player.isFavorite ? '★' : '☆' }
-					</div>
-				}
+				{/*{ player.user ?*/}
+					{/*null*/}
+					{/*:*/}
+					{/*<div className="interface-player-favorite" onClick={ this.toggleFavorite }>*/}
+						{/*{ player.isFavorite ? '★' : '☆' }*/}
+					{/*</div>*/}
+				{/*}*/}
 
 				<p><T>Age</T> { Math.round(player.age * 100) }</p>
 				{ player.endOfTrade && <i><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</i> }

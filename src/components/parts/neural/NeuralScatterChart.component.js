@@ -19,10 +19,10 @@ class NeuralScatterChart extends React.Component {
 	selectedPlayer = observable.box(null);
 
 	colors = {
-		att: 'rgb(215, 39, 41)',
+		gk: '#2876b4',
 		def: 'rgb(247, 126, 17)',
 		mid: 'rgb(44, 160, 44)',
-		gk: '#2876b4',
+		att: 'rgb(215, 39, 41)',
 	};
 	
 
