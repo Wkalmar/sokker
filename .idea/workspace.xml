@@ -6,10 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/functions/transfers/transfers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/functions/transfers/transfers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/functions/transfers/transfersParse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/FavoritesPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/lazy/FavoritesPage.lazy.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/lazy/ChartsPage.lazy.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/parts/Header.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/Header.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/net-info.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/net-info.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Transfers.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Transfers.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/players/Player.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/players/Player.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/players/Players.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/players/Players.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/header.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +32,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NeuralScatterChart.component.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js">
+      <file leaf-file-name="transfers.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/src/functions/transfers/transfers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+            <state relative-caret-position="419">
+              <caret line="83" column="186" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="186" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.model.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -36,8 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Age range</find>
-      <find>Filter by</find>
       <find>search...</find>
       <find>interface-player-chart</find>
       <find>circle</find>
@@ -66,6 +82,8 @@
       <find>playerData</find>
       <find>HOM!</find>
       <find>.net-info-details-block .interface-player-info a</find>
+      <find>favorites</find>
+      <find>header_menu-</find>
     </findStrings>
     <replaceStrings>
       <replace>this.props.store.authorizedUser</replace>
@@ -82,15 +100,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/styles/interface/interface.css" />
-        <option value="$PROJECT_DIR$/server/src/functions/transfers/transfersParse.js" />
-        <option value="$PROJECT_DIR$/server/src/functions/transfers/transfers.js" />
         <option value="$PROJECT_DIR$/src/styles/layout.css" />
         <option value="$PROJECT_DIR$/src/svg/neural.svg.js" />
         <option value="$PROJECT_DIR$/src/components/parts/forms/LogInForm.component.js" />
         <option value="$PROJECT_DIR$/src/components/pages/lazy/FavoritesPage.lazy.component.js" />
         <option value="$PROJECT_DIR$/src/components/pages/FavoritesPage.component.js" />
-        <option value="$PROJECT_DIR$/src/styles/header.css" />
         <option value="$PROJECT_DIR$/src/components/pages/TransfersPage.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/forms/RegistrationForm.component.js" />
@@ -100,10 +114,8 @@
         <option value="$PROJECT_DIR$/src/i18n.js" />
         <option value="$PROJECT_DIR$/src/models/Filters.model.js" />
         <option value="$PROJECT_DIR$/src/utils/lazy.utils.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/Header.component.js" />
         <option value="$PROJECT_DIR$/public/locales/en/translations.json" />
         <option value="$PROJECT_DIR$/public/locales/ru/translations.json" />
-        <option value="$PROJECT_DIR$/src/models/players/Player.model.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInput.component.js" />
         <option value="$PROJECT_DIR$/src/styles/interface/interface-player-info.css" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerForm.component.js" />
@@ -114,7 +126,6 @@
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js" />
         <option value="$PROJECT_DIR$/src/models/users/User.model.js" />
         <option value="$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js" />
-        <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
         <option value="$PROJECT_DIR$/src/models/players/Players.model.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js" />
         <option value="$PROJECT_DIR$/src/graphql/responseResolver.js" />
@@ -127,12 +138,19 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/parts/T.component.js" />
         <option value="$PROJECT_DIR$/src/components/Layout.component.js" />
-        <option value="$PROJECT_DIR$/src/components/Router.js" />
         <option value="$PROJECT_DIR$/src/components/pages/HomePage.component.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" />
         <option value="$PROJECT_DIR$/src/styles/net-info.css" />
+        <option value="$PROJECT_DIR$/src/components/pages/lazy/ChartsPage.lazy.component.js" />
+        <option value="$PROJECT_DIR$/src/components/Router.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" />
+        <option value="$PROJECT_DIR$/src/styles/header.css" />
+        <option value="$PROJECT_DIR$/src/components/parts/Header.component.js" />
+        <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
+        <option value="$PROJECT_DIR$/src/models/players/Player.model.js" />
+        <option value="$PROJECT_DIR$/server/src/functions/transfers/transfers.js" />
       </list>
     </option>
   </component>
@@ -213,43 +231,52 @@
             <path>
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="functions" type="462c0819:PsiDirectoryNode" />
+              <item name="transfers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-              <item name="interface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-              <item name="neural" type="462c0819:PsiDirectoryNode" />
+              <item name="svg" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -346,12 +373,12 @@
       <workItem from="1536070717227" duration="19023000" />
       <workItem from="1536234895861" duration="792000" />
       <workItem from="1536244082368" duration="214000" />
-      <workItem from="1536249862062" duration="2998000" />
+      <workItem from="1536249862062" duration="4444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250127000" />
+    <option name="totallyTimeSpent" value="251573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -415,160 +442,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/pages/UserPlayersPage.component.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/parts/players/UserPlayers.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/PreLoader.component.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AlertContainer.component.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Link.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/lazy.utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/locales/ru/translations.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/locales/en/translations.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="76" column="54" lean-forward="true" selection-start-line="76" selection-start-column="54" selection-end-line="76" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="51" lean-forward="true" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInput.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/interface/interface-player-info.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/interface/interface.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerForm.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="59" column="97" selection-start-line="59" selection-start-column="81" selection-end-line="59" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/functions/transfers/transfers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="21" column="62" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/interface/interface-player.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="90" column="42" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/i18n.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Transfers.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
         </state>
       </provider>
     </entry>
@@ -642,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/players/Players.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -712,24 +582,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="37" column="11" lean-forward="true" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayer.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="128" column="118" selection-start-line="128" selection-start-column="79" selection-end-line="128" selection-end-column="118" />
         </state>
       </provider>
     </entry>
@@ -747,10 +603,131 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/lazy/ChartsPage.lazy.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/lazy/NeuralNetworkPage.lazy.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/ChartsPage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/account.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/archive.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/build.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/burger.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/delete.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/refresh.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/replay.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/save.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/saved.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/search.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/settings.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/unarchive.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/options.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/notifications.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/info.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        <state relative-caret-position="586">
+          <caret line="140" column="69" selection-start-line="140" selection-start-column="69" selection-end-line="140" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/header.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="87" column="66" selection-start-line="87" selection-start-column="66" selection-end-line="87" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Transfers.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/functions/transfers/transfersParse.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/players/Player.component.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/functions/transfers/transfers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="83" column="186" selection-start-line="83" selection-start-column="56" selection-end-line="83" selection-end-column="186" />
         </state>
       </provider>
     </entry>

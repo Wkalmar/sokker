@@ -128,7 +128,7 @@ class NeuralScatterChart extends React.Component {
 	render() {
 		return (
 			<div style={{ width: '100%' }}>
-				<div style={{ width: '100%', height: '600px', background: 'white' }}>
+				<div style={{ width: '100%', height: '700px', background: 'white' }}>
 					{ this.renderLabels() }
 
 					<ResponsiveContainer>

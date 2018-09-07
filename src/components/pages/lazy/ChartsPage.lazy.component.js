@@ -6,7 +6,7 @@ import permissions from "utils/permissions.utils";
 import lazy from "utils/lazy.utils";
 
 
-class FavoritesPage extends React.Component {
+class ChartsPage extends React.Component {
 
 	static permissions = {
 		needAuth: true,
@@ -16,5 +16,5 @@ class FavoritesPage extends React.Component {
 
 export default observer(
 	permissions(
-		lazy(()=> import(/* webpackChunkName: "FavoritesPage" */ 'components/pages/FavoritesPage.component'))(FavoritesPage)
+		lazy(()=> import(/* webpackChunkName: "ChartsPage" */ 'components/pages/ChartsPage.component'))(ChartsPage)
 	));
