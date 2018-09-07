@@ -21,7 +21,7 @@ class NeuralScatterPriceChart extends React.Component {
 		return this.props.players.map((player)=> {
 			return {
 				price: player.saleFor ? +player.saleFor.replace(/\s/g, "") : +player.currentBid.replace(/\s/g, ""),
-				skill: player.gk > 5 ?  player.gk*3 : player.att + player.mid + player.def,
+				skill: (player.gk > 5 ?  player.gk*3 : player.att + player.mid + player.def),
 				age: Math.round(player.age * 100),
 				name: player.name,
 				id: player.id
@@ -43,15 +43,15 @@ class NeuralScatterPriceChart extends React.Component {
 			<div style={{ background: 'white', border: '1px solid gray', padding: '10px', fontSize: '13px', lineHeight: '20px' }}>
 				{ player.name }<br/>
 				age: { player.age }<br/>
-				skill: { player.skill }<br/>
-				price: { player.price }<br/>
+				skill: { player.skill.toFixed(2) }<br/>
+				//: { player.skill / player.price }<br/>
 			</div>
 		)
 	};
 
 
 	renderScatterShape = (player)=> {
-		let fill = 'orange';
+		let fill = 'rgb(247, 126, 17)';
 		if(this.selectedPlayer.get() && this.selectedPlayer.get().id === player.id) fill = 'gray';
 		return <circle cx={player.x}
 					   cy={player.y}
@@ -75,7 +75,7 @@ class NeuralScatterPriceChart extends React.Component {
 				<YAxis type="number"
 					   tick={{ fontSize: '11px' }}
 					   dataKey={ 'price' }
-					   domain={['dataMin', 'dataMax + 1000']}
+					   domain={['dataMin', 'dataMax + 1000000']}
 					   tickCount={ 5 }
 					   name={ 'price' }
 					   unit={` price`} />
@@ -85,7 +85,7 @@ class NeuralScatterPriceChart extends React.Component {
 						 content={ this.renderTooltip } />
 				<Scatter name={ 'price' }
 						 data={ this.chartData }
-						 fill={ 'green' }
+						 fill={ 'rgb(247, 126, 17)' }
 						 onClick={ this.onScatterClick }
 						 shape={ this.renderScatterShape }
 				/>
