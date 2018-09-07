@@ -5,7 +5,7 @@ import { observer } from "mobx-react";
 // Store
 import store from "store";
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
-import { ResponsiveContainer, ScatterChart, CartesianGrid, XAxis, YAxis, ZAxis, Tooltip, Legend, Scatter } from "recharts";
+import { ResponsiveContainer, ScatterChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Scatter } from "recharts";
 // Components
 import PreLoader from "components/parts/PreLoader.component";
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";

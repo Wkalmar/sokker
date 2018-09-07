@@ -20,7 +20,7 @@ async function transfers(event) {
 	const response = await api.request(query, { id: 'cjkntd1p42ocw0157motav7bq' });
 
 	// Cache for 3 min
-	if((Date.now() - +response.User.updatedTransfersAt) / 1000 / 60 > 3) {
+	//if((Date.now() - +response.User.updatedTransfersAt) / 1000 / 60 > 3) {
 		const players = await parse();
 
 		const mutation = `
@@ -43,13 +43,13 @@ async function transfers(event) {
 				response: JSON.stringify(players)
 			}
 		}
-	} else {
-		return {
-			data: {
-				response: response.User.transfers
-			}
-		}
-	}
+	// } else {
+	// 	return {
+	// 		data: {
+	// 			response: response.User.transfers
+	// 		}
+	// 	}
+	// }
 }
 
 
@@ -77,12 +77,12 @@ async function parse() {
 									const DATA = [];
 									$players.forEach((item)=> {
 										const $player = $(item);
-										const $col = $player.find('.col-md-6.col-sm-5.col-xs-12.small');
+										const $col = $($player.find('.col-md-6.col-sm-5.col-xs-12.small'));
 
 										const id = $player.find("#playerCell").find("div").first().text().trim();
 
-										const currentBid = $($col.text().trim().split('Current bid:')[1].split(' грн.')[0].trim();
-										const saleFor = $($col.text().trim().split('Placed up for sale for: ')[1].split(' грн.')[0].trim();
+										const currentBid = $($col).text().trim().split('Aktualna oferta: ')[1] && $($col).text().trim().split('Aktualna oferta: ')[1].split('zł')[0].trim();
+										const saleFor = $($col).text().trim().split('Wystawiony za: ')[1] && $($col).text().trim().split('Wystawiony za: ')[1].split('zł')[0].trim();
 										const endOfTrade = $($col.find("strng").find("strong")[2]).text().trim();
 
 										const skills = $player.find('.table.table-condensed.table-skills td')
