@@ -3,7 +3,7 @@ import { CellMeasurer, List } from 'react-virtualized';
 // Styles
 import "styles/interface/interface.css";
 // MobX
-import { reaction, observable, values } from "mobx";
+import { observable, values } from "mobx";
 import { observer } from "mobx-react";
 // Store
 import store from "store";

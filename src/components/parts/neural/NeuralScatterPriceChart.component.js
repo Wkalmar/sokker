@@ -11,28 +11,17 @@ import PreLoader from "components/parts/PreLoader.component";
 import InterfacePlayer from "components/parts/interface/InterfacePlayer.component";
 
 
-class NeuralScatterChart extends React.Component {
+class NeuralScatterPriceChart extends React.Component {
 
-
-	activeTab = observable.box('att');
 
 	selectedPlayer = observable.box(null);
-
-	colors = {
-		gk: '#2876b4',
-		def: 'rgb(247, 126, 17)',
-		mid: 'rgb(44, 160, 44)',
-		att: 'rgb(215, 39, 41)',
-	};
 	
 
 	get chartData() {
 		return this.props.players.map((player)=> {
 			return {
-				att: player.att + 0.01,
-				def: player.def + 0.01,
-				mid: player.mid + 0.01,
-				gk: player.gk + 0.01,
+				price: player.saleFor ? +player.saleFor.replace(/\s/g, "") : +player.currentBid.replace(/\s/g, ""),
+				skill: player.gk > 5 ?  player.gk*3 : player.att + player.mid + player.def,
 				age: Math.round(player.age * 100),
 				name: player.name,
 				id: player.id
@@ -54,40 +43,21 @@ class NeuralScatterChart extends React.Component {
 			<div style={{ background: 'white', border: '1px solid gray', padding: '10px', fontSize: '13px', lineHeight: '20px' }}>
 				{ player.name }<br/>
 				age: { player.age }<br/>
-				{ this.activeTab.get() }: { player[this.activeTab.get()].toFixed(1) }<br/>
+				skill: { player.skill }<br/>
+				price: { player.price }<br/>
 			</div>
 		)
 	};
 
 
 	renderScatterShape = (player)=> {
-		const skill = player[this.activeTab.get()];
-		let fill = this.colors[this.activeTab.get()];
+		let fill = 'orange';
 		if(this.selectedPlayer.get() && this.selectedPlayer.get().id === player.id) fill = 'gray';
 		return <circle cx={player.x}
 					   cy={player.y}
-					   r={ skill * 14 <= 6 ? 6 : skill * 14 }
+					   r={ 8 }
 					   fill={ fill } stroke="none" />;
 	};
-
-
-	renderLabels() {
-		return (
-			<div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-				{ Object.keys(this.colors).map((skill)=> {
-					return <div key={skill}
-								onClick={ ()=> this.activeTab.set(skill) }
-								style={{
-									background: this.colors[skill],
-									border: `3px solid ${ skill === this.activeTab.get() ? 'white' : this.colors[skill] }`,
-									width: '40px',
-									cursor: 'pointer',
-									height: '15px',
-									margin: '10px' }} />
-				}) }
-			</div>
-		);
-	}
 
 
 	renderChart() {
@@ -97,26 +67,25 @@ class NeuralScatterChart extends React.Component {
 			<ScatterChart margin={{ top: 10, right: 20, bottom: 50, left: 0 }}>
 				<Legend verticalAlign="top" height={30} iconType="square" />
 				<XAxis type="number"
+					   dataKey="skill"
+					   tickCount={ 5 }
 					   tick={{ fontSize: '11px' }}
-					   dataKey={ this.activeTab.get() }
-					   tickCount={ 6 }
-					   domain={[0, 1]}
-					   name={ this.activeTab.get() }
-					   unit={` ${this.activeTab.get()}`} />
+					   name="skill"
+					   unit=" skill" />
 				<YAxis type="number"
-					   dataKey="age"
-					   tickCount={ 15 }
-					   domain={[15, 'dataMax + 1']}
 					   tick={{ fontSize: '11px' }}
-					   name="age"
-					   unit=" age" />
+					   dataKey={ 'price' }
+					   domain={['dataMax', 'dataMin']}
+					   tickCount={ 5 }
+					   name={ 'price' }
+					   unit={` price`} />
 				<CartesianGrid />
 				<Tooltip cursor={{ strokeDasharray: '3 3' }}
 						 isAnimationActive={false}
 						 content={ this.renderTooltip } />
-				<Scatter name={ this.activeTab.get().toUpperCase() }
+				<Scatter name={ 'price' }
 						 data={ this.chartData }
-						 fill={ this.colors[this.activeTab.get()] }
+						 fill={ 'green' }
 						 onClick={ this.onScatterClick }
 						 shape={ this.renderScatterShape }
 				/>
@@ -129,8 +98,6 @@ class NeuralScatterChart extends React.Component {
 		return (
 			<div style={{ width: '100%' }}>
 				<div style={{ width: '100%', height: '500px', background: 'white' }}>
-					{ this.renderLabels() }
-
 					<ResponsiveContainer>
 						{ this.renderChart() }
 					</ResponsiveContainer>
@@ -149,4 +116,4 @@ class NeuralScatterChart extends React.Component {
 }
 
 
-export default observer(NeuralScatterChart);
+export default observer(NeuralScatterPriceChart);

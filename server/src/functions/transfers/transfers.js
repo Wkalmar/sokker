@@ -20,7 +20,7 @@ async function transfers(event) {
 	const response = await api.request(query, { id: 'cjkntd1p42ocw0157motav7bq' });
 
 	// Cache for 3 min
-	//if((Date.now() - +response.User.updatedTransfersAt) / 1000 / 60 > 3) {
+	if((Date.now() - +response.User.updatedTransfersAt) / 1000 / 60 > 3) {
 		const players = await parse();
 
 		const mutation = `
@@ -43,13 +43,13 @@ async function transfers(event) {
 				response: JSON.stringify(players)
 			}
 		}
-	// } else {
-	// 	return {
-	// 		data: {
-	// 			response: response.User.transfers
-	// 		}
-	// 	}
-	// }
+	} else {
+		return {
+			data: {
+				response: response.User.transfers
+			}
+		}
+	}
 }
 
 
