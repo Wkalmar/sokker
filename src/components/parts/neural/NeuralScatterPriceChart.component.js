@@ -75,7 +75,7 @@ class NeuralScatterPriceChart extends React.Component {
 				<YAxis type="number"
 					   tick={{ fontSize: '11px' }}
 					   dataKey={ 'price' }
-					   domain={['dataMax', 'dataMin']}
+					   domain={['dataMin', 'dataMax + 1000']}
 					   tickCount={ 5 }
 					   name={ 'price' }
 					   unit={` price`} />

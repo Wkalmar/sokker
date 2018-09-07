@@ -10,6 +10,7 @@ import LogoutSVG from "svg/logout.svg";
 import NeuralSVG from "svg/neural.svg";
 import HomeSVG from "svg/home.svg";
 import SidebarSVG from "svg/sidebar.svg";
+import ChartSVG from "svg/chart.svg";
 // Styles
 import "styles/header.css";
 // MobX
@@ -88,7 +89,7 @@ class Header extends React.Component {
 						<span style={{ background: this.netStatusColor }} />
 					</span> }
 
-					{ store.authorizedUser && <Link className="header_menu-charts" to="/charts">о</Link> }
+					{ store.authorizedUser && <Link to="/charts"><ChartSVG /></Link> }
 				</ul>
 
 				<ul className="header_menu">
