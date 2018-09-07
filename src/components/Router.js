@@ -34,7 +34,7 @@ const RouteComponent = ({ component: Component, ...rest })=> {
 	// Default case
 	return (
 		<Route { ...rest } render={ (props)=>
-			React.createElement(Layout, props, React.createElement(Component, props))
+			React.createElement(Component, props)
 		}/>
 	);
 };
@@ -48,20 +48,18 @@ const Routes = ()=> {
 			<ApolloProvider client={client}>
 				<QueryLoader query={ LOGGED_IN_USER_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}>
-						<div>
-							<Switch>
-								<RouteComponent exact path="/" component={<div>{null}</div>} />
-								<RouteComponent exact path="/login" component={LogInPage} />
-								<RouteComponent exact path="/registration" component={RegistrationPage} />
-								<RouteComponent exact path="/favorites" component={ FavoritesPage } />
-								<RouteComponent exact path="/neuralnetwork" component={ NeuralNetworkPage } />
-								{/*<RouteComponent exact path="/profile" component={RegistrationPage} />*/}
-								<RouteComponent component={Page404} />
-							</Switch>
-							<Layout>
-								<HomePage />
-							</Layout>
-						</div>
+					<Layout>
+						<Switch>
+							<RouteComponent exact path="/" component={<div>{null}</div>} />
+							<RouteComponent exact path="/login" component={LogInPage} />
+							<RouteComponent exact path="/registration" component={RegistrationPage} />
+							<RouteComponent exact path="/favorites" component={ FavoritesPage } />
+							<RouteComponent exact path="/neuralnetwork" component={ NeuralNetworkPage } />
+							{/*<RouteComponent exact path="/profile" component={RegistrationPage} />*/}
+							<RouteComponent component={Page404} />
+						</Switch>
+						<HomePage />
+					</Layout>
 				</QueryLoader>
 			</ApolloProvider>
 		</Router>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { push as Menu } from 'react-burger-menu';
+import { withRouter } from "react-router-dom";
 // Styles
 import "styles/layout.css";
 import "styles/sidebar.css";
@@ -76,4 +77,4 @@ class Layout extends React.Component {
 	}
 }
 
-export default observer(Layout)
+export default withRouter(observer(Layout));

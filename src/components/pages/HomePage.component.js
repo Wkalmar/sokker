@@ -20,7 +20,7 @@ class HomePageContent extends React.Component {
 			<div style={{
 				opacity: store.currentPath === "/" ? "1" : "0",
 				height: store.currentPath === "/" ? "auto" : "0",
-				overflow: store.currentPath === "/" ? "auto" : "hidden",
+				overflow: store.currentPath === "/" ? "auto" : "hidden"
 			}}>
 				{ !store.authorizedUser &&
 					<div style={{padding: '20px'}}>

@@ -6,6 +6,20 @@ import defaultFilters from "utils/defaultFilters.utils";
 import RootModel from "models/Root.model";
 
 
+const accessList = ['watchAllAdmins', 'createNewAdmin', 'updateAdminProfile', 'watchAllUsers', 'updateLicense', 'sudosu', 'sudoku', 'aboslutnayaVlast'];
+
+const access = accessList.reduce((res, name, index)=> {
+	res[name] = index ? 2 ** index : 1;
+	return res
+}, {});
+
+const permissionsMask = new Array(accessList.length + 1).join('0');
+
+let adminX = parseInt([0,7,2].reduce((res, value)=> {
+	return res.substr(0, value) + '1' + res.substr(value + 1);
+}, permissionsMask).split("").reverse().join(""), 2);
+
+
 const store = RootModel.create({
 	lang: i18n.lang,
 	isOpenSidebar: false,

@@ -1,9 +1,10 @@
 import i18n from 'i18next';
-import { types } from "mobx-state-tree";
+import { types, applySnapshot } from "mobx-state-tree";
 import { runInAction } from "mobx";
 import { CellMeasurerCache } from "react-virtualized";
 // Utils
 import history from "utils/history.utils";
+import defaultFilters from "utils/defaultFilters.utils";
 // GraphQL
 import client from "graphql/client";
 import LOG_IN_USER_MUTATION from "graphql/mutations/authenticateUser.mutation";
@@ -90,7 +91,19 @@ const actions = (store)=> {
 			history.push("/");
 			runInAction(`USER-LOGOUT-SUCCESS`, ()=> {
 				window.sessionStorage.removeItem('token');
-				store.authorizedUser = null;
+				applySnapshot(store, {
+					lang: i18n.lang,
+					authorizedUser: null,
+					isOpenSidebar: false,
+					NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
+					device: window.innerWidth > 1000 ? "desktop" : "mobile",
+					users: {},
+					players: {
+						isHideCharts: true
+					},
+					transfers: {},
+					filters: defaultFilters
+				});
 				client.resetStore();
 			});
 		},
