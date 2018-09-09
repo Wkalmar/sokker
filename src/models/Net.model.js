@@ -45,7 +45,7 @@ const actions = (self)=> {
 		run(player) {
 			// if(self.status !== "success") return {};
 			try {
-				let a = NET.run({
+				return NET.run({
 					age: player.age,
 					defender: player.defender,
 					keeper: player.keeper,
@@ -56,7 +56,6 @@ const actions = (self)=> {
 					striker: player.striker,
 					technique: player.technique,
 				});
-				return a;
 			}
 			catch (err) {
 				console.log(`NET exception ${err}`)
