@@ -27,10 +27,10 @@ const Player = {
 	striker: types.maybe(types.number),
 	technique: types.maybe(types.number),
 
-	att: types.number,
-	def: types.number,
-	mid: types.number,
-	gk: types.number
+	att: types.maybe(types.number),
+	def: types.maybe(types.number),
+	mid: types.maybe(types.number),
+	gk: types.maybe(types.number),
 };
 
 
