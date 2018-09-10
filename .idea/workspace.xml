@@ -6,17 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/en/translations.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/en/translations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/locales/ru/translations.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/locales/ru/translations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QueryLoader.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QueryLoader.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/players/Player.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/players/Player.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/interface/interface-player.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/interface/interface-player.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,17 +26,8 @@
       <file leaf-file-name="NeuralScatterChart.component.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="162" column="16" lean-forward="true" selection-start-line="162" selection-start-column="16" selection-end-line="162" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NeuralScatterPriceChart.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/parts/neural/NeuralScatterPriceChart.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="77" column="63" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="63" />
+            <state relative-caret-position="454">
+              <caret line="139" column="112" lean-forward="true" selection-start-line="139" selection-start-column="112" selection-end-line="139" selection-end-column="112" />
             </state>
           </provider>
         </entry>
@@ -52,7 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>device =</find>
       <find>setDevice(</find>
       <find>.interface-player-chart</find>
       <find>isLoading</find>
@@ -82,6 +65,7 @@
       <find>.interface-player-form-inputs input</find>
       <find>toFixed</find>
       <find>this.props.playerData</find>
+      <find>moment</find>
     </findStrings>
     <replaceStrings>
       <replace>this.props.store.authorizedUser</replace>
@@ -127,7 +111,6 @@
         <option value="$PROJECT_DIR$/src/models/Transfers.model.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerForm.component.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" />
         <option value="$PROJECT_DIR$/server/src/functions/transfers/transfers.js" />
         <option value="$PROJECT_DIR$/src/svg/chart.svg.js" />
         <option value="$PROJECT_DIR$/src/components/parts/Header.component.js" />
@@ -144,10 +127,11 @@
         <option value="$PROJECT_DIR$/src/i18n.js" />
         <option value="$PROJECT_DIR$/src/styles/interface/interface-player.css" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" />
-        <option value="$PROJECT_DIR$/src/models/players/Player.model.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" />
         <option value="$PROJECT_DIR$/public/locales/en/translations.json" />
         <option value="$PROJECT_DIR$/public/locales/ru/translations.json" />
+        <option value="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" />
+        <option value="$PROJECT_DIR$/src/models/players/Player.model.js" />
         <option value="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" />
       </list>
     </option>
@@ -391,12 +375,12 @@
       <workItem from="1536244082368" duration="214000" />
       <workItem from="1536249862062" duration="10894000" />
       <workItem from="1536338522880" duration="331000" />
-      <workItem from="1536570271253" duration="3786000" />
+      <workItem from="1536570271253" duration="4580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262140000" />
+    <option name="totallyTimeSpent" value="262934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -714,27 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="51" column="10" lean-forward="true" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/ChartsPage.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="38" lean-forward="true" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="52" column="19" lean-forward="true" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/neural/NeuralScatterPriceChart.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -742,10 +705,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/ChartsPage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="57" lean-forward="true" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="26" column="41" lean-forward="true" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="60" column="64" lean-forward="true" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="162" column="16" lean-forward="true" selection-start-line="162" selection-start-column="16" selection-end-line="162" selection-end-column="16" />
+        <state relative-caret-position="454">
+          <caret line="139" column="112" lean-forward="true" selection-start-line="139" selection-start-column="112" selection-end-line="139" selection-end-column="112" />
         </state>
       </provider>
     </entry>

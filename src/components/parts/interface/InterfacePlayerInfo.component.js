@@ -68,7 +68,7 @@ class InterfacePlayerInfo extends React.Component {
 
 				<p><T>Age</T> { Math.round(player.age * 100) }</p>
 
-				{ player.endOfTrade && <i><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</i> }
+				{ player.endOfTrade && <i><T>End of trade</T>: { player.endOfTradeFromNow }</i> }
 
 				<div className="interface-player-info-block">
 					<div key='1'>

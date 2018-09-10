@@ -21,7 +21,7 @@ class ChartsPage extends React.Component {
 		return (
 			<div className="net-info">
 				<div className="net-info-table">
-					{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Transfer players skill / age chart</T></div> }
+					{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Transfer players (age | price) / skill chart</T></div> }
 					{ store.NET.status !== 'disabled' ?
 						<div className="net-info-table">
 							<div className="net-info-row">
@@ -31,15 +31,15 @@ class ChartsPage extends React.Component {
 						:
 						null }
 
-					{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Transfer players price / skill chart</T></div> }
-					{ store.NET.status !== 'disabled' ?
-						<div className="net-info-table">
-							<div className="net-info-row">
-								<NeuralScatterPriceChart players={ this.transfers } />
-							</div>
-						</div>
-						:
-						null }
+					{/*{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Transfer players price / skill chart</T></div> }*/}
+					{/*{ store.NET.status !== 'disabled' ?*/}
+						{/*<div className="net-info-table">*/}
+							{/*<div className="net-info-row">*/}
+								{/*<NeuralScatterPriceChart players={ this.transfers } />*/}
+							{/*</div>*/}
+						{/*</div>*/}
+						{/*:*/}
+						{/*null }*/}
 				</div>
 			</div>
 		)
