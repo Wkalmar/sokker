@@ -7,6 +7,7 @@ import store from "store";
 // Components
 import InterfacePlayerInput from "components/parts/interface/InterfacePlayerInput.component";
 import T from "components/parts/T.component";
+import { isNumber } from 'util';
 
 
 class InterfacePlayerFrom extends React.Component {
@@ -26,12 +27,18 @@ class InterfacePlayerFrom extends React.Component {
 		this.setOutput(props);
 	}
 
+	formatSkill = (skill) => {
+		if (isNumber(skill))
+			return +skill.toFixed(2);
+		return 0;
+	}
+
 
 	setOutput(props) {
-		this.output.set('gk', +props.player.gk.toFixed(1));
-		this.output.set('def', +props.player.def.toFixed(1));
-		this.output.set('mid', +props.player.mid.toFixed(1));
-		this.output.set('att', +props.player.att.toFixed(1));
+		this.output.set('gk', this.formatSkill(props.player.gk));
+		this.output.set('def', this.formatSkill(props.player.def));
+		this.output.set('mid', this.formatSkill(props.player.mid));
+		this.output.set('att', this.formatSkill(props.player.att));
 	}
 
 

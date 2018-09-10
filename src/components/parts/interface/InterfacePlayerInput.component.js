@@ -6,7 +6,7 @@ import { observer } from 'mobx-react';
 
 export default observer(function({ output, pos, color='transparent' }) {
 	return (
-		<InputMask mask="9.9"
+		<InputMask mask="9.99"
 				   maskChar=" "
 				   style={{ borderBottom: `6px solid ${color}` }}
 				   alwaysShowMask={ true }
