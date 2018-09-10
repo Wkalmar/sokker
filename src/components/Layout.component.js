@@ -46,7 +46,7 @@ class Layout extends React.Component {
 			<div id="outer-container">
 				<Header />
 
-				{ store.authorizedUser && store.device === "mobile" && store.currentPath === "/" ?
+				{ store.authorizedUser && store.device === "mobile" ?
 					<Menu right
 						  push
 						  isOpen={ store.isOpenSidebar }
@@ -60,17 +60,19 @@ class Layout extends React.Component {
 							</div>
 						}
 					</Menu>
-					: <div id="page-wrap" /> }
+					: null }
 
-				{ store.authorizedUser ?
-					<QueryLoader query={ GET_USER_INFO_QUERY }
-								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-								 variables={{ id: store.authorizedUser.id }}>
-						{ this.props.children }
-					</QueryLoader>
-					:
-					this.props.children
-				}
+				<div id="page-wrap">
+					{ store.authorizedUser ?
+						<QueryLoader query={ GET_USER_INFO_QUERY }
+									 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
+									 variables={{ id: store.authorizedUser.id }}>
+							{ this.props.children }
+						</QueryLoader>
+						:
+						this.props.children
+					}
+				</div>
 			</div>
 		)
 	}
