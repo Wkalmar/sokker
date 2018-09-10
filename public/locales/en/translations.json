@@ -54,5 +54,7 @@
 	"status": "status",
 	"error thresh": "error thresh",
 	"trained players": "trained players",
-	"Saving": "Saving"
+	"Saving": "Saving",
+	"current bid": "current bid",
+	"sales for": "sales for"
 }

@@ -70,7 +70,7 @@ class InterfacePlayerChart extends React.Component {
 				<path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
 				<circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
 				<text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">
-					{ `${payload.name} / ${+payload.value.toFixed(1)}` }
+					{ `${payload.name} / ${ (+payload.value * 100).toFixed(0) }` }
 				</text>
 			</g>
 		);

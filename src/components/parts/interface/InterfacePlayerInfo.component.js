@@ -64,10 +64,10 @@ class InterfacePlayerInfo extends React.Component {
 					</p>
 				</a>
 
-				<p>currentBid: { player.currentBid }</p>
-				<p>saleFor: { player.saleFor }</p>
+				<p>{ player.currentBid ? <T>current bid</T> : <T>sales for</T> }: { player.currentBid || player.saleFor }</p>
 
 				<p><T>Age</T> { Math.round(player.age * 100) }</p>
+
 				{ player.endOfTrade && <i><T>End of trade</T>: { moment(player.endOfTrade).add(1, 'h').fromNow() }</i> }
 
 				<div className="interface-player-info-block">

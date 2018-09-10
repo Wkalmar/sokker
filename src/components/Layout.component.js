@@ -64,7 +64,6 @@ class Layout extends React.Component {
 
 				{ store.authorizedUser ?
 					<QueryLoader query={ GET_USER_INFO_QUERY }
-								 fetchPolicy="network-only"
 								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 								 variables={{ id: store.authorizedUser.id }}>
 						{ this.props.children }

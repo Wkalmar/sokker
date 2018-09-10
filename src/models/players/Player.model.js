@@ -60,6 +60,7 @@ const actions = (self)=> {
 const views = (self)=> {
 	return {
 		get userId() { return self.user.id },
+		skill(name) { return (+self[name] * 100).toFixed(0); }
 	};
 };
 
