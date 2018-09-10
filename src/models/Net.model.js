@@ -53,7 +53,7 @@ const actions = (self)=> {
 				});
 			}
 			catch (err) {
-				console.log(`NET exception ${err}`)
+				console.log(`NET run exception ${err}`);
 				return {};
 			}
 		},
