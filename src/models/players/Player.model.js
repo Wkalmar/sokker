@@ -62,7 +62,7 @@ const views = (self)=> {
 	return {
 		get userId() { return self.user.id },
 		get endOfTradeFromNow() { return moment(self.endOfTrade).add(1, 'h').fromNow(); },
-		skill(name) { return (+self[name] * 100).toFixed(0); }
+		skill(name) { return (+self.toJSON()[name] * 100).toFixed(0); }
 	};
 };
 

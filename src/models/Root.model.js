@@ -59,6 +59,7 @@ const actions = (store)=> {
 		},
 
 		setCurrentPath(url = "") {
+			store.isOpenSidebar = false;
 			store.currentPath = url;
 		},
 
