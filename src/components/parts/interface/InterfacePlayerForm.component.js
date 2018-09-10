@@ -1,13 +1,12 @@
 import React from 'react';
 // MobX
-import { observable } from "mobx";
+import { observable, reaction } from "mobx";
 import { observer } from 'mobx-react';
 // Store
 import store from "store";
 // Components
 import InterfacePlayerInput from "components/parts/interface/InterfacePlayerInput.component";
 import T from "components/parts/T.component";
-import { isNumber } from 'util';
 
 
 class InterfacePlayerFrom extends React.Component {
@@ -22,36 +21,45 @@ class InterfacePlayerFrom extends React.Component {
 	});
 
 
-	constructor(props) {
-		super(props);
-		this.setOutput(props);
+	componentDidMount() {
+		this.setOutput(this.props);
+
+		this['@silentReaction on [store.players.isHideCharts]'] = reaction(
+			()=> store.players.isHideCharts,
+			(isHideCharts)=> {
+				if(isHideCharts === false) this.setOutput(this.props);
+			},
+			{ name: '@silentReaction on [store.players.isHideCharts]' });
 	}
 
-	formatSkill = (skill) => {
-		if (isNumber(skill))
-			return +skill.toFixed(2);
-		return 0;
-	};
+
+	componentWillUmount() {
+		this['@silentReaction on [store.players.isHideCharts]']();
+	}
 
 
 	setOutput(props) {
-		this.output.set('gk', this.formatSkill(props.player.gk));
-		this.output.set('def', this.formatSkill(props.player.def));
-		this.output.set('mid', this.formatSkill(props.player.mid));
-		this.output.set('att', this.formatSkill(props.player.att));
+		this.output.set('gk', this.props.player.skill('gk'));
+		this.output.set('def', this.props.player.skill('def'));
+		this.output.set('mid', this.props.player.skill('mid'));
+		this.output.set('att', this.props.player.skill('att'));
 	}
 
 
 	savePlayer = async ()=> {
+		const playerOutput =  Object.keys(this.output.toJSON()).reduce((res, name)=> {
+			res[name] = +this.output.toJSON()[name] / 100;
+			return res;
+		}, {});
+
 		this.isSavingData.set(true);
 		await store.players.upsertMutation({
 			...this.props.player,
-			...this.output.toJSON(),
+			...playerOutput,
 			playerId: this.props.player.id,
 			userId: store.authorizedUser.id
 		});
 		this.isSavingData.set(false);
-		this.setOutput(this.props);
 	};
 
 
@@ -61,10 +69,14 @@ class InterfacePlayerFrom extends React.Component {
 			<div className="interface-player-form">
 
 				<div className="interface-player-form-inputs">
-					<InterfacePlayerInput pos="gk" output={ this.output } color='#2876b4' />
-					<InterfacePlayerInput pos="def" output={ this.output } color='rgb(247, 126, 17)'/>
-					<InterfacePlayerInput pos="mid" output={ this.output } color='rgb(44, 160, 44)'/>
-					<InterfacePlayerInput pos="att" output={ this.output } color='rgb(215, 39, 41)'/>
+					{/*{ !store.players.isHideCharts ?*/}
+						{/*<React.Fragment>*/}
+							<InterfacePlayerInput pos="gk" output={ this.output } color='#2876b4' />
+							<InterfacePlayerInput pos="def" output={ this.output } color='rgb(247, 126, 17)'/>
+							<InterfacePlayerInput pos="mid" output={ this.output } color='rgb(44, 160, 44)'/>
+							<InterfacePlayerInput pos="att" output={ this.output } color='rgb(215, 39, 41)'/>
+						{/*</React.Fragment>*/}
+						{/*: null }*/}
 
 					<button onClick={ this.savePlayer }
 							style={{ width: '92px' }}
