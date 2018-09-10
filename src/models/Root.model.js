@@ -92,11 +92,16 @@ const actions = (store)=> {
 			history.push("/");
 			runInAction(`USER-LOGOUT-SUCCESS`, ()=> {
 				window.sessionStorage.removeItem('token');
+				// TODO: Duplicated with store.js initial logic
 				applySnapshot(store, {
 					lang: i18n.lang,
 					authorizedUser: null,
 					isOpenSidebar: false,
-					NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
+					NET: {
+						status: window.localStorage.getItem('NET.status') || "initial",
+						errorThresh: 0,
+						maxErrorThresh: 0.005
+					},
 					device: window.innerWidth > 1000 ? "desktop" : "mobile",
 					users: {},
 					players: {

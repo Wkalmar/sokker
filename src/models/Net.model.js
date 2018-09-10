@@ -110,6 +110,11 @@ const actions = (self)=> {
 					}, 0);
 				});
 			}
+		},
+
+		// Hooks
+		postProcessSnapshot(snapshot) {
+			window.localStorage.setItem('NET.status', snapshot.status);
 		}
 	};
 };

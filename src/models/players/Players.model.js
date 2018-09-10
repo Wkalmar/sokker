@@ -23,8 +23,7 @@ const actions = (self)=> {
 
 		async upsertMutation(newPlayer) {
 			const duplicatedPlayer = values(self.all).find((player)=> {
-				// TODO: Duplicated player invalid
-				return player.id === newPlayer.userId;
+				return player.playerId === newPlayer.playerId;
 			});
 			if(duplicatedPlayer) return await duplicatedPlayer.updateMutation({ ...newPlayer, id: duplicatedPlayer.id });
 			await client.mutate({

@@ -127,6 +127,7 @@ class NeuralNetworkPage extends React.Component {
 										</button>
 
 										<div className="net-info-details-block net-info-details-block-hide-player-name" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
+
 											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
 
 											<button onClick={ ()=> this.removePlayer(player.id) }>
