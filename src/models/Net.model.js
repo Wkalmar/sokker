@@ -4,7 +4,7 @@ import brain from "brainjs";
 // Store
 import store from "store";
 
-const NET = window.NET = new brain.NeuralNetwork();
+let NET = window.NET = new brain.NeuralNetwork();
 
 const Net = {
 	status: types.string,
@@ -53,8 +53,12 @@ const actions = (self)=> {
 				});
 			}
 			catch (err) {
-				console.log(`NET run exception ${err}`);
-				return {};
+				return {
+					att: 0,
+					def: 0,
+					mid: 0,
+					gk: 0
+				};
 			}
 		},
 
@@ -92,13 +96,13 @@ const actions = (self)=> {
 			if(!formattedData.length) {
 				runInAction(`NET-TRAIN-ERROR (players: ${data.length})`, ()=> {
 					self.setStatus("error");
+					NET = new brain.NeuralNetwork();
+					store.transfers.addPredictions();
 					store.players.refreshPlayersCharts(false);
 				});
 			} else {
 				runInAction(`NET-TRAIN-SUCCESS (players: ${data.length})`, ()=> {
 					setTimeout(()=> {
-						// self.setErrorThresh(NET.train(formattedData).error);
-						//self.errorThresh = NET.train(formattedData).error;
 						self.setErrorThresh(NET.train(formattedData).error);
 						self.setStatus(self.errorThresh < self.maxErrorThresh ? "success" : "error");
 						store.transfers.addPredictions();

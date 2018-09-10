@@ -23,7 +23,8 @@ const actions = (self)=> {
 
 		async upsertMutation(newPlayer) {
 			const duplicatedPlayer = values(self.all).find((player)=> {
-				return player.id === newPlayer.id;
+				// TODO: Duplicated player invalid
+				return player.id === newPlayer.userId;
 			});
 			if(duplicatedPlayer) return await duplicatedPlayer.updateMutation({ ...newPlayer, id: duplicatedPlayer.id });
 			await client.mutate({
@@ -45,7 +46,6 @@ const actions = (self)=> {
 				variables: { userId },
 				mutation: DELETE_ALL_USER_PLAYERS_MUTATION
 			}).catch((e)=> console.log("DELETE_ALL_USER_PLAYERS_MUTATION 🍪 + 🍩 ", e));
-			self.deleteAll();
 		},
 
 

@@ -8,7 +8,6 @@ import { values } from "mobx";
 import store from "store";
 // Components
 import NeuralScatterChart from "components/parts/neural/NeuralScatterChart.component";
-import NeuralScatterPriceChart from "components/parts/neural/NeuralScatterPriceChart.component";
 import T from "components/parts/T.component";
 
 
@@ -30,16 +29,6 @@ class ChartsPage extends React.Component {
 						</div>
 						:
 						null }
-
-					{/*{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Transfer players price / skill chart</T></div> }*/}
-					{/*{ store.NET.status !== 'disabled' ?*/}
-						{/*<div className="net-info-table">*/}
-							{/*<div className="net-info-row">*/}
-								{/*<NeuralScatterPriceChart players={ this.transfers } />*/}
-							{/*</div>*/}
-						{/*</div>*/}
-						{/*:*/}
-						{/*null }*/}
 				</div>
 			</div>
 		)

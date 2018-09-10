@@ -10,7 +10,7 @@ export default observer(function({ output, pos, color='transparent' }) {
 				   maskChar=" "
 				   style={{ borderBottom: `6px solid ${color}` }}
 				   alwaysShowMask={ true }
-				   value={ output.get(pos) }
+				   value={ output.get(pos).length < 2 ? '0' + output.get(pos) : output.get(pos) }
 				   onChange={ (e)=> output.set(pos, e.currentTarget.value) }
 		/>
 	);

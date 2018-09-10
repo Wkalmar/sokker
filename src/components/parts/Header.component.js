@@ -57,7 +57,7 @@ class Header extends React.Component {
 				return 'green';
 			case 'learning':
 				return 'yellow';
-			case 'disabled':
+			default:
 				return 'lightgray';
 		}
 	}

@@ -1,5 +1,4 @@
 import Alert from 'react-s-alert';
-import { values } from 'mobx';
 // Utils
 import history from "utils/history.utils";
 // Store
@@ -56,9 +55,14 @@ function applyData(dataName, data) {
 			Alert.success("Player updated in DB");
 			break;
 		case "deletePlayer":
-			store.NET.train(store.players.userPlayers);
 			store.players.delete(data.id);
+			store.NET.train(store.players.userPlayers);
 			Alert.success("Player deleted from DB");
+			break;
+		case 'deleteAllUserPlayers':
+			store.players.deleteAll();
+			store.NET.train(store.players.userPlayers);
+			Alert.success("All user players deleted from DB");
 			break;
 		case "allPlayers":
 			store.NET.train(data);

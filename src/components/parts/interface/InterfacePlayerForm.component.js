@@ -11,8 +11,6 @@ import T from "components/parts/T.component";
 
 class InterfacePlayerFrom extends React.Component {
 
-	isSavingData = observable.box(false);
-
 	output = observable.map({
 		gk: 0,
 		def: 0,
@@ -47,19 +45,19 @@ class InterfacePlayerFrom extends React.Component {
 
 
 	savePlayer = async ()=> {
+		store.players.refreshPlayersCharts(true);
+
 		const playerOutput =  Object.keys(this.output.toJSON()).reduce((res, name)=> {
 			res[name] = +this.output.toJSON()[name] / 100;
 			return res;
 		}, {});
 
-		this.isSavingData.set(true);
 		await store.players.upsertMutation({
 			...this.props.player,
 			...playerOutput,
 			playerId: this.props.player.id,
 			userId: store.authorizedUser.id
 		});
-		this.isSavingData.set(false);
 	};
 
 
@@ -76,8 +74,8 @@ class InterfacePlayerFrom extends React.Component {
 
 					<button onClick={ this.savePlayer }
 							style={{ width: '92px' }}
-							disabled={ this.isSavingData.get() }>
-						{ this.isSavingData.get() ? <T>Saving</T> : <T>Save</T> }
+							disabled={ store.players.isHideCharts }>
+						{ store.players.isHideCharts ? <T>Saving</T> : <T>Save</T> }
 					</button>
 				</div>
 			</div>
