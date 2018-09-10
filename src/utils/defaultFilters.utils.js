@@ -1,4 +1,5 @@
 export default {
+	isLoading: false,
 	age: {
 		range: [16, 35],
 		order: "✘"

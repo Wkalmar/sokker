@@ -60,7 +60,7 @@ class Layout extends React.Component {
 							</div>
 						}
 					</Menu>
-					: null }
+					: <div id="page-wrap" /> }
 
 				{ store.authorizedUser ?
 					<QueryLoader query={ GET_USER_INFO_QUERY }

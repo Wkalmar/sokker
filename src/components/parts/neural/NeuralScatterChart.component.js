@@ -110,6 +110,8 @@ class NeuralScatterChart extends React.Component {
 									width: '40px',
 									cursor: 'pointer',
 									color: 'white',
+									minWidth: '30px',
+									boxSizing: 'border-box',
 									height: '20px',
 									margin: '10px' }} >{ skill }</div>
 				}) }
