@@ -31,7 +31,7 @@ class InterfacePlayerFrom extends React.Component {
 		if (isNumber(skill))
 			return +skill.toFixed(2);
 		return 0;
-	}
+	};
 
 
 	setOutput(props) {
