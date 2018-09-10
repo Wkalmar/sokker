@@ -18,7 +18,8 @@ class InterfacePlayer extends React.Component {
 	render() {
 		return (
 			<div className="interface-player"
-				 key={ store.NET.status } >
+				 key={ store.NET.status }>
+				{ store.players.isHideCharts + "" }
 				<InterfacePlayerInfo player={ this.props.player } />
 
 				{ store.players.isHideCharts ?

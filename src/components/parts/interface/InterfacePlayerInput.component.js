@@ -5,13 +5,12 @@ import { observer } from 'mobx-react';
 
 
 export default observer(function({ output, pos, color='transparent' }) {
-	console.log(output.get(pos), "pos", pos, output.get(pos).length < 2 ? '0' + output.get(pos) : output.get(pos));
 	return (
 		<InputMask mask="99"
-				   maskChar=" "
+				   maskChar="0"
 				   style={{ borderBottom: `6px solid ${color}` }}
 				   alwaysShowMask={ true }
-				   value={ output.get(pos).length < 2 ? '0' + output.get(pos) : output.get(pos) }
+				   value={ output.get(pos) }
 				   onChange={ (e)=> output.set(pos, e.currentTarget.value) }
 		/>
 	);

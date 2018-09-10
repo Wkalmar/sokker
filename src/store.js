@@ -9,7 +9,7 @@ import RootModel from "models/Root.model";
 const store = RootModel.create({
 	lang: i18n.lang,
 	isOpenSidebar: false,
-	NET: { status: "initial", errorThresh: 0, maxErrorThresh: 0.005 },
+	NET: { status: "disabled", errorThresh: 0, maxErrorThresh: 0.005 },
 	device: "desktop",
 	users: {},
 	players: {

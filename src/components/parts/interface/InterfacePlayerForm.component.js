@@ -12,10 +12,10 @@ import T from "components/parts/T.component";
 class InterfacePlayerFrom extends React.Component {
 
 	output = observable.map({
-		gk: 0,
-		def: 0,
-		mid: 0,
-		att: 0
+		gk: '0',
+		def: '0',
+		mid: '0',
+		att: '0'
 	});
 
 
