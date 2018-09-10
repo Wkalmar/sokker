@@ -92,6 +92,7 @@ const actions = (self)=> {
 			if(!formattedData.length) {
 				runInAction(`NET-TRAIN-ERROR (players: ${data.length})`, ()=> {
 					self.setStatus("error");
+					store.players.refreshPlayersCharts(false);
 				});
 			} else {
 				runInAction(`NET-TRAIN-SUCCESS (players: ${data.length})`, ()=> {

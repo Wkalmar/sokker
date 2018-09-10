@@ -1,0 +1,7 @@
+type DeleteAllUserPlayers {
+    response: String!
+}
+
+extend type Mutation {
+    deleteAllUserPlayers(userId: String!): DeleteAllUserPlayers
+}

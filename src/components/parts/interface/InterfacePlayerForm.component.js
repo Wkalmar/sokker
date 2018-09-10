@@ -69,14 +69,10 @@ class InterfacePlayerFrom extends React.Component {
 			<div className="interface-player-form">
 
 				<div className="interface-player-form-inputs">
-					{/*{ !store.players.isHideCharts ?*/}
-						{/*<React.Fragment>*/}
-							<InterfacePlayerInput pos="gk" output={ this.output } color='#2876b4' />
-							<InterfacePlayerInput pos="def" output={ this.output } color='rgb(247, 126, 17)'/>
-							<InterfacePlayerInput pos="mid" output={ this.output } color='rgb(44, 160, 44)'/>
-							<InterfacePlayerInput pos="att" output={ this.output } color='rgb(215, 39, 41)'/>
-						{/*</React.Fragment>*/}
-						{/*: null }*/}
+					<InterfacePlayerInput pos="gk" output={ this.output } color='#2876b4' />
+					<InterfacePlayerInput pos="def" output={ this.output } color='rgb(247, 126, 17)'/>
+					<InterfacePlayerInput pos="mid" output={ this.output } color='rgb(44, 160, 44)'/>
+					<InterfacePlayerInput pos="att" output={ this.output } color='rgb(215, 39, 41)'/>
 
 					<button onClick={ this.savePlayer }
 							style={{ width: '92px' }}

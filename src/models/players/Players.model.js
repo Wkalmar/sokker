@@ -9,6 +9,7 @@ import PlayerModel from "models/players/Player.model";
 import client from "graphql/client";
 import CREATE_PLAYER_MUTATION from "graphql/mutations/players/createPlayer.mutation";
 import DELETE_PLAYER_MUTATION from "graphql/mutations/players/deletePlayer.mutation";
+import DELETE_ALL_USER_PLAYERS_MUTATION from "graphql/mutations/players/deleteAllUserPlayers.mutation";
 
 
 const Players = {
@@ -39,6 +40,15 @@ const actions = (self)=> {
 		},
 
 
+		async deleteAllUserPlayersMutation({ userId }) {
+			await client.mutate({
+				variables: { userId },
+				mutation: DELETE_ALL_USER_PLAYERS_MUTATION
+			}).catch((e)=> console.log("DELETE_ALL_USER_PLAYERS_MUTATION 🍪 + 🍩 ", e));
+			self.deleteAll();
+		},
+
+
 		async createAll(players) {
 			runInAction(`PLAYERS-CREATE-ALL-SUCCESS`, ()=> {
 				players.map((player)=> store.players.create(player));
@@ -52,6 +62,13 @@ const actions = (self)=> {
 
 		delete(id) {
 			self.all.delete(id);
+		},
+
+
+		deleteAll() {
+			runInAction(`PLAYERS-DELETE-ALL-SUCCESS`, ()=> {
+				self.all.clear();
+			});
 		},
 
 		refreshPlayersCharts(isHideCharts) {

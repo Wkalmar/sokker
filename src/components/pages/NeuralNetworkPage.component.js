@@ -47,6 +47,13 @@ class NeuralNetworkPage extends React.Component {
 		await store.players.deleteMutation({ id: id });
 		this.isLoadingDeleteBtn.set(false);
 	};
+
+
+	deleteAllUserPlayers = async ()=> {
+		this.isLoadingDeleteBtn.set(true);
+		await store.players.deleteAllUserPlayersMutation({ userId: store.authorizedUser.id });
+		this.isLoadingDeleteBtn.set(false);
+	};
 	
 
 	render() {
@@ -94,8 +101,12 @@ class NeuralNetworkPage extends React.Component {
 								</div>
 								<div className="net-info-row">
 									<span />
-									<button>
-										<T>Remove all net players</T>
+									<button onClick={ this.deleteAllUserPlayers }>
+										{ this.isLoadingDeleteBtn.get() ?
+											<PreLoader />
+											:
+											<T>Remove all net players</T>
+										}
 									</button>
 								</div>
 							</div>
