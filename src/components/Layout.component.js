@@ -49,6 +49,7 @@ class Layout extends React.Component {
 				{ store.authorizedUser && store.device === "mobile" ?
 					<Menu right
 						  push
+						  disableOverlayClick
 						  isOpen={ store.isOpenSidebar }
 						  pageWrapId={ "page-wrap" }
 						  onStateChange={ this.onMenuChange }
