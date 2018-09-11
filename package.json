@@ -37,7 +37,8 @@
     "recharts": "^1.0.0-beta.10",
     "sinon": "^6.1.0",
     "storybook-addon-specifications": "^2.1.2",
-    "three": "^0.93.0"
+    "three": "^0.93.0",
+    "webworkify-webpack": "^2.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -48,6 +49,5 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
