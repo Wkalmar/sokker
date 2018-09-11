@@ -63,9 +63,9 @@ class InterfacePlayerInfo extends React.Component {
 					</p>
 				</a>
 
-				<p>{ player.currentBid ? <T>current bid</T> : <T>sales for</T> }: { player.currentBid || player.saleFor }</p>
+				<p>{ player.currentBid ? <T>Current bid</T> : <T>Sales for</T> }: { player.currentBid || player.saleFor }</p>
 
-				<p><T>Age</T> { Math.round(player.age * 100) }</p>
+				<i><T>Age</T> { Math.round(player.age * 100) }</i>
 
 				{ player.endOfTrade && <i><T>End of trade</T>: { player.endOfTradeFromNow }</i> }
 

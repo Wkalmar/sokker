@@ -55,8 +55,8 @@
 	"error thresh": "порог ошибки",
 	"trained players": "количество игроков для обучения сети",
 	"Saving": "Сохранение",
-	"current bid": "текущая ставка",
-	"sales for": "продается за",
+	"Current bid": "Текущая ставка",
+	"Sales for": "Продается за",
 	"Remove all net players": "Удалить всех игроков для обучения сети",
 	"Are you sure you want to delete all players? This action can not be undone": "Вы уверены что хотите удалить всех игроков? Это действие нельзя будет отменить."
 }
