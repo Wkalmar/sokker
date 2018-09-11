@@ -50,11 +50,13 @@
 	"Filter by <1>playmaker</1>": "Фильтровать по <1>полузащита</1>",
 	"Filter by <1>passing</1>": "Фильтровать по <1>пас</1>",
 	"Filter by <1>striker</1>": "Фильтровать по <1>нападение</1>",
-	"search...": "поиск...",
+	"search": "поиск...",
 	"status": "статус",
 	"error thresh": "порог ошибки",
 	"trained players": "количество игроков для обучения сети",
 	"Saving": "Сохранение",
 	"current bid": "текущая ставка",
-	"sales for": "продается за"
+	"sales for": "продается за",
+	"Remove all net players": "Удалить всех игроков для обучения сети",
+	"Are you sure you want to delete all players? This action can not be undone": "Вы уверены что хотите удалить всех игроков? Это действие нельзя будет отменить."
 }

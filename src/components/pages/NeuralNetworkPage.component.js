@@ -50,6 +50,8 @@ class NeuralNetworkPage extends React.Component {
 
 
 	deleteAllUserPlayers = async ()=> {
+		const isConfirm = window.confirm(store.t('Are you sure you want to delete all players? This action can not be undone'));
+		if(!isConfirm) return;
 		this.isLoadingDeleteBtn.set(true);
 		await store.players.deleteAllUserPlayersMutation({ userId: store.authorizedUser.id });
 		this.isLoadingDeleteBtn.set(false);
