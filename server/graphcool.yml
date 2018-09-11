@@ -43,6 +43,13 @@ functions:
      handler:
        code: src/functions/transfers/transfers.js
 
+  deleteAllUserPlayers:
+    type: resolver
+    schema: src/functions/players/deleteAllUserPlayers.graphql
+    handler:
+      code: src/functions/players/deleteAllUserPlayers.js
+
+
 
 # Model/Relation permissions are used to limit the API access
 # To take the burden of thinking about those while development, we

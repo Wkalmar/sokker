@@ -47,6 +47,6 @@
 }
 
 
-.net-info-details-block .interface-player-info a {
+.net-info-details-block-hide-player-name .interface-player-info a {
     display: none;
 }

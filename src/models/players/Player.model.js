@@ -3,13 +3,15 @@ import { runInAction } from "mobx";
 // GraphQL
 import client from "graphql/client";
 import UPDATE_PLAYER_MUTATION from "graphql/mutations/players/updatePlayer.mutation";
+import moment from "moment/moment";
 
 
 const Player = {
 	user: types.frozen,
 	id: types.string,
 
-	currentPrice: types.maybe(types.string),
+	saleFor: types.maybe(types.string),
+	currentBid: types.maybe(types.string),
 	endOfTrade: types.maybe(types.string),
 
 	playerId: types.string,
@@ -59,6 +61,8 @@ const actions = (self)=> {
 const views = (self)=> {
 	return {
 		get userId() { return self.user.id },
+		get endOfTradeFromNow() { return moment(self.endOfTrade).add(1, 'h').fromNow(); },
+		skill(name) { return (+self.toJSON()[name] * 100).toFixed(0); }
 	};
 };
 

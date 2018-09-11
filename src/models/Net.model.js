@@ -1,17 +1,30 @@
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
 import brain from "brainjs";
+import webworkify from 'webworkify-webpack';
 // Store
 import store from "store";
 
-const NET = window.NET = new brain.NeuralNetwork();
+let NET = new brain.NeuralNetwork();
 
 const Net = {
-	isLoading: types.boolean,
 	status: types.string,
 	errorThresh: types.number,
 	maxErrorThresh: types.number
 };
+
+
+const worker = webworkify(require.resolve('./NET.model.worker.js'));
+worker.addEventListener('message', (event)=> {
+	runInAction(`NET-TRAIN-SUCCESS`, ()=> {
+		NET = NET.fromJSON(event.data.NET);
+		store.NET.setErrorThresh(event.data.error);
+		store.NET.setStatus(store.NET.errorThresh < store.NET.maxErrorThresh ? "success" : "error");
+		store.transfers.addPredictions();
+		store.players.refreshPlayersCharts(false);
+	});
+});
+
 
 
 const actions = (self)=> {
@@ -25,10 +38,6 @@ const actions = (self)=> {
 			if(self.status === 'enabled') {
 				self.train(store.players.userPlayers);
 			}
-		},
-
-		setLoading(isLoading = false) {
-			self.isLoading = isLoading;
 		},
 
 
@@ -58,17 +67,26 @@ const actions = (self)=> {
 				});
 			}
 			catch (err) {
-				console.log(`NET exception ${err}`)
-				return {};
+				return {
+					att: 0,
+					def: 0,
+					mid: 0,
+					gk: 0
+				};
 			}
 		},
 
 
 		async train(data = []) {
+
+			store.players.refreshPlayersCharts(true);
+			if(self.status === 'disabled') return runInAction(`NET-TRAIN-WARNING (status: ${self.status })`, ()=> store.players.refreshPlayersCharts(false));
+
 			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> {
 				self.status = "learning";
 				self.setErrorThresh(0);
 			});
+
 			const formattedData = data.map((player)=> ({
 				input: {
 					age: player.age,
@@ -92,17 +110,18 @@ const actions = (self)=> {
 			if(!formattedData.length) {
 				runInAction(`NET-TRAIN-ERROR (players: ${data.length})`, ()=> {
 					self.setStatus("error");
+					NET = new brain.NeuralNetwork();
+					store.transfers.addPredictions();
+					store.players.refreshPlayersCharts(false);
 				});
 			} else {
-				runInAction(`NET-TRAIN-SUCCESS (players: ${data.length})`, ()=> {
-					setTimeout(()=> {
-						// self.setErrorThresh(NET.train(formattedData).error);
-						//self.errorThresh = NET.train(formattedData).error;
-						self.setErrorThresh(NET.train(formattedData).error);
-						self.setStatus(self.errorThresh < self.maxErrorThresh ? "success" : "error");
-					}, 0);
-				});
+				worker.postMessage(formattedData);
 			}
+		},
+
+		// Hooks
+		postProcessSnapshot(snapshot) {
+			window.localStorage.setItem('NET.status', snapshot.status);
 		}
 	};
 };

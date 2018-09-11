@@ -8,7 +8,6 @@ class QueryLoader extends React.Component {
 
 
 	render() {
-		if(this.props.variables && this.props.variables.id === 'optimisticUpdate') return this.props.children;
 		return (
 			<Query { ...this.props }>
 				{({ loading, error, data })=> {

@@ -50,9 +50,13 @@
 	"Filter by <1>playmaker</1>": "Filter by <1>playmaker</1>",
 	"Filter by <1>passing</1>": "Filter by <1>passing</1>",
 	"Filter by <1>striker</1>": "Filter by <1>striker</1>",
-	"search...": "search...",
+	"search": "search...",
 	"status": "status",
 	"error thresh": "error thresh",
 	"trained players": "trained players",
-	"Saving": "Saving"
+	"Saving": "Saving",
+	"current bid": "current bid",
+	"sales for": "sales for",
+	"Remove all net players": "Remove all net players",
+	"Are you sure you want to delete all players? This action can not be undone": "Are you sure you want to delete all players? This action can not be undone."
 }

@@ -19,6 +19,7 @@ async function transfers(event) {
 
 	const response = await api.request(query, { id: 'cjkntd1p42ocw0157motav7bq' });
 
+	// Cache for 3 min
 	if((Date.now() - +response.User.updatedTransfersAt) / 1000 / 60 > 3) {
 		const players = await parse();
 
@@ -76,11 +77,13 @@ async function parse() {
 									const DATA = [];
 									$players.forEach((item)=> {
 										const $player = $(item);
+										const $col = $($player.find('.col-md-6.col-sm-5.col-xs-12.small'));
 
 										const id = $player.find("#playerCell").find("div").first().text().trim();
 
-										const details = $($player.find('.col-md-6.col-sm-5.col-xs-12.small').find("strng").html().split("<br>")[0]).text().trim();
-										const endOfTrade = $($player.find('.col-md-6.col-sm-5.col-xs-12.small').find("strng").find("strong")[2]).text().trim();
+										const currentBid = $($col).text().trim().split('Aktualna oferta: ')[1] && $($col).text().trim().split('Aktualna oferta: ')[1].split('zł')[0].trim();
+										const saleFor = $($col).text().trim().split('Wystawiony za: ')[1] && $($col).text().trim().split('Wystawiony za: ')[1].split('zł')[0].trim();
+										const endOfTrade = $($col.find("strng").find("strong")[2]).text().trim();
 
 										const skills = $player.find('.table.table-condensed.table-skills td')
 											.text().trim().split('\n');
@@ -97,7 +100,7 @@ async function parse() {
 										const striker = +skills[7].split('[')[1].split(']')[0] / 100;
 
 										DATA.push({
-											id, name, age, stamina, keeper, pace, defender, technique, playmaker, passing, striker, details, endOfTrade
+											id, name, age, stamina, keeper, pace, defender, technique, playmaker, passing, striker, currentBid, saleFor, endOfTrade
 										});
 									});
 									return DATA;

@@ -3,7 +3,7 @@ import { CellMeasurer, List } from 'react-virtualized';
 // Styles
 import "styles/interface/interface.css";
 // MobX
-import { reaction, observable, values } from "mobx";
+import { observable, values } from "mobx";
 import { observer } from "mobx-react";
 // Store
 import store from "store";
@@ -28,27 +28,11 @@ class Interface extends React.Component {
 	constructor() {
 		super();
 		store.transfers.transfersMutation();
-
-		this["@reaction on change [userPlayers]"] = reaction(
-			()=> store.authorizedUser && this.userPlayers.map((player)=> player.mid + player.att + player.def + player.gk),
-			()=> {
-				if(!store.authorizedUser) return;
-				store.NET.train(this.userPlayers);
-				store.transfers.addPredictions();
-				store.players.refreshPlayersCharts(false);
-			},
-			{
-				fireImmediately: true,
-				name: "@reaction on change [userPlayers]"
-			}
-		);
-
 		window.addEventListener('resize', this.onWindowResize);
 	}
 
 
 	componentWillUnmount() {
-		this["@reaction on change [userPlayers]"]();
 		window.removeEventListener('resize', this.onWindowResize);
 	}
 

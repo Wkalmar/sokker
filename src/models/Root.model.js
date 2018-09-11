@@ -1,9 +1,10 @@
 import i18n from 'i18next';
-import { types } from "mobx-state-tree";
+import { types, applySnapshot } from "mobx-state-tree";
 import { runInAction } from "mobx";
 import { CellMeasurerCache } from "react-virtualized";
 // Utils
 import history from "utils/history.utils";
+import defaultFilters from "utils/defaultFilters.utils";
 // GraphQL
 import client from "graphql/client";
 import LOG_IN_USER_MUTATION from "graphql/mutations/authenticateUser.mutation";
@@ -44,10 +45,6 @@ const RootModel = {
 const actions = (store)=> {
 	return {
 
-		t(translate="", params={}) {
-			return i18n.t(translate, params, store.lang);
-		},
-
 		toggleSideBar() {
 			store.isOpenSidebar = !store.isOpenSidebar;
 		},
@@ -58,10 +55,11 @@ const actions = (store)=> {
 		},
 
 		setDevice() {
-			store.device = window.innerWidth > 800 ? "desktop" : "mobile";
+			store.device = window.innerWidth > 1000 ? "desktop" : "mobile";
 		},
 
 		setCurrentPath(url = "") {
+			store.isOpenSidebar = false;
 			store.currentPath = url;
 		},
 
@@ -93,8 +91,25 @@ const actions = (store)=> {
 			e.preventDefault();
 			history.push("/");
 			runInAction(`USER-LOGOUT-SUCCESS`, ()=> {
-				sessionStorage.removeItem('token');
-				store.authorizedUser = null;
+				window.sessionStorage.removeItem('token');
+				// TODO: Duplicated with store.js initial logic
+				applySnapshot(store, {
+					lang: i18n.lang,
+					authorizedUser: null,
+					isOpenSidebar: false,
+					NET: {
+						status: window.localStorage.getItem('NET.status') || "initial",
+						errorThresh: 0,
+						maxErrorThresh: 0.005
+					},
+					device: window.innerWidth > 1000 ? "desktop" : "mobile",
+					users: {},
+					players: {
+						isHideCharts: true
+					},
+					transfers: {},
+					filters: defaultFilters
+				});
 				client.resetStore();
 			});
 		},
@@ -121,4 +136,13 @@ const views = (store)=> {
 };
 
 
-export default types.model("RootModel", RootModel).actions(actions).views(views);
+const volatile = (store)=> {
+	return {
+		t(translate="", params={}) {
+			return i18n.t(translate, params, store.lang);
+		},
+	}
+};
+
+
+export default types.model("RootModel", RootModel).actions(actions).views(views).volatile(volatile);

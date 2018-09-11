@@ -11,6 +11,18 @@ import AlertContainer from "components/AlertContainer.component";
 
 class App extends React.Component {
 
+
+	componentDidMount() {
+		// window.addEventListener("beforeunload", function (e) {
+		// 	             //Webkit, Safari, Chrome
+		// });
+	}
+
+	componentWillUnmount() {
+		//alert(3)
+	}
+
+
 	render() {
 		return (
 			<div>

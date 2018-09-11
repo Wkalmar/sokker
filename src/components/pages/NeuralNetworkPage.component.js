@@ -24,6 +24,8 @@ class NeuralNetworkPage extends React.Component {
 
 	get players() { return values(store.players.all); };
 
+	get transfers() { return values(store.transfers.players); };
+
 	get userPlayers() { return this.players.filter((player)=> player.userId === store.authorizedUser.id); };
 
 
@@ -37,7 +39,6 @@ class NeuralNetworkPage extends React.Component {
 
 	relearnNet = ()=> {
 		store.NET.train(this.userPlayers);
-		store.transfers.addPredictions();
 	};
 
 
@@ -46,12 +47,20 @@ class NeuralNetworkPage extends React.Component {
 		await store.players.deleteMutation({ id: id });
 		this.isLoadingDeleteBtn.set(false);
 	};
+
+
+	deleteAllUserPlayers = async ()=> {
+		const isConfirm = window.confirm(store.t('Are you sure you want to delete all players? This action can not be undone'));
+		if(!isConfirm) return;
+		this.isLoadingDeleteBtn.set(true);
+		await store.players.deleteAllUserPlayersMutation({ userId: store.authorizedUser.id });
+		this.isLoadingDeleteBtn.set(false);
+	};
 	
 
 	render() {
 		return (
 			<div>
-				<h1>{ '' + store.players.isHideCharts }</h1>
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
 							 variables={{ userId: store.authorizedUser.id }}>
@@ -92,13 +101,22 @@ class NeuralNetworkPage extends React.Component {
 										}
 									</button>
 								</div>
+								<div className="net-info-row">
+									<span />
+									<button onClick={ this.deleteAllUserPlayers }>
+										{ this.isLoadingDeleteBtn.get() ?
+											<PreLoader />
+											:
+											<T>Remove all net players</T>
+										}
+									</button>
+								</div>
 							</div>
 							: null }
 
-
 						{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Trained players information</T></div> }
 						{ store.NET.status !== 'disabled' ?
-							this.players.map((player)=> {
+							this.players.reverse().map((player)=> {
 								return (
 									<div className="net-info-row" key={ player.id }>
 										<a style={{ width: 'calc(100% - 115px)' }}
@@ -110,7 +128,8 @@ class NeuralNetworkPage extends React.Component {
 											<T>{ this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
 										</button>
 
-										<div className="net-info-details-block" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
+										<div className="net-info-details-block net-info-details-block-hide-player-name" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
+
 											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
 
 											<button onClick={ ()=> this.removePlayer(player.id) }>

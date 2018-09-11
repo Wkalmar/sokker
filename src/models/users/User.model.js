@@ -5,7 +5,6 @@ import { types } from "mobx-state-tree";
 const UserModel = {
 	id: types.maybe(types.string),
 	email: types.maybe(types.string),
-	avatar: types.maybe(types.string),
 	name: types.maybe(types.string)
 };
 

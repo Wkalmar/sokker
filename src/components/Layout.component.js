@@ -1,16 +1,21 @@
 import React from 'react';
 import { push as Menu } from 'react-burger-menu';
+import { withRouter } from "react-router-dom";
 // Styles
 import "styles/layout.css";
 import "styles/sidebar.css";
 // MobX
 import { observable } from "mobx";
 import { observer } from "mobx-react";
+// GraphQL
+import GET_USER_INFO_QUERY from "graphql/queries/getUserInfo.query";
 // Store
 import store from "store";
 // Components
 import Header from "components/parts/Header.component";
 import Filters from "components/parts/filters/Filters.component";
+import QueryLoader from "components/QueryLoader.component";
+import PreLoader from "components/parts/PreLoader.component";
 
 
 class Layout extends React.Component {
@@ -41,9 +46,10 @@ class Layout extends React.Component {
 			<div id="outer-container">
 				<Header />
 
-				{ store.authorizedUser && store.device === "mobile" && store.currentPath === "/" ?
+				{ store.authorizedUser && store.device === "mobile" ?
 					<Menu right
 						  push
+						  disableOverlayClick
 						  isOpen={ store.isOpenSidebar }
 						  pageWrapId={ "page-wrap" }
 						  onStateChange={ this.onMenuChange }
@@ -59,7 +65,11 @@ class Layout extends React.Component {
 
 				<div id="page-wrap">
 					{ store.authorizedUser ?
-						this.props.children
+						<QueryLoader query={ GET_USER_INFO_QUERY }
+									 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
+									 variables={{ id: store.authorizedUser.id }}>
+							{ this.props.children }
+						</QueryLoader>
 						:
 						this.props.children
 					}
@@ -69,4 +79,4 @@ class Layout extends React.Component {
 	}
 }
 
-export default observer(Layout)
+export default withRouter(observer(Layout));

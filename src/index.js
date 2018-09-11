@@ -10,6 +10,7 @@ import { WebGLRenderer } from 'three';
 
 import 'i18n';
 
+
 const renderer = new WebGLRenderer({ antialias: true });
 
 ReactDOM.render(<App renderer={ renderer }/>, document.getElementById('root'));

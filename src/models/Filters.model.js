@@ -11,13 +11,19 @@ const Filters = {
 	gk: types.map(types.frozen),
 	age: types.map(types.frozen),
 	skills: types.map(types.frozen),
-	search: types.string
+	search: types.string,
+	isLoading: types.boolean
 };
 
 
 let timeout = null;
 const actions = (self)=> {
 	return {
+
+		setLoading(isLoading = false) {
+			self.isLoading = isLoading;
+		},
+
 
 		change(filter={}) {
 			clearTimeout(timeout);
@@ -52,7 +58,11 @@ const actions = (self)=> {
 
 
 		resetFilters() {
-			applySnapshot(self, defaultFilters);
+			runInAction(`FILTERS-RESET-SUCCESS`, ()=> {
+				applySnapshot(self, defaultFilters);
+				self.setLoading(true);
+			});
+			setTimeout(self.setLoading, 0);
 		},
 
 

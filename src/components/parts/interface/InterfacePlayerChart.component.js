@@ -2,7 +2,6 @@ import React from 'react';
 // MobX
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
-// Chart
 // @SOURCE: https://github.com/recharts/recharts/blob/master/demo/component/PieChart.js
 import { ResponsiveContainer, PieChart, Sector, Cell, Legend, Pie } from "recharts";
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
@@ -23,11 +22,7 @@ class InterfacePlayerChart extends React.Component {
 		value: this.props.playerData[name]
 	})); };
 
-
-	get playerSkillsSum() { return this.chartData.reduce(function(previousValue, currentValue) {
-		return (previousValue.value ? previousValue.value * 100 : previousValue)  + currentValue.value * 100;
-	}); };
-
+	get playerSkillsSum() { return this.chartData.reduce((sum, { value })=> sum + value * 100, 0); };
 
 	get chartRadius() {
 		const chartRadiusInPercents = this.playerSkillsSum * 100 / this.totalSkillsSum;
@@ -71,7 +66,7 @@ class InterfacePlayerChart extends React.Component {
 				<path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
 				<circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
 				<text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">
-					{ `${payload.name} / ${+payload.value.toFixed(1)}` }
+					{ `${payload.name} / ${ (+payload.value * 100).toFixed(0) }` }
 				</text>
 			</g>
 		);
@@ -85,6 +80,8 @@ class InterfacePlayerChart extends React.Component {
 
 	render() {
 		if(!Object.keys(this.props.playerData).length) return null;
+
+		if(isNaN(this.chartRadius)) console.log(this.chartRadius, this.chartData, this.playerSkillsSum, "this.chartRadius === NaN!!");
 		return (
 			<div className="interface-player-chart">
 				<ResponsiveContainer>
@@ -95,7 +92,9 @@ class InterfacePlayerChart extends React.Component {
 							 activeShape={this.renderActiveShape}
 							 activeIndex={this.activeIndex.get()}
 							 onMouseEnter={this.onPieEnter}
+							 animationDuration={700}
 							 cx={'50%'}
+							 label={ this.renderActiveShape }
 							 cy={'50%'}
 							 innerRadius={0}
 							 outerRadius={ this.chartRadius }>

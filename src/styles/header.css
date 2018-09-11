@@ -66,13 +66,13 @@
 }
 
 
-.header_menu .header_menu-favorites {
+.header_menu .header_menu-charts {
 	color: black;
 	font-size: 18px;
 	line-height: 28px;
 	padding-top: 11px;
 }
-.header_menu .header_menu-favorites:hover {
+.header_menu .header_menu-charts:hover {
 	text-decoration: none;
 }
 

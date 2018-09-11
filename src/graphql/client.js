@@ -26,7 +26,7 @@ const httpLink = new BatchHttpLink({
 
 
 const authLink = setContext((_, { headers }) => {
-    const token = sessionStorage.getItem('token');
+    const token = window.sessionStorage.getItem('token');
     return {
         headers: {
             ...headers,

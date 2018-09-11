@@ -3,11 +3,11 @@ import React from 'react';
 import "styles/interface/interface-player.css";
 // MobX
 import { observer } from 'mobx-react';
-import { observable } from 'mobx';
 // Store
 import store from "store";
 // Components
 import InterfacePlayerChart from "components/parts/interface/InterfacePlayerChart.component";
+import InterfacePlayerSkillsChart from "components/parts/interface/InterfacePlayerSkillsChart.component";
 import InterfacePlayerInfo from "components/parts/interface/InterfacePlayerInfo.component";
 import InterfacePlayerForm from "components/parts/interface/InterfacePlayerForm.component";
 import PreLoader from "components/parts/PreLoader.component";
@@ -15,49 +15,25 @@ import PreLoader from "components/parts/PreLoader.component";
 
 class InterfacePlayer extends React.Component {
 
-
-	isReady = observable.box(false);
-
-
-	constructor(props) {
-		super(props);
-		this.isReady.set(true);
-	}
-
-
-	getPlayerPrediction(player = this.props.player) {
-		return store.NET.run(player);
-	};
-
-
-	toggleFavorite = ()=> {
-		this.props.player.update({
-			id: this.props.player.id,
-			isFavorite: !this.props.player.isFavorite
-		});
-	};
-
-
 	render() {
-		if(!this.isReady.get()) return <PreLoader />;
-
 		return (
 			<div className="interface-player"
-				 key={ store.NET.status } >
+				 key={ store.NET.status }>
+
 				<InterfacePlayerInfo player={ this.props.player } />
 
 				{ store.players.isHideCharts ?
-					<PreLoader />
+					<div className="interface-player-chart"><PreLoader /></div>
 					:
-					store.NET.status !== 'disabled' && <InterfacePlayerChart playerData={ this.getPlayerPrediction() } />
-				}
-
-				{ this.props.player.user ?
-					null
-					:
-					<div className="interface-player-favorite" onClick={ this.toggleFavorite }>
-						{ this.props.player.isFavorite ? '★' : '☆' }
-					</div>
+					store.NET.status !== 'disabled' ?
+						<InterfacePlayerChart playerData={{
+							gk: this.props.player.gk,
+							def: this.props.player.def,
+							mid: this.props.player.mid,
+							att: this.props.player.att
+						}} />
+						:
+						<InterfacePlayerSkillsChart player={ this.props.player } />
 				}
 
 				<InterfacePlayerForm player={ this.props.player } />

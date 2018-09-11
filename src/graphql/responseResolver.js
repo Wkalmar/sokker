@@ -1,5 +1,4 @@
 import Alert from 'react-s-alert';
-import { runInAction } from 'mobx';
 // Utils
 import history from "utils/history.utils";
 // Store
@@ -39,28 +38,35 @@ function applyData(dataName, data) {
 		case "signupUser":
 		case "authenticateUser":
 			if(!data) return;
-			sessionStorage.setItem('token', data.token);
+			window.sessionStorage.setItem('token', data.token);
 			store.logIn(data.id);
 			history.push(store.nextPathUrl || '/');
 			break;
 
 		//	Players
 		case "createPlayer":
+			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
 			Alert.success("Player saved to DB");
 			break;
 		case "updatePlayer":
+			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
 			Alert.success("Player updated in DB");
 			break;
 		case "deletePlayer":
 			store.players.delete(data.id);
+			store.NET.train(store.players.userPlayers);
 			Alert.success("Player deleted from DB");
 			break;
+		case 'deleteAllUserPlayers':
+			store.players.deleteAll();
+			store.NET.train(store.players.userPlayers);
+			Alert.success("All user players deleted from DB");
+			break;
 		case "allPlayers":
-			runInAction(`PLAYERS-CREATE-ALL-SUCCESS`, ()=> {
-				data.map((player)=> store.players.create(player));
-			});
+			store.NET.train(data);
+			store.players.createAll(data);
 			break;
 
 		// Transfers
