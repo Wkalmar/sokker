@@ -65,3 +65,7 @@ type Player @model {
 }
 
 
+type Cache @model {
+    id: ID! @isUnique # read-only (managed by Graphcool)
+    transfers: String
+}

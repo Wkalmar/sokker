@@ -80,14 +80,22 @@ class Header extends React.Component {
 			<div className="header">
 				<ul className="header_menu">
 					<Link to="/"><HomeSVG /></Link>
+
 					{ store.authorizedUser && <span className="neural-link-wrapper">
-						<Link className="rotating" style={{
+						<Link style={{
 							position: 'relative',
+							zIndex: 200,
 							left: '-7px'
 						}} to="/neuralnetwork">
 							<NeuralSVG />
 						</Link>
-						<span style={{ background: this.netStatusColor }} />
+						{ store.NET.status !== 'disabled' ?
+							<React.Fragment>
+								<span className="rotating neural-network-orbit" style={{ border: `1px solid #2876b4` }} />
+								<span className="rotating120 neural-network-orbit" style={{ border: `1px solid rgb(44, 160, 44)` }} />
+								<span className="rotating240 neural-network-orbit" style={{ border: `1px solid rgb(215, 39, 41)` }} />
+							</React.Fragment>
+							: null }
 					</span> }
 
 					{ store.authorizedUser && store.NET.status !== 'disabled' && <Link to="/charts"><ChartSVG /></Link> }
