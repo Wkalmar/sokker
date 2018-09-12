@@ -13,7 +13,7 @@ import PreLoader from "components/parts/PreLoader.component";
 import T from "components/parts/T.component";
 
 
-class HomePageContent extends React.Component {
+class HomePage extends React.Component {
 
 	render() {
 		return (
@@ -46,4 +46,4 @@ class HomePageContent extends React.Component {
 }
 
 
-export default observer(HomePageContent);
+export default observer(HomePage);

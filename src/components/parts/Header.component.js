@@ -10,6 +10,7 @@ import LogoutSVG from "svg/logout.svg";
 import NeuralSVG from "svg/neural.svg";
 import HomeSVG from "svg/home.svg";
 import SidebarSVG from "svg/sidebar.svg";
+import InfoSVG from "svg/info.svg";
 import ChartSVG from "svg/chart.svg";
 // Styles
 import "styles/header.css";
@@ -93,7 +94,7 @@ class Header extends React.Component {
 				</ul>
 
 				<ul className="header_menu">
-					{ store.device === "mobile" && store.currentPath === "/" ?
+					{ store.device === "mobile" ?
 						<a onClick={ store.toggleSideBar }><SidebarSVG /></a>
 						: null }
 
@@ -101,7 +102,8 @@ class Header extends React.Component {
 						<img style={{ width: '20px', height: '20px', marginTop: '2px' }} alt={store.lang} src={ flags[store.lang] } />
 					</div>
 
-					{/*<Link to="/help"><HelpSVG /></Link>*/}
+					<Link to="/info"><InfoSVG /></Link>
+
 					{/*{ store.authorizedUser && <Link to="/profile"><ProfileSVG /></Link> }*/}
 					{ !store.authorizedUser && <Link to="/login"><LoginSVG /></Link> }
 					{ store.authorizedUser && <a onClick={ store.logOut }><LogoutSVG /></a> }

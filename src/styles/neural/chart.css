@@ -1,0 +1,27 @@
+.neural-chart {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.neural-chart-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 10px 0 10px;
+    padding: 5px 10px;
+    background: whitesmoke;
+}
+
+.neural-chart-controls-item {
+    max-width: 55px;
+    min-width: 25px;
+    cursor: pointer;
+    color: white;
+    height: 20px;
+    padding: 0 8px;
+    margin: 0 0 0 10px;
+}

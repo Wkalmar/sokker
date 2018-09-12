@@ -24,7 +24,7 @@ class ChartsPage extends React.Component {
 					{ store.NET.status !== 'disabled' ?
 						<div className="net-info-table">
 							<div className="net-info-row">
-								<NeuralScatterChart players={ this.transfers } />
+								<NeuralScatterChart />
 							</div>
 						</div>
 						:
