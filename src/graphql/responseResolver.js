@@ -34,6 +34,7 @@ function applyData(dataName, data) {
 
 		case "User":
 			store.users.create(data);
+			Alert.success(store.t('Welcome') + `, ${data.name}!`);
 			break;
 		case "signupUser":
 		case "authenticateUser":
@@ -41,28 +42,29 @@ function applyData(dataName, data) {
 			window.sessionStorage.setItem('token', data.token);
 			store.logIn(data.id);
 			history.push(store.nextPathUrl || '/');
+			Alert.success(store.t('Registration successful'));
 			break;
 
 		//	Players
 		case "createPlayer":
 			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
-			Alert.success("Player saved to DB");
+			Alert.success(store.t("Player saved to DB"));
 			break;
 		case "updatePlayer":
 			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
-			Alert.success("Player updated in DB");
+			Alert.success(store.t("Player updated in DB"));
 			break;
 		case "deletePlayer":
 			store.players.delete(data.id);
 			store.NET.train(store.players.userPlayers);
-			Alert.success("Player deleted from DB");
+			Alert.success(store.t("Player deleted from DB"));
 			break;
 		case 'deleteAllUserPlayers':
 			store.players.deleteAll();
 			store.NET.train(store.players.userPlayers);
-			Alert.success("All user players deleted from DB");
+			Alert.success(store.t("All user players deleted from DB"));
 			break;
 		case "allPlayers":
 			store.NET.train(data);

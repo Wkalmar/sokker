@@ -1,5 +1,9 @@
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
+// Utils
+import formatMoney from "utils/formatMoney.utils";
+// Store
+import store from "store";
 // GraphQL
 import client from "graphql/client";
 import UPDATE_PLAYER_MUTATION from "graphql/mutations/players/updatePlayer.mutation";
@@ -62,7 +66,23 @@ const views = (self)=> {
 	return {
 		get userId() { return self.user.id },
 		get endOfTradeFromNow() { return moment(self.endOfTrade).add(1, 'h').fromNow(); },
-		get price() { return (self.currentBid || self.saleFor) + ' zł'; },
+		get price() {
+			let amount = +(self.currentBid || self.saleFor).replace(/\s/g, "");
+
+			// Ukraine = zl 100 -> 160 грн.
+			// Romania =  zl 100 -> 100 lei
+			// Italia =  zl 100 -> € 100
+
+			switch(store.lang) {
+				case 'ua':
+					amount = Math.round(amount * 1.6);
+					return formatMoney(amount) + ' грн.';
+				case "pl":
+					return formatMoney(amount) + ' zł';
+				default:
+					return '€ ' + formatMoney(amount);
+			}
+			},
 		skill(name) { return (+self.toJSON()[name] * 100).toFixed(0); }
 	};
 };
