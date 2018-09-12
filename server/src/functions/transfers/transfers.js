@@ -10,32 +10,31 @@ async function transfers(event) {
 	const graphcool = fromEvent(event);
 	const api = graphcool.api('simple/v1');
 
-	const query = `query User($id: ID!) {
-			User(id: $id) {
-				transfers
-				updatedTransfersAt
+	const query = `query Cache($id: ID!) {
+			Cache(id: $id) {
+				transfers,
+				updatedAt
 			}
 		}`;
 
-	const response = await api.request(query, { id: 'cjkntd1p42ocw0157motav7bq' });
+	const response = await api.request(query, { id: 'cjlz7ojk810tg0166fxs0kgpc' });
 
 	// Cache for 3 min
-	if((Date.now() - +response.User.updatedTransfersAt) / 1000 / 60 > 3) {
+	const diffInMinutes = (Date.now() - new Date(response.Cache.updatedAt).valueOf()) / 1000 / 60;
+	if(diffInMinutes > 3) {
 		const players = await parse();
 
 		const mutation = `
-		mutation updateUser($id: ID!, $transfers: String, $updatedTransfersAt: String) {
-			updateUser(id: $id, transfers: $transfers, updatedTransfersAt: $updatedTransfersAt) {
+		mutation updateCache($id: ID!, $transfers: String) {
+			updateCache(id: $id, transfers: $transfers) {
 				id
 				transfers
-				updatedTransfersAt
 			}
 		}`;
 
 		api.request(mutation, {
-			id: 'cjkntd1p42ocw0157motav7bq',
-			transfers: JSON.stringify(players),
-			updatedTransfersAt: "" + Date.now()
+			id: "cjlz7ojk810tg0166fxs0kgpc",
+			transfers: JSON.stringify(players)
 		});
 
 		return {
@@ -46,7 +45,7 @@ async function transfers(event) {
 	} else {
 		return {
 			data: {
-				response: response.User.transfers
+				response: response.Cache.transfers
 			}
 		}
 	}

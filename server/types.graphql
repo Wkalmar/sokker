@@ -15,9 +15,6 @@ type User @model {
     password: String!
     name: String
     trigger: String # for triggering socket update
-
-    transfers: String
-    updatedTransfersAt: String
 }
 
 
@@ -67,5 +64,9 @@ type Player @model {
 
 type Cache @model {
     id: ID! @isUnique # read-only (managed by Graphcool)
-    transfers: String
+    transfers: String,
+
+    # Optional system fields (remove if not needed):
+    createdAt: DateTime! # read-only (managed by Graphcool)
+    updatedAt: DateTime! # read-only (managed by Graphcool)
 }
