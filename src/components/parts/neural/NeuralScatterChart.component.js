@@ -60,11 +60,12 @@ class NeuralScatterChart extends React.Component {
 
 	renderTooltip = (tooltip)=> {
 		if(!tooltip.payload.length) return null;
-		const player = tooltip.payload[0].payload;
+		const data = tooltip.payload[0].payload;
+		const player = this.players.find((player)=> player.id === data.id);
 		return (
 			<div style={{ background: 'white', border: '1px solid gray', padding: '10px', fontSize: '13px', lineHeight: '20px', textAlign: 'left' }}>
 				{ player.name }<br/>
-				age: { player.age }<br/>
+				age: { Math.round(player.age * 100) }<br/>
 				price: { player.price }<br/>
 				{ this.activeTab.get() }: { (player[this.activeTab.get()] * 100).toFixed(0) }<br/>
 			</div>
@@ -78,7 +79,7 @@ class NeuralScatterChart extends React.Component {
 		if(this.selectedPlayer.get() && this.selectedPlayer.get().id === player.id) fill = 'gray';
 		return <circle cx={player.x}
 					   cy={player.y}
-					   r={ skill * 14 <= 6 ? 6 : skill * 14 }
+					   r={ skill * 15 <= 7 ? 7 : skill * 15 }
 					   fill={ fill } stroke="none" />;
 	};
 
@@ -151,13 +152,31 @@ class NeuralScatterChart extends React.Component {
 					   name={ this.activeTab.get() }
 					   unit={` ${this.activeTab.get()}`} />
 
-				<YAxis type="number"
-					   dataKey={ this.activeChart.get() }
-					   tickCount={ 15 }
-					   domain={ this.activeChart.get() === 'age' ? [15, 'dataMax + 1'] : ['dataMin', 'dataMax + 1000000']}
-					   tick={{ fontSize: '11px' }}
-					   name={ this.activeChart.get() }
-					   unit={ ` ${this.activeChart.get()}` } />
+				{ this.activePlayers.get('filtered') ?
+					<YAxis type="number"
+						   dataKey={ this.activeChart.get() }
+						   allowDecimals={ false }
+						   tickCount={ 15 }
+						   domain={ this.activeChart.get() === 'age' ?
+							   [15, 'dataMax + 1']
+							   :
+							   ['dataMin', 'dataMax + 1000000'] }
+						   tick={{ fontSize: '11px' }}
+						   name={ this.activeChart.get() }
+						   unit={ ` ${this.activeChart.get()}` } />
+					:
+					<YAxis type="number"
+						   dataKey={ this.activeChart.get() }
+						   allowDecimals={ false }
+						   tickCount={ 15 }
+						   domain={ this.activeChart.get() === 'age' ?
+							   [store.filters.age.get('range')[0]-1, store.filters.age.get('range')[1]+1]
+							   :
+							   ['dataMin', 'dataMax + 1000000'] }
+						   tick={{ fontSize: '11px' }}
+						   name={ this.activeChart.get() }
+						   unit={ ` ${this.activeChart.get()}` } />
+				}
 
 				<CartesianGrid />
 

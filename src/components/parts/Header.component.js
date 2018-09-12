@@ -96,6 +96,8 @@ class Header extends React.Component {
 								<span className="rotating240 neural-network-orbit" style={{ border: `1px solid rgb(215, 39, 41)` }} />
 							</React.Fragment>
 							: null }
+
+						<span className="neural-status" style={{ background: this.netStatusColor }} />
 					</span> }
 
 					{ store.authorizedUser && store.NET.status !== 'disabled' && <Link to="/charts"><ChartSVG /></Link> }
