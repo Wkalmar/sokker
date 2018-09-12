@@ -72,8 +72,12 @@ const views = (self)=> {
 			// Ukraine = zl 100 -> 160 грн.
 			// Romania =  zl 100 -> 100 lei
 			// Italia =  zl 100 -> € 100
+			// Russia =  zl 100 -> 800 руб.
 
 			switch(store.lang) {
+				case 'ru':
+					amount = Math.round(amount * 8);
+					return formatMoney(amount) + ' руб.';
 				case 'ua':
 					amount = Math.round(amount * 1.6);
 					return formatMoney(amount) + ' грн.';

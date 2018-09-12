@@ -5,12 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/../../reactcore/_core/utils/reformatData.core.utils.js" description="cashierCartBonusesModel.changeCartBonus({" line="443" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/formatMoney.utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/responseResolver.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/responseResolver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/players/Player.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/players/Player.model.js" afterDir="false" />
-    </list>
+    <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -23,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="formatMoney.utils.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="formatMoney.utils.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/formatMoney.utils.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -32,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.model.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="66" column="45" lean-forward="true" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+            <state relative-caret-position="466">
+              <caret line="69" column="50" lean-forward="true" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -140,8 +135,8 @@
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" />
         <option value="$PROJECT_DIR$/src/graphql/responseResolver.js" />
-        <option value="$PROJECT_DIR$/src/utils/formatMoney.utils.js" />
         <option value="$PROJECT_DIR$/src/models/players/Player.model.js" />
+        <option value="$PROJECT_DIR$/src/utils/formatMoney.utils.js" />
       </list>
     </option>
   </component>
@@ -347,12 +342,12 @@
       <workItem from="1536249862062" duration="10894000" />
       <workItem from="1536338522880" duration="331000" />
       <workItem from="1536570271253" duration="15345000" />
-      <workItem from="1536760569926" duration="5824000" />
+      <workItem from="1536760569926" duration="6069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294168000" />
+    <option name="totallyTimeSpent" value="294413000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -364,8 +359,8 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32995495" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32995495" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.21831736" />
-      <window_info active="true" content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.28328007" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.21831736" />
+      <window_info content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.28328007" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -671,13 +666,6 @@
     <entry file="file://$PROJECT_DIR$/src/models/users/Users.model.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/formatMoney.utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -694,8 +682,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="66" column="45" lean-forward="true" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+        <state relative-caret-position="466">
+          <caret line="69" column="50" lean-forward="true" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/formatMoney.utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
         </state>
       </provider>
     </entry>
