@@ -5,7 +5,9 @@
     <bookmark url="file://$PROJECT_DIR$/../../reactcore/_core/utils/reformatData.core.utils.js" description="cashierCartBonusesModel.changeCartBonus({" line="443" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="" />
+    <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/models/players/Player.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/players/Player.model.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Filters.model.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/models/Filters.model.js">
+      <file leaf-file-name="Player.model.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+            <state relative-caret-position="350">
+              <caret line="69" column="61" lean-forward="true" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -107,7 +109,6 @@
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInfo.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/neural/NeuralScatterChart.component.js" />
         <option value="$PROJECT_DIR$/src/utils/formatMoney.utils.js" />
-        <option value="$PROJECT_DIR$/src/models/players/Player.model.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/Router.js" />
         <option value="$PROJECT_DIR$/server/types.graphql" />
@@ -123,11 +124,12 @@
         <option value="$PROJECT_DIR$/src/graphql/responseResolver.js" />
         <option value="$PROJECT_DIR$/src/styles/layout.css" />
         <option value="$PROJECT_DIR$/src/svg/delete.svg.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js" />
         <option value="$PROJECT_DIR$/src/models/Filters.model.js" />
+        <option value="$PROJECT_DIR$/src/models/players/Player.model.js" />
       </list>
     </option>
   </component>
@@ -349,12 +351,12 @@
       <workItem from="1536338522880" duration="331000" />
       <workItem from="1536570271253" duration="15345000" />
       <workItem from="1536760569926" duration="6725000" />
-      <workItem from="1536833612503" duration="9127000" />
+      <workItem from="1536833612503" duration="9403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304196000" />
+    <option name="totallyTimeSpent" value="304472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -513,13 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -682,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/defaultFilters.utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -724,10 +712,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Filters.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        <state relative-caret-position="428">
+          <caret line="47" column="59" lean-forward="true" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/players/Player.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="69" column="61" lean-forward="true" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
         </state>
       </provider>
     </entry>
