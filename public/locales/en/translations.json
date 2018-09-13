@@ -58,5 +58,15 @@
 	"Current bid": "Current bid",
 	"Sales for": "Sales for",
 	"Remove all net players": "Remove all net players",
-	"Are you sure you want to delete all players? This action can not be undone": "Are you sure you want to delete all players? This action can not be undone."
+	"Are you sure you want to delete all players? This action can not be undone": "Are you sure you want to delete all players? This action can not be undone.",
+	"Save you custom filter": "Save you custom filter",
+	"new filter name": "new filter name",
+	"Welcome": "Welcome",
+	"ATT": "ATT",
+	"MID": "MID",
+	"DEF": "DEF",
+	"GK": "GK",
+	"Show players": "Show players",
+	"Order by": "Order by",
+	"Current active chart": "Current active chart"
 }

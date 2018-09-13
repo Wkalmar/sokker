@@ -59,8 +59,8 @@ class Filters extends React.Component {
 							<div className="rc-slider-rail"/>
 							<div className="rc-slider-track rc-slider-track-1" style={{ left: 0, width: '100%' }}/>
 							<div className="rc-slider-step"/>
-							<div role="slider" tabIndex="0" className="rc-slider-handle rc-slider-handle-1"  style={{ left: '0%' }} />
-							<div role="slider" tabIndex="0"  className="rc-slider-handle rc-slider-handle-2" style={{ left: '100%' }}/>
+							<div className="rc-slider-handle rc-slider-handle-1"  style={{ left: '0%' }} />
+							<div className="rc-slider-handle rc-slider-handle-2" style={{ left: '100%' }}/>
 							<div className="rc-slider-mark"/>
 						</div>
 						:

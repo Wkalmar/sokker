@@ -50,6 +50,7 @@ const actions = (store)=> {
 
 		changeLang(lang) {
 			i18n.changeLanguage(lang);
+			window.localStorage.setItem('lang', lang);
 			store.lang = lang;
 		},
 

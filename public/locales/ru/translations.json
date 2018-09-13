@@ -58,5 +58,15 @@
 	"Current bid": "Текущая ставка",
 	"Sales for": "Продается за",
 	"Remove all net players": "Удалить всех игроков для обучения сети",
-	"Are you sure you want to delete all players? This action can not be undone": "Вы уверены что хотите удалить всех игроков? Это действие нельзя будет отменить."
+	"Are you sure you want to delete all players? This action can not be undone": "Вы уверены что хотите удалить всех игроков? Это действие нельзя будет отменить.",
+	"Save you custom filter": "Сохранить новый фильтр",
+	"new filter name": "введите имя фильтра",
+	"Welcome": "Добро пожаловать",
+	"ATT": "ATT",
+	"MID": "MID",
+	"DEF": "DEF",
+	"GK": "GK",
+	"Show players": "Показать игроков",
+	"Order by": "Упорядочить по",
+	"Current active chart": "Текущий выбранный график"
 }

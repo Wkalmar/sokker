@@ -112,7 +112,7 @@ class Header extends React.Component {
 						<img style={{ width: '20px', height: '20px', marginTop: '2px' }} alt={store.lang} src={ flags[store.lang] } />
 					</div>
 
-					<Link to="/info"><InfoSVG /></Link>
+					{/*<Link to="/info"><InfoSVG /></Link>*/}
 
 					{/*{ store.authorizedUser && <Link to="/profile"><ProfileSVG /></Link> }*/}
 					{ !store.authorizedUserId && <Link to="/login"><LoginSVG /></Link> }

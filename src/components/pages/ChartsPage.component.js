@@ -20,7 +20,6 @@ class ChartsPage extends React.Component {
 		return (
 			<div className="net-info">
 				<div className="net-info-table">
-					{ store.NET.status !== 'disabled' && <div className="net-info-title"><T>Transfer players (age | price) / skill chart</T></div> }
 					{ store.NET.status !== 'disabled' ?
 						<div className="net-info-table">
 							<div className="net-info-row">
