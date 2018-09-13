@@ -22,8 +22,6 @@ class Filters extends React.Component {
 
 	get ageOrder() { return store.filters.age.get('order'); };
 
-	getSkill(name) { return store.filters.skills.get(name); };
-
 
 	onOrderChange = ()=> {
 		store.filters.change({

@@ -41,11 +41,10 @@ class Layout extends React.Component {
 	};
 
 
-	render() {
-		return (
-			<div id="outer-container">
-				<Header />
+	renderContent() {
 
+		return (
+			<div>
 				{ store.authorizedUserId && store.device === "mobile" ?
 					<Menu right
 						  push
@@ -56,24 +55,35 @@ class Layout extends React.Component {
 						  outerContainerId={ "outer-container" }
 						  width={ this.menuWidth.get() }>
 						{ store.authorizedUserId &&
-							<div style={{ height: this.menuHeight.get(), overflow: 'scroll' }}>
-								<Filters />
-							</div>
+						<div style={{ height: this.menuHeight.get(), overflow: 'scroll' }}>
+							<Filters />
+						</div>
 						}
 					</Menu>
 					: null }
 
 				<div id="page-wrap">
-					{ store.authorizedUserId ?
-						<QueryLoader query={ GET_USER_INFO_QUERY }
-									 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-									 variables={{ id: store.authorizedUserId }}>
-							{ this.props.children }
-						</QueryLoader>
-						:
-						this.props.children
-					}
+					{ this.props.children }
 				</div>
+			</div>
+		);
+	}
+
+
+	render() {
+		return (
+			<div id="outer-container">
+				<Header />
+
+				{ store.authorizedUserId ?
+					<QueryLoader query={ GET_USER_INFO_QUERY }
+								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
+								 variables={{ id: store.authorizedUserId }}>
+						{ this.renderContent() }
+					</QueryLoader>
+					:
+					this.renderContent()
+				}
 			</div>
 		)
 	}
