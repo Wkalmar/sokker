@@ -10,6 +10,7 @@ type User @model {
     updatedAt: DateTime! # read-only (managed by Graphcool)
 
     players: [Player!]! @relation(name: "UserOfPlayers")
+    filters: [Filter!]!  @relation(name: "UserOfFilters")
 
     email: String! @isUnique
     password: String!
@@ -25,9 +26,6 @@ type Net @model {
     # Optional system fields (remove if not needed):
     createdAt: DateTime! # read-only (managed by Graphcool)
     updatedAt: DateTime! # read-only (managed by Graphcool)
-
-#    user: [User!]! @relation(name: "UserAndNet")
-#    players: [Player!]! @relation(name: "NetOfPlayers")
 }
 
 
@@ -39,7 +37,6 @@ type Player @model {
     createdAt: DateTime! # read-only (managed by Graphcool)
     updatedAt: DateTime! # read-only (managed by Graphcool)
 
-#    net: Net! @relation(name: "NetOfPlayers")
     user: User! @relation(name: "UserOfPlayers")
 
     playerId: String!
@@ -53,12 +50,26 @@ type Player @model {
     playmaker: Float!
     stamina: Float!
     striker: Float!
-    technique: Float!,
+    technique: Float!
 
     att: Float!,
     def: Float!,
     gk: Float!,
     mid: Float!
+}
+
+
+type Filter @model {
+    id: ID! @isUnique # read-only (managed by Graphcool)
+
+    # Optional system fields (remove if not needed):
+    createdAt: DateTime! # read-only (managed by Graphcool)
+    updatedAt: DateTime! # read-only (managed by Graphcool)
+
+    user: User! @relation(name: "UserOfFilters")
+
+    name: String!,
+    filter: String!
 }
 
 
