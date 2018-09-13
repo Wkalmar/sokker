@@ -39,7 +39,6 @@ class FiltersCustom extends React.Component {
 
 
 	applyCustomFilter({ filter }) {
-		console.log(JSON.parse(filter), "applyCustomFilter!");
 		store.filters.resetFilters(JSON.parse(filter));
 	}
 

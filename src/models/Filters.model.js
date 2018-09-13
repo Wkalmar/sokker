@@ -39,6 +39,7 @@ const actions = (self)=> {
 					switch(name) {
 						case "skills":
 							const skillName = Object.keys(filter[name])[0];
+							// Reset skills
 							filter[name][skillName].order && keys(self.skills).forEach((name)=> self.skills.set(name, { ...self.skills.get(name), order: "✘" }));
 
 							self.skills.set(skillName, { ...self.skills.get(skillName), ...filter[name][skillName] });
@@ -47,10 +48,9 @@ const actions = (self)=> {
 							self.search = filter["search"];
 							break;
 						default:
-							console.log(filter, "???SS", name);
-							Object.keys(filter[name]).forEach((prop)=> {
-								self[name].set(prop, filter[name][prop]);
-							});
+							// Reset skills
+							keys(self.skills).forEach((name)=> self.skills.set(name, { ...self.skills.get(name), order: "✘" }));
+							Object.keys(filter[name]).forEach((prop)=> self[name].set(prop, filter[name][prop]));
 							break;
 					}
 				});
