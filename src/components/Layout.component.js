@@ -46,7 +46,7 @@ class Layout extends React.Component {
 			<div id="outer-container">
 				<Header />
 
-				{ store.authorizedUser && store.device === "mobile" ?
+				{ store.authorizedUserId && store.device === "mobile" ?
 					<Menu right
 						  push
 						  disableOverlayClick
@@ -55,7 +55,7 @@ class Layout extends React.Component {
 						  onStateChange={ this.onMenuChange }
 						  outerContainerId={ "outer-container" }
 						  width={ this.menuWidth.get() }>
-						{ store.authorizedUser &&
+						{ store.authorizedUserId &&
 							<div style={{ height: this.menuHeight.get(), overflow: 'scroll' }}>
 								<Filters />
 							</div>
@@ -64,10 +64,10 @@ class Layout extends React.Component {
 					: null }
 
 				<div id="page-wrap">
-					{ store.authorizedUser ?
+					{ store.authorizedUserId ?
 						<QueryLoader query={ GET_USER_INFO_QUERY }
 									 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-									 variables={{ id: store.authorizedUser.id }}>
+									 variables={{ id: store.authorizedUserId }}>
 							{ this.props.children }
 						</QueryLoader>
 						:

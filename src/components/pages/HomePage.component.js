@@ -22,21 +22,17 @@ class HomePage extends React.Component {
 				height: store.currentPath === "/" ? "auto" : "0",
 				overflow: store.currentPath === "/" ? "auto" : "hidden"
 			}}>
-				{ !store.authorizedUser &&
+				{ !store.authorizedUserId &&
 					<div style={{padding: '20px'}}>
 						<Link to="/login"><T i18nKey="Login"><button>Login</button></T></Link>
 						<Link to="/registration"><T i18nKey="Registration"><button>Registration</button></T></Link>
 					</div>
 				}
 
-				{/*<T i18nKey="Hello">*/}
-					{/*Hello <strong title={"Login"}>{{ name: store.t('NickName') }}</strong>, you have {{ count: 42 }} unread message.*/}
-				{/*</T>*/}
-
-				{ store.authorizedUser &&
+				{ store.authorizedUserId &&
 					<QueryLoader query={ USER_PLAYERS_QUERY }
 								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-								 variables={{ userId: store.authorizedUser.id }}>
+								 variables={{ userId: store.authorizedUserId }}>
 						<Interface />
 					</QueryLoader>
 				}

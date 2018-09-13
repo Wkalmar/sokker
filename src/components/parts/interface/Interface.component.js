@@ -41,7 +41,7 @@ class Interface extends React.Component {
 
 	get tableHeight() { return window.innerHeight - 50; };
 
-	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUser.id); };
+	get userPlayers() { return values(store.players.all).filter((player)=> player.userId === store.authorizedUserId); };
 
 	get players() { return store.transfers.filtered; };
 
@@ -59,7 +59,7 @@ class Interface extends React.Component {
 				left: this.tableWidth + 15,
 				width: window.innerWidth - (this.tableWidth + 50)
 			}}>
-				{ store.authorizedUser && <div style={{ height: this.table.height, overflowY: 'scroll' }}><Filters /></div> }
+				{ store.authorizedUserId && <div style={{ height: this.table.height, overflowY: 'scroll' }}><Filters /></div> }
 			</div>
 			: null;
 	}

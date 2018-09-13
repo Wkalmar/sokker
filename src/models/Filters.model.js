@@ -57,9 +57,9 @@ const actions = (self)=> {
 		},
 
 
-		resetFilters() {
+		resetFilters(snapshot = defaultFilters) {
 			runInAction(`FILTERS-RESET-SUCCESS`, ()=> {
-				applySnapshot(self, defaultFilters);
+				applySnapshot(self, snapshot);
 				self.setLoading(true);
 			});
 			setTimeout(self.setLoading, 0);
@@ -81,6 +81,9 @@ const views = (self)=> {
 
 	return {
 		get sortBySkillName() { return Object.keys(self.skills).find((name)=> self.skills[name] !== "✘"); },
+		get snapshot() {
+			return Object.keys(self).reduce((res, name)=> ({ ...res, [name]: self[name].toJSON ? self[name].toJSON() : self[name] }), {});
+		}
 	};
 };
 

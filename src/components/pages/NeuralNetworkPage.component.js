@@ -26,7 +26,7 @@ class NeuralNetworkPage extends React.Component {
 
 	get transfers() { return values(store.transfers.players); };
 
-	get userPlayers() { return this.players.filter((player)=> player.userId === store.authorizedUser.id); };
+	get userPlayers() { return this.players.filter((player)=> player.userId === store.authorizedUserId); };
 
 
 	showPlayerDetails(player) {
@@ -53,7 +53,7 @@ class NeuralNetworkPage extends React.Component {
 		const isConfirm = window.confirm(store.t('Are you sure you want to delete all players? This action can not be undone'));
 		if(!isConfirm) return;
 		this.isLoadingDeleteBtn.set(true);
-		await store.players.deleteAllUserPlayersMutation({ userId: store.authorizedUser.id });
+		await store.players.deleteAllUserPlayersMutation({ userId: store.authorizedUserId });
 		this.isLoadingDeleteBtn.set(false);
 	};
 	
@@ -63,7 +63,7 @@ class NeuralNetworkPage extends React.Component {
 			<div>
 				<QueryLoader query={ USER_PLAYERS_QUERY }
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-							 variables={{ userId: store.authorizedUser.id }}>
+							 variables={{ userId: store.authorizedUserId }}>
 					<div className="net-info">
 						<div className="net-info-table">
 							<div className="net-info-row">

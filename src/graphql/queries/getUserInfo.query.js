@@ -6,5 +6,10 @@ export default gql`query getUserInfo($id: ID!) {
         id
         email
         name
+        filters {
+            id
+            name
+            filter
+        }
     }
 }`

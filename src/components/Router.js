@@ -28,10 +28,10 @@ const RouteComponent = ({ component: Component, ...rest })=> {
 
 	if(Component.permissions) {
 		// Need needAuth case
-		if(Component.permissions && Component.permissions.needAuth === true && !store.authorizedUser) store.setNextPathUrl(rest.path);
-		if(Component.permissions && Component.permissions.needAuth === true && !store.authorizedUser) return <Redirect to={{ pathname: Component.permissions.redirectPath }} />;
+		if(Component.permissions && Component.permissions.needAuth === true && !store.authorizedUserId) store.setNextPathUrl(rest.path);
+		if(Component.permissions && Component.permissions.needAuth === true && !store.authorizedUserId) return <Redirect to={{ pathname: Component.permissions.redirectPath }} />;
 
-		if(Component.permissions && Component.permissions.notForAuth === true && store.authorizedUser) return <Redirect to={{ pathname: Component.permissions.redirectPath }} />;
+		if(Component.permissions && Component.permissions.notForAuth === true && store.authorizedUserId) return <Redirect to={{ pathname: Component.permissions.redirectPath }} />;
 	}
 
 	// Default case
@@ -53,7 +53,7 @@ const Routes = ()=> {
 							 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}>
 					<Layout>
 						<Switch>
-							<RouteComponent exact path="/" component={'div'} />
+							<RouteComponent exact path="/" component={ ()=> <div /> } />
 							<RouteComponent exact path="/login" component={LogInPage} />
 							<RouteComponent exact path="/registration" component={RegistrationPage} />
 							<RouteComponent exact path="/info" component={ InfoPage } />

@@ -9,6 +9,7 @@ import store from "store";
 import { observer } from "mobx-react";
 // Components
 import T from "components/parts/T.component";
+import FiltersCustom from "components/parts/filters/FiltersCustom.component";
 import FiltersSkillBtn from "components/parts/filters/FiltersSkillBtn.component";
 import FiltersSkillRange from "components/parts/filters/FiltersSkillRange.component";
 import PredictedSkillsFilters from "components/parts/filters/PredictedSkillsFilters.component";
@@ -16,9 +17,11 @@ import PredictedSkillsFilters from "components/parts/filters/PredictedSkillsFilt
 
 class Filters extends React.Component {
 
+
 	get ageRange() { return store.filters.age.get('range'); };
 
 	get ageOrder() { return store.filters.age.get('order'); };	
+
 
 	onOrderChange = ()=> {
 		store.filters.change({
@@ -35,9 +38,11 @@ class Filters extends React.Component {
 		return (
 			<div className="filters">
 				<div className="filter">
-					<div className="filter_title"><T>Saved filters</T></div>
-					<button onClick={ store.filters.resetFilters }><T>Reset filters</T></button>
+					<div className="filter_title" />
+					<button onClick={ ()=> store.filters.resetFilters() }><T>Reset filters</T></button>
 				</div>
+
+				<FiltersCustom />
 
 				<div className="filter">
 					<div className="filter_title"><T>Search by name</T></div>

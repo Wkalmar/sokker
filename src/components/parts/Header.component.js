@@ -81,7 +81,7 @@ class Header extends React.Component {
 				<ul className="header_menu">
 					<Link to="/"><HomeSVG /></Link>
 
-					{ store.authorizedUser && <span className="neural-link-wrapper">
+					{ store.authorizedUserId && <span className="neural-link-wrapper">
 						<Link style={{
 							position: 'relative',
 							zIndex: 200,
@@ -100,7 +100,7 @@ class Header extends React.Component {
 						<span className="neural-status" style={{ background: this.netStatusColor }} />
 					</span> }
 
-					{ store.authorizedUser && store.NET.status !== 'disabled' && <Link to="/charts"><ChartSVG /></Link> }
+					{ store.authorizedUserId && store.NET.status !== 'disabled' && <Link to="/charts"><ChartSVG /></Link> }
 				</ul>
 
 				<ul className="header_menu">
@@ -115,8 +115,8 @@ class Header extends React.Component {
 					<Link to="/info"><InfoSVG /></Link>
 
 					{/*{ store.authorizedUser && <Link to="/profile"><ProfileSVG /></Link> }*/}
-					{ !store.authorizedUser && <Link to="/login"><LoginSVG /></Link> }
-					{ store.authorizedUser && <a onClick={ store.logOut }><LogoutSVG /></a> }
+					{ !store.authorizedUserId && <Link to="/login"><LoginSVG /></Link> }
+					{ store.authorizedUserId && <a onClick={ store.logOut }><LogoutSVG /></a> }
 				</ul>
 
 				<ul ref={ this.popoverRef } className="header_drop_down" style={{

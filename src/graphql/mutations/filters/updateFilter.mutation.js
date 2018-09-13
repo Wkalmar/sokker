@@ -1,10 +1,10 @@
 import gql from 'graphql-tag';
 
 
-export default gql`mutation createFilter($userId: ID!, $name: String!, $filter:String!) {
-    createFilter(userId:$userId, name: $name, filter:$filter) {
-        id,
-		name,
+export default gql`mutation updateFilter($id: ID!, $name: String, $filter: String) {
+    updateFilter(id: $id, name: $name, filter: $filter) {
+        id
+		name
 		filter
     }
 }`

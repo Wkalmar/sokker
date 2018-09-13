@@ -42,7 +42,14 @@ function applyData(dataName, data) {
 			window.sessionStorage.setItem('token', data.token);
 			store.logIn(data.id);
 			history.push(store.nextPathUrl || '/');
-			Alert.success(store.t('Registration successful'));
+			break;
+
+		// User custom filters
+		case "createFilter":
+			store.users.authorizedUser.createFilter(data);
+			break;
+		case "deleteFilter":
+			store.users.authorizedUser.deleteFilter(data.id);
 			break;
 
 		//	Players
@@ -75,7 +82,6 @@ function applyData(dataName, data) {
 		case "transfers":
 			store.transfers.create(JSON.parse(data.response));
 			break;
-		// Custom Functions
 
 		default:
 			console.log(`%c RESPONSE RESOLVER UNHANDLED:`, 'color: darkred', dataName, data);

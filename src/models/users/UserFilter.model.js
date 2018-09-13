@@ -2,7 +2,7 @@ import { runInAction } from "mobx";
 import { types } from "mobx-state-tree";
 
 
-const FilterModel = {
+const UserFilterModel = {
 	id: types.string,
 	name: types.string,
 	filter: types.string
@@ -12,7 +12,7 @@ const FilterModel = {
 const actions = (self)=> {
 	return {
 		update(filter) {
-			runInAction(`FILTER-UPDATE-SUCCESS ${filter.id}`, ()=> {
+			runInAction(`USER-FILTER-UPDATE-SUCCESS ${filter.id}`, ()=> {
 				Object.keys(self).forEach((fieldName)=> {
 					if(filter[fieldName] !== undefined) self[fieldName] = filter[fieldName];
 				});
@@ -28,4 +28,4 @@ const views = (self)=> {
 };
 
 
-export default types.model('FilterModel', FilterModel).actions(actions).views(views);
+export default types.model('UserFilterModel', UserFilterModel).actions(actions).views(views);

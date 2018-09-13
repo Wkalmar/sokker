@@ -56,7 +56,7 @@ class InterfacePlayerFrom extends React.Component {
 			...this.props.player,
 			...playerOutput,
 			playerId: this.props.player.id,
-			userId: store.authorizedUser.id
+			userId: store.authorizedUserId
 		});
 	};
 
