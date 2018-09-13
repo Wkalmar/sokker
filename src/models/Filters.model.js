@@ -47,6 +47,7 @@ const actions = (self)=> {
 							self.search = filter["search"];
 							break;
 						default:
+							console.log(filter, "???SS", name);
 							Object.keys(filter[name]).forEach((prop)=> {
 								self[name].set(prop, filter[name][prop]);
 							});
