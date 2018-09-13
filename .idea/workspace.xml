@@ -6,32 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/filters/createFilter.mutation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/filters/deleteFilter.mutation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/filters/updateFilter.mutation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/users/UserFilter.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/svg/delete.svg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/types.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/server/types.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/NeuralNetworkPage.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/Header.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/Header.component.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerForm.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerForm.component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/responseResolver.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/responseResolver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/AuthorizedUser.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Filters.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Filters.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Root.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Root.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/players/Players.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/players/Players.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/users/User.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/users/User.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/users/Users.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/users/Users.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/svg/delete.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,38 +23,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FiltersCustom.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js">
+      <file leaf-file-name="Filters.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="714">
+              <caret line="81" column="49" lean-forward="true" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Filters.model.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/models/Filters.model.js">
+      <file leaf-file-name="PredictedSkillsFilters.component.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="466">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delete.svg.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/svg/delete.svg.js">
+      <file leaf-file-name="FiltersSkillRange.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="responseResolver.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphql/responseResolver.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+            <state relative-caret-position="225">
+              <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -85,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.props.playerData</find>
       <find>moment</find>
       <find>reaction</find>
       <find>removePlayer</find>
@@ -115,6 +83,7 @@
       <find>changeLang(</find>
       <find>client.mutate(</find>
       <find>authorizedUser</find>
+      <find>resetFilters</find>
     </findStrings>
     <replaceStrings>
       <replace>this.props.store.authorizedUser</replace>
@@ -131,9 +100,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/src/utils/defaultFilters.utils.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js" />
         <option value="$PROJECT_DIR$/src/components/worker.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/worker.js" />
@@ -174,14 +141,16 @@
         <option value="$PROJECT_DIR$/src/models/filters/Filter.model.js" />
         <option value="$PROJECT_DIR$/src/models/users/UserFilter.model.js" />
         <option value="$PROJECT_DIR$/src/models/Root.model.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
         <option value="$PROJECT_DIR$/src/models/users/Users.model.js" />
         <option value="$PROJECT_DIR$/src/models/users/User.model.js" />
         <option value="$PROJECT_DIR$/src/graphql/responseResolver.js" />
         <option value="$PROJECT_DIR$/src/styles/layout.css" />
         <option value="$PROJECT_DIR$/src/svg/delete.svg.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js" />
         <option value="$PROJECT_DIR$/src/models/Filters.model.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js" />
       </list>
     </option>
   </component>
@@ -268,7 +237,28 @@
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="parts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="parts" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -376,25 +366,26 @@
       <workItem from="1536338522880" duration="331000" />
       <workItem from="1536570271253" duration="15345000" />
       <workItem from="1536760569926" duration="6725000" />
-      <workItem from="1536833612503" duration="6835000" />
+      <workItem from="1536833612503" duration="8832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301904000" />
+    <option name="totallyTimeSpent" value="303901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="GraphQL" order="10" weight="0.32995495" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32995495" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32995495" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.24920128" />
-      <window_info active="true" content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.2859425" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.21831736" />
+      <window_info content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.2859425" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -405,7 +396,6 @@
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
     </layout>
@@ -445,9 +435,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/svg/options.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/svg/refresh.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -636,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/defaultFilters.utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/graphql/queries/getUserInfo.query.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -657,20 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="50" lean-forward="true" selection-end-line="64" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/players/Players.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -682,13 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
@@ -733,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/graphql/responseResolver.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -751,6 +703,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/defaultFilters.utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/Filters.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="81" column="49" lean-forward="true" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersSkillRange.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/filters/PredictedSkillsFilters.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>

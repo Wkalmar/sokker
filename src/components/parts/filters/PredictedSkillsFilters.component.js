@@ -20,6 +20,27 @@ class PredictedSkillsFilters extends React.Component {
 	get gkRange() { return store.filters.gk.get('range'); };
 
 
+	renderSkillRange(type, labels) {
+	    if(store.filters.isLoading) return (
+			<div className="rc-slider">
+				<div className="rc-slider-rail"/>
+				<div className="rc-slider-track rc-slider-track-1" style={{ left: 0, width: '100%' }}/>
+				<div className="rc-slider-step"/>
+				<div role="slider" tabIndex="0" className="rc-slider-handle rc-slider-handle-1"  style={{ left: '0%' }} />
+				<div role="slider" tabIndex="0"  className="rc-slider-handle rc-slider-handle-2" style={{ left: '100%' }}/>
+				<div className="rc-slider-mark"/>
+			</div>
+        );
+	    return (
+			<Slider.Range min={0}
+						  max={100}
+						  pushable
+						  onChange={ (range)=> store.filters.change({ [type]: { range } }) }
+						  defaultValue={[labels[0], labels[1]]} />
+        );
+    }
+
+
     render() {
         return (
             <div className="filter">
@@ -29,33 +50,18 @@ class PredictedSkillsFilters extends React.Component {
                 <FiltersSkillBtn name="MID" color="rgb(44, 160, 44)" />
                 <FiltersSkillBtn name="GK" color="rgb(215, 39, 41)" />
 
-                <div className="filter_title"><T>Predicted attacker range</T>:  ({ this.attRange[0]/100 } - { this.attRange[1]/100 })</div>
-                <Slider.Range min={0}
-                                max={100}
-                                pushable
-                                onChange={ (range)=> store.filters.change({ att: { range } }) }
-                                defaultValue={[this.attRange[0], this.attRange[1]]} />
+                <div className="filter_title"><T>Predicted attacker range</T>:  ({ this.attRange[0] } - { this.attRange[1] })</div>
+                { this.renderSkillRange('att', this.attRange) }
 
-                <div className="filter_title"><T>Predicted midfelder range</T>:  ({ this.midRange[0]/100 } - { this.midRange[1]/100 })</div>
-                <Slider.Range min={0}
-                                max={100}
-                                pushable
-                                onChange={ (range)=> store.filters.change({ mid: { range } }) }
-                                defaultValue={[this.midRange[0], this.midRange[1]]} />
+                <div className="filter_title"><T>Predicted midfelder range</T>:  ({ this.midRange[0] } - { this.midRange[1] })</div>
+                { this.renderSkillRange('mid', this.midRange) }
 
-                <div className="filter_title"><T>Predicted defender range</T>:  ({ this.defRange[0]/100 } - { this.defRange[1]/100 })</div>
-                <Slider.Range min={0}
-                                max={100}
-                                pushable
-                                onChange={ (range)=> store.filters.change({ def: { range } }) }
-                                defaultValue={[this.defRange[0], this.defRange[1]]} />
+                <div className="filter_title"><T>Predicted defender range</T>:  ({ this.defRange[0] } - { this.defRange[1] })</div>
+                { this.renderSkillRange('def', this.defRange) }
 
-                <div className="filter_title"><T>Predicted goalkeeper range</T>:  ({ this.gkRange[0]/100 } - { this.gkRange[1]/100 })</div>
-                <Slider.Range min={0}
-                                max={100}
-                                pushable
-                                onChange={ (range)=> store.filters.change({ gk: { range } }) }
-                                defaultValue={[this.gkRange[0], this.gkRange[1]]} />
+                <div className="filter_title"><T>Predicted goalkeeper range</T>:  ({ this.gkRange[0] } - { this.gkRange[1] })</div>
+                { this.renderSkillRange('gk', this.gkRange) }
+
             </div>
 
         );

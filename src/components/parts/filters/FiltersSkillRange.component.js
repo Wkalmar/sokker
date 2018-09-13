@@ -25,13 +25,13 @@ export default observer(function({ name }) {
 				</div>
 				:
 				<Slider.Range min={0}
-						  max={17}
-						  pushable
-						  trackStyle={{
-						  		background: "red"
-						  }}
-						  onChange={ (range)=> store.filters.change({ skills: { [name]: { range } } }) }
-						  defaultValue={ [getSkill(name).range[0], getSkill(name).range[1]] } />
+							  max={17}
+							  pushable
+							  trackStyle={{
+									background: "red"
+							  }}
+							  onChange={ (range)=> store.filters.change({ skills: { [name]: { range } } }) }
+							  defaultValue={ [getSkill(name).range[0], getSkill(name).range[1]] } />
 			}
 		</div>
 	)

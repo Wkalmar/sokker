@@ -20,7 +20,9 @@ class Filters extends React.Component {
 
 	get ageRange() { return store.filters.age.get('range'); };
 
-	get ageOrder() { return store.filters.age.get('order'); };	
+	get ageOrder() { return store.filters.age.get('order'); };
+
+	getSkill(name) { return store.filters.skills.get(name); };
 
 
 	onOrderChange = ()=> {
@@ -54,21 +56,29 @@ class Filters extends React.Component {
 
 				<div className="filter">
 					<div className="filter_title"><T>Age range</T>: ({ this.ageRange[0] } - { this.ageRange[1] })</div>
-					<Slider.Range min={16}
-								  max={40}
-								  pushable
-								  onChange={ (range)=> store.filters.change({ age: { range } }) }
-								  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
-					<div className="filter_title"><T>Sort by age</T>:</div>
+					{ store.filters.isLoading ?
+						<div className="rc-slider">
+							<div className="rc-slider-rail"/>
+							<div className="rc-slider-track rc-slider-track-1" style={{ left: 0, width: '100%' }}/>
+							<div className="rc-slider-step"/>
+							<div role="slider" tabIndex="0" className="rc-slider-handle rc-slider-handle-1"  style={{ left: '0%' }} />
+							<div role="slider" tabIndex="0"  className="rc-slider-handle rc-slider-handle-2" style={{ left: '100%' }}/>
+							<div className="rc-slider-mark"/>
+						</div>
+						:
+						<Slider.Range min={16}
+									  max={40}
+									  pushable
+									  onChange={ (range)=> store.filters.change({ age: { range } }) }
+									  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
+					}
 					<button onClick={ this.onOrderChange }
 							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
 						<T>Order</T> { this.ageOrder }
 					</button>
 				</div>
 
-				{ store.NET.status !== 'disabled' ?
-					<PredictedSkillsFilters />
-					: null }
+				{ store.NET.status !== 'disabled' ? <PredictedSkillsFilters /> : null }
 
 				<div className="filter">
 					<div className="filter_title"><T>Sort by skills</T>:</div>
@@ -90,9 +100,6 @@ class Filters extends React.Component {
 					<FiltersSkillRange name="passing" />
 					<FiltersSkillRange name="striker" />
 				</div>
-				{/*<div className="filter" style={{ paddingTop: 20 }}>*/}
-					{/*<pre>{ JSON.stringify(store.filters.toJSON(), null, '\t') }</pre>*/}
-				{/*</div>*/}
 			</div>
 		)
 	}
