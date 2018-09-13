@@ -78,8 +78,8 @@ const actions = (self)=> {
 
 
 		async train(data = []) {
-
 			store.players.refreshPlayersCharts(true);
+
 			if(self.status === 'disabled') return runInAction(`NET-TRAIN-WARNING (status: ${self.status })`, ()=> store.players.refreshPlayersCharts(false));
 
 			runInAction(`NET-TRAIN-PENDING (players: ${data.length})`, ()=> {
