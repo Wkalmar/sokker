@@ -7,6 +7,11 @@ import LoginForm from "components/parts/forms/LogInForm.component";
 
 class LoginPage extends React.Component {
 
+	static permissions = {
+		notForAuth: true,
+		redirectPath: "/"
+	};
+
 	render() {
 		return (
 			<LoginForm />

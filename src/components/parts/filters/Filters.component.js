@@ -39,7 +39,9 @@ class Filters extends React.Component {
 			<div className="filters">
 				<div className="filter">
 					<div className="filter_title" />
-					<button onClick={ ()=> store.filters.resetFilters() }><T>Reset filters</T></button>
+					<button style={{ background: '#2876b4' }} onClick={ ()=> store.filters.resetFilters() }>
+						<T>Reset filters</T>
+					</button>
 				</div>
 
 				<FiltersCustom />
