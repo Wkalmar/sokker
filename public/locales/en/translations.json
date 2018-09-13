@@ -1,6 +1,6 @@
 {
-	"Registration": "<0>Registration</0>",
-	"Login": "<0>Login</0>",
+	"Registration": "Registration",
+	"Login": "Login",
 	"Hello": "Hello <1><0>{{name}}</0></1>, you have <3>{{count}}</3> unread message.",
 	"NickName": "Fedor",
 	"keeper": "keeper",

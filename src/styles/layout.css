@@ -89,6 +89,17 @@ input::placeholder {
 }
 
 
+.info {
+	padding: 20px 0;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.info a {
+	display: inline;
+}
+
+
 @-webkit-keyframes rotating /* Safari and Chrome */ {
 	from {
 		-webkit-transform: rotate(0deg);
