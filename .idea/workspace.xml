@@ -6,7 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Layout.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout.component.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/parts/Info.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/InfoPage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/InfoPage.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/parts/Header.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/Header.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +26,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Layout.component.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Layout.component.js">
+      <file leaf-file-name="Header.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="188">
+              <caret line="82" column="47" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Info.component.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/parts/Info.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="24" column="58" lean-forward="true" selection-start-line="24" selection-start-column="58" selection-end-line="25" selection-end-column="118" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InfoPage.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pages/InfoPage.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePage.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pages/HomePage.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -33,9 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>upsertMutation(</find>
-      <find>refreshPlayersCharts</find>
-      <find>isHideCharts</find>
       <find>refreshPlayersCharts(</find>
       <find>@silentReaction on [store.players.isHideCharts]</find>
       <find>applySna</find>
@@ -63,6 +93,9 @@
       <find>input</find>
       <find>inputElement</find>
       <find>type</find>
+      <find>window.addEventListener('res</find>
+      <find>window.addEventListener(</find>
+      <find>keks..</find>
     </findStrings>
     <replaceStrings>
       <replace>this.props.store.authorizedUser</replace>
@@ -79,8 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/styles/interface/interface-player.css" />
-        <option value="$PROJECT_DIR$/src/styles/interface/interface-player-info.css" />
         <option value="$PROJECT_DIR$/src/components/pages/lazy/InfoPage.lazy.component.js" />
         <option value="$PROJECT_DIR$/src/svg/info.svg.js" />
         <option value="$PROJECT_DIR$/src/styles/header.css" />
@@ -107,29 +138,31 @@
         <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/src/models/Net.model.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersSkillBtn.component.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" />
         <option value="$PROJECT_DIR$/src/styles/neural/chart.css" />
         <option value="$PROJECT_DIR$/server/src/functions/transfers/transfers.js" />
         <option value="$PROJECT_DIR$/src/components/pages/LogInPage.component.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/InfoPage.component.js" />
-        <option value="$PROJECT_DIR$/src/models/Root.model.js" />
         <option value="$PROJECT_DIR$/src/i18n.js" />
         <option value="$PROJECT_DIR$/src/styles/net-info.css" />
-        <option value="$PROJECT_DIR$/src/components/Router.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInput.component.js" />
         <option value="$PROJECT_DIR$/src/styles/layout.css" />
-        <option value="$PROJECT_DIR$/src/components/pages/HomePage.component.js" />
-        <option value="$PROJECT_DIR$/src/components/parts/Header.component.js" />
         <option value="$PROJECT_DIR$/public/locales/en/translations.json" />
         <option value="$PROJECT_DIR$/public/locales/ru/translations.json" />
         <option value="$PROJECT_DIR$/src/graphql/responseResolver.js" />
         <option value="$PROJECT_DIR$/src/styles/forms/login-form.css" />
         <option value="$PROJECT_DIR$/src/styles/forms/reg-form.css" />
+        <option value="$PROJECT_DIR$/src/models/Root.model.js" />
         <option value="$PROJECT_DIR$/src/components/Layout.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/interface/Interface.component.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/ChartsPage.component.js" />
+        <option value="$PROJECT_DIR$/src/components/Router.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/HomePage.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/Header.component.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/InfoPage.component.js" />
+        <option value="$PROJECT_DIR$/src/components/parts/Info.component.js" />
       </list>
     </option>
   </component>
@@ -210,31 +243,6 @@
             <path>
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-              <item name="en" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-              <item name="ru" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -248,23 +256,7 @@
               <item name="sokker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-              <item name="interface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sokker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="parts" type="462c0819:PsiDirectoryNode" />
-              <item name="neural" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
@@ -389,7 +381,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313657000" />
+    <option name="totallyTimeSpent" value="314758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -402,7 +394,7 @@
       <window_info anchor="bottom" id="Run" order="5" weight="0.32995495" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32995495" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.21831736" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.21831736" />
       <window_info content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.2891374" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="4" />
@@ -464,21 +456,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/svg/delete.svg" />
-    <entry file="file://$PROJECT_DIR$/src/svg/delete.svg.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/users/Users.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/defaultFilters.utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -557,13 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/ChartsPage.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Net.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -606,24 +576,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/InfoPage.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/Root.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
     </entry>
@@ -645,13 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -742,13 +691,6 @@
     <entry file="file://$PROJECT_DIR$/src/png/brain.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/HomePage.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/locales/ru/translations.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="661">
@@ -767,13 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -798,10 +733,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Root.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="114" column="10" lean-forward="true" selection-start-line="114" selection-start-column="10" selection-end-line="114" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Layout.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="332">
+          <caret line="33" column="46" lean-forward="true" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/ChartsPage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/interface/Interface.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/PreLoader.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/HomePage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/InfoPage.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="82" column="47" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/parts/Info.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="24" column="58" lean-forward="true" selection-start-line="24" selection-start-column="58" selection-end-line="25" selection-end-column="118" />
         </state>
       </provider>
     </entry>

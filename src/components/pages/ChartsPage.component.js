@@ -8,7 +8,6 @@ import { values } from "mobx";
 import store from "store";
 // Components
 import NeuralScatterChart from "components/parts/neural/NeuralScatterChart.component";
-import T from "components/parts/T.component";
 
 
 class ChartsPage extends React.Component {
