@@ -94,6 +94,6 @@ function revertData(dataName, errorMsg) {
 	switch (dataName) {
 
 		default:
-			Alert.error(errorMsg);
+			Alert.error(store.t(errorMsg));
 	}
 }

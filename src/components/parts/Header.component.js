@@ -1,5 +1,6 @@
 import React from 'react';
 // PNG
+import brain1 from "png/brain1.gif";
 import en from "png/en.png";
 import ru from "png/ru.png";
 import pl from "png/pl.png";

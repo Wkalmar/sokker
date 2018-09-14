@@ -1,6 +1,5 @@
 // PNG
 import screen1 from "png/screen1.png";
-import brain from "png/brain.gif";
 import brain1 from "png/brain1.gif";
 import React from 'react';
 // MobX

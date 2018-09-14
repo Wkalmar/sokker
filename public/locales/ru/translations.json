@@ -68,5 +68,6 @@
 	"GK": "GK",
 	"Show players": "Показать игроков",
 	"Order by": "Упорядочить по",
-	"Current active chart": "Текущий выбранный график"
+	"Current active chart": "Текущий выбранный график",
+	"Invalid credentials!": "Неправильные данные!"
 }
