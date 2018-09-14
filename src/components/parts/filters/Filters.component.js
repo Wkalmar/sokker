@@ -72,10 +72,11 @@ class Filters extends React.Component {
 									  onChange={ (range)=> store.filters.change({ age: { range } }) }
 									  defaultValue={[this.ageRange[0], this.ageRange[1]]} />
 					}
-					<button onClick={ this.onOrderChange }
-							style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>
-						<T>Order</T> { this.ageOrder }
-					</button>
+					{/* TODO: Fix conflict with skill filter */}
+					{/*<button onClick={ this.onOrderChange }*/}
+							{/*style={{ color: this.ageOrder === "✘" ? "white" : "black" }}>*/}
+						{/*<T>Order</T> { this.ageOrder }*/}
+					{/*</button>*/}
 				</div>
 
 				{ store.NET.status !== 'disabled' ? <PredictedSkillsFilters /> : null }

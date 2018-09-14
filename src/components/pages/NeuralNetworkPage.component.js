@@ -49,6 +49,20 @@ class NeuralNetworkPage extends React.Component {
 	};
 
 
+	get netStatusColor() {
+		switch(store.NET.status) {
+			case 'error':
+				return 'rgb(215, 39, 41)';
+			case 'success':
+				return 'rgb(44, 160, 44)';
+			case 'learning':
+				return 'rgb(247, 126, 17)';
+			default:
+				return 'lightgray';
+		}
+	}
+
+
 	deleteAllUserPlayers = async ()=> {
 		const isConfirm = window.confirm(store.t('Are you sure you want to delete all players? This action can not be undone'));
 		if(!isConfirm) return;
@@ -80,7 +94,7 @@ class NeuralNetworkPage extends React.Component {
 							<div className="net-info-table">
 								<div className="net-info-row">
 									<T>status</T>: <span style={{
-									color: store.NET.status === "success" ? "rgb(44, 160, 44)" : "rgb(215, 39, 41)"
+									color: this.netStatusColor
 								}}>{ store.NET.status }</span>
 								</div>
 								<div className="net-info-row">
