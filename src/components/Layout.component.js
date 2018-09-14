@@ -20,7 +20,7 @@ import PreLoader from "components/parts/PreLoader.component";
 
 class Layout extends React.Component {
 
-	menuWidth = observable.box(window.innerWidth / 100 * 90);
+	menuWidth = observable.box(window.innerWidth);
 	menuHeight = observable.box(window.innerHeight - 100);
 
 
@@ -31,7 +31,7 @@ class Layout extends React.Component {
 
 	onWindowResize = ()=> {
 		store.interfaceMeasurerCache.clearAll();
-		this.menuWidth.set(window.innerWidth / 100 * 90);
+		this.menuWidth.set(window.innerWidth);
 		this.menuHeight.set(window.innerHeight - 100);
 	};
 
