@@ -9,7 +9,7 @@ i18n
 	.init({
 
 		lng: window.localStorage.lang || 'en',
-		// lng: i18n.lang,
+
 		languages: ["en", "ru", "pl", "ua"],
 
 		preload: ["en", "ru", "pl", "ua"],

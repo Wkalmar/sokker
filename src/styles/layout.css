@@ -61,24 +61,29 @@ input:-webkit-autofill {
 
 button,
 .pseudo-button {
-	padding: 10px 15px;
+	padding: 0 15px;
 	margin: 5px 0;
 	font-size: 12px;
 	background: #d67800;
 	color: whitesmoke;
 	outline: none;
 	min-height: 35px;
+	line-height: 35px;
 	border: none;
 	cursor: pointer;
+	display: inline-block;
 	transition: 1s opacity;
 	box-sizing: border-box;
 }
 
-button:hover {
+button:hover,
+.pseudo-button:hover {
 	opacity: 0.7;
+	text-decoration: none;
 }
 
-button:disabled {
+button:disabled,
+.pseudo-button:disabled {
     opacity: 0.5;
     cursor: default;
 }

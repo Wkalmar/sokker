@@ -104,7 +104,7 @@ class Header extends React.Component {
 				</ul>
 
 				<ul className="header_menu">
-					{ store.device === "mobile" ?
+					{ store.device === "mobile" && store.authorizedUserId ?
 						<a onClick={ store.toggleSideBar }><SidebarSVG /></a>
 						: null }
 

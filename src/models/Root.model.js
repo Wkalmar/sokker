@@ -94,7 +94,7 @@ const actions = (store)=> {
 				window.sessionStorage.removeItem('token');
 				// TODO: Duplicated with store.js initial logic
 				applySnapshot(store, {
-					lang: i18n.lang,
+					lang: window.localStorage.lang || 'en',
 					authorizedUserId: null,
 					isOpenSidebar: false,
 					NET: {
