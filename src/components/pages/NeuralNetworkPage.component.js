@@ -119,7 +119,7 @@ class NeuralNetworkPage extends React.Component {
 							this.players.reverse().map((player)=> {
 								return (
 									<div className="net-info-row" key={ player.id }>
-										<a style={{ width: 'calc(100% - 115px)' }}
+										<a style={{ width: 'calc(100% - 130px)' }}
 										   href={ `http://sokker.org/player/PID/${player.id}` } target="_blank">
 											<p>{ player.name }</p>
 										</a>

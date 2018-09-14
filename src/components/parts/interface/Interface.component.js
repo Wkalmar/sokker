@@ -28,12 +28,12 @@ class Interface extends React.Component {
 	constructor() {
 		super();
 		store.transfers.transfersMutation();
-		window.addEventListener('orientationchange', this.onOrientationChangeResize);
+		window.addEventListener('resize', this.onResize);
 	}
 
 
 	componentWillUnmount() {
-		window.removeEventListener('orientationchange', this.onOrientationChangeResize);
+		window.removeEventListener('resize', this.onResize);
 	}
 
 
@@ -46,11 +46,9 @@ class Interface extends React.Component {
 	get players() { return store.transfers.filtered; };
 
 
-	onOrientationChangeResize = (e)=> {
-		setTimeout(()=> {
-			this.table.width = this.tableWidth;
-			this.table.height = this.tableHeight;
-		}, 700);
+	onResize = (e)=> {
+		this.table.width = this.tableWidth;
+		this.table.height = this.tableHeight;
 	};
 
 
