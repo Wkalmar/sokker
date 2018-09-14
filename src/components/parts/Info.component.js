@@ -59,15 +59,17 @@ class Info extends React.Component {
 						Постараюсь оперативно их исправлять по мере возможности.</p>
 					<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen5 } alt="screen5"/>
 					<p>Если возникнут идеи как улучшить функционал или появятся вопросы, пишите на <b><a target="blank" href="http://sokker.org/team/teamID/75331">мой аккаунт</a></b> в sokker.org
-						или в телеграм <b><a target="blank" href="http://vvesti.net/uploads/posts/2011-09/1315934884_300h-programmist.jpg">@andiwillfly</a></b>.</p>
+						или мне в телеграм <b><a target="blank" href="http://vvesti.net/uploads/posts/2011-09/1315934884_300h-programmist.jpg">@andiwillfly</a></b>.</p>
 					<br/>
 					<br/>
 					<br/>
 					<b>P.S. Большое спасибо за помощь в разработке сайта <a target="blank" href="http://sokker.org/team/teamID/111293">WKalmar!</a></b>
-
+					<br/>
+					<br/>
 					{ !store.authorizedUserId ?
 						<div>
 							<Link to="/login" className="pseudo-button">Login</Link>
+							<br/>
 							<br/>
 							<Link to="/registration" className="pseudo-button">Registration</Link>
 						</div>
