@@ -6,8 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd06689f-811d-40b7-885c-41c744664ebd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/HomePage.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/layout.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,17 +24,17 @@
       <file leaf-file-name="HomePage.component.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/pages/HomePage.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="37" column="129" lean-forward="true" selection-start-line="37" selection-start-column="129" selection-end-line="37" selection-end-column="129" />
+            <state relative-caret-position="77">
+              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/parts/Header.component.js">
+      <file leaf-file-name="layout.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="361">
+              <caret line="71" column="20" lean-forward="true" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -133,12 +133,12 @@
         <option value="$PROJECT_DIR$/src/components/parts/Header.component.js" />
         <option value="$PROJECT_DIR$/src/styles/net-info.css" />
         <option value="$PROJECT_DIR$/src/components/Router.js" />
-        <option value="$PROJECT_DIR$/src/styles/layout.css" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/filters/Filters.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerSkillsChart.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerChart.component.js" />
         <option value="$PROJECT_DIR$/src/components/parts/interface/InterfacePlayerInput.component.js" />
+        <option value="$PROJECT_DIR$/src/styles/layout.css" />
         <option value="$PROJECT_DIR$/src/components/pages/HomePage.component.js" />
       </list>
     </option>
@@ -257,6 +257,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="png" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="sokker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sokker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -368,7 +374,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312707000" />
+    <option name="totallyTimeSpent" value="313140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="985" extended-state="6" />
@@ -382,7 +388,7 @@
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32995495" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="right" id="Terminal" order="3" weight="0.21831736" />
-      <window_info active="true" content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.2891374" />
+      <window_info content_ui="combo" x="424" y="143" width="474" height="887" id="Project" order="0" visible="true" weight="0.2891374" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -443,13 +449,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/models/users/UserFilter.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/users/User.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -679,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/parts/filters/FiltersCustom.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -777,10 +769,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/png/brain.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="71" column="20" lean-forward="true" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pages/HomePage.component.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="37" column="129" lean-forward="true" selection-start-line="37" selection-start-column="129" selection-end-line="37" selection-end-column="129" />
+        <state relative-caret-position="77">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>

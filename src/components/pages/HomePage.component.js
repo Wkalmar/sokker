@@ -1,5 +1,7 @@
 // PNG
 import screen1 from "png/screen1.png";
+import brain from "png/brain.gif";
+import brain1 from "png/brain1.gif";
 import React from 'react';
 // MobX
 import { observer } from "mobx-react";
@@ -27,8 +29,9 @@ class HomePage extends React.Component {
 				overflow: store.currentPath === "/" ? "auto" : "hidden"
 			}}>
 				{ !store.authorizedUserId &&
-					<div style={{ padding: '20px' }}>
+					<div style={{ padding: '20px', background: 'black', color: '#e0dddd' }}>
 						<div className="info">
+							<img src={ brain1 } style={{ maxWidth: '100%' }} alt="brain"/>
 							<h1>Brainsokker</h1>
 							<p>На этом сайте можно мониторить текущие трансферы игроков с сайта <b>sokker.org</b>.</p>
 							<p>Для начала работы нужно залогиниться или зарегистрироваться.</p>
@@ -36,7 +39,7 @@ class HomePage extends React.Component {
 							<p>После создания аккаунта вы увидите список трансферов и стандартные графики.</p>
 							<p>Расширить функционал сайта можно на
 								странице <a target="blank" href="https://brainsokker42.firebaseapp.com/neuralnetwork">neuralnetwork</a> включив нейросеть:</p>
-							<img style={{ margin: '10px 0', maxWidth: '100%', border: '1px solid rgb(239, 239, 239)'}} src={ screen1 } alt="screen1"/>
+							<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen1 } alt="screen1"/>
 							<br/>
 							<p>Нейросеть понадобится в том случае, если вы хотите настроить свой собственный поиск игроков по установленным вами индивидуальным критериям.</p>
 							<p>Нейросеть можно научить оценивать игроков по четырем характеристиками <b>ATT MID DEF GK</b>.</p>
