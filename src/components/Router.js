@@ -8,7 +8,7 @@ import { observer } from 'mobx-react';
 import store from 'store';
 // Pages
 import Layout from "components/Layout.component";
-import HomePage from "components/pages/lazy/HomePage.lazy.component";
+import HomePage from "components/pages/HomePage.component";
 import LogInPage from "components/pages/LogInPage.component";
 import RegistrationPage from "components/pages/lazy/RegistrationPage.lazy.component";
 import ChartsPage from "components/pages/lazy/ChartsPage.lazy.component";

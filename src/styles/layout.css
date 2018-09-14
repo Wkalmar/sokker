@@ -62,12 +62,12 @@ input:-webkit-autofill {
 button,
 .pseudo-button {
 	padding: 0 15px;
+	height: 35px;
 	margin: 5px 0;
 	font-size: 12px;
 	background: #d67800;
 	color: whitesmoke;
 	outline: none;
-	min-height: 35px;
 	line-height: 35px;
 	border: none;
 	cursor: pointer;

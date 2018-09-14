@@ -26,7 +26,7 @@ import Link from "components/Link.component";
 const flags = {
 	en,
 	ru,
-	pl,
+	// pl,
 	ua
 };
 
