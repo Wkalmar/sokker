@@ -64,15 +64,15 @@ class Info extends React.Component {
 					<br/>
 					<br/>
 					<b>P.S. Большое спасибо за помощь в разработке сайта <a target="blank" href="http://sokker.org/team/teamID/111293">WKalmar!</a></b>
-				</div>
 
-				{ !store.authorizedUserId ?
-					<div>
-						<Link to="/login" className="pseudo-button">Login</Link>
-						<br/>
-						<Link to="/registration" className="pseudo-button">Registration</Link>
-					</div>
-					: null }
+					{ !store.authorizedUserId ?
+						<div>
+							<Link to="/login" className="pseudo-button">Login</Link>
+							<br/>
+							<Link to="/registration" className="pseudo-button">Registration</Link>
+						</div>
+						: null }
+				</div>
 			</div>
 		)
 	}
