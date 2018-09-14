@@ -26,7 +26,7 @@ class Info extends React.Component {
 					<img src={ brain1 } style={{ maxWidth: '100%' }} alt="brain"/>
 					<h1>Brainsokker</h1>
 					<p>На этом сайте можно мониторить текущие трансферы игроков с сайта <b>sokker.org</b>.</p>
-					<p>Для начала работы нужно залогиниться или зарегистрироваться.</p>
+					<p>Для начала работы нужно <Link to="registration">залогиниться</Link> или <Link to="registration">зарегистрироваться</Link>.</p>
 					<p>Ваш логин и пароль от сайта <b>sokker.org</b> не требуется.</p>
 					<p>После создания аккаунта вы увидите список трансферов и стандартные графики:</p>
 					<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen6 } alt="screen6"/>
@@ -37,7 +37,7 @@ class Info extends React.Component {
 					<br/>
 					<br/>
 					<p>Расширить функционал сайта можно на
-						странице <a target="blank" href="https://brainsokker42.firebaseapp.com/neuralnetwork">neuralnetwork</a> включив нейросеть:</p>
+						странице <a href="https://brainsokker42.firebaseapp.com/neuralnetwork">neuralnetwork</a> включив нейросеть:</p>
 					<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen1 } alt="screen1"/>
 					<br/>
 					<p>Нейросеть понадобится в том случае, если вы хотите настроить свой собственный поиск игроков по установленным вами индивидуальным критериям.</p>
@@ -50,7 +50,7 @@ class Info extends React.Component {
 					<br/>
 					<p>Таким образом можно скорректировать проесс обучения и его результат.</p>
 					<p>Если по какой-то причине обучение пошло не так как вам бы хотелось, вы можете на
-						странице <a target="blank" href="https://brainsokker42.firebaseapp.com/neuralnetwork">neuralnetwork</a> удалить одного или всех игроков по которым обучается нейросеть:</p>
+						странице <a href="https://brainsokker42.firebaseapp.com/neuralnetwork">neuralnetwork</a> удалить одного или всех игроков по которым обучается нейросеть:</p>
 					<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen4 } alt="screen4"/>
 					<br/>
 					<br/>
