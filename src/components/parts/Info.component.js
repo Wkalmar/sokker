@@ -26,7 +26,7 @@ class Info extends React.Component {
 					<img src={ brain1 } style={{ maxWidth: '100%' }} alt="brain"/>
 					<h1>Brainsokker</h1>
 					<p>На этом сайте можно отслеживать текущие трансферы игроков с сайта <b>sokker.org</b>.</p>
-					<p>Для начала работы нужно <Link to="registration">залогиниться</Link> или <Link to="registration">зарегистрироваться</Link>.</p>
+					<p>Для начала работы нужно <Link to="login">залогиниться</Link> или <Link to="registration">зарегистрироваться</Link>.</p>
 					<p>Ваш логин и пароль от сайта <b>sokker.org</b> не требуется.</p>
 					<p>После создания аккаунта вы увидите список трансферов и стандартные графики:</p>
 					<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen6 } alt="screen6"/>
