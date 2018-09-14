@@ -65,10 +65,9 @@ class FiltersCustom extends React.Component {
 					{ this.filters.map((filter)=> {
 						return (
 							<div style={{ display: 'flex' }} key={ filter.id }>
-								<button style={{ margin: '0 0 5px 0', padding: '0 10px', color: 'black' }}
+								<button style={{ margin: '0 0 5px 0', color: 'black' }}
 										onClick={ ()=> this.applyCustomFilter(filter) }>{ filter.name }</button>
-								<button style={{ padding: '0 10px' }}
-										disabled={ this.isLoading.get() }
+								<button disabled={ this.isLoading.get() }
 										onClick={ ()=> this.deleteCustomFilter(filter.id) }>
 									{ this.isLoading.get() ?
 										<PreLoader />
