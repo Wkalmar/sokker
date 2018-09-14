@@ -51,7 +51,7 @@ class FiltersCustom extends React.Component {
 					<input type="text"
 						   placeholder={ store.t('new filter name') }
 						   value={ this.newFilterName.get() }
-						   onChange={ (e)=> this.newFilterName.set(e.currentTarget.value.substring(0, 10)) } />
+						   onChange={ (e)=> this.newFilterName.set(e.currentTarget.value.substring(0, 20)) } />
 					<button disabled={ !this.newFilterName.get() || this.isLoading.get() }
 							onClick={ this.createCustomFilter }>
 						{ this.isLoading.get() ?
@@ -61,7 +61,7 @@ class FiltersCustom extends React.Component {
 						}
 					</button>
 				</div>
-				<div style={{ display: 'flex' }}>
+				<div style={{ display: 'flex', flexWrap: "wrap" }}>
 					{ this.filters.map((filter)=> {
 						return (
 							<div style={{ display: 'flex' }} key={ filter.id }>

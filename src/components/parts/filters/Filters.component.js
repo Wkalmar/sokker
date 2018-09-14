@@ -44,7 +44,7 @@ class Filters extends React.Component {
 					</button>
 				</div>
 
-				<FiltersCustom />
+				{ store.NET.status !== 'disabled' && <FiltersCustom /> }
 
 				<div className="filter">
 					<div className="filter_title"><T>Search by name</T></div>
