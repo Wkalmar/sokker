@@ -50,7 +50,7 @@ class Interface extends React.Component {
 		setTimeout(()=> {
 			this.table.width = this.tableWidth;
 			this.table.height = this.tableHeight;
-		}, 50);
+		}, 700);
 	};
 
 
