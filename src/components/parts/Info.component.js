@@ -37,7 +37,7 @@ class Info extends React.Component {
 					<br/>
 					<br/>
 					<p>Расширить функционал сайта можно на
-						странице <a href="https://brainsokker42.firebaseapp.com/neuralnetwork">neuralnetwork</a> включив нейросеть:</p>
+						странице <Link to="neuralnetwork">neuralnetwork</Link> включив нейросеть:</p>
 					<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen1 } alt="screen1"/>
 					<br/>
 					<p>Нейросеть понадобится в том случае, если вы хотите настроить свой собственный поиск игроков по установленным вами индивидуальным критериям.</p>
@@ -50,7 +50,7 @@ class Info extends React.Component {
 					<br/>
 					<p>Таким образом можно скорректировать проесс обучения и его результат.</p>
 					<p>Если по какой-то причине обучение пошло не так как вам бы хотелось, вы можете на
-						странице <a href="https://brainsokker42.firebaseapp.com/neuralnetwork">neuralnetwork</a> удалить одного или всех игроков по которым обучается нейросеть:</p>
+						странице <Link to="neuralnetwork">neuralnetwork</Link> удалить одного или всех игроков по которым обучается нейросеть:</p>
 					<img style={{ margin: '10px 0', maxWidth: '100%' }} src={ screen4 } alt="screen4"/>
 					<br/>
 					<br/>
