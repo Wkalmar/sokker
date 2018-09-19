@@ -2,6 +2,7 @@ import React from 'react';
 // PNG
 import en from "png/en.png";
 import ru from "png/ru.png";
+import ua from "png/ua.png";
 // SVG
 import LoginSVG from "svg/login.svg";
 import LogoutSVG from "svg/logout.svg";
@@ -25,7 +26,7 @@ const flags = {
 	en,
 	ru,
 	// pl,
-	// ua
+	ua
 };
 
 class Header extends React.Component {
