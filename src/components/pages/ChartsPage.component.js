@@ -8,6 +8,7 @@ import { values } from "mobx";
 import store from "store";
 // Components
 import NeuralScatterChart from "components/parts/neural/NeuralScatterChart.component";
+import NeuralScatterSkillsChart from "components/parts/neural/NeuralScatterSkillsChart.component";
 
 
 class ChartsPage extends React.Component {
@@ -26,7 +27,11 @@ class ChartsPage extends React.Component {
 							</div>
 						</div>
 						:
-						null }
+						<div className="net-info-table">
+							<div className="net-info-row">
+								<NeuralScatterSkillsChart />
+							</div>
+						</div> }
 				</div>
 			</div>
 		)

@@ -99,7 +99,7 @@ class Header extends React.Component {
 						<span className="neural-status" style={{ background: this.netStatusColor }} />
 					</span> }
 
-					{ store.authorizedUserId && store.NET.status !== 'disabled' && <Link to="/charts"><ChartSVG /></Link> }
+					{ store.authorizedUserId && <Link to="/charts"><ChartSVG /></Link> }
 				</ul>
 
 				<ul className="header_menu">
