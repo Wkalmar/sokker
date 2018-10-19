@@ -82,7 +82,7 @@ class NeuralScatterSkillsChart extends React.Component {
 
 
 	renderScatterShape = (player)=> {
-		const skill = player[this.activeTab.get()];
+		const skill = player[this.activeTab.get()] - 3;
 		let fill = this.colors[this.activeTab.get()];
 		if(this.selectedPlayer.get() && this.selectedPlayer.get().id === player.id) fill = 'gray';
 
@@ -131,7 +131,7 @@ class NeuralScatterSkillsChart extends React.Component {
 		return (
 			<div className='neural-chart-controls'>
 				<div className='neural-chart-controls-title'><T>Order by</T>: </div>
-				<div style={{ display: 'flex' }}>
+				<div style={{ display: 'flex', flexWrap: 'wrap' }}>
 					{ Object.keys(this.colors).map((skill)=> {
 						return (
 							<div key={skill}
