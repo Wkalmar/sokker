@@ -34,4 +34,4 @@ const views = (self)=> {
 
 
 
-export default types.model('Users', Users).actions(actions).views(views);
+export default types.model(Users).actions(actions).views(views);

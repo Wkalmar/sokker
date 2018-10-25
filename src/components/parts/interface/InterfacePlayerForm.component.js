@@ -20,12 +20,12 @@ class InterfacePlayerFrom extends React.Component {
 
 
 	componentDidMount() {
-		this.setOutput(this.props);
-
+		this.setOutput();
+		
 		this['@silentReaction on [store.players.isHideCharts]'] = reaction(
 			()=> store.players.isHideCharts,
 			(isHideCharts)=> {
-				if(isHideCharts === false) this.setOutput(this.props);
+				if(isHideCharts === false) this.setOutput();
 			},
 			{ name: '@silentReaction on [store.players.isHideCharts]' });
 	}
@@ -36,7 +36,7 @@ class InterfacePlayerFrom extends React.Component {
 	}
 
 
-	setOutput(props) {
+	setOutput() {
 		this.output.set('gk', this.props.player.skill('gk'));
 		this.output.set('def', this.props.player.skill('def'));
 		this.output.set('mid', this.props.player.skill('mid'));

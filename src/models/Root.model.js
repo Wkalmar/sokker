@@ -27,13 +27,13 @@ const RootModel = {
 	lang: types.string,
 	isOpenSidebar: types.boolean,
 
-	NET: types.optional(types.maybe(NetModel), null),
+	NET: NetModel,
 
 	device: types.string,
 	nextPathUrl: types.maybe(types.string),
 	currentPath: types.maybe(types.string),
 
-	authorizedUserId: types.optional(types.maybe(types.string), null),
+	authorizedUserId: types.maybe(types.string),
 	users: UsersModel,
 	players: PlayersModel,
 	transfers: TransfersModel,

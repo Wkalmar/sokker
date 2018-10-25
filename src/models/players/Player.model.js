@@ -11,7 +11,7 @@ import moment from "moment/moment";
 
 
 const Player = {
-	user: types.frozen,
+	user: types.frozen(null),
 	id: types.string,
 
 	saleFor: types.maybe(types.string),
@@ -92,4 +92,4 @@ const views = (self)=> {
 };
 
 
-export default types.model('Player', Player).actions(actions).views(views);
+export default types.model(Player).actions(actions).views(views);

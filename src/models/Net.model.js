@@ -117,11 +117,6 @@ const actions = (self)=> {
 			} else {
 				worker.postMessage(formattedData);
 			}
-		},
-
-		// Hooks
-		postProcessSnapshot(snapshot) {
-			window.localStorage.setItem('NET.status', snapshot.status);
 		}
 	};
 };
@@ -133,4 +128,9 @@ const views = (self)=> {
 };
 
 
-export default types.model('Net', Net).actions(actions).views(views);
+export default types.model( Net)
+	.actions(actions)
+	.views(views)
+	.postProcessSnapshot((snapshot)=> {
+		window.localStorage.setItem('NET.status', snapshot.status);
+	});

@@ -5,12 +5,12 @@ import defaultFilters from "utils/defaultFilters.utils";
 
 
 const Filters = {
-	att: types.map(types.frozen),
-	mid: types.map(types.frozen),
-	def: types.map(types.frozen),
-	gk: types.map(types.frozen),
-	age: types.map(types.frozen),
-	skills: types.map(types.frozen),
+	att: types.map(types.frozen(0)),
+	mid: types.map(types.frozen(0)),
+	def: types.map(types.frozen(0)),
+	gk: types.map(types.frozen(0)),
+	age: types.map(types.frozen(0)),
+	skills: types.map(types.frozen(0)),
 	search: types.string,
 	isLoading: types.boolean
 };
@@ -62,15 +62,6 @@ const actions = (self)=> {
 				self.setLoading(true);
 			});
 			setTimeout(self.setLoading, 0);
-		},
-
-
-		// Hooks
-		postProcessSnapshot() {
-			// TODO: Fix this issue with [React virtualized] list _cache
-			const $list = document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0];
-			if($list) $list.scrollTop = $list.scrollTop+1;
-
 		}
 	};
 };
@@ -87,4 +78,11 @@ const views = (self)=> {
 };
 
 
-export default types.model('Filters', Filters).actions(actions).views(views);
+export default types.model('Filters', Filters)
+	.actions(actions)
+	.views(views)
+	.postProcessSnapshot(()=> {
+		// TODO: Fix this issue with [React virtualized] list _cache
+		const $list = document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0];
+		if($list) $list.scrollTop = $list.scrollTop+1;
+	});

@@ -142,9 +142,18 @@ class NeuralNetworkPage extends React.Component {
 											<T>{ this.openedDetailsBlock.get() === player.id ? "Hide" : "Show" }</T> <T>details</T>
 										</button>
 
-										<div className="net-info-details-block net-info-details-block-hide-player-name" style={{ height: this.openedDetailsBlock.get() === player.id ? 'auto' : 0 }}>
+										<div className="net-info-details-block net-info-details-block-hide-player-name"
+											 style={{
+											 	transition: 'height 0.7s',
+											 	height: this.openedDetailsBlock.get() === player.id ? '370px' : 0
+											 }}>
 
-											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
+											<div style={{
+												transition: '1s opacity',
+												opacity: this.openedDetailsBlock.get() === player.id ? 1 : 0
+											}}>
+												{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
+											</div>
 
 											<button onClick={ ()=> this.removePlayer(player.id) }>
 												{ this.isLoadingDeleteBtn.get() ?
