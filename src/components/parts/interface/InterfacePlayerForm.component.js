@@ -47,7 +47,7 @@ class InterfacePlayerFrom extends React.Component {
 	savePlayer = async ()=> {
 		store.players.refreshPlayersCharts(true);
 
-		const playerOutput =  Object.keys(this.output.toJSON()).reduce((res, name)=> {
+		const playerOutput = Object.keys(this.output.toJSON()).reduce((res, name)=> {
 			res[name] = +this.output.toJSON()[name] / 100;
 			return res;
 		}, {});
@@ -55,7 +55,7 @@ class InterfacePlayerFrom extends React.Component {
 		await store.players.upsertMutation({
 			...this.props.player,
 			...playerOutput,
-			playerId: this.props.player.id,
+			playerId: this.props.player.playerId,
 			userId: store.authorizedUserId
 		});
 	};
