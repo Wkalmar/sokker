@@ -148,12 +148,7 @@ class NeuralNetworkPage extends React.Component {
 											 	height: this.openedDetailsBlock.get() === player.id ? '370px' : 0
 											 }}>
 
-											<div style={{
-												transition: '1s opacity',
-												opacity: this.openedDetailsBlock.get() === player.id ? 1 : 0
-											}}>
-												{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
-											</div>
+											{ this.openedDetailsBlock.get() === player.id && <InterfacePlayer player={ player } /> }
 
 											<button onClick={ ()=> this.removePlayer(player.id) }>
 												{ this.isLoadingDeleteBtn.get() ?
