@@ -5,12 +5,12 @@ import defaultFilters from "utils/defaultFilters.utils";
 
 
 const Filters = {
-	att: types.map(types.frozen),
-	mid: types.map(types.frozen),
-	def: types.map(types.frozen),
-	gk: types.map(types.frozen),
-	age: types.map(types.frozen),
-	skills: types.map(types.frozen),
+	att: types.map(types.frozen(0)),
+	mid: types.map(types.frozen(0)),
+	def: types.map(types.frozen(0)),
+	gk: types.map(types.frozen(0)),
+	age: types.map(types.frozen(0)),
+	skills: types.map(types.frozen(0)),
 	search: types.string,
 	isLoading: types.boolean
 };
@@ -39,6 +39,7 @@ const actions = (self)=> {
 					switch(name) {
 						case "skills":
 							const skillName = Object.keys(filter[name])[0];
+							// Reset skills
 							filter[name][skillName].order && keys(self.skills).forEach((name)=> self.skills.set(name, { ...self.skills.get(name), order: "✘" }));
 
 							self.skills.set(skillName, { ...self.skills.get(skillName), ...filter[name][skillName] });
@@ -47,9 +48,7 @@ const actions = (self)=> {
 							self.search = filter["search"];
 							break;
 						default:
-							Object.keys(filter[name]).forEach((prop)=> {
-								self[name].set(prop, filter[name][prop]);
-							});
+							Object.keys(filter[name]).forEach((prop)=> self[name].set(prop, filter[name][prop]));
 							break;
 					}
 				});
@@ -57,21 +56,12 @@ const actions = (self)=> {
 		},
 
 
-		resetFilters() {
+		resetFilters(snapshot = defaultFilters) {
 			runInAction(`FILTERS-RESET-SUCCESS`, ()=> {
-				applySnapshot(self, defaultFilters);
+				applySnapshot(self, snapshot);
 				self.setLoading(true);
 			});
 			setTimeout(self.setLoading, 0);
-		},
-
-
-		// Hooks
-		postProcessSnapshot() {
-			// TODO: Fix this issue with [React virtualized] list _cache
-			const $list = document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0];
-			if($list) $list.scrollTop = $list.scrollTop+1;
-
 		}
 	};
 };
@@ -81,8 +71,18 @@ const views = (self)=> {
 
 	return {
 		get sortBySkillName() { return Object.keys(self.skills).find((name)=> self.skills[name] !== "✘"); },
+		get snapshot() {
+			return Object.keys(self).reduce((res, name)=> ({ ...res, [name]: self[name].toJSON ? self[name].toJSON() : self[name] }), {});
+		}
 	};
 };
 
 
-export default types.model('Filters', Filters).actions(actions).views(views);
+export default types.model('Filters', Filters)
+	.actions(actions)
+	.views(views)
+	.postProcessSnapshot(()=> {
+		// TODO: Fix this issue with [React virtualized] list _cache
+		const $list = document.getElementsByClassName('ReactVirtualized__Grid ReactVirtualized__List')[0];
+		if($list) $list.scrollTop = $list.scrollTop+1;
+	});

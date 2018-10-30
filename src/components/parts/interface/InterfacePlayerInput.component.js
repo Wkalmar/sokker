@@ -12,6 +12,7 @@ export default observer(function({ output, pos, color='transparent' }) {
 				   style={{ borderBottom: `6px solid ${color}` }}
 				   alwaysShowMask={ true }
 				   value={ value }
+				   type="phone"
 				   onChange={ (e)=> output.set(pos, e.currentTarget.value) }
 		/>
 	);

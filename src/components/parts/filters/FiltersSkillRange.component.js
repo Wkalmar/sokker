@@ -19,19 +19,19 @@ export default observer(function({ name }) {
 					<div className="rc-slider-rail"/>
 					<div className="rc-slider-track rc-slider-track-1" style={{ left: 0, width: '100%' }}/>
 					<div className="rc-slider-step"/>
-					<div role="slider" tabIndex="0" className="rc-slider-handle rc-slider-handle-1"  style={{ left: '0%' }} />
-					<div role="slider" tabIndex="0"  className="rc-slider-handle rc-slider-handle-2" style={{ left: '100%' }}/>
+					<div tabIndex="0" className="rc-slider-handle rc-slider-handle-1"  style={{ left: '0%' }} />
+					<div tabIndex="0" className="rc-slider-handle rc-slider-handle-2" style={{ left: '100%' }}/>
 					<div className="rc-slider-mark"/>
 				</div>
 				:
 				<Slider.Range min={0}
-						  max={17}
-						  pushable
-						  trackStyle={{
-						  		background: "red"
-						  }}
-						  onChange={ (range)=> store.filters.change({ skills: { [name]: { range } } }) }
-						  defaultValue={ [getSkill(name).range[0], getSkill(name).range[1]] } />
+							  max={17}
+							  pushable
+							  trackStyle={{
+									background: "red"
+							  }}
+							  onChange={ (range)=> store.filters.change({ skills: { [name]: { range } } }) }
+							  defaultValue={ [getSkill(name).range[0], getSkill(name).range[1]] } />
 			}
 		</div>
 	)

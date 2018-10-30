@@ -64,12 +64,6 @@ const actions = (self)=> {
 			values(self.players).forEach((player)=> {
 				self.players.set(player.id, { ...player, ...store.NET.run(player) });
 			});
-		},
-
-
-		// Hooks
-		postProcessSnapshot(snapshot) {
-			fuse = new Fuse(values(self.players), fuseOptions); // "list" is the item array
 		}
 	};
 };
@@ -96,4 +90,9 @@ const views = (self)=> {
 };
 
 
-export default types.model('Transfers', Transfers).actions(actions).views(views);
+export default types.model('Transfers', Transfers)
+	.actions(actions)
+	.views(views)
+	.postProcessSnapshot(({ players }, a,b)=> {
+		fuse = new Fuse(Object.values(players), fuseOptions); // "list" is the item array
+	});

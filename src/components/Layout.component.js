@@ -20,7 +20,7 @@ import PreLoader from "components/parts/PreLoader.component";
 
 class Layout extends React.Component {
 
-	menuWidth = observable.box(window.innerWidth / 100 * 90);
+	menuWidth = observable.box(window.innerWidth);
 	menuHeight = observable.box(window.innerHeight - 100);
 
 
@@ -31,7 +31,7 @@ class Layout extends React.Component {
 
 	onWindowResize = ()=> {
 		store.interfaceMeasurerCache.clearAll();
-		this.menuWidth.set(window.innerWidth / 100 * 90);
+		this.menuWidth.set(window.innerWidth);
 		this.menuHeight.set(window.innerHeight - 100);
 	};
 
@@ -41,12 +41,11 @@ class Layout extends React.Component {
 	};
 
 
-	render() {
-		return (
-			<div id="outer-container">
-				<Header />
+	renderContent() {
 
-				{ store.authorizedUser && store.device === "mobile" ?
+		return (
+			<div>
+				{ store.authorizedUserId && store.device === "mobile" ?
 					<Menu right
 						  push
 						  disableOverlayClick
@@ -55,25 +54,36 @@ class Layout extends React.Component {
 						  onStateChange={ this.onMenuChange }
 						  outerContainerId={ "outer-container" }
 						  width={ this.menuWidth.get() }>
-						{ store.authorizedUser &&
-							<div style={{ height: this.menuHeight.get(), overflow: 'scroll' }}>
-								<Filters />
-							</div>
+						{ store.authorizedUserId &&
+						<div style={{ height: this.menuHeight.get(), overflow: 'scroll' }}>
+							<Filters />
+						</div>
 						}
 					</Menu>
 					: null }
 
 				<div id="page-wrap">
-					{ store.authorizedUser ?
-						<QueryLoader query={ GET_USER_INFO_QUERY }
-									 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
-									 variables={{ id: store.authorizedUser.id }}>
-							{ this.props.children }
-						</QueryLoader>
-						:
-						this.props.children
-					}
+					{ this.props.children }
 				</div>
+			</div>
+		);
+	}
+
+
+	render() {
+		return (
+			<div id="outer-container">
+				<Header />
+
+				{ store.authorizedUserId ?
+					<QueryLoader query={ GET_USER_INFO_QUERY }
+								 preLoader={ <div className="cssload-loader-big"><PreLoader/></div>}
+								 variables={{ id: store.authorizedUserId }}>
+						{ this.renderContent() }
+					</QueryLoader>
+					:
+					this.renderContent()
+				}
 			</div>
 		)
 	}

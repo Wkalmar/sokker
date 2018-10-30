@@ -1,5 +1,9 @@
 import { types } from "mobx-state-tree";
 import { runInAction } from "mobx";
+// Utils
+import formatMoney from "utils/formatMoney.utils";
+// Store
+import store from "store";
 // GraphQL
 import client from "graphql/client";
 import UPDATE_PLAYER_MUTATION from "graphql/mutations/players/updatePlayer.mutation";
@@ -7,7 +11,7 @@ import moment from "moment/moment";
 
 
 const Player = {
-	user: types.frozen,
+	user: types.frozen(null),
 	id: types.string,
 
 	saleFor: types.maybe(types.string),
@@ -62,9 +66,30 @@ const views = (self)=> {
 	return {
 		get userId() { return self.user.id },
 		get endOfTradeFromNow() { return moment(self.endOfTrade).add(1, 'h').fromNow(); },
+		get price() {
+			let amount = +(self.currentBid || self.saleFor).replace(/\s/g, "");
+
+			// Ukraine = zl 100 -> 160 грн.
+			// Romania =  zl 100 -> 100 lei
+			// Italia =  zl 100 -> € 100
+			// Russia =  zl 100 -> 800 руб.
+
+			switch(store.lang) {
+				case 'ru':
+					amount = Math.round(amount * 8);
+					return formatMoney(amount) + ' руб.';
+				case 'ua':
+					amount = Math.round(amount * 1.6);
+					return formatMoney(amount) + ' грн.';
+				case "pl":
+					return formatMoney(amount) + ' zł';
+				default:
+					return '€ ' + formatMoney(amount);
+			}
+			},
 		skill(name) { return (+self.toJSON()[name] * 100).toFixed(0); }
 	};
 };
 
 
-export default types.model('Player', Player).actions(actions).views(views);
+export default types.model(Player).actions(actions).views(views);

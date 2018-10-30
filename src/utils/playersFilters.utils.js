@@ -7,7 +7,7 @@ const filterByName = function(fuse, players = []) {
 	if (store.filters.search) {
 		return fuse
 			.search(store.filters.search)
-			.map((result)=> result.item);
+			.map((result)=> players.find((player)=> player.id === result.item.id));
 	}
 	return players;
 };

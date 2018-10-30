@@ -36,7 +36,9 @@ class InterfacePlayer extends React.Component {
 						<InterfacePlayerSkillsChart player={ this.props.player } />
 				}
 
-				<InterfacePlayerForm player={ this.props.player } />
+				{ store.NET.status !== 'disabled' ?
+					<InterfacePlayerForm player={ this.props.player } />
+					: null }
 			</div>
 		);
 	}

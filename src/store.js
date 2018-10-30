@@ -1,5 +1,4 @@
 import { spy } from "mobx";
-import i18n from 'i18n';
 // Utils
 import defaultFilters from "utils/defaultFilters.utils";
 // Models
@@ -7,7 +6,7 @@ import RootModel from "models/Root.model";
 
 
 const store = RootModel.create({
-	lang: i18n.lang,
+	lang: window.localStorage.lang || 'en',
 	isOpenSidebar: false,
 	NET: {
 		status: window.localStorage.getItem('NET.status') || "disabled",

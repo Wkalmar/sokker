@@ -34,6 +34,7 @@ function applyData(dataName, data) {
 
 		case "User":
 			store.users.create(data);
+			Alert.success(store.t('Welcome') + `, ${data.name}!`);
 			break;
 		case "signupUser":
 		case "authenticateUser":
@@ -43,26 +44,34 @@ function applyData(dataName, data) {
 			history.push(store.nextPathUrl || '/');
 			break;
 
+		// User custom filters
+		case "createFilter":
+			store.users.authorizedUser.createFilter(data);
+			break;
+		case "deleteFilter":
+			store.users.authorizedUser.deleteFilter(data.id);
+			break;
+
 		//	Players
 		case "createPlayer":
 			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
-			Alert.success("Player saved to DB");
+			Alert.success(store.t("Player saved to DB"));
 			break;
 		case "updatePlayer":
 			store.NET.train([ ...store.players.userPlayers, data ]);
 			store.players.create(data);
-			Alert.success("Player updated in DB");
+			Alert.success(store.t("Player updated in DB"));
 			break;
 		case "deletePlayer":
 			store.players.delete(data.id);
 			store.NET.train(store.players.userPlayers);
-			Alert.success("Player deleted from DB");
+			Alert.success(store.t("Player deleted from DB"));
 			break;
 		case 'deleteAllUserPlayers':
 			store.players.deleteAll();
 			store.NET.train(store.players.userPlayers);
-			Alert.success("All user players deleted from DB");
+			Alert.success(store.t("All user players deleted from DB"));
 			break;
 		case "allPlayers":
 			store.NET.train(data);
@@ -73,7 +82,6 @@ function applyData(dataName, data) {
 		case "transfers":
 			store.transfers.create(JSON.parse(data.response));
 			break;
-		// Custom Functions
 
 		default:
 			console.log(`%c RESPONSE RESOLVER UNHANDLED:`, 'color: darkred', dataName, data);
@@ -86,6 +94,6 @@ function revertData(dataName, errorMsg) {
 	switch (dataName) {
 
 		default:
-			Alert.error(errorMsg);
+			Alert.error(store.t(errorMsg));
 	}
 }

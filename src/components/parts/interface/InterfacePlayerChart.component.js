@@ -26,7 +26,8 @@ class InterfacePlayerChart extends React.Component {
 
 	get chartRadius() {
 		const chartRadiusInPercents = this.playerSkillsSum * 100 / this.totalSkillsSum;
-		return this.maxChartRadius * chartRadiusInPercents / 100;
+		let chartRadius = this.maxChartRadius * chartRadiusInPercents / 100;
+		return chartRadius < 10 ? 10 : chartRadius;
 	};
 
 
@@ -81,7 +82,6 @@ class InterfacePlayerChart extends React.Component {
 	render() {
 		if(!Object.keys(this.props.playerData).length) return null;
 
-		if(isNaN(this.chartRadius)) console.log(this.chartRadius, this.chartData, this.playerSkillsSum, "this.chartRadius === NaN!!");
 		return (
 			<div className="interface-player-chart">
 				<ResponsiveContainer>

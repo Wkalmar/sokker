@@ -59,27 +59,52 @@ input:-webkit-autofill {
 }
 
 
-button {
-	padding: 10px 15px;
+button,
+.pseudo-button {
+	padding: 10px;
+	height: 35px;
 	margin: 5px 0;
 	font-size: 12px;
 	background: #d67800;
 	color: whitesmoke;
 	outline: none;
-	min-height: 35px;
 	border: none;
 	cursor: pointer;
+	display: inline-block;
 	transition: 1s opacity;
+	box-sizing: border-box;
 }
 
-button:hover {
+.pseudo-button {
+	line-height: 15px;
+}
+
+button:hover,
+.pseudo-button:hover {
 	opacity: 0.7;
+	text-decoration: none;
 }
 
+button:disabled,
+.pseudo-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
 
 input::placeholder {
 	color: white;
 	opacity: 0.5;
+}
+
+
+.info {
+	padding: 20px 0;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.info a {
+	display: inline;
 }
 
 
@@ -112,5 +137,71 @@ input::placeholder {
 	}
 }
 .rotating {
-	animation: rotating 15s linear infinite;
+	animation: rotating 5s linear infinite;
+}
+
+
+@-webkit-keyframes rotating120 /* Safari and Chrome */ {
+	from {
+		-webkit-transform: rotate(120deg);
+		-o-transform: rotate(120deg);
+		transform: rotate(120deg);
+	}
+	to {
+		-webkit-transform: rotate(480deg);
+		-o-transform: rotate(480deg);
+		transform: rotate(480deg);
+	}
+}
+@keyframes rotating120 {
+	from {
+		-ms-transform: rotate(120deg);
+		-moz-transform: rotate(120deg);
+		-webkit-transform: rotate(120deg);
+		-o-transform: rotate(120deg);
+		transform: rotate(120deg);
+	}
+	to {
+		-ms-transform: rotate(480deg);
+		-moz-transform: rotate(480deg);
+		-webkit-transform: rotate(480deg);
+		-o-transform: rotate(480deg);
+		transform: rotate(480deg);
+	}
+}
+.rotating120 {
+	animation: rotating120 5s linear infinite;
+}
+
+
+@-webkit-keyframes rotating240 /* Safari and Chrome */ {
+	from {
+		-webkit-transform: rotate(240deg);
+		-o-transform: rotate(240deg);
+		transform: rotate(240deg);
+	}
+	to {
+		-webkit-transform: rotate(600deg);
+		-o-transform: rotate(600deg);
+		transform: rotate(600deg);
+	}
+}
+@keyframes rotating240 {
+	from {
+		-ms-transform: rotate(240deg);
+		-moz-transform: rotate(240deg);
+		-webkit-transform: rotate(240deg);
+		-o-transform: rotate(240deg);
+		transform: rotate(240deg);
+	}
+	to {
+		-ms-transform: rotate(600deg);
+		-moz-transform: rotate(600deg);
+		-webkit-transform: rotate(600deg);
+		-o-transform: rotate(600deg);
+		transform: rotate(600deg);
+	}
+}
+.rotating240 {
+	animation: rotating240 5s linear infinite;
 }

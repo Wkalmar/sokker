@@ -79,7 +79,7 @@ const actions = (self)=> {
 
 const views = (self)=> {
 	return {
-		get userPlayers() { return values(self.all).filter((player)=> player.userId === store.authorizedUser.id); }
+		get userPlayers() { return values(self.all).filter((player)=> player.userId === store.authorizedUserId); }
 	};
 };
 

@@ -4,8 +4,6 @@ import "styles/interface/interface-player-info.css";
 // MobX
 import { observer } from 'mobx-react';
 import { observable } from "mobx";
-// Store
-import store from 'store';
 // Components
 import T from "components/parts/T.component";
 
@@ -23,14 +21,6 @@ class InterfacePlayerInfo extends React.Component {
 	componentWillUnmount() {
 		clearInterval(this.interval);
 	}
-
-
-	toggleFavorite = ()=> {
-		this.props.player.update({
-			id: this.props.player.id,
-			isFavorite: !this.props.player.isFavorite
-		});
-	};
 
 
 	renderSkill(skillName) {
@@ -54,6 +44,7 @@ class InterfacePlayerInfo extends React.Component {
 
 	render() {
 		const player = this.props.player;
+		const isPrice = player.currentBid || player.saleFor;
 
 		return (
 			<div className="interface-player-info" style={{ width: '40%' }} id={ this.dateNow.get() }>
@@ -63,9 +54,11 @@ class InterfacePlayerInfo extends React.Component {
 					</p>
 				</a>
 
-				<p>{ player.currentBid ? <T>current bid</T> : <T>sales for</T> }: { player.currentBid || player.saleFor }</p>
+				{ isPrice ?
+					<p>{ player.currentBid ? <T>Current bid</T> : <T>Sales for</T> }: { player.price }</p>
+					: null }
 
-				<p><T>Age</T> { Math.round(player.age * 100) }</p>
+				<i><T>Age</T> { Math.round(player.age * 100) }</i>
 
 				{ player.endOfTrade && <i><T>End of trade</T>: { player.endOfTradeFromNow }</i> }
 

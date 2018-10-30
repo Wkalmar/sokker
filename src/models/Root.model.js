@@ -10,7 +10,6 @@ import client from "graphql/client";
 import LOG_IN_USER_MUTATION from "graphql/mutations/authenticateUser.mutation";
 import SIGN_UP_USER_MUTATION from "graphql/mutations/signupUser.mutation";
 // Models
-import AuthorizedUserModel from "models/AuthorizedUser.model";
 import UsersModel from "models/users/Users.model";
 import FiltersModel from "models/Filters.model";
 import PlayersModel from "models/players/Players.model";
@@ -28,13 +27,13 @@ const RootModel = {
 	lang: types.string,
 	isOpenSidebar: types.boolean,
 
-	NET: types.optional(types.maybe(NetModel), null),
+	NET: NetModel,
 
 	device: types.string,
 	nextPathUrl: types.maybe(types.string),
 	currentPath: types.maybe(types.string),
 
-	authorizedUser: types.optional(types.maybe(AuthorizedUserModel), null),
+	authorizedUserId: types.maybe(types.string),
 	users: UsersModel,
 	players: PlayersModel,
 	transfers: TransfersModel,
@@ -51,6 +50,7 @@ const actions = (store)=> {
 
 		changeLang(lang) {
 			i18n.changeLanguage(lang);
+			window.localStorage.setItem('lang', lang);
 			store.lang = lang;
 		},
 
@@ -84,7 +84,7 @@ const actions = (store)=> {
 		},
 
 
-		logIn: (userId)=> { store.authorizedUser = { id: userId } },
+		logIn: (userId)=> { store.authorizedUserId = userId },
 
 
 		logOut: (e)=> {
@@ -94,8 +94,8 @@ const actions = (store)=> {
 				window.sessionStorage.removeItem('token');
 				// TODO: Duplicated with store.js initial logic
 				applySnapshot(store, {
-					lang: i18n.lang,
-					authorizedUser: null,
+					lang: window.localStorage.lang || 'en',
+					authorizedUserId: null,
 					isOpenSidebar: false,
 					NET: {
 						status: window.localStorage.getItem('NET.status') || "initial",

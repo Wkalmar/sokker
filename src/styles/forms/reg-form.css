@@ -1,3 +1,7 @@
 .reg-form {
     padding: 20px;
 }
+
+.reg-form input {
+    width: 200px;
+}
